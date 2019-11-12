@@ -1,14 +1,15 @@
 import './styles.css'
 import csv from './finalDataset.csv'
 import DivergentBarChart from './idioms/divergent_bar'
-
 import * as d3 from 'd3'
+//
+//
 ;(async () => {
   const containerSelector = '.divergent-charts-section'
   let data = await load(csv)
 
   data = data.filter(d => {
-    return d.location === 'Crato'
+    return d.location === 'Continente'
   })
 
   const mainSectionWidth = document.querySelector(containerSelector).offsetWidth
