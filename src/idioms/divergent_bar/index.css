@@ -1,0 +1,8 @@
+.svg-chart g rect {
+  fill: steelblue;
+}
+
+.svg-chart g text {
+  fill: black;
+  font: 10px sans-serif;
+}

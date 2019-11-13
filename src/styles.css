@@ -2,30 +2,24 @@ body {
   font-family: sans-serif;
 }
 
-.div-chart .bar {
-  font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
-}
-
-.svg-chart g rect {
-  fill: steelblue;
-}
-
-.svg-chart g text {
-  fill: black;
-  font: 10px sans-serif;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  column-gap: 20px;
+  column-gap: 10px;
 }
 
 .grid-container > * {
   border: 1px solid red;
+}
+
+.grid-container .charts-pane {
+  grid-column: 2;
+}
+
+.grid-container .selections-pane {
+  grid-column: 1;
+}
+
+.grid-container .map-pane {
+  grid-column: 3;
 }
