@@ -8,6 +8,10 @@ class DivergentBarChart {
     this.chartWidth = chartWidth
     this.chart = d3.select(this.parentSelector)
     this.scaler = d3.scaleLinear()
+    this.transition = d3
+      .transition()
+      .duration(1000)
+      .ease(d3.easeQuadInOut)
   }
 
   create (data) {
@@ -66,29 +70,43 @@ class DivergentBarChart {
   }
 
   __createRect (bar) {
-    return bar
+    const rect = bar
       .append('rect')
+
+    rect
+      .transition(this.transition)
       .attr(
         'x',
         d => this.chartWidth / 2 - (d < 0 ? this.scaler(Math.abs(d)) : 0)
       )
       .attr('width', d => this.scaler(Math.abs(d)))
       .attr('height', this.barHeight - 1)
+
+    rect
       .append('title')
       .text(d => d)
+
+    return bar
   }
 
   __updateRect (bar) {
-    return bar
+    const rect = bar
       .select('rect')
+
+    rect
+      .transition(this.transition)
       .attr(
         'x',
         d => this.chartWidth / 2 - (d < 0 ? this.scaler(Math.abs(d)) : 0)
       )
       .attr('width', d => this.scaler(Math.abs(d)))
       .attr('height', this.barHeight - 1)
+
+    rect
       .select('title')
       .text(d => d)
+
+    return bar
   }
 
   __getTranslate (d, i) {
