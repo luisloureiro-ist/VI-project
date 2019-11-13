@@ -5,26 +5,10 @@ import * as d3 from 'd3'
 //
 //
 ;(async () => {
-  const containerSelector = '.divergent-charts-section'
-  let data = await load(csv)
+  const data = await load(csv)
 
-  data = data.filter(d => {
-    return d.location === 'Continente'
-  })
-
-  const mainSectionWidth = document.querySelector(containerSelector).offsetWidth
-  const activitySectors = getActivitySectors(data)
-  const numberOfActivitySectors = activitySectors.length
-  const chartWidth = Math.floor(mainSectionWidth / numberOfActivitySectors) - 5
-
-  // column with the years
-  for (let index = 0; index < activitySectors.length; index++) {
-    const filteredData = data
-      .filter(d => d.type === activitySectors[index])
-      .reduce((prev, curr) => prev.concat(curr.productivity), [])
-
-    new DivergentBarChart(containerSelector, chartWidth).create(filteredData)
-  }
+  const dispatch = registerEventListeners()
+  dispatch.call('load', this, data, 'Continente')
 })()
 
 async function load (filename) {
@@ -37,6 +21,54 @@ async function load (filename) {
       productivity: +d.Productivity
     }
   })
+}
+
+function registerEventListeners () {
+  let dataset = []
+  const barCharts = []
+  const dispatch = d3.dispatch('load', 'update')
+
+  dispatch.on('load', (data, municipality) => {
+    dataset = data
+
+    dispatch.call('update', this, municipality)
+  })
+
+  dispatch.on('update.dashboard', municipalityName => {
+    const containerSelector = '.divergent-charts-section'
+    const data = dataset.filter(d => {
+      return d.location === municipalityName
+    })
+
+    const mainSectionWidth = document.querySelector(containerSelector)
+      .offsetWidth
+    const activitySectors = getActivitySectors(data)
+    const numberOfActivitySectors = activitySectors.length
+    const chartWidth =
+      Math.floor(mainSectionWidth / numberOfActivitySectors) - 5
+
+    // column with the years
+    for (let index = 0; index < numberOfActivitySectors; index++) {
+      const filteredData = data
+        .filter(d => d.type === activitySectors[index])
+        .reduce((prev, curr) => prev.concat(curr.productivity), [])
+
+      if (barCharts[index]) {
+        barCharts[index].update(filteredData)
+      } else {
+        const newLength = barCharts.push(
+          new DivergentBarChart(containerSelector, chartWidth)
+        )
+        barCharts[newLength - 1].create(filteredData)
+      }
+    }
+  })
+
+  d3.selectAll('.municipality').on('click', (d, i, nodesList) => {
+    dispatch.call('update', this, nodesList[i].value)
+  })
+
+  return dispatch
 }
 
 function getActivitySectors (data) {
