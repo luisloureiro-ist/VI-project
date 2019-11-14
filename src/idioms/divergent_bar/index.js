@@ -67,6 +67,7 @@ class DivergentBarChart {
       .append('g')
       .attr('transform', `translate(0, ${this.barHeight * dataLength})`)
       .classed('x-axis', true)
+      .transition(this.transition)
       .call(this.xAxis)
   }
 
