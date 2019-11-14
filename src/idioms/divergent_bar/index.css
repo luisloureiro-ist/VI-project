@@ -1,3 +1,7 @@
+.svg-chart:not(:first-child) {
+  margin-left: 5px;
+}
+
 .svg-chart g rect {
   fill: steelblue;
 }
