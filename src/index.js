@@ -43,9 +43,11 @@ function registerEventListeners () {
     const mainSectionWidth = document.querySelector(containerSelector)
       .offsetWidth
     const activitySectors = getActivitySectors(data)
+    const years = getYears(data)
     const numberOfActivitySectors = activitySectors.length
+    const yAxisWidth = 40
     const chartWidth =
-      Math.floor(mainSectionWidth / numberOfActivitySectors) - 5
+      Math.floor((mainSectionWidth - yAxisWidth) / numberOfActivitySectors) - 4
 
     // column with the years
     for (let index = 0; index < numberOfActivitySectors; index++) {
@@ -57,9 +59,16 @@ function registerEventListeners () {
         barCharts[index].update(filteredData)
       } else {
         const newLength = barCharts.push(
-          new DivergentBarChart(containerSelector, chartWidth)
+          new DivergentBarChart(
+            containerSelector,
+            chartWidth + (index === 0 ? yAxisWidth : 0)
+          )
         )
-        barCharts[newLength - 1].create(filteredData)
+        // The first chart will have the Y axis
+        barCharts[newLength - 1].create(
+          filteredData,
+          (index === 0 ? years : null)
+        )
       }
     }
   })
@@ -75,6 +84,14 @@ function getActivitySectors (data) {
   return data.reduce(
     (prev, curr) =>
       prev.indexOf(curr.type) === -1 ? prev.concat([curr.type]) : prev,
+    []
+  )
+}
+
+function getYears (data) {
+  return data.reduce(
+    (prev, curr) =>
+      prev.indexOf(curr.year) === -1 ? prev.concat([curr.year]) : prev,
     []
   )
 }
