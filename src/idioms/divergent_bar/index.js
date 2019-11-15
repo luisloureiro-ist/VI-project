@@ -104,7 +104,10 @@ class DivergentBarChart {
       .domain([domain[0], domain[domain.length - 1]])
       .range([20 * domain.length, 0])
 
-    this.yAxis.scale(scale).ticks(domain.length, 'd')
+    this.yAxis
+      .scale(scale)
+      .tickValues(domain)
+      .tickFormat(d3.format('d'))
   }
 
   __createXAxis (dataLength) {
