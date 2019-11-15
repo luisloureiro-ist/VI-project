@@ -1,4 +1,8 @@
-.svg-chart:not(:first-child) {
+.svg-chart {
+  margin-left: 0;
+}
+
+.svg-chart ~ .svg-chart {
   margin-left: 5px;
 }
 
