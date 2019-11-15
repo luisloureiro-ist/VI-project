@@ -56,7 +56,7 @@ function registerEventListeners () {
         .reduce((prev, curr) => prev.concat(curr.productivity), [])
 
       if (barCharts[index]) {
-        barCharts[index].update(filteredData)
+        barCharts[index].update(filteredData, index === 0 ? years : null)
       } else {
         const newLength = barCharts.push(
           new DivergentBarChart(
@@ -67,7 +67,7 @@ function registerEventListeners () {
         // The first chart will have the Y axis
         barCharts[newLength - 1].create(
           filteredData,
-          (index === 0 ? years : null)
+          index === 0 ? years : null
         )
       }
     }
