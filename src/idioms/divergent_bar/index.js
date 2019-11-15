@@ -91,7 +91,7 @@ class DivergentBarChart {
     this.chart
       .select('.y-axis')
       .attr('transform', 'translate(35, 0)')
-      // .transition(this.transition)
+      .transition(this.transition)
       .call(this.yAxis)
   }
 
@@ -133,7 +133,7 @@ class DivergentBarChart {
         'transform',
         `translate(${rangeStart}, ${this.barHeight * dataLength})`
       )
-      // .transition(this.transition)
+      .transition(this.transition)
       .call(this.xAxis)
   }
 
