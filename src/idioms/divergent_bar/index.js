@@ -9,26 +9,35 @@ class DivergentBarChart {
     this.chart = d3.select(this.parentSelector)
     this.scaler = d3.scaleLinear()
     this.xAxis = d3.axisBottom()
+    this.yAxis = null
     this.transition = d3
       .transition()
       .duration(1000)
       .ease(d3.easeQuadInOut)
   }
 
-  create (data) {
+  create (data, yAxisDomain = null) {
     this.chart = this.chart
       .append('svg')
       .classed('svg-chart', true)
       .attr('width', this.chartWidth)
 
+    if (yAxisDomain) {
+      this.__setYAxisScaler(yAxisDomain)
+      this.__createYAxis(yAxisDomain)
+    }
+
     this.__setScalerDomainAndRange(data).__setChartHeight(data.length)
 
     const bar = this.chart
+      .append('g')
+      .classed('bars-group', true)
       .selectAll('g')
       .data(data)
       .enter()
       .append('g')
       .attr('transform', this.__getTranslate.bind(this))
+      .classed('bars', true)
 
     this.__createRect(bar)
 
@@ -62,21 +71,47 @@ class DivergentBarChart {
   //
   // Private (auxiliar) functions
   //
-  __createXAxis (dataLength) {
+  __createYAxis (domain) {
     this.chart
       .append('g')
-      .attr('transform', `translate(0, ${this.barHeight * dataLength})`)
+      .classed('y-axis', true)
+      .attr('transform', 'translate(35, 0)')
+      .call(this.yAxis)
+  }
+
+  __setYAxisScaler (domain) {
+    const scale = d3
+      .scaleLinear()
+      .domain([domain[0], domain[domain.length - 1]])
+      .range([20 * domain.length, 0])
+
+    this.yAxis = d3
+      .axisLeft()
+      .scale(scale)
+      .ticks(domain.length, 'd')
+  }
+
+  __createXAxis (dataLength) {
+    const rangeStart = this.yAxis !== null ? 35 : 0
+
+    this.chart
+      .append('g')
       .classed('x-axis', true)
+      .attr(
+        'transform',
+        `translate(${rangeStart}, ${this.barHeight * dataLength})`
+      )
       .transition(this.transition)
       .call(this.xAxis)
   }
 
   __setXAxisScaler (data) {
+    const rangeStart = this.yAxis !== null ? 35 : 0
     const max = d3.max(data, d => Math.abs(d))
     const scale = d3
       .scaleLinear()
       .domain([-1 * max, max])
-      .range([0, this.chartWidth])
+      .range([0, this.chartWidth - rangeStart])
 
     this.xAxis
       .scale(scale)
@@ -87,9 +122,11 @@ class DivergentBarChart {
   }
 
   __setScalerDomainAndRange (newData) {
+    const rangeStart = this.yAxis !== null ? 35 : 0
+
     this.scaler
       .domain([0, d3.max(newData, d => Math.abs(d))])
-      .range([0, this.chartWidth / 2])
+      .range([0, Math.floor((this.chartWidth - rangeStart) / 2)])
 
     return this
   }
@@ -101,13 +138,16 @@ class DivergentBarChart {
   }
 
   __createRect (bar) {
+    const rangeStart = this.yAxis !== null ? 35 : 0
     const rect = bar.append('rect')
 
     rect
       .transition(this.transition)
       .attr(
         'x',
-        d => this.chartWidth / 2 - (d < 0 ? this.scaler(Math.abs(d)) : 0)
+        d =>
+          Math.floor((this.chartWidth + rangeStart) / 2) -
+          (d < 0 ? this.scaler(Math.abs(d)) : 0)
       )
       .attr('width', d => this.scaler(Math.abs(d)))
       .attr('height', this.barHeight - 1)
