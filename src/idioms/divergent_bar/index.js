@@ -7,7 +7,7 @@ class DivergentBarChart {
     this.barHeight = barHeight
     this.chartWidth = chartWidth
     this.chart = d3.select(this.parentSelector)
-    this.scaler = d3.scaleLinear()
+    this.xScaler = d3.scaleLinear()
     this.xAxis = d3.axisBottom()
     this.yAxis = null
     this.yAxisPadding = 0
@@ -27,7 +27,8 @@ class DivergentBarChart {
       this.__createYAxis(yAxisDomain)
     }
 
-    this.__setScalerDomainAndRange(data).__setChartHeight(data.length)
+    this.__setScalerDomainAndRange(data)
+    this.__setChartHeight(data.length)
 
     this.chart
       .append('g')
@@ -48,7 +49,8 @@ class DivergentBarChart {
       this.__updateYAxis(yAxisDomain)
     }
 
-    this.__setScalerDomainAndRange(data).__setChartHeight(data.length)
+    this.__setScalerDomainAndRange(data)
+    this.__setChartHeight(data.length)
 
     this.chart
       .select('.bars-group')
@@ -152,17 +154,13 @@ class DivergentBarChart {
   }
 
   __setScalerDomainAndRange (newData) {
-    this.scaler
+    this.xScaler
       .domain([0, d3.max(newData, d => Math.abs(d))])
       .range([0, Math.floor((this.chartWidth - this.yAxisPadding) / 2)])
-
-    return this
   }
 
   __setChartHeight (dataLength) {
     this.chart.attr('height', this.barHeight * (dataLength + 1)) // +1 for the bottom axis
-
-    return this
   }
 
   __createRect (bar) {
@@ -173,9 +171,9 @@ class DivergentBarChart {
         'x',
         d =>
           Math.floor((this.chartWidth + this.yAxisPadding) / 2) -
-          (d < 0 ? this.scaler(Math.abs(d)) : 0)
+          (d < 0 ? this.xScaler(Math.abs(d)) : 0)
       )
-      .attr('width', d => this.scaler(Math.abs(d)))
+      .attr('width', d => this.xScaler(Math.abs(d)))
       .attr('height', this.barHeight - 1)
       .selection()
       .append('title')
@@ -190,9 +188,9 @@ class DivergentBarChart {
         'x',
         d =>
           Math.floor((this.chartWidth + this.yAxisPadding) / 2) -
-          (d < 0 ? this.scaler(Math.abs(d)) : 0)
+          (d < 0 ? this.xScaler(Math.abs(d)) : 0)
       )
-      .attr('width', d => this.scaler(Math.abs(d)))
+      .attr('width', d => this.xScaler(Math.abs(d)))
       .attr('height', this.barHeight - 1)
       .selection()
       .select('title')
