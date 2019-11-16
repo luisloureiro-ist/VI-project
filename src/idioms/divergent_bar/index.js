@@ -10,6 +10,7 @@ class DivergentBarChart {
     this.scaler = d3.scaleLinear()
     this.xAxis = d3.axisBottom()
     this.yAxis = null
+    this.yAxisPadding = 0
     this.transition = d3
       .transition()
       .duration(1000)
@@ -98,6 +99,7 @@ class DivergentBarChart {
   __setYAxisScaler (domain) {
     if (this.yAxis === null) {
       this.yAxis = d3.axisLeft()
+      this.yAxisPadding = 35
     }
     const scale = d3
       .scaleLinear()
@@ -111,39 +113,34 @@ class DivergentBarChart {
   }
 
   __createXAxis (dataLength) {
-    const rangeStart = this.yAxis !== null ? 35 : 0
-
     this.chart
       .append('g')
       .classed('x-axis', true)
       .attr(
         'transform',
-        `translate(${rangeStart}, ${this.barHeight * dataLength})`
+        `translate(${this.yAxisPadding}, ${this.barHeight * dataLength})`
       )
       .transition(this.transition)
       .call(this.xAxis)
   }
 
   __updateXAxis (dataLength) {
-    const rangeStart = this.yAxis !== null ? 35 : 0
-
     this.chart
       .select('.x-axis')
       .attr(
         'transform',
-        `translate(${rangeStart}, ${this.barHeight * dataLength})`
+        `translate(${this.yAxisPadding}, ${this.barHeight * dataLength})`
       )
       .transition(this.transition)
       .call(this.xAxis)
   }
 
   __setXAxisScaler (data) {
-    const rangeStart = this.yAxis !== null ? 35 : 0
     const max = d3.max(data, d => Math.abs(d))
     const scale = d3
       .scaleLinear()
       .domain([-1 * max, max])
-      .range([0, this.chartWidth - rangeStart])
+      .range([0, this.chartWidth - this.yAxisPadding])
 
     this.xAxis
       .scale(scale)
@@ -154,11 +151,9 @@ class DivergentBarChart {
   }
 
   __setScalerDomainAndRange (newData) {
-    const rangeStart = this.yAxis !== null ? 35 : 0
-
     this.scaler
       .domain([0, d3.max(newData, d => Math.abs(d))])
-      .range([0, Math.floor((this.chartWidth - rangeStart) / 2)])
+      .range([0, Math.floor((this.chartWidth - this.yAxisPadding) / 2)])
 
     return this
   }
@@ -170,7 +165,6 @@ class DivergentBarChart {
   }
 
   __createRect (bar) {
-    const rangeStart = this.yAxis !== null ? 35 : 0
     const rect = bar.append('rect')
 
     rect
@@ -178,7 +172,7 @@ class DivergentBarChart {
       .attr(
         'x',
         d =>
-          Math.floor((this.chartWidth + rangeStart) / 2) -
+          Math.floor((this.chartWidth + this.yAxisPadding) / 2) -
           (d < 0 ? this.scaler(Math.abs(d)) : 0)
       )
       .attr('width', d => this.scaler(Math.abs(d)))
@@ -190,7 +184,6 @@ class DivergentBarChart {
   }
 
   __updateRect (bar) {
-    const rangeStart = this.yAxis !== null ? 35 : 0
     const rect = bar.select('rect')
 
     rect
@@ -198,7 +191,7 @@ class DivergentBarChart {
       .attr(
         'x',
         d =>
-          Math.floor((this.chartWidth + rangeStart) / 2) -
+          Math.floor((this.chartWidth + this.yAxisPadding) / 2) -
           (d < 0 ? this.scaler(Math.abs(d)) : 0)
       )
       .attr('width', d => this.scaler(Math.abs(d)))
