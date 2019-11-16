@@ -9,6 +9,7 @@ class DivergentBarChart {
     this.chart = d3.select(this.parentSelector)
     this.xScaler = d3.scaleLinear()
     this.xAxis = d3.axisBottom()
+    this.yScaler = null
     this.yAxis = null
     this.yAxisPadding = 0
     this.transition = d3
@@ -101,14 +102,15 @@ class DivergentBarChart {
     if (this.yAxis === null) {
       this.yAxis = d3.axisLeft()
       this.yAxisPadding = 35
+      this.yScaler = d3.scaleLinear()
     }
-    const scale = d3
-      .scaleLinear()
+
+    this.yScaler
       .domain([domain[0], domain[domain.length - 1]])
       .range([20 * domain.length, 0])
 
     this.yAxis
-      .scale(scale)
+      .scale(this.yScaler)
       .tickValues(domain)
       .tickFormat(d3.format('d'))
   }
