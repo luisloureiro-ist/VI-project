@@ -24,8 +24,7 @@ class DivergentBarChart {
       .attr('width', this.chartWidth)
 
     if (yAxisDomain) {
-      this.__setYAxisScaler(yAxisDomain)
-      this.__createYAxis()
+      this.__createYAxis(yAxisDomain)
     }
 
     this.__setScalerDomainAndRange(data).__setChartHeight(data.length)
@@ -41,14 +40,12 @@ class DivergentBarChart {
       .attr('transform', this.__getTranslate.bind(this))
       .call(this.__createRect.bind(this))
 
-    this.__setXAxisScaler(data)
-    this.__createXAxis(data.length)
+    this.__createXAxis(data)
   }
 
   update (data, yAxisDomain = null) {
     if (yAxisDomain) {
-      this.__setYAxisScaler(yAxisDomain)
-      this.__updateYAxis()
+      this.__updateYAxis(yAxisDomain)
     }
 
     this.__setScalerDomainAndRange(data).__setChartHeight(data.length)
@@ -71,14 +68,15 @@ class DivergentBarChart {
         exit => exit.remove()
       )
 
-    this.__setXAxisScaler(data)
-    this.__updateXAxis(data.length)
+    this.__updateXAxis(data)
   }
 
   //
   // Private (auxiliar) functions
   //
-  __createYAxis () {
+  __createYAxis (domain) {
+    this.__setYAxisScaler(domain)
+
     this.chart
       .append('g')
       .classed('y-axis', true)
@@ -87,7 +85,9 @@ class DivergentBarChart {
       .call(this.yAxis)
   }
 
-  __updateYAxis () {
+  __updateYAxis (domain) {
+    this.__setYAxisScaler(domain)
+
     this.chart
       .select('.y-axis')
       .attr('transform', 'translate(35, 0)')
@@ -111,24 +111,28 @@ class DivergentBarChart {
       .tickFormat(d3.format('d'))
   }
 
-  __createXAxis (dataLength) {
+  __createXAxis (data) {
+    this.__setXAxisScaler(data)
+
     this.chart
       .append('g')
       .classed('x-axis', true)
       .attr(
         'transform',
-        `translate(${this.yAxisPadding}, ${this.barHeight * dataLength})`
+        `translate(${this.yAxisPadding}, ${this.barHeight * data.length})`
       )
       .transition(this.transition)
       .call(this.xAxis)
   }
 
-  __updateXAxis (dataLength) {
+  __updateXAxis (data) {
+    this.__setXAxisScaler(data)
+
     this.chart
       .select('.x-axis')
       .attr(
         'transform',
-        `translate(${this.yAxisPadding}, ${this.barHeight * dataLength})`
+        `translate(${this.yAxisPadding}, ${this.barHeight * data.length})`
       )
       .transition(this.transition)
       .call(this.xAxis)
@@ -145,8 +149,6 @@ class DivergentBarChart {
       .scale(scale)
       .ticks(3, '~s')
       .tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
-
-    return this.xAxis
   }
 
   __setScalerDomainAndRange (newData) {
