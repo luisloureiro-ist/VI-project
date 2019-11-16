@@ -40,7 +40,7 @@ class DivergentBarChart {
       .append('g')
       .classed('bars', true)
       .attr('transform', this.__getTranslate.bind(this))
-      .call(this.__createRect.bind(this))
+      .call(this.__createRects.bind(this))
 
     this.__createXAxis(data)
   }
@@ -63,11 +63,11 @@ class DivergentBarChart {
             .append('g')
             .attr('transform', this.__getTranslate.bind(this))
             .classed('bars', true)
-            .call(this.__createRect.bind(this)),
+            .call(this.__createRects.bind(this)),
         update =>
           update
             .attr('transform', this.__getTranslate.bind(this))
-            .call(this.__updateRect.bind(this)),
+            .call(this.__updateRects.bind(this)),
         exit => exit.remove()
       )
 
@@ -165,26 +165,22 @@ class DivergentBarChart {
     this.chart.attr('height', this.barHeight * (dataLength + 1)) // +1 for the bottom axis
   }
 
-  __createRect (bar) {
-    bar
-      .append('rect')
-      .transition(this.transition)
-      .attr(
-        'x',
-        d =>
-          Math.floor((this.chartWidth + this.yAxisPadding) / 2) -
-          (d < 0 ? this.xScaler(Math.abs(d)) : 0)
-      )
-      .attr('width', d => this.xScaler(Math.abs(d)))
-      .attr('height', this.barHeight - 1)
-      .selection()
-      .append('title')
-      .text(d => d)
+  __createRects (bars) {
+    this.__appendOrSelectRectsFrom(bars, 'append')
   }
 
-  __updateRect (bar) {
-    bar
-      .select('rect')
+  __updateRects (bars) {
+    this.__appendOrSelectRectsFrom(bars, 'select')
+  }
+
+  __appendOrSelectRectsFrom (bars, appendOrSelect) {
+    if (['append', 'select'].indexOf(appendOrSelect) === -1) {
+      throw Error(
+        `"__appendOrSelectRectsFrom" called with wrong argument: ${appendOrSelect}`
+      )
+    }
+
+    bars[appendOrSelect]('rect')
       .transition(this.transition)
       .attr(
         'x',
@@ -194,8 +190,7 @@ class DivergentBarChart {
       )
       .attr('width', d => this.xScaler(Math.abs(d)))
       .attr('height', this.barHeight - 1)
-      .selection()
-      .select('title')
+      .selection()[appendOrSelect]('title')
       .text(d => d)
   }
 
