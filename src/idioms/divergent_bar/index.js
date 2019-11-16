@@ -30,7 +30,7 @@ class DivergentBarChart {
 
     this.__setScalerDomainAndRange(data).__setChartHeight(data.length)
 
-    const bar = this.chart
+    this.chart
       .append('g')
       .classed('bars-group', true)
       .selectAll('g')
@@ -39,8 +39,7 @@ class DivergentBarChart {
       .append('g')
       .classed('bars', true)
       .attr('transform', this.__getTranslate.bind(this))
-
-    this.__createRect(bar)
+      .call(this.__createRect.bind(this))
 
     this.__setXAxisScaler(data)
     this.__createXAxis(data.length)
@@ -165,9 +164,8 @@ class DivergentBarChart {
   }
 
   __createRect (bar) {
-    const rect = bar.append('rect')
-
-    rect
+    bar
+      .append('rect')
       .transition(this.transition)
       .attr(
         'x',
@@ -177,16 +175,14 @@ class DivergentBarChart {
       )
       .attr('width', d => this.scaler(Math.abs(d)))
       .attr('height', this.barHeight - 1)
-
-    rect.append('title').text(d => d)
-
-    return bar
+      .selection()
+      .append('title')
+      .text(d => d)
   }
 
   __updateRect (bar) {
-    const rect = bar.select('rect')
-
-    rect
+    bar
+      .select('rect')
       .transition(this.transition)
       .attr(
         'x',
@@ -196,10 +192,9 @@ class DivergentBarChart {
       )
       .attr('width', d => this.scaler(Math.abs(d)))
       .attr('height', this.barHeight - 1)
-
-    rect.select('title').text(d => d)
-
-    return bar
+      .selection()
+      .select('title')
+      .text(d => d)
   }
 
   __getTranslate (d, i) {
