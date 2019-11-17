@@ -5,8 +5,10 @@ class CompaniesProductivity extends Component {
   constructor (dispatch, parentSelector, componentSize) {
     super(dispatch, parentSelector, componentSize)
     this.activitySectors = []
+    this.charts = []
 
     dispatch.on('initialize', this.initialize.bind(this))
+    dispatch.on('update_municipality', this.update.bind(this))
   }
 
   initialize (data, municipality) {
@@ -19,15 +21,33 @@ class CompaniesProductivity extends Component {
       Math.floor(super.getComponentSize() / this.activitySectors.length) - 4
 
     this.activitySectors.forEach((activitySector, idx) => {
-      const filteredData = super.getDataset()
+      const filteredData = super
+        .getDataset()
         .filter(d => d.type === activitySector)
         .reduce((prev, curr) => prev.concat(curr.productivity), [])
 
-      new DivergentBarChart(
-        super.getContainerSelector(),
-        chartWidth,
-        idx === 0
-      ).create(filteredData, idx === 0 ? super.getYears() : null)
+      this.charts.push(
+        new DivergentBarChart(
+          super.getContainerSelector(),
+          chartWidth,
+          idx === 0
+        )
+      )
+      this.charts[idx].create(filteredData, idx === 0 ? super.getYears() : null)
+    })
+  }
+
+  update (newData, newMunicipality) {
+    super.setDataset(newData)
+    super.setMunicipality(newMunicipality)
+
+    this.activitySectors.forEach((activitySector, idx) => {
+      const filteredData = super
+        .getDataset()
+        .filter(d => d.type === activitySector)
+        .reduce((prev, curr) => prev.concat(curr.productivity), [])
+
+      this.charts[idx].update(filteredData, idx === 0 ? super.getYears() : null)
     })
   }
 }
