@@ -4,6 +4,7 @@ import DivergentBarChart from '../idioms/divergent_bar'
 class CompaniesProductivity extends Component {
   constructor (dispatch, parentSelector, componentSize) {
     super(dispatch, parentSelector, componentSize)
+    this.activitySectors = []
 
     dispatch.on('initialize', this.initialize.bind(this))
   }
@@ -11,14 +12,14 @@ class CompaniesProductivity extends Component {
   initialize (data, municipality) {
     super.setMunicipality(municipality)
     super.setYears(getYears(data))
+    super.setDataset(data)
     this.activitySectors = getActivitySectors(data)
-    this.fulldata = data
 
     const chartWidth =
       Math.floor(super.getComponentSize() / this.activitySectors.length) - 4
 
     this.activitySectors.forEach((activitySector, idx) => {
-      const filteredData = data
+      const filteredData = super.getDataset()
         .filter(d => d.type === activitySector)
         .reduce((prev, curr) => prev.concat(curr.productivity), [])
 

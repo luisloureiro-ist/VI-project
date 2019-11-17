@@ -3,6 +3,8 @@ class Component {
     this.dispatch = dispatch
     this.containerSelector = containerSelector
     this.componentSize = componentSize
+    // All fields that every component must have
+    this.dataset = []
     this.years = []
     this.municipality = ''
   }
@@ -13,6 +15,14 @@ class Component {
 
   getComponentSize () {
     return this.componentSize
+  }
+
+  getDataset () {
+    return this.dataset
+  }
+
+  setDataset (newDataset) {
+    this.dataset = newDataset
   }
 
   getYears () {
