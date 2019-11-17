@@ -2,7 +2,7 @@ import './index.css'
 import * as d3 from 'd3'
 
 class DivergentBarChart {
-  constructor (parentSelector, chartWidth, barHeight = 20) {
+  constructor (parentSelector, chartWidth, withYAxis = false, barHeight = 20) {
     this.parentSelector = parentSelector
     this.barHeight = barHeight
     this.chartWidth = chartWidth
@@ -11,7 +11,7 @@ class DivergentBarChart {
     this.xAxis = d3.axisBottom()
     this.yScaler = null
     this.yAxis = null
-    this.yAxisPadding = 0
+    this.yAxisPadding = +(withYAxis && 35) // if false then equals 0
     this.transition = d3
       .transition()
       .duration(1000)
@@ -101,7 +101,6 @@ class DivergentBarChart {
   __setYAxisScaler (domain) {
     if (this.yAxis === null) {
       this.yAxis = d3.axisLeft()
-      this.yAxisPadding = 35
       this.yScaler = d3.scaleLinear()
     }
 
