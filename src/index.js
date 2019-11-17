@@ -1,14 +1,34 @@
 import './styles.css'
 import csv from './finalDataset.csv'
-import DivergentBarChart from './idioms/divergent_bar'
+import CompaniesProductivityComponent from './components/companies_productivity'
 import * as d3 from 'd3'
 //
 //
 ;(async () => {
   const data = await load(csv)
+  const defaultMunicipality = 'Continente'
+  const containerSelector = '.divergent-charts-section'
+  const components = []
 
-  const dispatch = registerEventListeners()
-  dispatch.call('load', this, data, 'Continente')
+  const mainSectionWidth = document.querySelector(containerSelector).offsetWidth
+  const dispatch = registerEventListeners(data)
+
+  // Create all the components of the dashboard
+  components.push(
+    new CompaniesProductivityComponent(
+      dispatch,
+      containerSelector,
+      mainSectionWidth
+    )
+  )
+
+  // Initialize dashboard components
+  dispatch.call(
+    'initialize',
+    this,
+    data.filter(value => value.location === defaultMunicipality),
+    defaultMunicipality
+  )
 })()
 
 async function load (filename) {
@@ -23,75 +43,19 @@ async function load (filename) {
   })
 }
 
-function registerEventListeners () {
-  let dataset = []
-  const barCharts = []
-  const dispatch = d3.dispatch('load', 'update')
-
-  dispatch.on('load', (data, municipality) => {
-    dataset = data
-
-    dispatch.call('update', this, municipality)
-  })
-
-  dispatch.on('update.dashboard', municipalityName => {
-    const containerSelector = '.divergent-charts-section'
-    const data = dataset.filter(d => {
-      return d.location === municipalityName
-    })
-
-    const mainSectionWidth = document.querySelector(containerSelector)
-      .offsetWidth
-    const activitySectors = getActivitySectors(data)
-    const years = getYears(data)
-    const numberOfActivitySectors = activitySectors.length
-    const yAxisWidth = 40
-    const chartWidth =
-      Math.floor((mainSectionWidth - yAxisWidth) / numberOfActivitySectors) - 4
-
-    // column with the years
-    for (let index = 0; index < numberOfActivitySectors; index++) {
-      const filteredData = data
-        .filter(d => d.type === activitySectors[index])
-        .reduce((prev, curr) => prev.concat(curr.productivity), [])
-
-      if (barCharts[index]) {
-        barCharts[index].update(filteredData, index === 0 ? years : null)
-      } else {
-        const newLength = barCharts.push(
-          new DivergentBarChart(
-            containerSelector,
-            chartWidth + (index === 0 ? yAxisWidth : 0)
-          )
-        )
-        // The first chart will have the Y axis
-        barCharts[newLength - 1].create(
-          filteredData,
-          index === 0 ? years : null
-        )
-      }
-    }
-  })
+function registerEventListeners (fullDataset) {
+  const dispatch = d3.dispatch('initialize', 'update_municipality')
 
   d3.selectAll('.municipality').on('click', (d, i, nodesList) => {
-    dispatch.call('update', this, nodesList[i].value)
+    const newMunicipality = nodesList[i].value
+
+    dispatch.call(
+      'update_municipality',
+      this,
+      fullDataset.filter(value => value.location === newMunicipality),
+      newMunicipality
+    )
   })
 
   return dispatch
-}
-
-function getActivitySectors (data) {
-  return data.reduce(
-    (prev, curr) =>
-      prev.indexOf(curr.type) === -1 ? prev.concat([curr.type]) : prev,
-    []
-  )
-}
-
-function getYears (data) {
-  return data.reduce(
-    (prev, curr) =>
-      prev.indexOf(curr.year) === -1 ? prev.concat([curr.year]) : prev,
-    []
-  )
 }
