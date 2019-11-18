@@ -24,6 +24,7 @@ class CompaniesProductivity extends Component {
       const filteredData = super
         .getDataset()
         .filter(d => d.type === activitySector)
+        .sort((first, second) => second.year - first.year)
         .reduce((prev, curr) => prev.concat(curr.productivity), [])
 
       this.charts.push(
@@ -45,6 +46,7 @@ class CompaniesProductivity extends Component {
       const filteredData = super
         .getDataset()
         .filter(d => d.type === activitySector)
+        .sort((first, second) => second.year - first.year)
         .reduce((prev, curr) => prev.concat(curr.productivity), [])
 
       this.charts[idx].update(filteredData, idx === 0 ? super.getYears() : null)
