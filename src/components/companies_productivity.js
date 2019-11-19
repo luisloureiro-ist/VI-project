@@ -18,7 +18,7 @@ class CompaniesProductivity extends Component {
     this.activitySectors = getActivitySectors(data)
 
     const chartWidth =
-      Math.floor(super.getComponentSize() / this.activitySectors.length) - 4
+      Math.floor(super.getComponentSize() / this.activitySectors.length) - 5
 
     this.activitySectors.forEach((activitySector, idx) => {
       const filteredData = super
