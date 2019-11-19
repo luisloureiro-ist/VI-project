@@ -1,6 +1,7 @@
 import './styles.css'
 import csv from './finalDataset.csv'
 import CompaniesProductivityComponent from './components/companies_productivity'
+import ElectionsComponent from './components/elections'
 import * as d3 from 'd3'
 //
 //
@@ -16,6 +17,14 @@ import * as d3 from 'd3'
   // Create all the components of the dashboard
   components.push(
     new CompaniesProductivityComponent(
+      dispatch,
+      containerSelector,
+      mainSectionWidth
+    )
+  )
+
+  components.push(
+    new ElectionsComponent(
       dispatch,
       containerSelector,
       mainSectionWidth
