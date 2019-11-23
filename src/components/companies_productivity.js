@@ -9,6 +9,7 @@ class CompaniesProductivity extends Component {
 
     dispatch.on('initialize', this.initialize.bind(this))
     dispatch.on('update_municipality', this.update.bind(this))
+    dispatch.on('update_years', this.updateYears.bind(this))
   }
 
   initialize (data, municipality) {
@@ -46,6 +47,23 @@ class CompaniesProductivity extends Component {
       const filteredData = super
         .getDataset()
         .filter(d => d.type === activitySector)
+        .sort((first, second) => second.year - first.year)
+        .reduce((prev, curr) => prev.concat(curr.productivity), [])
+
+      this.charts[idx].update(filteredData, idx === 0 ? super.getYears() : null)
+    })
+  }
+
+  updateYears (datesRange) {
+    super.setYears(datesRange)
+
+    this.activitySectors.forEach((activitySector, idx) => {
+      const filteredData = super
+        .getDataset()
+        .filter(
+          d =>
+            d.type === activitySector && super.getYears().indexOf(d.year) !== -1
+        )
         .sort((first, second) => second.year - first.year)
         .reduce((prev, curr) => prev.concat(curr.productivity), [])
 
