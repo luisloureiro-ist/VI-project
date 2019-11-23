@@ -1,0 +1,32 @@
+/**
+ * This class was created using the code present on the following link:
+ * - https://www.simple.gy/blog/range-slider-two-handles/
+ *
+ * Credits to Eric Miller.
+ */
+ .years-range {
+  display: flex;
+}
+
+input[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+
+#min, #max {
+  flex: 1 0 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* input::-webkit-slider-thumb {
+  margin: 0;
+  padding: 0;
+} */
+
+#result {
+  display: block;
+  text-align: center;
+  margin-top: 3px;
+  color: gray;
+}
