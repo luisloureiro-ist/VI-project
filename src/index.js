@@ -1,5 +1,6 @@
 import './styles.css'
 import csv from './finalDataset.csv'
+import './components/selections'
 import CompaniesProductivityComponent from './components/companies_productivity'
 import ElectionsComponent from './components/elections'
 import * as d3 from 'd3'
@@ -53,7 +54,11 @@ async function load (filename) {
 }
 
 function registerEventListeners (fullDataset) {
-  const dispatch = d3.dispatch('initialize', 'update_municipality')
+  const dispatch = d3.dispatch(
+    'initialize',
+    'update_municipality',
+    'update_years'
+  )
 
   d3.selectAll('.municipality').on('click', (d, i, nodesList) => {
     const newMunicipality = nodesList[i].value
@@ -65,6 +70,19 @@ function registerEventListeners (fullDataset) {
       newMunicipality
     )
   })
+
+  d3.selectAll('.years-range > input[type=range').on(
+    'input mousedown',
+    (d, i, nodesList) => {
+      const datesRange = []
+
+      for (let i = +nodesList[0].value; i <= +nodesList[1].value; i++) {
+        datesRange.push(i)
+      }
+
+      dispatch.call('update_years', this, datesRange)
+    }
+  )
 
   return dispatch
 }
