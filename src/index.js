@@ -41,14 +41,24 @@ import ElectionsComponent from './components/elections'
       dispatch,
       containerSelector,
       mainSectionWidth
-  )
+    )
   )
 
   // Initialize dashboard components
   dispatch.call(
     'initialize',
     this,
-    companiesData.filter(value => value.location === defaultMunicipality),
+    {
+      companiesData: companiesData.filter(
+        value => value.location === defaultMunicipality
+      ),
+      electionsData: electionsData.filter(
+        value => value.location === defaultMunicipality
+      ),
+      firesData: firesData.filter(
+        value => value.location === defaultMunicipality
+      )
+    },
     defaultMunicipality
   )
 })()

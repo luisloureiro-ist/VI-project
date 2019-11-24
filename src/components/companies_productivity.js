@@ -12,7 +12,7 @@ class CompaniesProductivity extends Component {
     dispatch.on('update_years', this.updateYears.bind(this))
   }
 
-  initialize (data, municipality) {
+  initialize ({ companiesData: data }, municipality) {
     super.setMunicipality(municipality)
     super.setYears(getYears(data))
     super.setDataset(data)

@@ -11,7 +11,7 @@ class Elections extends Component {
     dispatch.on('update_municipality', this.update.bind(this))
   }
 
-  initialize (data, municipality) {
+  initialize ({ electionsData: data }, municipality) {
     super.setMunicipality(municipality)
     // super.setYears(getYears(data))
     super.setDataset(data)
