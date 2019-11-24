@@ -1,19 +1,21 @@
 import './styles.css'
-import csv from './finalDataset.csv'
 import './components/selections'
+
+import * as d3 from 'd3'
+import companiesCSV from './datasets/companies_dataset.csv'
 import CompaniesProductivityComponent from './components/companies_productivity'
 import ElectionsComponent from './components/elections'
-import * as d3 from 'd3'
 //
 //
 ;(async () => {
-  const data = await load(csv)
+  const companiesData = await d3.csv(companiesCSV, parseCompaniesData)
+
   const defaultMunicipality = 'Continente'
   const containerSelector = '.divergent-charts-section'
   const components = []
 
   const mainSectionWidth = document.querySelector(containerSelector).offsetWidth
-  const dispatch = registerEventListeners(data)
+  const dispatch = registerEventListeners(companiesData)
 
   // Create all the components of the dashboard
   components.push(
@@ -36,22 +38,10 @@ import * as d3 from 'd3'
   dispatch.call(
     'initialize',
     this,
-    data.filter(value => value.location === defaultMunicipality),
+    companiesData.filter(value => value.location === defaultMunicipality),
     defaultMunicipality
   )
 })()
-
-async function load (filename) {
-  return d3.csv(filename, d => {
-    return {
-      location: d.Location,
-      year: +d.Year,
-      type: d['Company Type'],
-      // number: +d['Number of Companies'],
-      productivity: +d.Productivity
-    }
-  })
-}
 
 function registerEventListeners (fullDataset) {
   const dispatch = d3.dispatch(
@@ -85,4 +75,15 @@ function registerEventListeners (fullDataset) {
   )
 
   return dispatch
+}
+
+function parseCompaniesData (datum) {
+  return {
+    nuts: datum.NUTS,
+    location: datum.Location,
+    year: +datum.Year,
+    type: datum['Company Type'],
+    number: +datum['Number of Companies'],
+    productivity: +datum.Productivity
+  }
 }
