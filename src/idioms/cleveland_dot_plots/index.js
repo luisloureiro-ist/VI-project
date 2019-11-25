@@ -16,6 +16,7 @@ class ClevelandDotPlots {
       .transition()
       .duration(1000)
       .ease(d3.easeQuadInOut)
+    this.colors = ['#1b9e77', '#d95f02', '#7570b3']
   }
 
   create (data) {
@@ -87,7 +88,7 @@ class ClevelandDotPlots {
       .attr('cx', d => this.xScaler(d.results[resultsIdx]) + this.yAxisPadding)
       .attr('cy', d => this.yScaler(d.key) + this.dotRadius / 2)
       .attr('r', this.dotRadius)
-      .style('fill', '#4C4082')
+      .style('fill', () => this.colors[resultsIdx])
       .selection()
       .append('title')
       .text(d => d.results[resultsIdx])
