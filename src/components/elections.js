@@ -1,3 +1,4 @@
+import * as d3 from 'd3'
 import Component from './component'
 import ClevelandDotPlot from '../idioms/cleveland_dot_plots'
 
@@ -16,6 +17,8 @@ class Elections extends Component {
     super.setMunicipality(municipality)
     super.setDataset(data)
     this.electionTypes = getElectionTypes(data)
+
+    this.updateSectionTitle()
 
     const chartWidth =
       Math.floor(super.getComponentSize() / this.electionTypes.length) - 5
@@ -58,6 +61,8 @@ class Elections extends Component {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
 
+    this.updateSectionTitle()
+
     this.electionTypes.forEach((electionType, idx) => {
       const filteredData = super
         .getDataset()
@@ -66,6 +71,12 @@ class Elections extends Component {
 
       this.charts[idx].update(filteredData)
     })
+  }
+
+  updateSectionTitle () {
+    d3.select(super.getContainerSelector())
+      .select('.elections-title')
+      .text(`Elections in ${super.getMunicipality()}`)
   }
 }
 
