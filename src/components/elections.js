@@ -27,6 +27,8 @@ class Elections extends Component {
       const filteredData = super
         .getDataset()
         .filter(d => d.type === electionType)
+
+      const reducedData = filteredData
         .reduce(
           (prev, curr) =>
             prev.concat(
@@ -53,7 +55,7 @@ class Elections extends Component {
           idx === 0
         )
       )
-      this.charts[idx].create(filteredData)
+      this.charts[idx].create(reducedData, getYears(filteredData))
     })
   }
 
@@ -84,6 +86,14 @@ function getElectionTypes (data) {
   return data.reduce(
     (prev, curr) =>
       prev.indexOf(curr.type) === -1 ? prev.concat([curr.type]) : prev,
+    []
+  )
+}
+
+function getYears (data) {
+  return data.reduce(
+    (prev, curr) =>
+      prev.indexOf(curr.year) === -1 ? prev.concat([curr.year]) : prev,
     []
   )
 }
