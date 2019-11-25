@@ -1,4 +1,6 @@
 import './styles.css'
+import 'bulma/css/bulma.css'
+
 import csv from './finalDataset.csv'
 import './components/selections'
 import CompaniesProductivityComponent from './components/companies_productivity'
