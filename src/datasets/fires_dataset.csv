@@ -1,0 +1,2764 @@
+NUTS,Location,Year,Fires,Firefighters,Tourism
+NUTS I,Continente,2009,29782,31003,48.3
+NUTS II,Norte,2009,18867,10562,34.5
+NUTS III,Alto Minho,2009,2059,702,23.3
+Município,Arcos de Valdevez,2009,309,58,7.7
+Município,Caminha,2009,104,91,18
+Município,Melgaço,2009,91,68,-
+Município,Monção,2009,279,41,24.8
+Município,Paredes de Coura,2009,102,41,-
+Município,Ponte da Barca,2009,263,52,10.6
+Município,Ponte de Lima,2009,346,90,18
+Município,Valença,2009,283,60,20.9
+Município,Viana do Castelo,2009,241,135,32.3
+Município,Vila Nova de Cerveira,2009,41,66,17.8
+NUTS III,Cávado,2009,1022,728,24
+Município,Amares,2009,110,60,19.8
+Município,Barcelos,2009,201,274,31.9
+Município,Braga,2009,242,154,23.3
+Município,Esposende,2009,40,107,40.5
+Município,Terras de Bouro,2009,112,68,3.7
+Município,Vila Verde,2009,317,65,13.9
+NUTS III,Ave,2009,1963,1079,-
+Município,Cabeceiras de Basto,2009,227,65,-
+Município,Fafe,2009,389,128,-
+Município,Guimarães,2009,487,232,34.2
+Município,Mondim de Basto,2009,72,63,-
+Município,Póvoa de Lanhoso,2009,258,90,-
+Município,Vieira do Minho,2009,269,45,18
+Município,Vila Nova de Famalicão,2009,208,342,16.6
+Município,Vizela,2009,53,114,-
+NUTS III,Área Metropolitana do Porto,2009,4408,3600,-
+Município,Arouca,2009,172,73,-
+Município,Espinho,2009,151,189,-
+Município,Gondomar,2009,500,319,11.9
+Município,Maia,2009,200,134,45.4
+Município,Matosinhos,2009,75,289,17.7
+Município,Oliveira de Azeméis,2009,205,179,-
+Município,Paredes,2009,702,398,8.9
+Município,Porto,2009,0,381,54.5
+Município,Póvoa de Varzim,2009,43,102,32.5
+Município,Santa Maria da Feira,2009,653,217,18.9
+Município,Santo Tirso,2009,465,246,8.7
+Município,São João da Madeira,2009,10,99,38.7
+Município,Trofa,2009,257,83,27.1
+Município,Vale de Cambra,2009,111,67,24.7
+Município,Valongo,2009,175,158,-
+Município,Vila do Conde,2009,208,104,35.6
+Município,Vila Nova de Gaia,2009,481,562,36.4
+NUTS III,Alto Tâmega,2009,1889,533,-
+Município,Boticas,2009,337,51,-
+Município,Chaves,2009,309,196,13.5
+Município,Montalegre,2009,475,102,7.2
+Município,Ribeira de Pena,2009,212,90,-
+Município,Valpaços,2009,301,46,2.9
+Município,Vila Pouca de Aguiar,2009,255,48,10.9
+NUTS III,Tâmega e Sousa,2009,5241,1660,-
+Município,Amarante,2009,567,195,31.1
+Município,Baião,2009,256,171,-
+Município,Castelo de Paiva,2009,74,118,-
+Município,Celorico de Basto,2009,339,101,-
+Município,Cinfães,2009,677,190,-
+Município,Felgueiras,2009,529,209,19.5
+Município,Lousada,2009,488,101,-
+Município,Marco de Canaveses,2009,695,160,-
+Município,Paços de Ferreira,2009,557,129,-
+Município,Penafiel,2009,761,217,11.5
+Município,Resende,2009,298,69,-
+NUTS III,Douro,2009,1426,1542,-
+Município,Alijó,2009,81,173,30.8
+Município,Armamar,2009,17,74,26
+Município,Carrazeda de Ansiães,2009,111,49,-
+Município,Freixo de Espada à Cinta,2009,39,53,-
+Município,Lamego,2009,112,75,22.9
+Município,Mesão Frio,2009,45,66,-
+Município,Moimenta da Beira,2009,66,91,-
+Município,Murça,2009,77,45,-
+Município,Penedono,2009,23,49,-
+Município,Peso da Régua,2009,82,55,22
+Município,Sabrosa,2009,107,67,-
+Município,Santa Marta de Penaguião,2009,65,108,-
+Município,São João da Pesqueira,2009,20,77,-
+Município,Sernancelhe,2009,37,62,-
+Município,Tabuaço,2009,19,75,-
+Município,Tarouca,2009,66,109,-
+Município,Torre de Moncorvo,2009,85,56,-
+Município,Vila Nova de Foz Côa,2009,89,49,-
+Município,Vila Real,2009,285,209,18.5
+NUTS III,Terras de Trás-os-Montes,2009,859,718,-
+Município,Alfândega da Fé,2009,51,64,-
+Município,Bragança,2009,215,114,16.4
+Município,Macedo de Cavaleiros,2009,109,79,-
+Município,Miranda do Douro,2009,60,133,13
+Município,Mirandela,2009,99,76,5.2
+Município,Mogadouro,2009,100,81,-
+Município,Vila Flor,2009,54,49,-
+Município,Vimioso,2009,54,57,-
+Município,Vinhais,2009,117,65,-
+NUTS II,Centro,2009,6701,10513,29.9
+NUTS III,Oeste,2009,1034,1143,31.4
+Município,Alcobaça,2009,90,250,28.5
+Município,Alenquer,2009,171,103,-
+Município,Arruda dos Vinhos,2009,130,61,-
+Município,Bombarral,2009,37,64,14.6
+Município,Cadaval,2009,64,57,-
+Município,Caldas da Rainha,2009,65,88,23
+Município,Lourinhã,2009,110,71,-
+Município,Nazaré,2009,23,39,44.2
+Município,Óbidos,2009,44,65,48.7
+Município,Peniche,2009,62,82,28.3
+Município,Sobral de Monte Agraço,2009,46,69,-
+Município,Torres Vedras,2009,192,194,20.8
+NUTS III,Região de Aveiro,2009,897,1174,-
+Município,Águeda,2009,104,128,18.1
+Município,Albergaria-a-Velha,2009,113,82,5.7
+Município,Anadia,2009,62,67,19.1
+Município,Aveiro,2009,159,228,40.2
+Município,Estarreja,2009,85,92,-
+Município,Ílhavo,2009,45,95,35.8
+Município,Murtosa,2009,30,98,31
+Município,Oliveira do Bairro,2009,55,50,-
+Município,Ovar,2009,131,192,5.8
+Município,Sever do Vouga,2009,70,55,-
+Município,Vagos,2009,43,87,-
+NUTS III,Região de Coimbra,2009,844,2056,-
+Município,Arganil,2009,33,167,-
+Município,Cantanhede,2009,54,36,43.2
+Município,Coimbra,2009,114,269,46.2
+Município,Condeixa-a-Nova,2009,11,111,-
+Município,Figueira da Foz,2009,83,112,27.2
+Município,Góis,2009,30,56,-
+Município,Lousã,2009,53,144,-
+Município,Mealhada,2009,56,115,31.3
+Município,Mira,2009,10,48,31.2
+Município,Miranda do Corvo,2009,75,109,-
+Município,Montemor-o-Velho,2009,48,99,-
+Município,Mortágua,2009,13,75,2.2
+Município,Oliveira do Hospital,2009,88,157,-
+Município,Pampilhosa da Serra,2009,17,64,-
+Município,Penacova,2009,36,113,-
+Município,Penela,2009,22,77,-
+Município,Soure,2009,40,124,-
+Município,Tábua,2009,43,130,-
+Município,Vila Nova de Poiares,2009,18,50,-
+NUTS III,Região de Leiria,2009,418,1408,-
+Município,Alvaiázere,2009,19,64,-
+Município,Ansião,2009,24,74,-
+Município,Batalha,2009,11,118,-
+Município,Castanheira de Pêra,2009,9,73,-
+Município,Figueiró dos Vinhos,2009,10,76,-
+Município,Leiria,2009,141,367,25
+Município,Marinha Grande,2009,25,146,33.8
+Município,Pedrógão Grande,2009,28,92,0
+Município,Pombal,2009,77,230,9.5
+Município,Porto de Mós,2009,74,168,-
+NUTS III,Viseu Dão Lafões,2009,1325,1325,-
+Município,Aguiar da Beira,2009,24,37,-
+Município,Carregal do Sal,2009,21,126,-
+Município,Castro Daire,2009,328,141,-
+Município,Mangualde,2009,123,94,15.6
+Município,Nelas,2009,66,112,-
+Município,Oliveira de Frades,2009,36,74,-
+Município,Penalva do Castelo,2009,31,62,-
+Município,Santa Comba Dão,2009,23,67,-
+Município,São Pedro do Sul,2009,76,121,5.7
+Município,Sátão,2009,93,58,-
+Município,Tondela,2009,78,165,2.3
+Município,Vila Nova de Paiva,2009,157,73,-
+Município,Viseu,2009,245,123,16.4
+Município,Vouzela,2009,24,72,-
+NUTS III,Beira Baixa,2009,283,602,-
+Município,Castelo Branco,2009,120,143,15.4
+Município,Idanha-a-Nova,2009,62,128,17.6
+Município,Oleiros,2009,12,121,-
+Município,Penamacor,2009,55,95,-
+Município,Proença-a-Nova,2009,13,74,-
+Município,Vila Velha de Ródão,2009,21,41,-
+NUTS III,Médio Tejo,2009,494,1234,-
+Município,Abrantes,2009,97,79,25.7
+Município,Alcanena,2009,21,103,20.5
+Município,Constância,2009,7,82,23.8
+Município,Entroncamento,2009,9,54,8.9
+Município,Ferreira do Zêzere,2009,23,57,-
+Município,Mação,2009,20,64,-
+Município,Ourém,2009,99,226,59
+Município,Sardoal,2009,10,72,-
+Município,Sertã,2009,38,193,-
+Município,Tomar,2009,110,82,31.5
+Município,Torres Novas,2009,40,103,-
+Município,Vila de Rei,2009,5,56,-
+Município,Vila Nova da Barquinha,2009,15,63,-
+NUTS III,Beiras e Serra da Estrela,2009,1406,1571,-
+Município,Almeida,2009,65,51,33.3
+Município,Belmonte,2009,24,70,-
+Município,Celorico da Beira,2009,53,68,-
+Município,Covilhã,2009,108,83,-
+Município,Figueira de Castelo Rodrigo,2009,104,25,0.4
+Município,Fornos de Algodres,2009,28,47,-
+Município,Fundão,2009,171,140,3.9
+Município,Gouveia,2009,73,236,7.5
+Município,Guarda,2009,109,192,14.5
+Município,Manteigas,2009,3,60,-
+Município,Mêda,2009,148,70,-
+Município,Pinhel,2009,116,56,-
+Município,Sabugal,2009,178,130,-
+Município,Seia,2009,71,201,7.8
+Município,Trancoso,2009,155,142,-
+NUTS II,Área Metropolitana de Lisboa,2009,1965,5233,61.8
+NUTS III,Área Metropolitana de Lisboa,2009,1965,5233,-
+Município,Alcochete,2009,17,65,-
+Município,Almada,2009,132,256,43
+Município,Amadora,2009,44,106,3.7
+Município,Barreiro,2009,46,161,-
+Município,Cascais,2009,94,389,65.9
+Município,Lisboa,2009,13,1068,67
+Município,Loures,2009,223,429,-
+Município,Mafra,2009,156,160,-
+Município,Moita,2009,101,68,-
+Município,Montijo,2009,125,115,-
+Município,Odivelas,2009,158,270,-
+Município,Oeiras,2009,76,435,31.4
+Município,Palmela,2009,115,157,28
+Município,Seixal,2009,140,181,-
+Município,Sesimbra,2009,65,81,42.3
+Município,Setúbal,2009,87,268,31.3
+Município,Sintra,2009,291,710,56.9
+Município,Vila Franca de Xira,2009,82,314,24.6
+NUTS II,Alentejo,2009,1631,3521,24.1
+NUTS III,Alentejo Litoral,2009,190,457,15.9
+Município,Alcácer do Sal,2009,26,75,13.8
+Município,Grândola,2009,37,38,7
+Município,Odemira,2009,62,88,21.1
+Município,Santiago do Cacém,2009,46,162,12.3
+Município,Sines,2009,19,94,28.2
+NUTS III,Baixo Alentejo,2009,343,648,16.2
+Município,Aljustrel,2009,29,51,-
+Município,Almodôvar,2009,21,45,-
+Município,Alvito,2009,6,36,-
+Município,Barrancos,2009,3,39,16.3
+Município,Beja,2009,87,85,20.3
+Município,Castro Verde,2009,18,39,-
+Município,Cuba,2009,11,51,-
+Município,Ferreira do Alentejo,2009,18,42,14.2
+Município,Mértola,2009,32,39,-
+Município,Moura,2009,41,67,9.8
+Município,Ourique,2009,18,49,-
+Município,Serpa,2009,32,46,10.2
+Município,Vidigueira,2009,27,59,-
+NUTS III,Lezíria do Tejo,2009,474,876,21.7
+Município,Almeirim,2009,47,49,-
+Município,Alpiarça,2009,17,36,-
+Município,Azambuja,2009,81,76,-
+Município,Benavente,2009,49,136,-
+Município,Cartaxo,2009,35,68,-
+Município,Chamusca,2009,13,44,-
+Município,Coruche,2009,45,67,-
+Município,Golegã,2009,10,43,-
+Município,Rio Maior,2009,44,67,-
+Município,Salvaterra de Magos,2009,37,58,-
+Município,Santarém,2009,96,232,23.7
+NUTS III,Alto Alentejo,2009,306,776,-
+Município,Alter do Chão,2009,6,46,-
+Município,Arronches,2009,17,27,-
+Município,Avis,2009,15,34,-
+Município,Campo Maior,2009,42,33,-
+Município,Castelo de Vide,2009,7,48,17.2
+Município,Crato,2009,7,45,-
+Município,Elvas,2009,79,53,24.3
+Município,Fronteira,2009,7,32,-
+Município,Gavião,2009,14,75,-
+Município,Marvão,2009,17,38,30.8
+Município,Monforte,2009,7,41,-
+Município,Nisa,2009,23,51,-
+Município,Ponte de Sor,2009,18,59,-
+Município,Portalegre,2009,42,133,12.9
+Município,Sousel,2009,5,61,-
+NUTS III,Alentejo Central,2009,318,764,-
+Município,Alandroal,2009,20,28,-
+Município,Arraiolos,2009,24,74,-
+Município,Borba,2009,8,47,-
+Município,Estremoz,2009,34,47,26
+Município,Évora,2009,97,57,38.5
+Município,Montemor-o-Novo,2009,25,87,-
+Município,Mora,2009,16,52,4.7
+Município,Mourão,2009,9,33,-
+Município,Portel,2009,12,54,-
+Município,Redondo,2009,19,44,-
+Município,Reguengos de Monsaraz,2009,21,67,-
+Município,Vendas Novas,2009,15,64,17.9
+Município,Viana do Alentejo,2009,13,65,-
+Município,Vila Viçosa,2009,5,45,17
+NUTS II,Algarve,2009,618,1174,62.3
+NUTS III,Algarve,2009,618,1174,62.3
+Município,Albufeira,2009,66,86,70.8
+Município,Alcoutim,2009,15,34,-
+Município,Aljezur,2009,23,84,15.7
+Município,Castro Marim,2009,11,0,-
+Município,Faro,2009,61,108,46.9
+Município,Lagoa,2009,32,77,65.7
+Município,Lagos,2009,29,48,72
+Município,Loulé,2009,95,117,54
+Município,Monchique,2009,26,70,35.3
+Município,Olhão,2009,55,80,29.2
+Município,Portimão,2009,41,105,60.7
+Município,São Brás de Alportel,2009,16,68,-
+Município,Silves,2009,83,141,56.5
+Município,Tavira,2009,38,52,48.5
+Município,Vila do Bispo,2009,11,40,50.7
+Município,Vila Real de Santo António,2009,16,64,53.1
+NUTS I,Continente,2010,26113,28522,49.1
+NUTS II,Norte,2010,15419,9431,36.7
+NUTS III,Alto Minho,2010,2269,636,24.2
+Município,Arcos de Valdevez,2010,333,42,9.3
+Município,Caminha,2010,183,63,16.1
+Município,Melgaço,2010,34,64,-
+Município,Monção,2010,298,48,12
+Município,Paredes de Coura,2010,178,39,-
+Município,Ponte da Barca,2010,262,41,3.2
+Município,Ponte de Lima,2010,401,101,25.6
+Município,Valença,2010,139,56,19.5
+Município,Viana do Castelo,2010,405,128,33.7
+Município,Vila Nova de Cerveira,2010,36,54,22.8
+NUTS III,Cávado,2010,856,682,25.9
+Município,Amares,2010,68,50,22.4
+Município,Barcelos,2010,246,264,32.9
+Município,Braga,2010,197,135,27.2
+Município,Esposende,2010,42,112,37
+Município,Terras de Bouro,2010,63,67,4.7
+Município,Vila Verde,2010,240,54,18
+NUTS III,Ave,2010,1433,884,-
+Município,Cabeceiras de Basto,2010,126,58,-
+Município,Fafe,2010,301,101,-
+Município,Guimarães,2010,335,205,35
+Município,Mondim de Basto,2010,71,48,-
+Município,Póvoa de Lanhoso,2010,217,77,-
+Município,Vieira do Minho,2010,177,44,22.6
+Município,Vila Nova de Famalicão,2010,173,276,15.9
+Município,Vizela,2010,33,75,-
+NUTS III,Área Metropolitana do Porto,2010,4752,3437,-
+Município,Arouca,2010,154,72,-
+Município,Espinho,2010,132,165,-
+Município,Gondomar,2010,562,304,-
+Município,Maia,2010,155,170,42.7
+Município,Matosinhos,2010,96,262,25.9
+Município,Oliveira de Azeméis,2010,367,176,-
+Município,Paredes,2010,801,375,3.9
+Município,Porto,2010,0,356,56.6
+Município,Póvoa de Varzim,2010,127,89,34.6
+Município,Santa Maria da Feira,2010,642,208,17.9
+Município,Santo Tirso,2010,454,236,10.6
+Município,São João da Madeira,2010,27,86,-
+Município,Trofa,2010,132,75,29.8
+Município,Vale de Cambra,2010,212,54,26
+Município,Valongo,2010,232,165,-
+Município,Vila do Conde,2010,223,102,39.7
+Município,Vila Nova de Gaia,2010,436,542,30.6
+NUTS III,Alto Tâmega,2010,892,410,-
+Município,Boticas,2010,92,49,33.5
+Município,Chaves,2010,127,131,15.6
+Município,Montalegre,2010,177,65,8.3
+Município,Ribeira de Pena,2010,142,82,-
+Município,Valpaços,2010,169,48,3.3
+Município,Vila Pouca de Aguiar,2010,185,35,12
+NUTS III,Tâmega e Sousa,2010,3904,1538,-
+Município,Amarante,2010,440,182,32.6
+Município,Baião,2010,223,155,-
+Município,Castelo de Paiva,2010,56,122,-
+Município,Celorico de Basto,2010,346,108,-
+Município,Cinfães,2010,330,144,-
+Município,Felgueiras,2010,533,192,22.7
+Município,Lousada,2010,307,89,-
+Município,Marco de Canaveses,2010,540,145,-
+Município,Paços de Ferreira,2010,299,127,-
+Município,Penafiel,2010,661,219,15.2
+Município,Resende,2010,169,55,-
+NUTS III,Douro,2010,878,1176,-
+Município,Alijó,2010,67,114,29.4
+Município,Armamar,2010,18,60,-
+Município,Carrazeda de Ansiães,2010,53,48,-
+Município,Freixo de Espada à Cinta,2010,17,42,-
+Município,Lamego,2010,77,69,23
+Município,Mesão Frio,2010,38,55,-
+Município,Moimenta da Beira,2010,31,65,-
+Município,Murça,2010,40,33,-
+Município,Penedono,2010,17,31,-
+Município,Peso da Régua,2010,45,49,22.2
+Município,Sabrosa,2010,42,24,-
+Município,Santa Marta de Penaguião,2010,37,85,-
+Município,São João da Pesqueira,2010,19,58,-
+Município,Sernancelhe,2010,34,44,-
+Município,Tabuaço,2010,26,62,-
+Município,Tarouca,2010,43,100,-
+Município,Torre de Moncorvo,2010,67,58,-
+Município,Vila Nova de Foz Côa,2010,51,22,-
+Município,Vila Real,2010,156,157,19
+NUTS III,Terras de Trás-os-Montes,2010,435,668,-
+Município,Alfândega da Fé,2010,21,65,-
+Município,Bragança,2010,51,105,17.1
+Município,Macedo de Cavaleiros,2010,60,63,-
+Município,Miranda do Douro,2010,34,120,13.3
+Município,Mirandela,2010,85,61,5.2
+Município,Mogadouro,2010,56,85,-
+Município,Vila Flor,2010,27,47,19.8
+Município,Vimioso,2010,37,52,-
+Município,Vinhais,2010,64,70,-
+NUTS II,Centro,2010,6680,9744,30.4
+NUTS III,Oeste,2010,950,1037,30.3
+Município,Alcobaça,2010,87,226,30.5
+Município,Alenquer,2010,147,106,-
+Município,Arruda dos Vinhos,2010,63,17,-
+Município,Bombarral,2010,39,58,20
+Município,Cadaval,2010,45,48,-
+Município,Caldas da Rainha,2010,89,87,24.7
+Município,Lourinhã,2010,86,79,1.4
+Município,Nazaré,2010,28,37,39
+Município,Óbidos,2010,53,57,-
+Município,Peniche,2010,56,75,25
+Município,Sobral de Monte Agraço,2010,36,67,-
+Município,Torres Vedras,2010,221,180,15
+NUTS III,Região de Aveiro,2010,1227,1131,-
+Município,Águeda,2010,120,110,15.5
+Município,Albergaria-a-Velha,2010,326,70,1.2
+Município,Anadia,2010,72,60,23.8
+Município,Aveiro,2010,145,249,40.8
+Município,Estarreja,2010,97,87,-
+Município,Ílhavo,2010,82,104,33.6
+Município,Murtosa,2010,22,79,27.9
+Município,Oliveira do Bairro,2010,58,54,-
+Município,Ovar,2010,132,171,12.5
+Município,Sever do Vouga,2010,130,55,-
+Município,Vagos,2010,43,92,-
+NUTS III,Região de Coimbra,2010,932,1952,-
+Município,Arganil,2010,23,111,-
+Município,Cantanhede,2010,70,71,43.4
+Município,Coimbra,2010,136,267,46
+Município,Condeixa-a-Nova,2010,23,95,-
+Município,Figueira da Foz,2010,81,104,28
+Município,Góis,2010,12,54,-
+Município,Lousã,2010,40,144,-
+Município,Mealhada,2010,54,119,31.6
+Município,Mira,2010,15,45,34.3
+Município,Miranda do Corvo,2010,51,112,-
+Município,Montemor-o-Velho,2010,49,90,-
+Município,Mortágua,2010,27,63,5.7
+Município,Oliveira do Hospital,2010,119,140,-
+Município,Pampilhosa da Serra,2010,15,72,-
+Município,Penacova,2010,65,99,-
+Município,Penela,2010,19,86,-
+Município,Soure,2010,39,116,-
+Município,Tábua,2010,62,115,-
+Município,Vila Nova de Poiares,2010,32,49,-
+NUTS III,Região de Leiria,2010,435,1267,-
+Município,Alvaiázere,2010,48,89,-
+Município,Ansião,2010,38,72,-
+Município,Batalha,2010,23,107,31.1
+Município,Castanheira de Pêra,2010,11,60,-
+Município,Figueiró dos Vinhos,2010,15,74,-
+Município,Leiria,2010,110,331,23
+Município,Marinha Grande,2010,34,131,35.5
+Município,Pedrógão Grande,2010,16,71,0
+Município,Pombal,2010,89,196,-
+Município,Porto de Mós,2010,51,136,-
+NUTS III,Viseu Dão Lafões,2010,1405,1185,-
+Município,Aguiar da Beira,2010,18,37,-
+Município,Carregal do Sal,2010,35,103,-
+Município,Castro Daire,2010,198,127,-
+Município,Mangualde,2010,115,85,19.6
+Município,Nelas,2010,58,107,9.7
+Município,Oliveira de Frades,2010,79,62,-
+Município,Penalva do Castelo,2010,18,47,-
+Município,Santa Comba Dão,2010,19,66,-
+Município,São Pedro do Sul,2010,75,112,1
+Município,Sátão,2010,43,47,-
+Município,Tondela,2010,151,148,9.2
+Município,Vila Nova de Paiva,2010,132,68,-
+Município,Viseu,2010,425,107,18.2
+Município,Vouzela,2010,39,69,-
+NUTS III,Beira Baixa,2010,227,567,-
+Município,Castelo Branco,2010,87,130,17.8
+Município,Idanha-a-Nova,2010,43,128,18.5
+Município,Oleiros,2010,9,101,-
+Município,Penamacor,2010,43,86,-
+Município,Proença-a-Nova,2010,14,84,-
+Município,Vila Velha de Ródão,2010,31,38,-
+NUTS III,Médio Tejo,2010,536,1180,-
+Município,Abrantes,2010,106,89,28.9
+Município,Alcanena,2010,32,95,18.7
+Município,Constância,2010,13,75,24.7
+Município,Entroncamento,2010,12,55,9.4
+Município,Ferreira do Zêzere,2010,24,56,-
+Município,Mação,2010,12,43,-
+Município,Ourém,2010,97,236,61.1
+Município,Sardoal,2010,6,70,-
+Município,Sertã,2010,63,185,-
+Município,Tomar,2010,95,77,36.5
+Município,Torres Novas,2010,51,84,-
+Município,Vila de Rei,2010,5,52,-
+Município,Vila Nova da Barquinha,2010,20,63,-
+NUTS III,Beiras e Serra da Estrela,2010,968,1425,-
+Município,Almeida,2010,31,42,29.7
+Município,Belmonte,2010,30,64,-
+Município,Celorico da Beira,2010,78,58,7.4
+Município,Covilhã,2010,73,87,6.8
+Município,Figueira de Castelo Rodrigo,2010,124,24,0.1
+Município,Fornos de Algodres,2010,35,49,-
+Município,Fundão,2010,110,138,-
+Município,Gouveia,2010,59,211,6.4
+Município,Guarda,2010,74,171,15.6
+Município,Manteigas,2010,2,55,-
+Município,Mêda,2010,65,63,-
+Município,Pinhel,2010,83,48,-
+Município,Sabugal,2010,68,120,-
+Município,Seia,2010,70,180,7.6
+Município,Trancoso,2010,66,115,-
+NUTS II,Área Metropolitana de Lisboa,2010,2043,5036,62.1
+NUTS III,Área Metropolitana de Lisboa,2010,2043,5036,-
+Município,Alcochete,2010,22,57,-
+Município,Almada,2010,129,250,42.3
+Município,Amadora,2010,41,91,10.1
+Município,Barreiro,2010,60,146,-
+Município,Cascais,2010,135,348,66.7
+Município,Lisboa,2010,1,1137,67.5
+Município,Loures,2010,185,369,-
+Município,Mafra,2010,115,156,27.7
+Município,Moita,2010,98,71,-
+Município,Montijo,2010,92,104,-
+Município,Odivelas,2010,149,267,-
+Município,Oeiras,2010,54,386,31
+Município,Palmela,2010,147,143,31.4
+Município,Seixal,2010,137,174,-
+Município,Sesimbra,2010,87,84,39
+Município,Setúbal,2010,65,276,32.3
+Município,Sintra,2010,420,661,61.8
+Município,Vila Franca de Xira,2010,106,316,-
+NUTS II,Alentejo,2010,1595,3231,23.6
+NUTS III,Alentejo Litoral,2010,164,436,16.6
+Município,Alcácer do Sal,2010,24,71,16.3
+Município,Grândola,2010,20,43,8.5
+Município,Odemira,2010,58,81,24.8
+Município,Santiago do Cacém,2010,48,159,15.2
+Município,Sines,2010,14,82,27
+NUTS III,Baixo Alentejo,2010,294,583,15.3
+Município,Aljustrel,2010,18,49,-
+Município,Almodôvar,2010,18,44,-
+Município,Alvito,2010,11,35,-
+Município,Barrancos,2010,4,35,12.4
+Município,Beja,2010,83,76,20.7
+Município,Castro Verde,2010,8,37,-
+Município,Cuba,2010,16,39,-
+Município,Ferreira do Alentejo,2010,23,39,10.2
+Município,Mértola,2010,19,31,-
+Município,Moura,2010,24,67,6.7
+Município,Ourique,2010,20,48,-
+Município,Serpa,2010,33,41,6.7
+Município,Vidigueira,2010,17,42,-
+NUTS III,Lezíria do Tejo,2010,489,814,19.2
+Município,Almeirim,2010,30,62,-
+Município,Alpiarça,2010,24,33,-
+Município,Azambuja,2010,79,66,-
+Município,Benavente,2010,43,116,-
+Município,Cartaxo,2010,56,75,-
+Município,Chamusca,2010,31,47,-
+Município,Coruche,2010,56,49,-
+Município,Golegã,2010,7,45,-
+Município,Rio Maior,2010,17,68,-
+Município,Salvaterra de Magos,2010,48,46,-
+Município,Santarém,2010,98,207,26.1
+NUTS III,Alto Alentejo,2010,296,664,-
+Município,Alter do Chão,2010,12,41,-
+Município,Arronches,2010,16,27,-
+Município,Avis,2010,7,33,-
+Município,Campo Maior,2010,34,26,-
+Município,Castelo de Vide,2010,7,45,-
+Município,Crato,2010,14,35,-
+Município,Elvas,2010,96,42,19.4
+Município,Fronteira,2010,4,30,-
+Município,Gavião,2010,11,54,-
+Município,Marvão,2010,13,37,33.4
+Município,Monforte,2010,6,38,-
+Município,Nisa,2010,12,48,-
+Município,Ponte de Sor,2010,21,34,-
+Município,Portalegre,2010,24,116,-
+Município,Sousel,2010,19,58,-
+NUTS III,Alentejo Central,2010,352,734,-
+Município,Alandroal,2010,24,31,-
+Município,Arraiolos,2010,22,69,-
+Município,Borba,2010,14,48,-
+Município,Estremoz,2010,56,43,23
+Município,Évora,2010,113,68,38.3
+Município,Montemor-o-Novo,2010,24,82,-
+Município,Mora,2010,11,46,-
+Município,Mourão,2010,8,28,-
+Município,Portel,2010,10,41,-
+Município,Redondo,2010,12,40,-
+Município,Reguengos de Monsaraz,2010,22,73,3.9
+Município,Vendas Novas,2010,11,54,-
+Município,Viana do Alentejo,2010,19,65,-
+Município,Vila Viçosa,2010,6,46,18.7
+NUTS II,Algarve,2010,376,1080,62.7
+NUTS III,Algarve,2010,376,1080,62.7
+Município,Albufeira,2010,29,80,70.9
+Município,Alcoutim,2010,15,28,-
+Município,Aljezur,2010,13,78,14.9
+Município,Castro Marim,2010,9,0,34.9
+Município,Faro,2010,22,105,53.5
+Município,Lagoa,2010,25,83,63.2
+Município,Lagos,2010,21,48,68.5
+Município,Loulé,2010,65,113,57.6
+Município,Monchique,2010,16,65,43.8
+Município,Olhão,2010,25,74,42.7
+Município,Portimão,2010,33,79,58.4
+Município,São Brás de Alportel,2010,7,50,-
+Município,Silves,2010,47,127,59.9
+Município,Tavira,2010,32,45,54.2
+Município,Vila do Bispo,2010,7,39,54.7
+Município,Vila Real de Santo António,2010,10,66,48.3
+NUTS I,Continente,2011,29782,28940,51.3
+NUTS II,Norte,2011,18715,9941,38.1
+NUTS III,Alto Minho,2011,2428,571,25.8
+Município,Arcos de Valdevez,2011,372,52,14.4
+Município,Caminha,2011,130,39,18.6
+Município,Melgaço,2011,38,18,-
+Município,Monção,2011,199,51,-
+Município,Paredes de Coura,2011,153,46,-
+Município,Ponte da Barca,2011,308,34,-
+Município,Ponte de Lima,2011,494,82,26.1
+Município,Valença,2011,154,62,22.1
+Município,Viana do Castelo,2011,545,125,35.8
+Município,Vila Nova de Cerveira,2011,35,62,23.9
+NUTS III,Cávado,2011,1281,745,26.5
+Município,Amares,2011,129,67,28.6
+Município,Barcelos,2011,311,277,34.5
+Município,Braga,2011,346,151,27
+Município,Esposende,2011,83,124,38.5
+Município,Terras de Bouro,2011,61,65,5.9
+Município,Vila Verde,2011,351,61,17.9
+NUTS III,Ave,2011,1975,943,-
+Município,Cabeceiras de Basto,2011,132,53,-
+Município,Fafe,2011,272,97,-
+Município,Guimarães,2011,514,212,35
+Município,Mondim de Basto,2011,20,53,-
+Município,Póvoa de Lanhoso,2011,287,74,-
+Município,Vieira do Minho,2011,204,51,27
+Município,Vila Nova de Famalicão,2011,422,308,14.8
+Município,Vizela,2011,124,95,-
+NUTS III,Área Metropolitana do Porto,2011,5226,3488,-
+Município,Arouca,2011,178,76,-
+Município,Espinho,2011,173,139,54.8
+Município,Gondomar,2011,615,308,-
+Município,Maia,2011,208,151,45.7
+Município,Matosinhos,2011,96,252,25.3
+Município,Oliveira de Azeméis,2011,303,157,-
+Município,Paredes,2011,612,409,14.3
+Município,Porto,2011,0,348,61.1
+Município,Póvoa de Varzim,2011,182,80,33.8
+Município,Santa Maria da Feira,2011,865,224,20.3
+Município,Santo Tirso,2011,454,235,11.2
+Município,São João da Madeira,2011,34,88,39.9
+Município,Trofa,2011,291,97,31.4
+Município,Vale de Cambra,2011,90,64,23.3
+Município,Valongo,2011,124,209,-
+Município,Vila do Conde,2011,236,99,39.8
+Município,Vila Nova de Gaia,2011,765,552,30.5
+NUTS III,Alto Tâmega,2011,1557,480,-
+Município,Boticas,2011,187,57,-
+Município,Chaves,2011,321,170,17.7
+Município,Montalegre,2011,484,79,8.9
+Município,Ribeira de Pena,2011,77,85,-
+Município,Valpaços,2011,283,49,2.4
+Município,Vila Pouca de Aguiar,2011,205,40,12.4
+NUTS III,Tâmega e Sousa,2011,4017,1653,-
+Município,Amarante,2011,406,196,34.3
+Município,Baião,2011,295,170,-
+Município,Castelo de Paiva,2011,55,126,-
+Município,Celorico de Basto,2011,240,99,-
+Município,Cinfães,2011,403,181,-
+Município,Felgueiras,2011,507,230,32.9
+Município,Lousada,2011,329,85,-
+Município,Marco de Canaveses,2011,511,146,-
+Município,Paços de Ferreira,2011,356,156,-
+Município,Penafiel,2011,704,211,16.9
+Município,Resende,2011,211,53,-
+NUTS III,Douro,2011,1423,1356,-
+Município,Alijó,2011,112,166,29.2
+Município,Armamar,2011,30,60,-
+Município,Carrazeda de Ansiães,2011,80,46,-
+Município,Freixo de Espada à Cinta,2011,47,68,-
+Município,Lamego,2011,160,59,23.7
+Município,Mesão Frio,2011,37,71,-
+Município,Moimenta da Beira,2011,52,67,-
+Município,Murça,2011,40,54,-
+Município,Penedono,2011,28,27,-
+Município,Peso da Régua,2011,55,50,8.7
+Município,Sabrosa,2011,33,56,-
+Município,Santa Marta de Penaguião,2011,41,90,-
+Município,São João da Pesqueira,2011,93,55,-
+Município,Sernancelhe,2011,69,48,-
+Município,Tabuaço,2011,19,61,-
+Município,Tarouca,2011,49,103,-
+Município,Torre de Moncorvo,2011,145,49,-
+Município,Vila Nova de Foz Côa,2011,136,39,-
+Município,Vila Real,2011,197,187,5.2
+NUTS III,Terras de Trás-os-Montes,2011,808,705,-
+Município,Alfândega da Fé,2011,52,61,-
+Município,Bragança,2011,141,103,16.1
+Município,Macedo de Cavaleiros,2011,71,70,-
+Município,Miranda do Douro,2011,56,128,13.9
+Município,Mirandela,2011,126,79,4.6
+Município,Mogadouro,2011,71,96,6
+Município,Vila Flor,2011,34,46,-
+Município,Vimioso,2011,58,49,-
+Município,Vinhais,2011,199,73,-
+NUTS II,Centro,2011,7329,9671,33.7
+NUTS III,Oeste,2011,1514,1102,35
+Município,Alcobaça,2011,92,243,35.6
+Município,Alenquer,2011,280,105,-
+Município,Arruda dos Vinhos,2011,171,52,-
+Município,Bombarral,2011,49,58,10.6
+Município,Cadaval,2011,70,43,-
+Município,Caldas da Rainha,2011,85,108,32
+Município,Lourinhã,2011,210,77,-
+Município,Nazaré,2011,16,41,43.7
+Município,Óbidos,2011,64,63,56.2
+Município,Peniche,2011,47,69,-
+Município,Sobral de Monte Agraço,2011,113,66,-
+Município,Torres Vedras,2011,317,177,17.4
+NUTS III,Região de Aveiro,2011,1341,1043,-
+Município,Águeda,2011,282,107,26
+Município,Albergaria-a-Velha,2011,235,76,0.7
+Município,Anadia,2011,85,63,24.1
+Município,Aveiro,2011,162,207,44.7
+Município,Estarreja,2011,139,77,-
+Município,Ílhavo,2011,42,93,33.5
+Município,Murtosa,2011,43,79,40.1
+Município,Oliveira do Bairro,2011,50,50,-
+Município,Ovar,2011,155,163,14.4
+Município,Sever do Vouga,2011,101,45,-
+Município,Vagos,2011,47,83,-
+NUTS III,Região de Coimbra,2011,1078,1951,-
+Município,Arganil,2011,36,112,-
+Município,Cantanhede,2011,104,93,47.7
+Município,Coimbra,2011,124,263,47.8
+Município,Condeixa-a-Nova,2011,26,89,-
+Município,Figueira da Foz,2011,134,92,27.4
+Município,Góis,2011,22,58,-
+Município,Lousã,2011,29,121,-
+Município,Mealhada,2011,57,113,30
+Município,Mira,2011,29,50,32.5
+Município,Miranda do Corvo,2011,41,116,-
+Município,Montemor-o-Velho,2011,102,103,-
+Município,Mortágua,2011,34,70,11.2
+Município,Oliveira do Hospital,2011,89,152,-
+Município,Pampilhosa da Serra,2011,22,61,-
+Município,Penacova,2011,72,115,-
+Município,Penela,2011,25,80,-
+Município,Soure,2011,80,121,-
+Município,Tábua,2011,42,102,-
+Município,Vila Nova de Poiares,2011,10,40,-
+NUTS III,Região de Leiria,2011,580,1169,-
+Município,Alvaiázere,2011,38,91,-
+Município,Ansião,2011,38,82,-
+Município,Batalha,2011,10,115,29.9
+Município,Castanheira de Pêra,2011,23,54,-
+Município,Figueiró dos Vinhos,2011,14,75,-
+Município,Leiria,2011,203,331,23.4
+Município,Marinha Grande,2011,46,129,-
+Município,Pedrógão Grande,2011,30,71,0
+Município,Pombal,2011,128,69,12
+Município,Porto de Mós,2011,50,152,-
+NUTS III,Viseu Dão Lafões,2011,1215,1225,-
+Município,Aguiar da Beira,2011,20,43,-
+Município,Carregal do Sal,2011,36,120,-
+Município,Castro Daire,2011,245,124,-
+Município,Mangualde,2011,56,89,15.6
+Município,Nelas,2011,76,122,13.6
+Município,Oliveira de Frades,2011,37,46,-
+Município,Penalva do Castelo,2011,27,51,-
+Município,Santa Comba Dão,2011,17,66,-
+Município,São Pedro do Sul,2011,57,117,3.3
+Município,Sátão,2011,44,50,-
+Município,Tondela,2011,125,148,6.4
+Município,Vila Nova de Paiva,2011,158,58,-
+Município,Viseu,2011,289,113,20.9
+Município,Vouzela,2011,28,78,-
+NUTS III,Beira Baixa,2011,227,558,-
+Município,Castelo Branco,2011,85,124,18.3
+Município,Idanha-a-Nova,2011,63,97,21.2
+Município,Oleiros,2011,14,121,-
+Município,Penamacor,2011,22,87,-
+Município,Proença-a-Nova,2011,10,81,-
+Município,Vila Velha de Ródão,2011,33,48,-
+NUTS III,Médio Tejo,2011,452,1195,-
+Município,Abrantes,2011,81,96,15.7
+Município,Alcanena,2011,24,82,22.3
+Município,Constância,2011,21,67,26.9
+Município,Entroncamento,2011,11,56,16
+Município,Ferreira do Zêzere,2011,24,59,-
+Município,Mação,2011,16,51,-
+Município,Ourém,2011,83,242,67.5
+Município,Sardoal,2011,9,71,-
+Município,Sertã,2011,45,185,-
+Município,Tomar,2011,60,77,42.9
+Município,Torres Novas,2011,50,94,-
+Município,Vila de Rei,2011,8,58,-
+Município,Vila Nova da Barquinha,2011,20,57,-
+NUTS III,Beiras e Serra da Estrela,2011,922,1428,-
+Município,Almeida,2011,8,48,29
+Município,Belmonte,2011,22,59,-
+Município,Celorico da Beira,2011,61,56,9.3
+Município,Covilhã,2011,96,84,7.4
+Município,Figueira de Castelo Rodrigo,2011,71,39,-
+Município,Fornos de Algodres,2011,14,42,-
+Município,Fundão,2011,98,129,-
+Município,Gouveia,2011,64,201,-
+Município,Guarda,2011,50,186,17.6
+Município,Manteigas,2011,2,61,-
+Município,Mêda,2011,148,64,-
+Município,Pinhel,2011,92,57,-
+Município,Sabugal,2011,50,108,-
+Município,Seia,2011,60,181,8.1
+Município,Trancoso,2011,86,113,-
+NUTS II,Área Metropolitana de Lisboa,2011,1768,5105,64
+NUTS III,Área Metropolitana de Lisboa,2011,1768,5105,-
+Município,Alcochete,2011,18,52,35.7
+Município,Almada,2011,122,280,45
+Município,Amadora,2011,18,89,12.7
+Município,Barreiro,2011,56,170,-
+Município,Cascais,2011,60,355,69
+Município,Lisboa,2011,1,1078,69.6
+Município,Loures,2011,144,416,-
+Município,Mafra,2011,216,151,27.7
+Município,Moita,2011,85,69,-
+Município,Montijo,2011,78,104,28.9
+Município,Odivelas,2011,149,273,-
+Município,Oeiras,2011,28,317,31.1
+Município,Palmela,2011,137,138,32.6
+Município,Seixal,2011,161,167,-
+Município,Sesimbra,2011,57,173,39.1
+Município,Setúbal,2011,72,265,33.1
+Município,Sintra,2011,300,686,60.3
+Município,Vila Franca de Xira,2011,66,322,-
+NUTS II,Alentejo,2011,1529,3152,25.2
+NUTS III,Alentejo Litoral,2011,143,420,18.4
+Município,Alcácer do Sal,2011,17,68,23.6
+Município,Grândola,2011,20,39,9.8
+Município,Odemira,2011,41,105,23
+Município,Santiago do Cacém,2011,42,149,17.1
+Município,Sines,2011,23,59,28.6
+NUTS III,Baixo Alentejo,2011,318,581,16.5
+Município,Aljustrel,2011,27,38,-
+Município,Almodôvar,2011,20,46,-
+Município,Alvito,2011,9,32,-
+Município,Barrancos,2011,3,36,9.5
+Município,Beja,2011,110,85,21.9
+Município,Castro Verde,2011,17,36,-
+Município,Cuba,2011,13,37,-
+Município,Ferreira do Alentejo,2011,19,41,10.6
+Município,Mértola,2011,17,33,-
+Município,Moura,2011,20,65,6.2
+Município,Ourique,2011,14,51,-
+Município,Serpa,2011,18,44,-
+Município,Vidigueira,2011,31,37,-
+NUTS III,Lezíria do Tejo,2011,544,804,24
+Município,Almeirim,2011,40,54,-
+Município,Alpiarça,2011,26,34,-
+Município,Azambuja,2011,70,78,-
+Município,Benavente,2011,66,107,-
+Município,Cartaxo,2011,29,69,-
+Município,Chamusca,2011,68,43,-
+Município,Coruche,2011,48,52,-
+Município,Golegã,2011,3,41,-
+Município,Rio Maior,2011,47,67,-
+Município,Salvaterra de Magos,2011,52,45,-
+Município,Santarém,2011,95,214,27.5
+NUTS III,Alto Alentejo,2011,308,655,-
+Município,Alter do Chão,2011,9,43,-
+Município,Arronches,2011,14,31,-
+Município,Avis,2011,11,32,-
+Município,Campo Maior,2011,40,18,-
+Município,Castelo de Vide,2011,11,43,17.3
+Município,Crato,2011,13,39,-
+Município,Elvas,2011,86,50,20
+Município,Fronteira,2011,5,33,-
+Município,Gavião,2011,16,60,-
+Município,Marvão,2011,16,36,36.2
+Município,Monforte,2011,14,36,-
+Município,Nisa,2011,23,47,-
+Município,Ponte de Sor,2011,19,26,-
+Município,Portalegre,2011,25,111,-
+Município,Sousel,2011,6,50,-
+NUTS III,Alentejo Central,2011,216,692,-
+Município,Alandroal,2011,21,22,-
+Município,Arraiolos,2011,10,69,-
+Município,Borba,2011,9,49,-
+Município,Estremoz,2011,30,49,26.3
+Município,Évora,2011,57,53,40.6
+Município,Montemor-o-Novo,2011,20,90,-
+Município,Mora,2011,3,46,-
+Município,Mourão,2011,7,26,-
+Município,Portel,2011,13,40,-
+Município,Redondo,2011,12,36,42.8
+Município,Reguengos de Monsaraz,2011,12,64,4
+Município,Vendas Novas,2011,3,45,-
+Município,Viana do Alentejo,2011,7,62,-
+Município,Vila Viçosa,2011,12,41,17.9
+NUTS II,Algarve,2011,441,1071,65
+NUTS III,Algarve,2011,441,1071,65
+Município,Albufeira,2011,55,81,71.8
+Município,Alcoutim,2011,6,39,-
+Município,Aljezur,2011,8,78,19.2
+Município,Castro Marim,2011,17,0,-
+Município,Faro,2011,26,102,54.7
+Município,Lagoa,2011,29,83,70.2
+Município,Lagos,2011,34,54,69.4
+Município,Loulé,2011,58,84,60.4
+Município,Monchique,2011,9,65,50.2
+Município,Olhão,2011,30,85,56.1
+Município,Portimão,2011,37,74,60.4
+Município,São Brás de Alportel,2011,7,55,-
+Município,Silves,2011,56,121,60.5
+Município,Tavira,2011,40,45,53.5
+Município,Vila do Bispo,2011,12,44,65.9
+Município,Vila Real de Santo António,2011,17,61,53
+NUTS I,Continente,2012,25352,30049,53.8
+NUTS II,Norte,2012,13934,10358,39.5
+NUTS III,Alto Minho,2012,1331,668,26.8
+Município,Arcos de Valdevez,2012,193,51,16.1
+Município,Caminha,2012,115,69,20.9
+Município,Melgaço,2012,35,59,7.1
+Município,Monção,2012,133,54,-
+Município,Paredes de Coura,2012,107,52,-
+Município,Ponte da Barca,2012,157,51,-
+Município,Ponte de Lima,2012,273,86,28.5
+Município,Valença,2012,83,58,23.8
+Município,Viana do Castelo,2012,207,121,38.6
+Município,Vila Nova de Cerveira,2012,28,67,14.6
+NUTS III,Cávado,2012,692,769,25.4
+Município,Amares,2012,64,65,30.9
+Município,Barcelos,2012,175,293,37.9
+Município,Braga,2012,154,158,25.5
+Município,Esposende,2012,34,117,38
+Município,Terras de Bouro,2012,64,65,4.7
+Município,Vila Verde,2012,201,71,19.1
+NUTS III,Ave,2012,1440,943,-
+Município,Cabeceiras de Basto,2012,162,61,-
+Município,Fafe,2012,267,99,-
+Município,Guimarães,2012,320,211,33.8
+Município,Mondim de Basto,2012,36,50,-
+Município,Póvoa de Lanhoso,2012,186,93,-
+Município,Vieira do Minho,2012,187,60,30.4
+Município,Vila Nova de Famalicão,2012,227,298,17.9
+Município,Vizela,2012,55,71,-
+NUTS III,Área Metropolitana do Porto,2012,4000,3604,-
+Município,Arouca,2012,147,78,-
+Município,Espinho,2012,139,137,51.2
+Município,Gondomar,2012,346,314,-
+Município,Maia,2012,178,182,56.6
+Município,Matosinhos,2012,69,257,23.9
+Município,Oliveira de Azeméis,2012,239,178,-
+Município,Paredes,2012,554,439,18.3
+Município,Porto,2012,0,361,63.4
+Município,Póvoa de Varzim,2012,174,86,33.2
+Município,Santa Maria da Feira,2012,585,230,-
+Município,Santo Tirso,2012,344,233,11.4
+Município,São João da Madeira,2012,12,87,40.2
+Município,Trofa,2012,104,97,28.6
+Município,Vale de Cambra,2012,82,58,23.7
+Município,Valongo,2012,131,204,-
+Município,Vila do Conde,2012,280,105,39.1
+Município,Vila Nova de Gaia,2012,616,558,30.6
+NUTS III,Alto Tâmega,2012,1207,519,-
+Município,Boticas,2012,165,58,-
+Município,Chaves,2012,292,173,17.5
+Município,Montalegre,2012,255,83,10.6
+Município,Ribeira de Pena,2012,119,97,-
+Município,Valpaços,2012,196,52,1
+Município,Vila Pouca de Aguiar,2012,180,56,-
+NUTS III,Tâmega e Sousa,2012,3013,1713,-
+Município,Amarante,2012,341,196,39.3
+Município,Baião,2012,213,181,-
+Município,Castelo de Paiva,2012,50,126,-
+Município,Celorico de Basto,2012,237,117,-
+Município,Cinfães,2012,264,200,-
+Município,Felgueiras,2012,365,229,39.8
+Município,Lousada,2012,201,84,-
+Município,Marco de Canaveses,2012,357,147,-
+Município,Paços de Ferreira,2012,329,172,-
+Município,Penafiel,2012,523,209,14.3
+Município,Resende,2012,133,52,-
+NUTS III,Douro,2012,1399,1388,-
+Município,Alijó,2012,122,176,32.8
+Município,Armamar,2012,29,57,-
+Município,Carrazeda de Ansiães,2012,95,45,-
+Município,Freixo de Espada à Cinta,2012,56,40,-
+Município,Lamego,2012,134,57,22.4
+Município,Mesão Frio,2012,33,74,-
+Município,Moimenta da Beira,2012,51,82,-
+Município,Murça,2012,67,33,-
+Município,Penedono,2012,27,41,-
+Município,Peso da Régua,2012,45,60,13.5
+Município,Sabrosa,2012,41,69,-
+Município,Santa Marta de Penaguião,2012,67,89,-
+Município,São João da Pesqueira,2012,63,51,-
+Município,Sernancelhe,2012,66,49,-
+Município,Tabuaço,2012,37,84,-
+Município,Tarouca,2012,65,112,-
+Município,Torre de Moncorvo,2012,101,59,-
+Município,Vila Nova de Foz Côa,2012,91,33,-
+Município,Vila Real,2012,209,177,6
+NUTS III,Terras de Trás-os-Montes,2012,852,754,-
+Município,Alfândega da Fé,2012,53,63,-
+Município,Bragança,2012,172,122,17.8
+Município,Macedo de Cavaleiros,2012,109,70,-
+Município,Miranda do Douro,2012,58,130,20.2
+Município,Mirandela,2012,102,83,5.7
+Município,Mogadouro,2012,119,96,12.1
+Município,Vila Flor,2012,47,49,-
+Município,Vimioso,2012,89,67,-
+Município,Vinhais,2012,103,74,-
+NUTS II,Centro,2012,7177,10096,34.4
+NUTS III,Oeste,2012,1200,1098,34.7
+Município,Alcobaça,2012,97,246,32.4
+Município,Alenquer,2012,230,67,-
+Município,Arruda dos Vinhos,2012,72,61,-
+Município,Bombarral,2012,34,64,10.3
+Município,Cadaval,2012,106,51,-
+Município,Caldas da Rainha,2012,78,106,32.7
+Município,Lourinhã,2012,106,72,-
+Município,Nazaré,2012,25,50,45.5
+Município,Óbidos,2012,60,67,48.9
+Município,Peniche,2012,58,65,22.4
+Município,Sobral de Monte Agraço,2012,78,70,-
+Município,Torres Vedras,2012,256,179,21.7
+NUTS III,Região de Aveiro,2012,1017,1073,-
+Município,Águeda,2012,208,113,26.1
+Município,Albergaria-a-Velha,2012,129,84,0.5
+Município,Anadia,2012,116,60,29.5
+Município,Aveiro,2012,112,211,48.2
+Município,Estarreja,2012,85,82,-
+Município,Ílhavo,2012,30,97,30.5
+Município,Murtosa,2012,29,81,36.3
+Município,Oliveira do Bairro,2012,43,46,-
+Município,Ovar,2012,109,162,17.3
+Município,Sever do Vouga,2012,132,49,-
+Município,Vagos,2012,24,88,-
+NUTS III,Região de Coimbra,2012,1182,2054,-
+Município,Arganil,2012,85,110,7.1
+Município,Cantanhede,2012,61,102,-
+Município,Coimbra,2012,185,264,49.4
+Município,Condeixa-a-Nova,2012,38,90,-
+Município,Figueira da Foz,2012,103,104,28.5
+Município,Góis,2012,27,54,-
+Município,Lousã,2012,52,138,-
+Município,Mealhada,2012,54,119,27.3
+Município,Mira,2012,26,45,33.5
+Município,Miranda do Corvo,2012,59,111,-
+Município,Montemor-o-Velho,2012,71,101,-
+Município,Mortágua,2012,9,72,14
+Município,Oliveira do Hospital,2012,141,162,-
+Município,Pampilhosa da Serra,2012,24,72,-
+Município,Penacova,2012,60,119,-
+Município,Penela,2012,44,94,-
+Município,Soure,2012,55,120,-
+Município,Tábua,2012,71,119,-
+Município,Vila Nova de Poiares,2012,17,58,-
+NUTS III,Região de Leiria,2012,681,1293,-
+Município,Alvaiázere,2012,58,88,-
+Município,Ansião,2012,51,76,-
+Município,Batalha,2012,14,109,35.1
+Município,Castanheira de Pêra,2012,14,57,-
+Município,Figueiró dos Vinhos,2012,32,83,-
+Município,Leiria,2012,163,355,22.9
+Município,Marinha Grande,2012,48,130,34.4
+Município,Pedrógão Grande,2012,28,72,0
+Município,Pombal,2012,217,180,-
+Município,Porto de Mós,2012,56,143,-
+NUTS III,Viseu Dão Lafões,2012,1308,1284,-
+Município,Aguiar da Beira,2012,14,40,-
+Município,Carregal do Sal,2012,40,128,-
+Município,Castro Daire,2012,217,119,-
+Município,Mangualde,2012,93,100,12.6
+Município,Nelas,2012,70,133,18
+Município,Oliveira de Frades,2012,54,46,-
+Município,Penalva do Castelo,2012,31,58,-
+Município,Santa Comba Dão,2012,32,82,-
+Município,São Pedro do Sul,2012,45,124,1.7
+Município,Sátão,2012,71,56,-
+Município,Tondela,2012,143,144,6.9
+Município,Vila Nova de Paiva,2012,140,65,-
+Município,Viseu,2012,300,115,23.6
+Município,Vouzela,2012,58,74,-
+NUTS III,Beira Baixa,2012,265,580,-
+Município,Castelo Branco,2012,108,140,20.8
+Município,Idanha-a-Nova,2012,44,96,20.1
+Município,Oleiros,2012,21,116,-
+Município,Penamacor,2012,39,104,-
+Município,Proença-a-Nova,2012,17,78,-
+Município,Vila Velha de Ródão,2012,36,46,-
+NUTS III,Médio Tejo,2012,612,1236,-
+Município,Abrantes,2012,126,72,10.6
+Município,Alcanena,2012,48,81,22.6
+Município,Constância,2012,17,82,18.8
+Município,Entroncamento,2012,16,60,7
+Município,Ferreira do Zêzere,2012,23,55,-
+Município,Mação,2012,21,57,-
+Município,Ourém,2012,120,251,64.7
+Município,Sardoal,2012,13,77,-
+Município,Sertã,2012,53,189,-
+Município,Tomar,2012,79,77,43.2
+Município,Torres Novas,2012,67,109,-
+Município,Vila de Rei,2012,3,56,-
+Município,Vila Nova da Barquinha,2012,26,70,-
+NUTS III,Beiras e Serra da Estrela,2012,912,1478,-
+Município,Almeida,2012,16,48,26.1
+Município,Belmonte,2012,16,61,-
+Município,Celorico da Beira,2012,42,54,8.4
+Município,Covilhã,2012,97,97,-
+Município,Figueira de Castelo Rodrigo,2012,25,37,-
+Município,Fornos de Algodres,2012,24,46,-
+Município,Fundão,2012,138,139,-
+Município,Gouveia,2012,42,218,13.4
+Município,Guarda,2012,81,168,21.2
+Município,Manteigas,2012,4,62,31.7
+Município,Mêda,2012,114,69,-
+Município,Pinhel,2012,52,61,-
+Município,Sabugal,2012,90,108,-
+Município,Seia,2012,71,181,-
+Município,Trancoso,2012,100,129,-
+NUTS II,Área Metropolitana de Lisboa,2012,1749,5257,65.7
+NUTS III,Área Metropolitana de Lisboa,2012,1749,5257,-
+Município,Alcochete,2012,23,53,36.4
+Município,Almada,2012,153,275,52.1
+Município,Amadora,2012,28,93,-
+Município,Barreiro,2012,66,182,-
+Município,Cascais,2012,49,371,71.7
+Município,Lisboa,2012,87,1046,71.4
+Município,Loures,2012,157,428,50.5
+Município,Mafra,2012,156,147,27
+Município,Moita,2012,77,74,-
+Município,Montijo,2012,113,107,46.8
+Município,Odivelas,2012,134,307,-
+Município,Oeiras,2012,29,353,34.4
+Município,Palmela,2012,118,156,35.1
+Município,Seixal,2012,125,166,-
+Município,Sesimbra,2012,55,175,41.3
+Município,Setúbal,2012,109,260,30.4
+Município,Sintra,2012,215,735,52.9
+Município,Vila Franca de Xira,2012,55,329,-
+NUTS II,Alentejo,2012,1918,3271,28.5
+NUTS III,Alentejo Litoral,2012,193,417,22
+Município,Alcácer do Sal,2012,14,75,23.3
+Município,Grândola,2012,24,38,19.9
+Município,Odemira,2012,51,101,25.7
+Município,Santiago do Cacém,2012,45,139,18
+Município,Sines,2012,59,64,27.4
+NUTS III,Baixo Alentejo,2012,273,628,18.3
+Município,Aljustrel,2012,21,47,-
+Município,Almodôvar,2012,19,48,-
+Município,Alvito,2012,4,34,-
+Município,Barrancos,2012,0,38,6.1
+Município,Beja,2012,66,89,22.5
+Município,Castro Verde,2012,15,38,-
+Município,Cuba,2012,9,48,-
+Município,Ferreira do Alentejo,2012,16,39,9.7
+Município,Mértola,2012,16,33,-
+Município,Moura,2012,20,75,-
+Município,Ourique,2012,13,49,-
+Município,Serpa,2012,33,44,10.6
+Município,Vidigueira,2012,41,46,-
+NUTS III,Lezíria do Tejo,2012,770,856,22.7
+Município,Almeirim,2012,58,58,-
+Município,Alpiarça,2012,41,35,-
+Município,Azambuja,2012,188,78,-
+Município,Benavente,2012,60,125,-
+Município,Cartaxo,2012,48,67,-
+Município,Chamusca,2012,47,49,-
+Município,Coruche,2012,62,50,-
+Município,Golegã,2012,10,42,-
+Município,Rio Maior,2012,81,61,-
+Município,Salvaterra de Magos,2012,33,51,-
+Município,Santarém,2012,142,240,28.5
+NUTS III,Alto Alentejo,2012,313,656,-
+Município,Alter do Chão,2012,8,45,-
+Município,Arronches,2012,14,36,-
+Município,Avis,2012,10,33,-
+Município,Campo Maior,2012,27,27,-
+Município,Castelo de Vide,2012,9,43,16.3
+Município,Crato,2012,11,38,-
+Município,Elvas,2012,86,49,18
+Município,Fronteira,2012,10,32,-
+Município,Gavião,2012,17,62,-
+Município,Marvão,2012,15,34,44.4
+Município,Monforte,2012,9,36,-
+Município,Nisa,2012,21,44,-
+Município,Ponte de Sor,2012,34,27,-
+Município,Portalegre,2012,34,99,-
+Município,Sousel,2012,8,51,-
+NUTS III,Alentejo Central,2012,369,714,-
+Município,Alandroal,2012,12,25,-
+Município,Arraiolos,2012,16,69,-
+Município,Borba,2012,16,47,-
+Município,Estremoz,2012,27,47,30.7
+Município,Évora,2012,160,67,44.9
+Município,Montemor-o-Novo,2012,30,90,-
+Município,Mora,2012,16,46,-
+Município,Mourão,2012,5,32,-
+Município,Portel,2012,11,43,-
+Município,Redondo,2012,13,33,39.1
+Município,Reguengos de Monsaraz,2012,29,68,18.8
+Município,Vendas Novas,2012,13,46,-
+Município,Viana do Alentejo,2012,11,64,-
+Município,Vila Viçosa,2012,10,37,-
+NUTS II,Algarve,2012,574,1067,68.5
+NUTS III,Algarve,2012,574,1067,68.5
+Município,Albufeira,2012,54,77,74.4
+Município,Alcoutim,2012,17,39,-
+Município,Aljezur,2012,21,81,-
+Município,Castro Marim,2012,35,0,47.4
+Município,Faro,2012,34,95,58.4
+Município,Lagoa,2012,30,83,69.9
+Município,Lagos,2012,37,64,72.3
+Município,Loulé,2012,77,84,64.3
+Município,Monchique,2012,35,62,47.9
+Município,Olhão,2012,27,79,63.5
+Município,Portimão,2012,49,74,64.3
+Município,São Brás de Alportel,2012,18,54,-
+Município,Silves,2012,68,123,65.4
+Município,Tavira,2012,46,45,58
+Município,Vila do Bispo,2012,8,43,81.9
+Município,Vila Real de Santo António,2012,18,64,57.2
+NUTS I,Continente,2013,23129,28227,55.9
+NUTS II,Norte,2013,13797,9721,42.2
+NUTS III,Alto Minho,2013,1882,652,28.9
+Município,Arcos de Valdevez,2013,291,39,24.3
+Município,Caminha,2013,139,70,30.6
+Município,Melgaço,2013,68,60,13.7
+Município,Monção,2013,174,55,-
+Município,Paredes de Coura,2013,104,43,-
+Município,Ponte da Barca,2013,233,45,-
+Município,Ponte de Lima,2013,364,92,30.6
+Município,Valença,2013,195,53,27.2
+Município,Viana do Castelo,2013,239,135,37
+Município,Vila Nova de Cerveira,2013,75,60,15.5
+NUTS III,Cávado,2013,776,732,27.9
+Município,Amares,2013,58,53,36.8
+Município,Barcelos,2013,196,287,-
+Município,Braga,2013,184,151,27.5
+Município,Esposende,2013,24,116,41.9
+Município,Terras de Bouro,2013,67,64,6.2
+Município,Vila Verde,2013,247,61,-
+NUTS III,Ave,2013,1269,901,-
+Município,Cabeceiras de Basto,2013,139,53,-
+Município,Fafe,2013,251,83,-
+Município,Guimarães,2013,272,197,40.9
+Município,Mondim de Basto,2013,28,51,-
+Município,Póvoa de Lanhoso,2013,186,81,-
+Município,Vieira do Minho,2013,121,53,38.2
+Município,Vila Nova de Famalicão,2013,235,303,19.2
+Município,Vizela,2013,37,80,-
+NUTS III,Área Metropolitana do Porto,2013,3896,3357,-
+Município,Arouca,2013,128,70,-
+Município,Espinho,2013,60,119,-
+Município,Gondomar,2013,500,278,-
+Município,Maia,2013,251,187,56.7
+Município,Matosinhos,2013,96,239,24.5
+Município,Oliveira de Azeméis,2013,92,142,-
+Município,Paredes,2013,808,432,21
+Município,Porto,2013,1,357,66
+Município,Póvoa de Varzim,2013,124,73,35.1
+Município,Santa Maria da Feira,2013,239,208,-
+Município,Santo Tirso,2013,443,223,12.6
+Município,São João da Madeira,2013,5,88,36.7
+Município,Trofa,2013,92,92,31.8
+Município,Vale de Cambra,2013,189,56,21.3
+Município,Valongo,2013,181,178,5.7
+Município,Vila do Conde,2013,210,91,43.4
+Município,Vila Nova de Gaia,2013,477,524,29.6
+NUTS III,Alto Tâmega,2013,866,473,-
+Município,Boticas,2013,110,55,-
+Município,Chaves,2013,191,148,19.8
+Município,Montalegre,2013,239,74,8.6
+Município,Ribeira de Pena,2013,78,90,-
+Município,Valpaços,2013,127,54,0.9
+Município,Vila Pouca de Aguiar,2013,121,52,-
+NUTS III,Tâmega e Sousa,2013,3754,1598,-
+Município,Amarante,2013,562,181,41.3
+Município,Baião,2013,220,166,-
+Município,Castelo de Paiva,2013,74,126,-
+Município,Celorico de Basto,2013,282,108,-
+Município,Cinfães,2013,262,184,-
+Município,Felgueiras,2013,402,212,51.6
+Município,Lousada,2013,348,74,-
+Município,Marco de Canaveses,2013,446,134,-
+Município,Paços de Ferreira,2013,400,156,-
+Município,Penafiel,2013,670,205,13.3
+Município,Resende,2013,88,52,-
+NUTS III,Douro,2013,964,1305,-
+Município,Alijó,2013,71,162,29.7
+Município,Armamar,2013,20,56,-
+Município,Carrazeda de Ansiães,2013,44,48,-
+Município,Freixo de Espada à Cinta,2013,29,62,-
+Município,Lamego,2013,153,62,29.1
+Município,Mesão Frio,2013,19,68,-
+Município,Moimenta da Beira,2013,80,80,-
+Município,Murça,2013,46,33,-
+Município,Penedono,2013,18,39,-
+Município,Peso da Régua,2013,45,43,23.9
+Município,Sabrosa,2013,20,60,-
+Município,Santa Marta de Penaguião,2013,31,79,-
+Município,São João da Pesqueira,2013,32,51,-
+Município,Sernancelhe,2013,60,42,-
+Município,Tabuaço,2013,23,61,-
+Município,Tarouca,2013,24,98,-
+Município,Torre de Moncorvo,2013,42,55,-
+Município,Vila Nova de Foz Côa,2013,52,33,-
+Município,Vila Real,2013,155,173,17.7
+NUTS III,Terras de Trás-os-Montes,2013,390,703,-
+Município,Alfândega da Fé,2013,25,60,-
+Município,Bragança,2013,74,112,18.8
+Município,Macedo de Cavaleiros,2013,60,80,-
+Município,Miranda do Douro,2013,22,126,23.7
+Município,Mirandela,2013,80,66,4.7
+Município,Mogadouro,2013,26,85,-
+Município,Vila Flor,2013,28,41,-
+Município,Vimioso,2013,19,59,-
+Município,Vinhais,2013,56,74,-
+NUTS II,Centro,2013,5479,9506,35.4
+NUTS III,Oeste,2013,828,1115,38.2
+Município,Alcobaça,2013,92,233,43
+Município,Alenquer,2013,117,149,-
+Município,Arruda dos Vinhos,2013,67,57,-
+Município,Bombarral,2013,32,63,9.9
+Município,Cadaval,2013,41,46,-
+Município,Caldas da Rainha,2013,76,99,31.9
+Município,Lourinhã,2013,59,66,-
+Município,Nazaré,2013,14,48,44.7
+Município,Óbidos,2013,38,58,59.2
+Município,Peniche,2013,51,59,23.1
+Município,Sobral de Monte Agraço,2013,41,62,-
+Município,Torres Vedras,2013,200,175,21.6
+NUTS III,Região de Aveiro,2013,797,1002,-
+Município,Águeda,2013,224,109,28.8
+Município,Albergaria-a-Velha,2013,99,83,0.3
+Município,Anadia,2013,41,50,29.2
+Município,Aveiro,2013,88,195,51.5
+Município,Estarreja,2013,38,72,-
+Município,Ílhavo,2013,33,93,31
+Município,Murtosa,2013,10,73,36.2
+Município,Oliveira do Bairro,2013,43,45,-
+Município,Ovar,2013,63,155,19.8
+Município,Sever do Vouga,2013,119,48,-
+Município,Vagos,2013,39,79,-
+NUTS III,Região de Coimbra,2013,901,1910,-
+Município,Arganil,2013,57,96,-
+Município,Cantanhede,2013,69,98,-
+Município,Coimbra,2013,88,248,49
+Município,Condeixa-a-Nova,2013,22,76,-
+Município,Figueira da Foz,2013,89,101,29.9
+Município,Góis,2013,18,52,-
+Município,Lousã,2013,25,143,-
+Município,Mealhada,2013,31,106,29.5
+Município,Mira,2013,36,39,28.9
+Município,Miranda do Corvo,2013,43,105,-
+Município,Montemor-o-Velho,2013,56,87,-
+Município,Mortágua,2013,13,68,7.8
+Município,Oliveira do Hospital,2013,81,131,-
+Município,Pampilhosa da Serra,2013,28,84,-
+Município,Penacova,2013,115,117,-
+Município,Penela,2013,24,82,-
+Município,Soure,2013,32,111,-
+Município,Tábua,2013,46,113,-
+Município,Vila Nova de Poiares,2013,28,53,-
+NUTS III,Região de Leiria,2013,414,1176,-
+Município,Alvaiázere,2013,20,82,-
+Município,Ansião,2013,16,73,-
+Município,Batalha,2013,10,107,42.5
+Município,Castanheira de Pêra,2013,13,46,-
+Município,Figueiró dos Vinhos,2013,20,76,-
+Município,Leiria,2013,135,328,25.5
+Município,Marinha Grande,2013,34,113,35.5
+Município,Pedrógão Grande,2013,29,70,0
+Município,Pombal,2013,87,155,-
+Município,Porto de Mós,2013,50,126,-
+NUTS III,Viseu Dão Lafões,2013,1182,1188,-
+Município,Aguiar da Beira,2013,24,37,-
+Município,Carregal do Sal,2013,30,110,-
+Município,Castro Daire,2013,179,117,-
+Município,Mangualde,2013,74,87,8.5
+Município,Nelas,2013,77,138,16.1
+Município,Oliveira de Frades,2013,74,35,-
+Município,Penalva do Castelo,2013,34,53,-
+Município,Santa Comba Dão,2013,22,72,-
+Município,São Pedro do Sul,2013,38,119,2
+Município,Sátão,2013,38,47,-
+Município,Tondela,2013,166,123,-
+Município,Vila Nova de Paiva,2013,94,67,-
+Município,Viseu,2013,267,114,27.5
+Município,Vouzela,2013,65,69,-
+NUTS III,Beira Baixa,2013,191,540,-
+Município,Castelo Branco,2013,70,125,21.9
+Município,Idanha-a-Nova,2013,53,92,24.2
+Município,Oleiros,2013,7,113,-
+Município,Penamacor,2013,23,88,-
+Município,Proença-a-Nova,2013,18,76,-
+Município,Vila Velha de Ródão,2013,20,46,-
+NUTS III,Médio Tejo,2013,443,1149,-
+Município,Abrantes,2013,63,55,11
+Município,Alcanena,2013,25,79,19.3
+Município,Constância,2013,9,72,6.2
+Município,Entroncamento,2013,11,49,7.3
+Município,Ferreira do Zêzere,2013,11,56,-
+Município,Mação,2013,15,54,-
+Município,Ourém,2013,57,232,61.9
+Município,Sardoal,2013,8,73,-
+Município,Sertã,2013,51,189,-
+Município,Tomar,2013,104,77,43.3
+Município,Torres Novas,2013,65,104,-
+Município,Vila de Rei,2013,6,50,-
+Município,Vila Nova da Barquinha,2013,18,59,-
+NUTS III,Beiras e Serra da Estrela,2013,723,1426,-
+Município,Almeida,2013,20,44,30.7
+Município,Belmonte,2013,18,55,-
+Município,Celorico da Beira,2013,24,63,10.1
+Município,Covilhã,2013,93,94,8.8
+Município,Figueira de Castelo Rodrigo,2013,57,33,-
+Município,Fornos de Algodres,2013,17,46,-
+Município,Fundão,2013,112,125,-
+Município,Gouveia,2013,67,207,-
+Município,Guarda,2013,47,187,22.5
+Município,Manteigas,2013,1,52,41.8
+Município,Mêda,2013,54,59,-
+Município,Pinhel,2013,48,54,-
+Município,Sabugal,2013,44,103,-
+Município,Seia,2013,60,179,8.1
+Município,Trancoso,2013,61,125,-
+NUTS II,Área Metropolitana de Lisboa,2013,1895,4855,67.7
+NUTS III,Área Metropolitana de Lisboa,2013,1895,4855,-
+Município,Alcochete,2013,26,43,41.3
+Município,Almada,2013,100,258,53.1
+Município,Amadora,2013,64,88,21.1
+Município,Barreiro,2013,58,164,-
+Município,Cascais,2013,73,339,71.7
+Município,Lisboa,2013,124,1000,73.4
+Município,Loures,2013,134,397,-
+Município,Mafra,2013,118,134,48.1
+Município,Moita,2013,108,57,-
+Município,Montijo,2013,100,99,44.6
+Município,Odivelas,2013,159,274,-
+Município,Oeiras,2013,76,327,40.6
+Município,Palmela,2013,152,164,38.6
+Município,Seixal,2013,109,146,32.1
+Município,Sesimbra,2013,46,156,44
+Município,Setúbal,2013,88,244,32.4
+Município,Sintra,2013,279,650,56.3
+Município,Vila Franca de Xira,2013,81,315,-
+NUTS II,Alentejo,2013,1505,3086,30.5
+NUTS III,Alentejo Litoral,2013,162,411,19.9
+Município,Alcácer do Sal,2013,14,74,26
+Município,Grândola,2013,30,39,15.5
+Município,Odemira,2013,52,95,23.9
+Município,Santiago do Cacém,2013,40,140,19
+Município,Sines,2013,26,63,26.1
+NUTS III,Baixo Alentejo,2013,354,569,19.5
+Município,Aljustrel,2013,30,42,-
+Município,Almodôvar,2013,14,45,-
+Município,Alvito,2013,0,30,-
+Município,Barrancos,2013,2,32,7.6
+Município,Beja,2013,119,82,22.7
+Município,Castro Verde,2013,20,38,-
+Município,Cuba,2013,3,45,-
+Município,Ferreira do Alentejo,2013,19,37,-
+Município,Mértola,2013,15,33,-
+Município,Moura,2013,60,58,5.3
+Município,Ourique,2013,14,45,-
+Município,Serpa,2013,27,40,-
+Município,Vidigueira,2013,31,42,-
+NUTS III,Lezíria do Tejo,2013,535,768,23.5
+Município,Almeirim,2013,30,55,-
+Município,Alpiarça,2013,19,28,-
+Município,Azambuja,2013,93,68,-
+Município,Benavente,2013,53,125,-
+Município,Cartaxo,2013,32,57,-
+Município,Chamusca,2013,48,38,-
+Município,Coruche,2013,49,51,-
+Município,Golegã,2013,5,45,-
+Município,Rio Maior,2013,40,56,-
+Município,Salvaterra de Magos,2013,30,41,-
+Município,Santarém,2013,136,204,28.3
+NUTS III,Alto Alentejo,2013,256,693,-
+Município,Alter do Chão,2013,9,44,-
+Município,Arronches,2013,8,29,-
+Município,Avis,2013,12,33,-
+Município,Campo Maior,2013,31,30,-
+Município,Castelo de Vide,2013,6,43,16
+Município,Crato,2013,7,35,-
+Município,Elvas,2013,67,49,17
+Município,Fronteira,2013,11,30,-
+Município,Gavião,2013,16,66,-
+Município,Marvão,2013,10,34,43.8
+Município,Monforte,2013,5,33,-
+Município,Nisa,2013,26,45,2.7
+Município,Ponte de Sor,2013,32,71,-
+Município,Portalegre,2013,12,102,21.5
+Município,Sousel,2013,4,49,-
+NUTS III,Alentejo Central,2013,198,645,-
+Município,Alandroal,2013,13,23,-
+Município,Arraiolos,2013,10,60,-
+Município,Borba,2013,6,48,-
+Município,Estremoz,2013,22,46,29.7
+Município,Évora,2013,56,36,50.8
+Município,Montemor-o-Novo,2013,22,84,-
+Município,Mora,2013,2,42,-
+Município,Mourão,2013,8,29,-
+Município,Portel,2013,7,40,-
+Município,Redondo,2013,7,30,37.4
+Município,Reguengos de Monsaraz,2013,23,64,-
+Município,Vendas Novas,2013,8,40,-
+Município,Viana do Alentejo,2013,9,61,-
+Município,Vila Viçosa,2013,5,42,-
+NUTS II,Algarve,2013,453,1059,70.5
+NUTS III,Algarve,2013,453,1059,70.5
+Município,Albufeira,2013,40,71,75.9
+Município,Alcoutim,2013,11,37,-
+Município,Aljezur,2013,7,73,-
+Município,Castro Marim,2013,11,0,46.9
+Município,Faro,2013,32,113,67
+Município,Lagoa,2013,25,81,74.7
+Município,Lagos,2013,24,66,77.1
+Município,Loulé,2013,76,82,66.9
+Município,Monchique,2013,9,61,47.8
+Município,Olhão,2013,33,84,61.3
+Município,Portimão,2013,33,73,68.4
+Município,São Brás de Alportel,2013,11,58,-
+Município,Silves,2013,78,118,67.1
+Município,Tavira,2013,42,44,58.4
+Município,Vila do Bispo,2013,13,39,78.8
+Município,Vila Real de Santo António,2013,8,59,54.2
+NUTS I,Continente,2014,9388,28509,56.1
+NUTS II,Norte,2014,4045,9912,43.9
+NUTS III,Alto Minho,2014,382,603,29.5
+Município,Arcos de Valdevez,2014,81,39,22.9
+Município,Caminha,2014,29,73,27.8
+Município,Melgaço,2014,4,40,12.3
+Município,Monção,2014,28,49,40.5
+Município,Paredes de Coura,2014,16,42,-
+Município,Ponte da Barca,2014,36,43,-
+Município,Ponte de Lima,2014,80,92,29.3
+Município,Valença,2014,28,47,26.9
+Município,Viana do Castelo,2014,76,127,38.1
+Município,Vila Nova de Cerveira,2014,4,51,18.3
+NUTS III,Cávado,2014,224,762,29.2
+Município,Amares,2014,22,56,31.6
+Município,Barcelos,2014,58,308,-
+Município,Braga,2014,36,149,30.2
+Município,Esposende,2014,12,122,39.6
+Município,Terras de Bouro,2014,23,65,6.1
+Município,Vila Verde,2014,73,62,-
+NUTS III,Ave,2014,391,933,34.4
+Município,Cabeceiras de Basto,2014,46,51,-
+Município,Fafe,2014,49,82,16.5
+Município,Guimarães,2014,114,199,41.4
+Município,Mondim de Basto,2014,13,54,-
+Município,Póvoa de Lanhoso,2014,66,81,-
+Município,Vieira do Minho,2014,32,54,32.6
+Município,Vila Nova de Famalicão,2014,57,323,18.1
+Município,Vizela,2014,14,89,-
+NUTS III,Área Metropolitana do Porto,2014,1116,3478,52.3
+Município,Arouca,2014,41,69,-
+Município,Espinho,2014,19,108,45.9
+Município,Gondomar,2014,165,303,-
+Município,Maia,2014,50,187,51.3
+Município,Matosinhos,2014,35,278,23.6
+Município,Oliveira de Azeméis,2014,66,132,-
+Município,Paredes,2014,159,438,20.8
+Município,Porto,2014,0,372,67.6
+Município,Póvoa de Varzim,2014,26,77,38.7
+Município,Santa Maria da Feira,2014,84,199,25.2
+Município,Santo Tirso,2014,77,254,-
+Município,São João da Madeira,2014,35,92,39.6
+Município,Trofa,2014,39,91,-
+Município,Vale de Cambra,2014,27,56,10.7
+Município,Valongo,2014,116,184,7.1
+Município,Vila do Conde,2014,64,92,39.3
+Município,Vila Nova de Gaia,2014,113,546,32.8
+NUTS III,Alto Tâmega,2014,377,461,16.9
+Município,Boticas,2014,38,52,-
+Município,Chaves,2014,58,136,20.9
+Município,Montalegre,2014,91,74,1.1
+Município,Ribeira de Pena,2014,39,87,-
+Município,Valpaços,2014,85,61,-
+Município,Vila Pouca de Aguiar,2014,66,51,10.4
+NUTS III,Tâmega e Sousa,2014,831,1658,23.1
+Município,Amarante,2014,111,200,35.8
+Município,Baião,2014,44,178,-
+Município,Castelo de Paiva,2014,21,111,-
+Município,Celorico de Basto,2014,55,102,-
+Município,Cinfães,2014,73,200,-
+Município,Felgueiras,2014,96,200,-
+Município,Lousada,2014,80,78,-
+Município,Marco de Canaveses,2014,96,145,-
+Município,Paços de Ferreira,2014,46,168,-
+Município,Penafiel,2014,186,214,17.2
+Município,Resende,2014,23,62,-
+NUTS III,Douro,2014,439,1315,25.3
+Município,Alijó,2014,30,153,38
+Município,Armamar,2014,11,52,-
+Município,Carrazeda de Ansiães,2014,28,48,-
+Município,Freixo de Espada à Cinta,2014,41,61,-
+Município,Lamego,2014,37,67,31.8
+Município,Mesão Frio,2014,6,62,-
+Município,Moimenta da Beira,2014,21,78,-
+Município,Murça,2014,15,33,-
+Município,Penedono,2014,14,44,-
+Município,Peso da Régua,2014,5,48,24.5
+Município,Sabrosa,2014,17,51,-
+Município,Santa Marta de Penaguião,2014,9,80,-
+Município,São João da Pesqueira,2014,32,49,-
+Município,Sernancelhe,2014,23,43,-
+Município,Tabuaço,2014,15,83,-
+Município,Tarouca,2014,10,95,-
+Município,Torre de Moncorvo,2014,60,61,-
+Município,Vila Nova de Foz Côa,2014,34,33,2.1
+Município,Vila Real,2014,31,174,19.2
+NUTS III,Terras de Trás-os-Montes,2014,285,702,15.3
+Município,Alfândega da Fé,2014,20,56,2.1
+Município,Bragança,2014,56,108,21.4
+Município,Macedo de Cavaleiros,2014,38,101,24.2
+Município,Miranda do Douro,2014,10,116,18.9
+Município,Mirandela,2014,54,69,4.2
+Município,Mogadouro,2014,23,77,3.2
+Município,Vila Flor,2014,31,45,-
+Município,Vimioso,2014,22,56,-
+Município,Vinhais,2014,31,74,-
+NUTS II,Centro,2014,2694,9487,36.1
+NUTS III,Oeste,2014,517,1089,38.3
+Município,Alcobaça,2014,39,223,34.8
+Município,Alenquer,2014,77,136,-
+Município,Arruda dos Vinhos,2014,27,60,-
+Município,Bombarral,2014,29,65,-
+Município,Cadaval,2014,24,49,-
+Município,Caldas da Rainha,2014,49,90,30.9
+Município,Lourinhã,2014,37,68,23.3
+Município,Nazaré,2014,7,49,47.2
+Município,Óbidos,2014,63,57,56.8
+Município,Peniche,2014,46,60,28.4
+Município,Sobral de Monte Agraço,2014,16,60,-
+Município,Torres Vedras,2014,103,172,26.3
+NUTS III,Região de Aveiro,2014,277,1004,39
+Município,Águeda,2014,54,119,26.7
+Município,Albergaria-a-Velha,2014,50,80,2.9
+Município,Anadia,2014,24,48,32.3
+Município,Aveiro,2014,40,203,52.9
+Município,Estarreja,2014,24,77,-
+Município,Ílhavo,2014,11,89,34.5
+Município,Murtosa,2014,9,65,37.3
+Município,Oliveira do Bairro,2014,14,50,-
+Município,Ovar,2014,26,148,24.8
+Município,Sever do Vouga,2014,12,49,-
+Município,Vagos,2014,13,76,-
+NUTS III,Região de Coimbra,2014,396,1918,40.6
+Município,Arganil,2014,24,95,5.7
+Município,Cantanhede,2014,32,100,-
+Município,Coimbra,2014,74,243,52.1
+Município,Condeixa-a-Nova,2014,13,78,-
+Município,Figueira da Foz,2014,31,105,31.4
+Município,Góis,2014,12,50,-
+Município,Lousã,2014,10,140,23.9
+Município,Mealhada,2014,21,101,25.1
+Município,Mira,2014,11,39,25.2
+Município,Miranda do Corvo,2014,13,127,-
+Município,Montemor-o-Velho,2014,14,79,-
+Município,Mortágua,2014,7,60,8.8
+Município,Oliveira do Hospital,2014,70,128,52
+Município,Pampilhosa da Serra,2014,7,103,-
+Município,Penacova,2014,15,116,-
+Município,Penela,2014,9,78,-
+Município,Soure,2014,18,100,-
+Município,Tábua,2014,11,122,-
+Município,Vila Nova de Poiares,2014,4,54,-
+NUTS III,Região de Leiria,2014,211,1202,28.6
+Município,Alvaiázere,2014,15,82,-
+Município,Ansião,2014,12,70,-
+Município,Batalha,2014,4,99,42.1
+Município,Castanheira de Pêra,2014,10,47,-
+Município,Figueiró dos Vinhos,2014,13,72,-
+Município,Leiria,2014,47,370,26.4
+Município,Marinha Grande,2014,16,112,36.2
+Município,Pedrógão Grande,2014,21,68,-
+Município,Pombal,2014,53,141,16.7
+Município,Porto de Mós,2014,20,141,1.5
+NUTS III,Viseu Dão Lafões,2014,372,1173,16.4
+Município,Aguiar da Beira,2014,11,33,-
+Município,Carregal do Sal,2014,24,109,-
+Município,Castro Daire,2014,35,115,-
+Município,Mangualde,2014,39,84,10.4
+Município,Nelas,2014,27,144,15
+Município,Oliveira de Frades,2014,18,34,20.3
+Município,Penalva do Castelo,2014,4,54,-
+Município,Santa Comba Dão,2014,10,66,0
+Município,São Pedro do Sul,2014,15,121,1.3
+Município,Sátão,2014,13,54,-
+Município,Tondela,2014,39,125,10.1
+Município,Vila Nova de Paiva,2014,14,66,-
+Município,Viseu,2014,111,105,26.3
+Município,Vouzela,2014,12,63,-
+NUTS III,Beira Baixa,2014,138,530,21.3
+Município,Castelo Branco,2014,63,128,23.5
+Município,Idanha-a-Nova,2014,36,92,27.1
+Município,Oleiros,2014,9,108,-
+Município,Penamacor,2014,10,82,-
+Município,Proença-a-Nova,2014,8,74,-
+Município,Vila Velha de Ródão,2014,12,46,22.6
+NUTS III,Médio Tejo,2014,313,1164,53.6
+Município,Abrantes,2014,34,59,6.3
+Município,Alcanena,2014,26,80,-
+Município,Constância,2014,9,73,-
+Município,Entroncamento,2014,6,48,-
+Município,Ferreira do Zêzere,2014,6,53,-
+Município,Mação,2014,12,54,0
+Município,Ourém,2014,45,262,61.5
+Município,Sardoal,2014,5,62,-
+Município,Sertã,2014,42,185,3.9
+Município,Tomar,2014,79,75,44
+Município,Torres Novas,2014,38,105,-
+Município,Vila de Rei,2014,1,49,-
+Município,Vila Nova da Barquinha,2014,10,59,-
+NUTS III,Beiras e Serra da Estrela,2014,470,1407,14
+Município,Almeida,2014,15,43,32
+Município,Belmonte,2014,11,52,-
+Município,Celorico da Beira,2014,16,63,10.6
+Município,Covilhã,2014,53,93,8.3
+Município,Figueira de Castelo Rodrigo,2014,54,31,13.2
+Município,Fornos de Algodres,2014,12,48,-
+Município,Fundão,2014,27,127,7.8
+Município,Gouveia,2014,38,199,12.9
+Município,Guarda,2014,35,184,21.7
+Município,Manteigas,2014,1,49,33.3
+Município,Mêda,2014,39,55,-
+Município,Pinhel,2014,37,52,-
+Município,Sabugal,2014,34,105,0
+Município,Seia,2014,52,177,8
+Município,Trancoso,2014,46,129,-
+NUTS II,Área Metropolitana de Lisboa,2014,1149,4897,68
+NUTS III,Área Metropolitana de Lisboa,2014,1149,4897,68
+Município,Alcochete,2014,16,39,29.9
+Município,Almada,2014,107,245,43.9
+Município,Amadora,2014,28,79,26.9
+Município,Barreiro,2014,23,202,-
+Município,Cascais,2014,63,339,71
+Município,Lisboa,2014,129,960,74.4
+Município,Loures,2014,74,400,42.7
+Município,Mafra,2014,28,159,53.7
+Município,Moita,2014,60,60,-
+Município,Montijo,2014,78,95,21.2
+Município,Odivelas,2014,70,271,-
+Município,Oeiras,2014,47,343,42.7
+Município,Palmela,2014,73,182,36.7
+Município,Seixal,2014,57,147,-
+Município,Sesimbra,2014,26,166,45.9
+Município,Setúbal,2014,45,235,32.8
+Município,Sintra,2014,168,660,50.8
+Município,Vila Franca de Xira,2014,57,315,-
+NUTS II,Alentejo,2014,1155,3171,31
+NUTS III,Alentejo Litoral,2014,122,403,22.7
+Município,Alcácer do Sal,2014,20,75,26.5
+Município,Grândola,2014,24,45,17.8
+Município,Odemira,2014,39,91,27.2
+Município,Santiago do Cacém,2014,28,137,19.7
+Município,Sines,2014,11,55,31.1
+NUTS III,Baixo Alentejo,2014,271,566,18.5
+Município,Aljustrel,2014,18,44,18.3
+Município,Almodôvar,2014,9,53,-
+Município,Alvito,2014,3,30,-
+Município,Barrancos,2014,3,29,-
+Município,Beja,2014,68,84,24.2
+Município,Castro Verde,2014,10,38,-
+Município,Cuba,2014,7,43,-
+Município,Ferreira do Alentejo,2014,12,31,9
+Município,Mértola,2014,17,33,20.5
+Município,Moura,2014,58,56,6.6
+Município,Ourique,2014,19,45,-
+Município,Serpa,2014,29,43,2
+Município,Vidigueira,2014,18,37,-
+NUTS III,Lezíria do Tejo,2014,375,814,23.8
+Município,Almeirim,2014,30,56,17.8
+Município,Alpiarça,2014,18,31,-
+Município,Azambuja,2014,47,81,20.1
+Município,Benavente,2014,34,121,26.5
+Município,Cartaxo,2014,33,55,-
+Município,Chamusca,2014,15,38,-
+Município,Coruche,2014,34,57,-
+Município,Golegã,2014,4,48,-
+Município,Rio Maior,2014,20,48,-
+Município,Salvaterra de Magos,2014,37,53,-
+Município,Santarém,2014,103,226,29.8
+NUTS III,Alto Alentejo,2014,208,715,22.1
+Município,Alter do Chão,2014,5,39,10.8
+Município,Arronches,2014,10,29,-
+Município,Avis,2014,9,29,22.8
+Município,Campo Maior,2014,27,32,-
+Município,Castelo de Vide,2014,3,40,16.5
+Município,Crato,2014,5,44,-
+Município,Elvas,2014,57,68,28.7
+Município,Fronteira,2014,4,29,-
+Município,Gavião,2014,12,62,-
+Município,Marvão,2014,9,34,45.5
+Município,Monforte,2014,9,35,0
+Município,Nisa,2014,17,46,-
+Município,Ponte de Sor,2014,13,69,-
+Município,Portalegre,2014,21,114,21.4
+Município,Sousel,2014,7,45,-
+NUTS III,Alentejo Central,2014,179,673,45.6
+Município,Alandroal,2014,14,23,-
+Município,Arraiolos,2014,13,62,-
+Município,Borba,2014,8,49,5
+Município,Estremoz,2014,25,48,28.2
+Município,Évora,2014,47,64,52.8
+Município,Montemor-o-Novo,2014,14,83,25.5
+Município,Mora,2014,9,38,-
+Município,Mourão,2014,6,29,-
+Município,Portel,2014,8,36,0
+Município,Redondo,2014,6,25,-
+Município,Reguengos de Monsaraz,2014,16,68,7.6
+Município,Vendas Novas,2014,7,43,-
+Município,Viana do Alentejo,2014,1,61,-
+Município,Vila Viçosa,2014,5,44,26
+NUTS II,Algarve,2014,345,1042,68.7
+NUTS III,Algarve,2014,345,1042,68.7
+Município,Albufeira,2014,34,64,72.6
+Município,Alcoutim,2014,11,37,-
+Município,Aljezur,2014,6,66,48.4
+Município,Castro Marim,2014,15,0,47.5
+Município,Faro,2014,32,108,67.5
+Município,Lagoa,2014,16,83,73.8
+Município,Lagos,2014,20,63,79.4
+Município,Loulé,2014,63,84,65.3
+Município,Monchique,2014,18,58,51.3
+Município,Olhão,2014,22,71,64.1
+Município,Portimão,2014,16,81,65.5
+Município,São Brás de Alportel,2014,5,71,-
+Município,Silves,2014,46,114,65.5
+Município,Tavira,2014,27,43,60.9
+Município,Vila do Bispo,2014,5,42,79.1
+Município,Vila Real de Santo António,2014,9,57,50.7
+NUTS I,Continente,2015,19643,27427,56.9
+NUTS II,Norte,2015,10671,9646,45.9
+NUTS III,Alto Minho,2015,1321,566,30.6
+Município,Arcos de Valdevez,2015,302,37,13.5
+Município,Caminha,2015,94,66,31.4
+Município,Melgaço,2015,17,41,17.2
+Município,Monção,2015,95,42,24.6
+Município,Paredes de Coura,2015,62,37,42.6
+Município,Ponte da Barca,2015,173,38,15
+Município,Ponte de Lima,2015,267,90,32.6
+Município,Valença,2015,57,42,26.7
+Município,Viana do Castelo,2015,221,125,40.5
+Município,Vila Nova de Cerveira,2015,33,48,20.7
+NUTS III,Cávado,2015,647,718,31.9
+Município,Amares,2015,52,58,33.3
+Município,Barcelos,2015,111,291,54.8
+Município,Braga,2015,166,137,33
+Município,Esposende,2015,37,111,44.2
+Município,Terras de Bouro,2015,86,67,6.6
+Município,Vila Verde,2015,195,54,16.2
+NUTS III,Ave,2015,1218,919,35.5
+Município,Cabeceiras de Basto,2015,120,51,-
+Município,Fafe,2015,191,85,18.8
+Município,Guimarães,2015,315,191,42.4
+Município,Mondim de Basto,2015,31,50,-
+Município,Póvoa de Lanhoso,2015,215,72,0
+Município,Vieira do Minho,2015,180,46,36.4
+Município,Vila Nova de Famalicão,2015,121,329,18.7
+Município,Vizela,2015,45,95,-
+NUTS III,Área Metropolitana do Porto,2015,2579,3474,54.4
+Município,Arouca,2015,98,81,8
+Município,Espinho,2015,55,97,46.7
+Município,Gondomar,2015,348,343,38.3
+Município,Maia,2015,215,196,50.9
+Município,Matosinhos,2015,94,220,26
+Município,Oliveira de Azeméis,2015,113,127,-
+Município,Paredes,2015,401,444,25.4
+Município,Porto,2015,1,400,69.2
+Município,Póvoa de Varzim,2015,65,70,41.3
+Município,Santa Maria da Feira,2015,188,195,29
+Município,Santo Tirso,2015,301,254,14
+Município,São João da Madeira,2015,10,83,39.8
+Município,Trofa,2015,95,75,-
+Município,Vale de Cambra,2015,44,53,17
+Município,Valongo,2015,131,177,10.7
+Município,Vila do Conde,2015,136,102,40.1
+Município,Vila Nova de Gaia,2015,284,557,37.1
+NUTS III,Alto Tâmega,2015,977,449,19
+Município,Boticas,2015,98,48,-
+Município,Chaves,2015,181,118,21.8
+Município,Montalegre,2015,321,85,4.1
+Município,Ribeira de Pena,2015,88,90,-
+Município,Valpaços,2015,175,54,7.5
+Município,Vila Pouca de Aguiar,2015,114,54,18.7
+NUTS III,Tâmega e Sousa,2015,2594,1607,23.5
+Município,Amarante,2015,323,214,33.7
+Município,Baião,2015,136,175,22.2
+Município,Castelo de Paiva,2015,30,103,22.5
+Município,Celorico de Basto,2015,216,94,-
+Município,Cinfães,2015,297,199,26.6
+Município,Felgueiras,2015,309,201,49.6
+Município,Lousada,2015,240,81,16.3
+Município,Marco de Canaveses,2015,248,137,4.2
+Município,Paços de Ferreira,2015,220,162,16.3
+Município,Penafiel,2015,444,195,19.2
+Município,Resende,2015,131,46,8.9
+NUTS III,Douro,2015,856,1225,28.5
+Município,Alijó,2015,64,154,42.8
+Município,Armamar,2015,20,45,30.8
+Município,Carrazeda de Ansiães,2015,37,50,10.8
+Município,Freixo de Espada à Cinta,2015,95,54,0
+Município,Lamego,2015,68,64,37.5
+Município,Mesão Frio,2015,10,56,-
+Município,Moimenta da Beira,2015,45,74,6.3
+Município,Murça,2015,40,34,-
+Município,Penedono,2015,15,34,-
+Município,Peso da Régua,2015,34,46,25.1
+Município,Sabrosa,2015,24,49,0
+Município,Santa Marta de Penaguião,2015,22,77,0
+Município,São João da Pesqueira,2015,44,47,-
+Município,Sernancelhe,2015,42,44,-
+Município,Tabuaço,2015,14,54,14.4
+Município,Tarouca,2015,38,93,-
+Município,Torre de Moncorvo,2015,75,59,0
+Município,Vila Nova de Foz Côa,2015,55,28,3
+Município,Vila Real,2015,114,163,20.6
+NUTS III,Terras de Trás-os-Montes,2015,479,688,16.5
+Município,Alfândega da Fé,2015,21,60,3.9
+Município,Bragança,2015,94,99,21.7
+Município,Macedo de Cavaleiros,2015,61,99,23.3
+Município,Miranda do Douro,2015,23,103,16.4
+Município,Mirandela,2015,79,81,8.6
+Município,Mogadouro,2015,34,77,0
+Município,Vila Flor,2015,27,41,1.4
+Município,Vimioso,2015,32,53,3
+Município,Vinhais,2015,108,75,0
+NUTS II,Centro,2015,4987,8988,37.3
+NUTS III,Oeste,2015,993,1048,38
+Município,Alcobaça,2015,109,210,32.9
+Município,Alenquer,2015,159,139,-
+Município,Arruda dos Vinhos,2015,67,48,10.4
+Município,Bombarral,2015,34,65,-
+Município,Cadaval,2015,53,49,-
+Município,Caldas da Rainha,2015,133,90,29.8
+Município,Lourinhã,2015,86,66,16.6
+Município,Nazaré,2015,18,47,51.3
+Município,Óbidos,2015,63,57,50.6
+Município,Peniche,2015,42,52,32.2
+Município,Sobral de Monte Agraço,2015,53,59,-
+Município,Torres Vedras,2015,176,166,29.5
+NUTS III,Região de Aveiro,2015,656,992,40.2
+Município,Águeda,2015,87,110,31.5
+Município,Albergaria-a-Velha,2015,64,70,2.5
+Município,Anadia,2015,37,50,38.2
+Município,Aveiro,2015,140,196,50.6
+Município,Estarreja,2015,62,79,-
+Município,Ílhavo,2015,52,101,35.2
+Município,Murtosa,2015,12,63,39.3
+Município,Oliveira do Bairro,2015,43,50,-
+Município,Ovar,2015,60,153,27.2
+Município,Sever do Vouga,2015,69,48,25.1
+Município,Vagos,2015,30,72,-
+NUTS III,Região de Coimbra,2015,652,1804,41.5
+Município,Arganil,2015,48,90,7.1
+Município,Cantanhede,2015,38,89,46.6
+Município,Coimbra,2015,111,231,55.5
+Município,Condeixa-a-Nova,2015,28,77,57.3
+Município,Figueira da Foz,2015,48,98,29.9
+Município,Góis,2015,15,45,5.4
+Município,Lousã,2015,17,131,24.3
+Município,Mealhada,2015,30,96,25.2
+Município,Mira,2015,18,38,28.1
+Município,Miranda do Corvo,2015,33,118,0.6
+Município,Montemor-o-Velho,2015,33,76,8.2
+Município,Mortágua,2015,8,55,8.3
+Município,Oliveira do Hospital,2015,78,116,49.4
+Município,Pampilhosa da Serra,2015,11,83,8.9
+Município,Penacova,2015,28,111,2.2
+Município,Penela,2015,20,82,-
+Município,Soure,2015,31,98,-
+Município,Tábua,2015,43,117,-
+Município,Vila Nova de Poiares,2015,14,53,-
+NUTS III,Região de Leiria,2015,457,1102,29
+Município,Alvaiázere,2015,18,77,-
+Município,Ansião,2015,33,66,25.9
+Município,Batalha,2015,18,99,38.9
+Município,Castanheira de Pêra,2015,8,47,5.1
+Município,Figueiró dos Vinhos,2015,12,69,12.5
+Município,Leiria,2015,130,311,24.6
+Município,Marinha Grande,2015,23,111,41.8
+Município,Pedrógão Grande,2015,51,66,-
+Município,Pombal,2015,104,125,19.3
+Município,Porto de Mós,2015,60,131,1.2
+NUTS III,Viseu Dão Lafões,2015,704,1114,19.1
+Município,Aguiar da Beira,2015,8,33,18.6
+Município,Carregal do Sal,2015,16,105,0
+Município,Castro Daire,2015,109,115,1.4
+Município,Mangualde,2015,73,91,9.6
+Município,Nelas,2015,41,143,19.2
+Município,Oliveira de Frades,2015,56,38,18.4
+Município,Penalva do Castelo,2015,14,50,-
+Município,Santa Comba Dão,2015,14,60,-
+Município,São Pedro do Sul,2015,36,111,4.5
+Município,Sátão,2015,19,55,0
+Município,Tondela,2015,68,106,10.8
+Município,Vila Nova de Paiva,2015,54,59,19
+Município,Viseu,2015,175,88,26.7
+Município,Vouzela,2015,21,60,-
+NUTS III,Beira Baixa,2015,285,487,20.3
+Município,Castelo Branco,2015,132,116,23.3
+Município,Idanha-a-Nova,2015,61,86,21.5
+Município,Oleiros,2015,12,97,5
+Município,Penamacor,2015,32,72,-
+Município,Proença-a-Nova,2015,15,70,-
+Município,Vila Velha de Ródão,2015,33,46,-
+NUTS III,Médio Tejo,2015,541,1125,54.6
+Município,Abrantes,2015,80,52,4.3
+Município,Alcanena,2015,62,88,19.2
+Município,Constância,2015,20,73,-
+Município,Entroncamento,2015,19,46,-
+Município,Ferreira do Zêzere,2015,13,52,-
+Município,Mação,2015,25,54,-
+Município,Ourém,2015,78,253,61.6
+Município,Sardoal,2015,8,63,-
+Município,Sertã,2015,47,173,12.5
+Município,Tomar,2015,111,76,45.3
+Município,Torres Novas,2015,60,100,21.6
+Município,Vila de Rei,2015,6,47,24.3
+Município,Vila Nova da Barquinha,2015,12,48,0
+NUTS III,Beiras e Serra da Estrela,2015,699,1316,15.7
+Município,Almeida,2015,35,39,30.1
+Município,Belmonte,2015,23,48,43.4
+Município,Celorico da Beira,2015,25,60,12.6
+Município,Covilhã,2015,113,86,12.2
+Município,Figueira de Castelo Rodrigo,2015,53,28,17.5
+Município,Fornos de Algodres,2015,3,54,13.7
+Município,Fundão,2015,70,112,7.8
+Município,Gouveia,2015,63,183,16
+Município,Guarda,2015,58,172,22
+Município,Manteigas,2015,3,44,40.1
+Município,Mêda,2015,46,49,0
+Município,Pinhel,2015,30,54,0
+Município,Sabugal,2015,70,98,1.5
+Município,Seia,2015,67,164,10.5
+Município,Trancoso,2015,40,125,27.7
+NUTS II,Área Metropolitana de Lisboa,2015,1856,4751,68.7
+NUTS III,Área Metropolitana de Lisboa,2015,1856,4751,68.7
+Município,Alcochete,2015,30,52,35.2
+Município,Almada,2015,165,253,54.2
+Município,Amadora,2015,86,82,22.9
+Município,Barreiro,2015,67,165,-
+Município,Cascais,2015,81,327,71.8
+Município,Lisboa,2015,78,929,74.7
+Município,Loures,2015,157,371,50.4
+Município,Mafra,2015,95,164,0
+Município,Moita,2015,99,53,-
+Município,Montijo,2015,111,93,16
+Município,Odivelas,2015,99,265,-
+Município,Oeiras,2015,44,356,44.1
+Município,Palmela,2015,151,192,37.2
+Município,Seixal,2015,129,132,-
+Município,Sesimbra,2015,29,162,52.8
+Município,Setúbal,2015,87,242,32.3
+Município,Sintra,2015,267,624,54.5
+Município,Vila Franca de Xira,2015,81,289,50.5
+NUTS II,Alentejo,2015,1724,2998,31.8
+NUTS III,Alentejo Litoral,2015,205,383,23.7
+Município,Alcácer do Sal,2015,36,74,25.2
+Município,Grândola,2015,65,42,19
+Município,Odemira,2015,50,82,30.5
+Município,Santiago do Cacém,2015,37,131,21.6
+Município,Sines,2015,17,54,29.4
+NUTS III,Baixo Alentejo,2015,288,544,21.6
+Município,Aljustrel,2015,18,46,25.1
+Município,Almodôvar,2015,7,51,4.3
+Município,Alvito,2015,10,28,51
+Município,Barrancos,2015,4,30,-
+Município,Beja,2015,70,83,27.9
+Município,Castro Verde,2015,6,34,19
+Município,Cuba,2015,9,37,-
+Município,Ferreira do Alentejo,2015,16,27,23.4
+Município,Mértola,2015,20,37,24.6
+Município,Moura,2015,65,51,10.2
+Município,Ourique,2015,11,44,-
+Município,Serpa,2015,32,42,0.3
+Município,Vidigueira,2015,20,34,2.9
+NUTS III,Lezíria do Tejo,2015,665,765,21.9
+Município,Almeirim,2015,34,49,16.2
+Município,Alpiarça,2015,30,29,-
+Município,Azambuja,2015,94,86,15.4
+Município,Benavente,2015,80,109,20.4
+Município,Cartaxo,2015,42,65,-
+Município,Chamusca,2015,27,41,-
+Município,Coruche,2015,67,56,12.1
+Município,Golegã,2015,11,34,24.6
+Município,Rio Maior,2015,61,45,9.5
+Município,Salvaterra de Magos,2015,57,43,-
+Município,Santarém,2015,162,208,28
+NUTS III,Alto Alentejo,2015,316,664,22.1
+Município,Alter do Chão,2015,11,31,7.4
+Município,Arronches,2015,15,27,11.5
+Município,Avis,2015,14,31,23.2
+Município,Campo Maior,2015,34,31,12.1
+Município,Castelo de Vide,2015,8,39,18.5
+Município,Crato,2015,8,37,48
+Município,Elvas,2015,82,57,25
+Município,Fronteira,2015,6,28,-
+Município,Gavião,2015,10,66,-
+Município,Marvão,2015,18,30,44.5
+Município,Monforte,2015,7,35,-
+Município,Nisa,2015,21,40,13.3
+Município,Ponte de Sor,2015,43,68,9.4
+Município,Portalegre,2015,29,100,21.4
+Município,Sousel,2015,10,44,-
+NUTS III,Alentejo Central,2015,250,642,45.3
+Município,Alandroal,2015,13,26,0
+Município,Arraiolos,2015,18,60,48.7
+Município,Borba,2015,10,52,0
+Município,Estremoz,2015,24,49,31.4
+Município,Évora,2015,56,58,50.5
+Município,Montemor-o-Novo,2015,25,79,30.5
+Município,Mora,2015,12,37,8.2
+Município,Mourão,2015,10,27,-
+Município,Portel,2015,18,39,9.3
+Município,Redondo,2015,14,24,0
+Município,Reguengos de Monsaraz,2015,22,63,7.7
+Município,Vendas Novas,2015,19,45,24.8
+Município,Viana do Alentejo,2015,4,41,-
+Município,Vila Viçosa,2015,5,42,29.1
+NUTS II,Algarve,2015,405,1044,69.9
+NUTS III,Algarve,2015,405,1044,69.9
+Município,Albufeira,2015,31,70,74
+Município,Alcoutim,2015,12,36,-
+Município,Aljezur,2015,12,65,48.7
+Município,Castro Marim,2015,15,0,53.1
+Município,Faro,2015,44,93,65.6
+Município,Lagoa,2015,15,86,77.7
+Município,Lagos,2015,15,63,81.4
+Município,Loulé,2015,75,86,66.8
+Município,Monchique,2015,16,58,53.1
+Município,Olhão,2015,34,82,59.5
+Município,Portimão,2015,18,95,66.2
+Município,São Brás de Alportel,2015,11,64,-
+Município,Silves,2015,55,105,68.6
+Município,Tavira,2015,34,43,57.9
+Município,Vila do Bispo,2015,12,41,80.6
+Município,Vila Real de Santo António,2015,6,57,48.6
+NUTS I,Continente,2016,16104,26734,58.5
+NUTS II,Norte,2016,9521,9301,48.3
+NUTS III,Alto Minho,2016,1109,563,29.6
+Município,Arcos de Valdevez,2016,225,39,15.3
+Município,Caminha,2016,48,63,30
+Município,Melgaço,2016,27,42,19.9
+Município,Monção,2016,87,43,22.2
+Município,Paredes de Coura,2016,96,36,28.5
+Município,Ponte da Barca,2016,139,32,23.5
+Município,Ponte de Lima,2016,243,97,32
+Município,Valença,2016,77,45,27.2
+Município,Viana do Castelo,2016,149,120,40.8
+Município,Vila Nova de Cerveira,2016,18,46,17.9
+NUTS III,Cávado,2016,569,661,33.7
+Município,Amares,2016,50,56,36.1
+Município,Barcelos,2016,122,254,54.5
+Município,Braga,2016,135,130,35.2
+Município,Esposende,2016,21,109,52.5
+Município,Terras de Bouro,2016,59,65,6.2
+Município,Vila Verde,2016,182,47,24.8
+NUTS III,Ave,2016,1044,852,40
+Município,Cabeceiras de Basto,2016,116,49,-
+Município,Fafe,2016,187,81,24.1
+Município,Guimarães,2016,240,187,46.3
+Município,Mondim de Basto,2016,26,43,-
+Município,Póvoa de Lanhoso,2016,195,71,0
+Município,Vieira do Minho,2016,92,45,36.2
+Município,Vila Nova de Famalicão,2016,168,284,24.1
+Município,Vizela,2016,20,92,-
+NUTS III,Área Metropolitana do Porto,2016,2431,3378,57.2
+Município,Arouca,2016,58,77,6.6
+Município,Espinho,2016,26,82,51.8
+Município,Gondomar,2016,253,346,-
+Município,Maia,2016,146,175,54.6
+Município,Matosinhos,2016,60,233,29.1
+Município,Oliveira de Azeméis,2016,63,124,50.2
+Município,Paredes,2016,637,437,33.1
+Município,Porto,2016,0,385,71.8
+Município,Póvoa de Varzim,2016,39,76,43.4
+Município,Santa Maria da Feira,2016,118,184,32.8
+Município,Santo Tirso,2016,267,238,13.6
+Município,São João da Madeira,2016,2,80,30.1
+Município,Trofa,2016,118,61,-
+Município,Vale de Cambra,2016,31,51,20.4
+Município,Valongo,2016,200,181,12.3
+Município,Vila do Conde,2016,135,119,40.1
+Município,Vila Nova de Gaia,2016,278,529,40.9
+NUTS III,Alto Tâmega,2016,726,471,21.8
+Município,Boticas,2016,93,45,9.5
+Município,Chaves,2016,106,130,23.2
+Município,Montalegre,2016,292,85,12.2
+Município,Ribeira de Pena,2016,40,89,29.8
+Município,Valpaços,2016,107,50,18.9
+Município,Vila Pouca de Aguiar,2016,88,72,17.9
+NUTS III,Tâmega e Sousa,2016,2699,1529,22.8
+Município,Amarante,2016,273,202,38.1
+Município,Baião,2016,140,164,20.9
+Município,Castelo de Paiva,2016,33,91,19.9
+Município,Celorico de Basto,2016,172,84,-
+Município,Cinfães,2016,247,191,27.9
+Município,Felgueiras,2016,365,191,50.5
+Município,Lousada,2016,327,87,14.6
+Município,Marco de Canaveses,2016,265,136,6.9
+Município,Paços de Ferreira,2016,239,160,14
+Município,Penafiel,2016,543,182,14.2
+Município,Resende,2016,95,41,7.3
+NUTS III,Douro,2016,639,1200,32.3
+Município,Alijó,2016,22,152,43.7
+Município,Armamar,2016,13,38,33.7
+Município,Carrazeda de Ansiães,2016,28,50,10.9
+Município,Freixo de Espada à Cinta,2016,64,44,0
+Município,Lamego,2016,89,59,46.2
+Município,Mesão Frio,2016,21,49,-
+Município,Moimenta da Beira,2016,30,75,5.5
+Município,Murça,2016,31,33,-
+Município,Penedono,2016,9,31,-
+Município,Peso da Régua,2016,21,45,27.8
+Município,Sabrosa,2016,14,48,0
+Município,Santa Marta de Penaguião,2016,24,77,0
+Município,São João da Pesqueira,2016,29,50,-
+Município,Sernancelhe,2016,23,43,-
+Município,Tabuaço,2016,5,54,17.9
+Município,Tarouca,2016,32,86,3.3
+Município,Torre de Moncorvo,2016,53,57,-
+Município,Vila Nova de Foz Côa,2016,44,34,3.2
+Município,Vila Real,2016,87,175,21.9
+NUTS III,Terras de Trás-os-Montes,2016,304,647,16.7
+Município,Alfândega da Fé,2016,12,55,1.7
+Município,Bragança,2016,68,114,23.1
+Município,Macedo de Cavaleiros,2016,19,58,3.6
+Município,Miranda do Douro,2016,20,98,19.3
+Município,Mirandela,2016,53,83,8.2
+Município,Mogadouro,2016,33,73,0
+Município,Vila Flor,2016,21,40,7.4
+Município,Vimioso,2016,18,50,27.2
+Município,Vinhais,2016,60,76,1.3
+NUTS II,Centro,2016,3800,8691,38.6
+NUTS III,Oeste,2016,728,989,40.3
+Município,Alcobaça,2016,57,198,34.3
+Município,Alenquer,2016,143,134,0
+Município,Arruda dos Vinhos,2016,50,43,7.7
+Município,Bombarral,2016,28,61,-
+Município,Cadaval,2016,25,47,-
+Município,Caldas da Rainha,2016,54,88,37
+Município,Lourinhã,2016,40,63,12.9
+Município,Nazaré,2016,20,45,53.4
+Município,Óbidos,2016,70,54,54.2
+Município,Peniche,2016,34,47,29.7
+Município,Sobral de Monte Agraço,2016,52,54,-
+Município,Torres Vedras,2016,155,155,31
+NUTS III,Região de Aveiro,2016,541,971,38.6
+Município,Águeda,2016,83,112,29
+Município,Albergaria-a-Velha,2016,64,66,1.3
+Município,Anadia,2016,35,53,35.4
+Município,Aveiro,2016,94,192,50.4
+Município,Estarreja,2016,37,77,31.7
+Município,Ílhavo,2016,28,98,30.4
+Município,Murtosa,2016,6,61,37.3
+Município,Oliveira do Bairro,2016,49,54,30
+Município,Ovar,2016,63,146,26.5
+Município,Sever do Vouga,2016,52,45,-
+Município,Vagos,2016,30,67,-
+NUTS III,Região de Coimbra,2016,487,1722,44.2
+Município,Arganil,2016,23,84,9.2
+Município,Cantanhede,2016,37,81,44.4
+Município,Coimbra,2016,72,222,60.5
+Município,Condeixa-a-Nova,2016,16,82,57.7
+Município,Figueira da Foz,2016,33,95,29.7
+Município,Góis,2016,23,46,0
+Município,Lousã,2016,18,123,31.8
+Município,Mealhada,2016,26,89,30.3
+Município,Mira,2016,26,48,34
+Município,Miranda do Corvo,2016,26,97,14.2
+Município,Montemor-o-Velho,2016,34,69,16.5
+Município,Mortágua,2016,5,61,9.7
+Município,Oliveira do Hospital,2016,47,104,30.6
+Município,Pampilhosa da Serra,2016,5,83,9
+Município,Penacova,2016,16,105,0.8
+Município,Penela,2016,21,80,20.8
+Município,Soure,2016,30,89,-
+Município,Tábua,2016,16,118,-
+Município,Vila Nova de Poiares,2016,13,46,17.6
+NUTS III,Região de Leiria,2016,321,1052,31.5
+Município,Alvaiázere,2016,20,72,-
+Município,Ansião,2016,18,61,2.8
+Município,Batalha,2016,7,93,41.7
+Município,Castanheira de Pêra,2016,15,45,5.8
+Município,Figueiró dos Vinhos,2016,23,70,10
+Município,Leiria,2016,86,300,28.2
+Município,Marinha Grande,2016,30,99,46.7
+Município,Pedrógão Grande,2016,25,63,-
+Município,Pombal,2016,72,124,20.4
+Município,Porto de Mós,2016,25,125,0.3
+NUTS III,Viseu Dão Lafões,2016,574,1067,20
+Município,Aguiar da Beira,2016,17,31,0
+Município,Carregal do Sal,2016,29,109,0
+Município,Castro Daire,2016,123,111,0.3
+Município,Mangualde,2016,31,82,8.4
+Município,Nelas,2016,27,140,15.9
+Município,Oliveira de Frades,2016,36,34,18
+Município,Penalva do Castelo,2016,10,47,-
+Município,Santa Comba Dão,2016,20,49,-
+Município,São Pedro do Sul,2016,18,104,9.1
+Município,Sátão,2016,15,56,-
+Município,Tondela,2016,46,112,10.5
+Município,Vila Nova de Paiva,2016,31,48,-
+Município,Viseu,2016,160,89,25.5
+Município,Vouzela,2016,11,55,-
+NUTS III,Beira Baixa,2016,220,465,23.3
+Município,Castelo Branco,2016,96,102,26.5
+Município,Idanha-a-Nova,2016,33,101,28.3
+Município,Oleiros,2016,8,97,7.9
+Município,Penamacor,2016,12,62,-
+Município,Proença-a-Nova,2016,20,60,-
+Município,Vila Velha de Ródão,2016,51,43,-
+NUTS III,Médio Tejo,2016,440,1153,55.6
+Município,Abrantes,2016,72,51,5.1
+Município,Alcanena,2016,39,86,11.6
+Município,Constância,2016,19,117,-
+Município,Entroncamento,2016,12,42,-
+Município,Ferreira do Zêzere,2016,10,47,7.5
+Município,Mação,2016,17,49,-
+Município,Ourém,2016,76,250,63.2
+Município,Sardoal,2016,10,68,-
+Município,Sertã,2016,57,171,12.6
+Município,Tomar,2016,88,75,45.3
+Município,Torres Novas,2016,30,101,22.3
+Município,Vila de Rei,2016,2,42,5.8
+Município,Vila Nova da Barquinha,2016,8,54,0
+NUTS III,Beiras e Serra da Estrela,2016,489,1272,15
+Município,Almeida,2016,28,39,29.8
+Município,Belmonte,2016,5,44,46.5
+Município,Celorico da Beira,2016,26,58,12.2
+Município,Covilhã,2016,64,84,12.9
+Município,Figueira de Castelo Rodrigo,2016,33,31,3.8
+Município,Fornos de Algodres,2016,21,57,3
+Município,Fundão,2016,42,102,7.1
+Município,Gouveia,2016,31,168,8.3
+Município,Guarda,2016,50,166,21.3
+Município,Manteigas,2016,4,40,34.4
+Município,Mêda,2016,30,50,0
+Município,Pinhel,2016,31,56,0
+Município,Sabugal,2016,35,89,2.1
+Município,Seia,2016,54,161,9.9
+Município,Trancoso,2016,35,127,17.3
+NUTS II,Área Metropolitana de Lisboa,2016,1191,4684,70.3
+NUTS III,Área Metropolitana de Lisboa,2016,1191,4684,70.3
+Município,Alcochete,2016,18,55,30.7
+Município,Almada,2016,109,244,63.4
+Município,Amadora,2016,55,79,23.2
+Município,Barreiro,2016,50,155,-
+Município,Cascais,2016,65,328,73.8
+Município,Lisboa,2016,27,951,75.7
+Município,Loures,2016,48,370,50.6
+Município,Mafra,2016,68,173,60.3
+Município,Moita,2016,88,54,-
+Município,Montijo,2016,67,91,22
+Município,Odivelas,2016,8,246,-
+Município,Oeiras,2016,22,346,51
+Município,Palmela,2016,148,194,43.4
+Município,Seixal,2016,99,146,-
+Município,Sesimbra,2016,22,159,54.3
+Município,Setúbal,2016,56,235,32.3
+Município,Sintra,2016,215,579,57.4
+Município,Vila Franca de Xira,2016,26,279,51
+NUTS II,Alentejo,2016,1318,2998,32.4
+NUTS III,Alentejo Litoral,2016,186,385,24.6
+Município,Alcácer do Sal,2016,29,72,27.3
+Município,Grândola,2016,44,54,19.4
+Município,Odemira,2016,39,83,32.8
+Município,Santiago do Cacém,2016,54,135,20.8
+Município,Sines,2016,20,41,30.8
+NUTS III,Baixo Alentejo,2016,203,552,20.4
+Município,Aljustrel,2016,12,43,24.9
+Município,Almodôvar,2016,11,47,1
+Município,Alvito,2016,8,31,-
+Município,Barrancos,2016,1,29,-
+Município,Beja,2016,57,81,26.6
+Município,Castro Verde,2016,6,32,19.7
+Município,Cuba,2016,10,28,9
+Município,Ferreira do Alentejo,2016,8,52,21.9
+Município,Mértola,2016,11,36,26
+Município,Moura,2016,25,54,12.6
+Município,Ourique,2016,8,38,10.1
+Município,Serpa,2016,23,47,0.5
+Município,Vidigueira,2016,23,34,3.5
+NUTS III,Lezíria do Tejo,2016,490,755,22.1
+Município,Almeirim,2016,17,47,16.8
+Município,Alpiarça,2016,31,31,-
+Município,Azambuja,2016,81,84,22.5
+Município,Benavente,2016,66,113,16.4
+Município,Cartaxo,2016,44,67,-
+Município,Chamusca,2016,15,42,-
+Município,Coruche,2016,51,52,4.8
+Município,Golegã,2016,2,35,22.6
+Município,Rio Maior,2016,39,43,10
+Município,Salvaterra de Magos,2016,33,36,-
+Município,Santarém,2016,111,205,29.3
+NUTS III,Alto Alentejo,2016,237,712,22.1
+Município,Alter do Chão,2016,14,29,6.5
+Município,Arronches,2016,3,25,17.2
+Município,Avis,2016,10,29,20.5
+Município,Campo Maior,2016,36,37,14.8
+Município,Castelo de Vide,2016,4,44,22.5
+Município,Crato,2016,8,33,48.5
+Município,Elvas,2016,63,70,27
+Município,Fronteira,2016,5,28,-
+Município,Gavião,2016,10,68,-
+Município,Marvão,2016,9,33,47.6
+Município,Monforte,2016,7,34,-
+Município,Nisa,2016,13,40,11.4
+Município,Ponte de Sor,2016,26,87,5.3
+Município,Portalegre,2016,19,101,20.1
+Município,Sousel,2016,10,54,29.9
+NUTS III,Alentejo Central,2016,202,594,45.9
+Município,Alandroal,2016,9,27,0
+Município,Arraiolos,2016,14,59,43.3
+Município,Borba,2016,8,49,0
+Município,Estremoz,2016,35,47,35.2
+Município,Évora,2016,31,59,50.5
+Município,Montemor-o-Novo,2016,22,82,29.9
+Município,Mora,2016,9,34,7.8
+Município,Mourão,2016,3,26,-
+Município,Portel,2016,9,27,2.4
+Município,Redondo,2016,15,22,0
+Município,Reguengos de Monsaraz,2016,24,57,13.2
+Município,Vendas Novas,2016,10,44,28.9
+Município,Viana do Alentejo,2016,7,27,-
+Município,Vila Viçosa,2016,6,34,28.5
+NUTS II,Algarve,2016,274,1060,71.9
+NUTS III,Algarve,2016,274,1060,71.9
+Município,Albufeira,2016,20,71,75.5
+Município,Alcoutim,2016,2,37,-
+Município,Aljezur,2016,12,64,59.9
+Município,Castro Marim,2016,10,0,56.2
+Município,Faro,2016,16,88,66.6
+Município,Lagoa,2016,21,87,80.2
+Município,Lagos,2016,13,69,84
+Município,Loulé,2016,40,94,69.4
+Município,Monchique,2016,12,55,58.6
+Município,Olhão,2016,23,82,60.6
+Município,Portimão,2016,22,97,69.2
+Município,São Brás de Alportel,2016,8,57,-
+Município,Silves,2016,43,107,77.1
+Município,Tavira,2016,19,50,61.5
+Município,Vila do Bispo,2016,4,43,79.3
+Município,Vila Real de Santo António,2016,9,59,49.2
+NUTS I,Continente,2017,21006,26110,60.5
+NUTS II,Norte,2017,11755,9040,50.8
+NUTS III,Alto Minho,2017,1163,538,32
+Município,Arcos de Valdevez,2017,282,36,18.9
+Município,Caminha,2017,62,61,31.5
+Município,Melgaço,2017,29,40,16.4
+Município,Monção,2017,88,39,26.4
+Município,Paredes de Coura,2017,81,30,2.5
+Município,Ponte da Barca,2017,155,30,19.8
+Município,Ponte de Lima,2017,209,91,33.1
+Município,Valença,2017,42,41,30.3
+Município,Viana do Castelo,2017,183,118,42.5
+Município,Vila Nova de Cerveira,2017,32,52,20.5
+NUTS III,Cávado,2017,637,605,37.3
+Município,Amares,2017,65,55,35
+Município,Barcelos,2017,150,227,55.6
+Município,Braga,2017,118,137,39.9
+Município,Esposende,2017,31,96,53.8
+Município,Terras de Bouro,2017,81,56,7.9
+Município,Vila Verde,2017,192,34,24.2
+NUTS III,Ave,2017,1306,849,40.9
+Município,Cabeceiras de Basto,2017,153,43,-
+Município,Fafe,2017,206,83,20.3
+Município,Guimarães,2017,276,180,48.9
+Município,Mondim de Basto,2017,87,42,-
+Município,Póvoa de Lanhoso,2017,190,64,0
+Município,Vieira do Minho,2017,165,41,34.6
+Município,Vila Nova de Famalicão,2017,189,299,24.2
+Município,Vizela,2017,40,97,-
+NUTS III,Área Metropolitana do Porto,2017,3003,3307,59.9
+Município,Arouca,2017,120,72,7.7
+Município,Espinho,2017,33,74,57.2
+Município,Gondomar,2017,383,344,-
+Município,Maia,2017,177,170,50.2
+Município,Matosinhos,2017,73,215,30.2
+Município,Oliveira de Azeméis,2017,143,144,49.6
+Município,Paredes,2017,438,390,38.2
+Município,Porto,2017,0,406,74.4
+Município,Póvoa de Varzim,2017,89,66,46.2
+Município,Santa Maria da Feira,2017,280,171,35.4
+Município,Santo Tirso,2017,290,236,13.6
+Município,São João da Madeira,2017,12,76,37
+Município,Trofa,2017,191,63,-
+Município,Vale de Cambra,2017,55,48,16.9
+Município,Valongo,2017,158,168,14.2
+Município,Vila do Conde,2017,202,105,45.9
+Município,Vila Nova de Gaia,2017,359,559,42.3
+NUTS III,Alto Tâmega,2017,960,439,21.6
+Município,Boticas,2017,94,42,8.4
+Município,Chaves,2017,132,116,23.5
+Município,Montalegre,2017,314,78,4.4
+Município,Ribeira de Pena,2017,86,85,23.4
+Município,Valpaços,2017,217,51,0
+Município,Vila Pouca de Aguiar,2017,117,67,20.1
+NUTS III,Tâmega e Sousa,2017,2945,1482,25
+Município,Amarante,2017,452,206,45.1
+Município,Baião,2017,164,155,21.6
+Município,Castelo de Paiva,2017,96,89,20.6
+Município,Celorico de Basto,2017,163,85,35.7
+Município,Cinfães,2017,202,145,30.4
+Município,Felgueiras,2017,390,196,45.5
+Município,Lousada,2017,279,95,16
+Município,Marco de Canaveses,2017,231,127,13.3
+Município,Paços de Ferreira,2017,268,150,15
+Município,Penafiel,2017,585,195,16.1
+Município,Resende,2017,115,39,10.1
+NUTS III,Douro,2017,1084,1192,32.8
+Município,Alijó,2017,48,150,47.1
+Município,Armamar,2017,42,34,46.3
+Município,Carrazeda de Ansiães,2017,50,49,13.5
+Município,Freixo de Espada à Cinta,2017,47,46,0
+Município,Lamego,2017,110,63,51.7
+Município,Mesão Frio,2017,40,48,75.2
+Município,Moimenta da Beira,2017,55,67,3.9
+Município,Murça,2017,50,35,-
+Município,Penedono,2017,49,30,-
+Município,Peso da Régua,2017,25,41,27.1
+Município,Sabrosa,2017,46,45,0
+Município,Santa Marta de Penaguião,2017,39,72,0
+Município,São João da Pesqueira,2017,42,56,-
+Município,Sernancelhe,2017,72,37,-
+Município,Tabuaço,2017,24,53,11.3
+Município,Tarouca,2017,59,97,0
+Município,Torre de Moncorvo,2017,100,58,-
+Município,Vila Nova de Foz Côa,2017,58,30,9.3
+Município,Vila Real,2017,128,181,21.5
+NUTS III,Terras de Trás-os-Montes,2017,657,628,16.1
+Município,Alfândega da Fé,2017,37,55,3.2
+Município,Bragança,2017,151,106,22.4
+Município,Macedo de Cavaleiros,2017,63,55,2.5
+Município,Miranda do Douro,2017,33,95,19.1
+Município,Mirandela,2017,94,88,8.5
+Município,Mogadouro,2017,63,73,-
+Município,Vila Flor,2017,43,40,0.4
+Município,Vimioso,2017,50,45,-
+Município,Vinhais,2017,123,71,4.3
+NUTS II,Centro,2017,6016,8418,43.5
+NUTS III,Oeste,2017,989,922,45
+Município,Alcobaça,2017,119,181,40.1
+Município,Alenquer,2017,207,118,9.4
+Município,Arruda dos Vinhos,2017,32,39,7.8
+Município,Bombarral,2017,35,54,48.1
+Município,Cadaval,2017,50,46,-
+Município,Caldas da Rainha,2017,80,88,40.4
+Município,Lourinhã,2017,66,56,26.6
+Município,Nazaré,2017,11,43,56.6
+Município,Óbidos,2017,102,49,57.5
+Município,Peniche,2017,73,47,42
+Município,Sobral de Monte Agraço,2017,40,49,-
+Município,Torres Vedras,2017,174,152,31.4
+NUTS III,Região de Aveiro,2017,876,912,43.2
+Município,Águeda,2017,121,98,37.4
+Município,Albergaria-a-Velha,2017,88,63,4.5
+Município,Anadia,2017,47,47,38.7
+Município,Aveiro,2017,183,194,54.1
+Município,Estarreja,2017,95,57,37
+Município,Ílhavo,2017,34,102,33.8
+Município,Murtosa,2017,40,64,34.3
+Município,Oliveira do Bairro,2017,104,47,34.7
+Município,Ovar,2017,42,139,34.8
+Município,Sever do Vouga,2017,56,43,20.7
+Município,Vagos,2017,66,58,20.2
+NUTS III,Região de Coimbra,2017,800,1718,46.6
+Município,Arganil,2017,30,78,9.8
+Município,Cantanhede,2017,71,83,54.6
+Município,Coimbra,2017,123,213,61.9
+Município,Condeixa-a-Nova,2017,35,73,55.1
+Município,Figueira da Foz,2017,81,100,36.6
+Município,Góis,2017,19,43,0
+Município,Lousã,2017,28,126,35.8
+Município,Mealhada,2017,46,85,32.4
+Município,Mira,2017,41,52,35.3
+Município,Miranda do Corvo,2017,33,94,29.4
+Município,Montemor-o-Velho,2017,54,61,17
+Município,Mortágua,2017,13,55,7.9
+Município,Oliveira do Hospital,2017,59,147,16.3
+Município,Pampilhosa da Serra,2017,12,77,10.7
+Município,Penacova,2017,36,103,5.7
+Município,Penela,2017,14,84,17.8
+Município,Soure,2017,33,81,-
+Município,Tábua,2017,64,119,96.2
+Município,Vila Nova de Poiares,2017,8,44,-
+NUTS III,Região de Leiria,2017,460,1033,36.7
+Município,Alvaiázere,2017,27,69,22.9
+Município,Ansião,2017,23,60,12.4
+Município,Batalha,2017,19,85,46.4
+Município,Castanheira de Pêra,2017,14,43,-
+Município,Figueiró dos Vinhos,2017,14,64,11.5
+Município,Leiria,2017,123,285,33.7
+Município,Marinha Grande,2017,42,100,52.3
+Município,Pedrógão Grande,2017,29,59,-
+Município,Pombal,2017,128,149,22.3
+Município,Porto de Mós,2017,41,119,5.7
+NUTS III,Viseu Dão Lafões,2017,1086,1045,20.8
+Município,Aguiar da Beira,2017,12,28,0
+Município,Carregal do Sal,2017,26,110,0
+Município,Castro Daire,2017,227,115,11.2
+Município,Mangualde,2017,99,72,10.5
+Município,Nelas,2017,44,97,16
+Município,Oliveira de Frades,2017,56,31,16.7
+Município,Penalva do Castelo,2017,24,52,-
+Município,Santa Comba Dão,2017,30,73,5.3
+Município,São Pedro do Sul,2017,54,97,3.1
+Município,Sátão,2017,22,54,-
+Município,Tondela,2017,131,111,19.8
+Município,Vila Nova de Paiva,2017,107,47,-
+Município,Viseu,2017,211,109,27.7
+Município,Vouzela,2017,43,49,11.7
+NUTS III,Beira Baixa,2017,343,445,24.1
+Município,Castelo Branco,2017,172,95,28.9
+Município,Idanha-a-Nova,2017,54,97,26.3
+Município,Oleiros,2017,22,91,9
+Município,Penamacor,2017,23,63,5.7
+Município,Proença-a-Nova,2017,23,56,15.7
+Município,Vila Velha de Ródão,2017,49,43,6.1
+NUTS III,Médio Tejo,2017,686,1125,62.9
+Município,Abrantes,2017,100,50,5.6
+Município,Alcanena,2017,49,86,32.7
+Município,Constância,2017,10,62,21.2
+Município,Entroncamento,2017,10,45,-
+Município,Ferreira do Zêzere,2017,38,47,10.9
+Município,Mação,2017,32,48,-
+Município,Ourém,2017,96,307,69.6
+Município,Sardoal,2017,24,63,-
+Município,Sertã,2017,73,156,14.3
+Município,Tomar,2017,162,74,48.7
+Município,Torres Novas,2017,60,95,29.9
+Município,Vila de Rei,2017,13,41,2.6
+Município,Vila Nova da Barquinha,2017,19,51,0
+NUTS III,Beiras e Serra da Estrela,2017,776,1218,15.1
+Município,Almeida,2017,23,36,25
+Município,Belmonte,2017,19,40,46.4
+Município,Celorico da Beira,2017,48,55,10.6
+Município,Covilhã,2017,115,74,14.7
+Município,Figueira de Castelo Rodrigo,2017,46,28,5.4
+Município,Fornos de Algodres,2017,10,49,4
+Município,Fundão,2017,73,100,6.3
+Município,Gouveia,2017,56,146,13
+Município,Guarda,2017,69,167,18.1
+Município,Manteigas,2017,3,59,23.9
+Município,Mêda,2017,63,45,0
+Município,Pinhel,2017,51,53,0
+Município,Sabugal,2017,67,88,0.7
+Município,Seia,2017,68,148,11.8
+Município,Trancoso,2017,65,130,14
+NUTS II,Área Metropolitana de Lisboa,2017,1234,4752,72.3
+NUTS III,Área Metropolitana de Lisboa,2017,1234,4752,72.3
+Município,Alcochete,2017,19,61,32.9
+Município,Almada,2017,93,236,66.2
+Município,Amadora,2017,33,88,29.9
+Município,Barreiro,2017,42,146,-
+Município,Cascais,2017,70,372,73.7
+Município,Lisboa,2017,30,963,77.9
+Município,Loures,2017,59,361,55
+Município,Mafra,2017,93,201,57.2
+Município,Moita,2017,73,56,-
+Município,Montijo,2017,67,82,28
+Município,Odivelas,2017,14,235,-
+Município,Oeiras,2017,43,353,52.8
+Município,Palmela,2017,109,200,49.2
+Município,Seixal,2017,101,149,44
+Município,Sesimbra,2017,20,147,49
+Município,Setúbal,2017,79,265,38.7
+Município,Sintra,2017,249,543,54.5
+Município,Vila Franca de Xira,2017,40,294,-
+NUTS II,Alentejo,2017,1607,2832,34.3
+NUTS III,Alentejo Litoral,2017,172,353,28.3
+Município,Alcácer do Sal,2017,39,61,29.6
+Município,Grândola,2017,32,54,22.5
+Município,Odemira,2017,56,89,36.9
+Município,Santiago do Cacém,2017,26,124,23.1
+Município,Sines,2017,19,25,37.2
+NUTS III,Baixo Alentejo,2017,300,531,20.6
+Município,Aljustrel,2017,27,38,20.4
+Município,Almodôvar,2017,15,47,1
+Município,Alvito,2017,3,28,27.9
+Município,Barrancos,2017,2,26,-
+Município,Beja,2017,64,82,25.9
+Município,Castro Verde,2017,15,36,21.4
+Município,Cuba,2017,12,27,-
+Município,Ferreira do Alentejo,2017,24,44,19.6
+Município,Mértola,2017,19,34,27.7
+Município,Moura,2017,39,56,14.5
+Município,Ourique,2017,10,44,11.9
+Município,Serpa,2017,29,40,0.3
+Município,Vidigueira,2017,41,29,0.1
+NUTS III,Lezíria do Tejo,2017,506,727,28.7
+Município,Almeirim,2017,32,46,20
+Município,Alpiarça,2017,14,31,-
+Município,Azambuja,2017,73,81,22.9
+Município,Benavente,2017,49,108,18.6
+Município,Cartaxo,2017,31,65,62.8
+Município,Chamusca,2017,29,43,-
+Município,Coruche,2017,55,50,7
+Município,Golegã,2017,8,37,30.4
+Município,Rio Maior,2017,33,39,9.9
+Município,Salvaterra de Magos,2017,84,36,-
+Município,Santarém,2017,98,191,39.2
+NUTS III,Alto Alentejo,2017,344,680,23.4
+Município,Alter do Chão,2017,11,31,6.3
+Município,Arronches,2017,14,22,10.9
+Município,Avis,2017,12,29,18.1
+Município,Campo Maior,2017,51,38,-
+Município,Castelo de Vide,2017,8,44,24.8
+Município,Crato,2017,9,28,44
+Município,Elvas,2017,76,60,30
+Município,Fronteira,2017,15,25,-
+Município,Gavião,2017,17,59,9.2
+Município,Marvão,2017,11,30,48.3
+Município,Monforte,2017,10,34,-
+Município,Nisa,2017,25,38,14.2
+Município,Ponte de Sor,2017,45,97,5.8
+Município,Portalegre,2017,32,95,20.3
+Município,Sousel,2017,8,50,35.6
+NUTS III,Alentejo Central,2017,285,541,47.2
+Município,Alandroal,2017,10,22,0.4
+Município,Arraiolos,2017,19,55,42.6
+Município,Borba,2017,15,43,0
+Município,Estremoz,2017,25,44,37.1
+Município,Évora,2017,62,56,51.2
+Município,Montemor-o-Novo,2017,24,61,35.2
+Município,Mora,2017,17,32,5.9
+Município,Mourão,2017,7,21,-
+Município,Portel,2017,15,29,8.7
+Município,Redondo,2017,12,21,9.7
+Município,Reguengos de Monsaraz,2017,33,52,25.6
+Município,Vendas Novas,2017,23,42,35.4
+Município,Viana do Alentejo,2017,17,27,-
+Município,Vila Viçosa,2017,6,36,31.9
+NUTS II,Algarve,2017,394,1068,72.5
+NUTS III,Algarve,2017,394,1068,72.5
+Município,Albufeira,2017,26,75,76
+Município,Alcoutim,2017,3,38,72
+Município,Aljezur,2017,19,61,67.2
+Município,Castro Marim,2017,11,0,54.4
+Município,Faro,2017,42,92,70.3
+Município,Lagoa,2017,16,88,80.2
+Município,Lagos,2017,20,68,83.8
+Município,Loulé,2017,53,89,68
+Município,Monchique,2017,17,52,58.8
+Município,Olhão,2017,30,98,63.8
+Município,Portimão,2017,27,92,70.8
+Município,São Brás de Alportel,2017,16,58,74.8
+Município,Silves,2017,56,111,72.5
+Município,Tavira,2017,38,51,66.1
+Município,Vila do Bispo,2017,5,35,83.2
+Município,Vila Real de Santo António,2017,15,60,50.6

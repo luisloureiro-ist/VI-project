@@ -1,22 +1,34 @@
 import './styles.css'
 import 'bulma/css/bulma.css'
 
-import csv from './finalDataset.csv'
 import './components/selections'
+
+import * as d3 from 'd3'
+import companiesCSV from './datasets/companies_dataset.csv'
+import electionsCSV from './datasets/elections_dataset.csv'
+import firesCSV from './datasets/fires_dataset.csv'
 import CompaniesProductivityComponent from './components/companies_productivity'
 import ElectionsComponent from './components/elections'
-import * as d3 from 'd3'
 //
 //
 ;(async () => {
-  const data = await load(csv)
+  const [companiesData, electionsData, firesData] = await Promise.all([
+    d3.csv(companiesCSV, parseCompaniesData),
+    d3.csv(electionsCSV, parseElectionsData),
+    d3.csv(firesCSV, parseFiresData)
+  ])
+
   const defaultMunicipality = 'Continente'
   const containerSelector = '.divergent-charts-section'
   const components = []
 
   setMapSectionHeading(defaultMunicipality)
   const mainSectionWidth = document.querySelector(containerSelector).offsetWidth
-  const dispatch = registerEventListeners(data)
+  const dispatch = registerEventListeners({
+    companiesData,
+    electionsData,
+    firesData
+  })
 
   // Create all the components of the dashboard
   components.push(
@@ -35,24 +47,22 @@ import * as d3 from 'd3'
   dispatch.call(
     'initialize',
     this,
-    data.filter(value => value.location === defaultMunicipality),
+    {
+      companiesData: companiesData.filter(
+        value => value.location === defaultMunicipality
+      ),
+      electionsData: electionsData.filter(
+        value => value.location === defaultMunicipality
+      ),
+      firesData: firesData.filter(
+        value => value.location === defaultMunicipality
+      )
+    },
     defaultMunicipality
   )
 })()
 
-async function load (filename) {
-  return d3.csv(filename, d => {
-    return {
-      location: d.Location,
-      year: +d.Year,
-      type: d['Company Type'],
-      // number: +d['Number of Companies'],
-      productivity: +d.Productivity
-    }
-  })
-}
-
-function registerEventListeners (fullDataset) {
+function registerEventListeners ({ companiesData: fullDataset }) {
   const dispatch = d3.dispatch(
     'initialize',
     'update_municipality',
@@ -86,6 +96,43 @@ function registerEventListeners (fullDataset) {
   )
 
   return dispatch
+}
+
+function parseCompaniesData (datum) {
+  return {
+    nuts: datum.NUTS,
+    location: datum.Location,
+    year: +datum.Year,
+    type: datum['Company Type'],
+    number: +datum['Number of Companies'],
+    productivity: +datum.Productivity
+  }
+}
+
+function parseElectionsData (datum) {
+  return {
+    nuts: datum.NUTS,
+    location: datum.Location,
+    year: +datum.Year,
+    type: datum['Election Type'],
+    PS: +datum.PS,
+    PSD: +datum.PSD,
+    CDS: +datum.CDS,
+    PCP: +datum.PCP,
+    BE: +datum.BE,
+    abstention: +datum.Abstention
+  }
+}
+
+function parseFiresData (datum) {
+  return {
+    nuts: datum.NUTS,
+    location: datum.Location,
+    year: +datum.Year,
+    fires: +datum.Fires,
+    firefighters: +datum.Firefighters,
+    tourism: +datum.Tourism
+  }
 }
 
 function setMapSectionHeading (text) {
