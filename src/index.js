@@ -1,4 +1,6 @@
 import './styles.css'
+import 'bulma/css/bulma.css'
+
 import './components/selections'
 
 import * as d3 from 'd3'
@@ -20,6 +22,7 @@ import ElectionsComponent from './components/elections'
   const containerSelector = '.divergent-charts-section'
   const components = []
 
+  setMapSectionHeading(defaultMunicipality)
   const mainSectionWidth = document.querySelector(containerSelector).offsetWidth
   const dispatch = registerEventListeners({
     companiesData,
@@ -37,11 +40,7 @@ import ElectionsComponent from './components/elections'
   )
 
   components.push(
-    new ElectionsComponent(
-      dispatch,
-      containerSelector,
-      mainSectionWidth
-    )
+    new ElectionsComponent(dispatch, containerSelector, mainSectionWidth)
   )
 
   // Initialize dashboard components
@@ -73,6 +72,8 @@ function registerEventListeners ({ companiesData: fullDataset }) {
   d3.selectAll('.municipality').on('click', (d, i, nodesList) => {
     const newMunicipality = nodesList[i].value
 
+    setMapSectionHeading(newMunicipality)
+
     dispatch.call(
       'update_municipality',
       this,
@@ -97,6 +98,7 @@ function registerEventListeners ({ companiesData: fullDataset }) {
   return dispatch
 }
 
+<<<<<<< HEAD
 function parseCompaniesData (datum) {
   return {
     nuts: datum.NUTS,
@@ -132,4 +134,8 @@ function parseFiresData (datum) {
     firefighters: +datum.Firefighters,
     tourism: +datum.Tourism
   }
+=======
+function setMapSectionHeading (text) {
+  d3.select('body .map-pane .region-name').text(text)
+>>>>>>> master
 }
