@@ -101,17 +101,16 @@ class DivergentBarChart {
   __setYAxisScaler (domain) {
     if (this.yAxis === null) {
       this.yAxis = d3.axisLeft()
-      this.yScaler = d3.scaleLinear()
+      this.yScaler = d3.scaleBand()
     }
 
-    this.yScaler
-      .domain([domain[0], domain[domain.length - 1]])
-      .range([20 * domain.length, 0])
+    this.yScaler.domain(domain).range([20 * domain.length, 0])
 
     this.yAxis
       .scale(this.yScaler)
       .tickValues(domain)
       .tickFormat(d3.format('d'))
+      .tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
   }
 
   __createXAxis (data) {
