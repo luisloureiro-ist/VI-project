@@ -13,6 +13,36 @@
         <button class="municipality" value="Crato">Crato</button>
         <button class="municipality" value="Tomar">Tomar</button>
         <form>
+          <h3>Political Parties</h3>
+          <div class="parties">
+            <ul>
+              <li>
+                <label>PS</label>
+                <input type="checkbox" checked name="PS" />
+              </li>
+              <li>
+                <label>PSD</label>
+                <input type="checkbox" checked name="PSD" />
+              </li>
+              <li>
+                <label>PCP</label>
+                <input type="checkbox" checked name="PCP" />
+              </li>
+              <li>
+                <label>CDS</label>
+                <input type="checkbox" checked name="CDS" />
+              </li>
+              <li>
+                <label>BE</label>
+                <input type="checkbox" checked name="BE" />
+              </li>
+              <li>
+                <label>Abstention</label>
+                <input type="checkbox" checked name="Abstention" />
+              </li>
+            </ul>
+          </div>
+          <h3>Years</h3>
           <div class="years-range">
             <input id="min" type="range" min="2009" max="2013" value="2009" />
             <input id="max" type="range" min="2014" max="2017" value="2017" />
@@ -33,7 +63,11 @@
           width="100%"
         ></object>
         <form>
-          <input name="municipality-search" type="text" placeholder="Search a municipality">
+          <input
+            name="municipality-search"
+            type="text"
+            placeholder="Search a municipality"
+          />
         </form>
       </section>
     </section>
