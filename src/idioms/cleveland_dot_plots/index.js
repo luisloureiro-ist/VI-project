@@ -26,14 +26,14 @@ class ClevelandDotPlots {
       .attr('height', 3 * this.dotRadius * (data.length + 1)) // +1 for the bottom axis
 
     this.xScaler
-      .domain([0, d3.max(data, d => d.value)])
+      .domain([0, d3.max(data, d => Math.max(...d.results))])
       .range([0, this.chartWidth - this.yAxisPadding])
     this.yScaler = d3
       .scaleBand()
       .range([0, 3 * this.dotRadius * data.length])
       .domain(data.map(d => d.key))
 
-    this.chart
+    const lineAndCirclesGroup = this.chart
       .append('g')
       .classed('clevelands', true)
       .attr('transform', (d, i) => `translate(0, ${this.dotRadius} )`)
@@ -42,17 +42,17 @@ class ClevelandDotPlots {
       .enter()
       .append('g')
       .classed('cleveland', true)
-      .call(this.__createDot.bind(this))
+
+    data[0].results.forEach((result, idx) => {
+      lineAndCirclesGroup.call(this.__createDot.bind(this, idx))
+    })
 
     this.__createXAxis(data)
     this.__createYAxis(data)
   }
 
   __createXAxis (data) {
-    this.xAxis
-      .scale(this.xScaler)
-      // .tickFormat(d3.format('.0%'))
-      .tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
+    this.xAxis.scale(this.xScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
     this.chart
       .append('g')
@@ -80,17 +80,17 @@ class ClevelandDotPlots {
       .call(this.yAxis)
   }
 
-  __createDot (lines) {
+  __createDot (resultsIdx, lines) {
     lines
       .append('circle')
       .transition(this.transition)
-      .attr('cx', d => this.xScaler(d.value) + this.yAxisPadding)
+      .attr('cx', d => this.xScaler(d.results[resultsIdx]) + this.yAxisPadding)
       .attr('cy', d => this.yScaler(d.key) + this.dotRadius / 2)
       .attr('r', this.dotRadius)
       .style('fill', '#4C4082')
       .selection()
       .append('title')
-      .text(d => d.value)
+      .text(d => d.results[resultsIdx])
   }
 }
 
