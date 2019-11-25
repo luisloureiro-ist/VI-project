@@ -6,7 +6,7 @@ class Elections extends Component {
   constructor (dispatch, parentSelector, componentSize) {
     super(dispatch, parentSelector, componentSize)
     this.electionTypes = []
-    this.parties = ['PS', 'PSD', 'CDS', 'PCP', 'BE', 'abstention']
+    this.parties = ['PS', 'PSD', 'CDS', 'PCP', 'BE', 'Abs.']
     this.charts = []
 
     dispatch.on('initialize.elections', this.initialize.bind(this))
