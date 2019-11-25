@@ -19,12 +19,12 @@ class ClevelandDotPlots {
     this.colors = ['#1b9e77', '#d95f02', '#7570b3']
   }
 
-  create (data) {
+  create (data, categories) {
     this.chart = this.chart
       .append('svg')
       .classed('svg-chart', true)
       .attr('width', this.chartWidth)
-      .attr('height', 3 * this.dotRadius * (data.length + 1)) // +1 for the bottom axis
+      .attr('height', 3 * this.dotRadius * (data.length + 2)) // +1 for the bottom axis
 
     this.xScaler
       .domain([0, d3.max(data, d => Math.max(...d.results))])
@@ -50,6 +50,7 @@ class ClevelandDotPlots {
 
     this.__createXAxis(data)
     this.__createYAxis(data)
+    this.__createLegend(categories)
   }
 
   __createXAxis (data) {
@@ -79,6 +80,16 @@ class ClevelandDotPlots {
       .attr('transform', `translate(${this.yAxisPadding}, 0)`)
       .transition(this.transition)
       .call(this.yAxis)
+  }
+
+  __createLegend (categories) {
+    const legend = this.chart.append('g').classed('legend', true).attr('height', 30).attr('transform', `translate(${this.yAxisPadding},30)`)
+    categories.forEach((category, idx) => {
+      legend
+        .append('circle').attr('cx', 50 + (idx * 50)).attr('cy', 130).attr('r', 6).style('fill', this.colors[idx])
+      legend
+        .append('text').attr('x', 50 + (idx * 50) + 12).attr('y', 131).text(category).style('font-size', '12px').attr('alignment-baseline', 'middle')
+    })
   }
 
   __createDot (resultsIdx, lines) {
