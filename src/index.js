@@ -19,11 +19,10 @@ import ElectionsComponent from './components/elections'
   ])
 
   const defaultMunicipality = 'Continente'
-  const containerSelector = '.divergent-charts-section'
   const components = []
 
   setMapSectionHeading(defaultMunicipality)
-  const mainSectionWidth = document.querySelector(containerSelector).offsetWidth
+  const mainSectionWidth = document.querySelector('.charts-pane').offsetWidth
   const dispatch = registerEventListeners({
     companiesData,
     electionsData,
@@ -34,13 +33,17 @@ import ElectionsComponent from './components/elections'
   components.push(
     new CompaniesProductivityComponent(
       dispatch,
-      containerSelector,
+      '.divergent-charts-section',
       mainSectionWidth
     )
   )
 
   components.push(
-    new ElectionsComponent(dispatch, containerSelector, mainSectionWidth)
+    new ElectionsComponent(
+      dispatch,
+      '.cleveland-dot-plot-section',
+      mainSectionWidth
+    )
   )
 
   // Initialize dashboard components
