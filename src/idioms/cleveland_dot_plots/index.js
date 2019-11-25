@@ -2,7 +2,7 @@ import './index.css'
 import * as d3 from 'd3'
 
 class ClevelandDotPlots {
-  constructor (parentSelector, chartWidth, withYAxis = false, dotRadius = 10) {
+  constructor (parentSelector, chartWidth, withYAxis = false, dotRadius = 7) {
     this.parentSelector = parentSelector
     this.chartWidth = chartWidth
     this.dotRadius = dotRadius

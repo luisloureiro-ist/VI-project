@@ -123,7 +123,7 @@ function parseElectionsData (datum) {
     CDS: +datum.CDS,
     PCP: +datum.PCP,
     BE: +datum.BE,
-    abstention: +datum.Abstention
+    'Abs.': +datum.Abstention
   }
 }
 
