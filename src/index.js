@@ -89,5 +89,5 @@ function registerEventListeners (fullDataset) {
 }
 
 function setMapSectionHeading (text) {
-  d3.select('body .map-pane h2').text(text)
+  d3.select('body .map-pane .region-name').text(text)
 }

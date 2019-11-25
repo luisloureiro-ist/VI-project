@@ -79,7 +79,7 @@ class CompaniesProductivity extends Component {
 
   updateSectionTitle () {
     d3.select(super.getContainerSelector())
-      .select('h3')
+      .select('.productivity-title')
       .text(`Productivity of companies in ${super.getMunicipality()}`)
   }
 }

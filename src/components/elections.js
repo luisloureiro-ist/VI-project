@@ -7,8 +7,8 @@ class Elections extends Component {
     this.electionTypes = []
     this.charts = []
 
-    dispatch.on('initialize', this.initialize.bind(this))
-    dispatch.on('update_municipality', this.update.bind(this))
+    // dispatch.on('initialize', this.initialize.bind(this))
+    // dispatch.on('update_municipality', this.update.bind(this))
   }
 
   initialize (data, municipality) {

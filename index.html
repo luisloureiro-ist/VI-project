@@ -8,9 +8,9 @@
   <body>
     <section class="grid-container">
       <aside class="selections-pane">
-        <h1>Impact of fires in Portugal</h1>
+        <h1 class="is-size-1">Impact of fires in Portugal</h1>
         <form>
-          <h3>Political Parties</h3>
+          <h3 class="is-size-3">Political Parties</h3>
           <div class="parties">
             <ul>
               <li>
@@ -39,7 +39,7 @@
               </li>
             </ul>
           </div>
-          <h3>Activity Sectors</h3>
+          <h3 class="is-size-3">Activity Sectors</h3>
           <div class="activity-sectors">
             <ul>
               <li>
@@ -64,7 +64,7 @@
               </li>
             </ul>
           </div>
-          <h3>Years</h3>
+          <h3 class="is-size-3">Years</h3>
           <div class="years-range">
             <input id="min" type="range" min="2009" max="2013" value="2009" />
             <input id="max" type="range" min="2014" max="2017" value="2017" />
@@ -74,28 +74,30 @@
       </aside>
       <main class="charts-pane">
         <section class="divergent-charts-section">
-          <h3></h3>
+          <h4 class="productivity-title is-size-4"></h4>
         </section>
       </main>
       <section class="map-pane">
-        <h2></h2>
+        <h3 class="region-name is-size-3"></h3>
         <object
           type="image/svg+xml"
           data="./src/NUTS II.svg"
           width="100%"
         ></object>
         <form>
-          <input
+          <input class="input is-rounded is-small"
             name="municipality-search"
             type="text"
             placeholder="Search a municipality"
           />
         </form>
-        <button class="button is-link municipality" value="Continente">
-          Continente
-        </button>
-        <button class="button is-link municipality" value="Crato">Crato</button>
-        <button class="button is-link municipality" value="Tomar">Tomar</button>
+        <div class="buttons are-small">
+          <button class="button is-link municipality" value="Continente">
+            Continente
+          </button>
+          <button class="button is-link municipality" value="Crato">Crato</button>
+          <button class="button is-link municipality" value="Tomar">Tomar</button>
+        </div> 
       </section>
     </section>
     <script src="src/index.js"></script>
