@@ -85,7 +85,7 @@ class ClevelandDotPlots {
       .append('circle')
       .transition(this.transition)
       .attr('cx', d => this.xScaler(d.value) + this.yAxisPadding)
-      .attr('cy', d => this.yScaler(d.key))
+      .attr('cy', d => this.yScaler(d.key) + this.dotRadius / 2)
       .attr('r', this.dotRadius)
       .style('fill', '#4C4082')
       .selection()
