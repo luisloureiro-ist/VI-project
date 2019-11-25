@@ -98,7 +98,6 @@ function registerEventListeners ({ companiesData: fullDataset }) {
   return dispatch
 }
 
-<<<<<<< HEAD
 function parseCompaniesData (datum) {
   return {
     nuts: datum.NUTS,
@@ -134,8 +133,8 @@ function parseFiresData (datum) {
     firefighters: +datum.Firefighters,
     tourism: +datum.Tourism
   }
-=======
+}
+
 function setMapSectionHeading (text) {
   d3.select('body .map-pane .region-name').text(text)
->>>>>>> master
 }
