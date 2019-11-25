@@ -5,6 +5,7 @@ class Elections extends Component {
   constructor (dispatch, parentSelector, componentSize) {
     super(dispatch, parentSelector, componentSize)
     this.electionTypes = []
+    this.parties = ['PS', 'PSD', 'CDS', 'PCP', 'BE', 'abstention']
     this.charts = []
 
     dispatch.on('initialize', this.initialize.bind(this))
@@ -13,7 +14,6 @@ class Elections extends Component {
 
   initialize ({ electionsData: data }, municipality) {
     super.setMunicipality(municipality)
-    // super.setYears(getYears(data))
     super.setDataset(data)
     this.electionTypes = getElectionTypes(data)
 
@@ -24,8 +24,10 @@ class Elections extends Component {
       const filteredData = super
         .getDataset()
         .filter(d => d.type === electionType)
-        // .sort((first, second) => second.year - first.year)
-        .reduce((prev, curr) => prev.concat(curr.electionResults), [])
+        .map(d => this.parties.map(p => ({ key: p, value: d[p] })))
+        .slice(1)
+        .reduce((prev, curr) => curr, [])
+      // .sort((first, second) => second.year - first.year)
 
       this.charts.push(
         new ClevelandDotPlot(
@@ -34,7 +36,7 @@ class Elections extends Component {
           idx === 0
         )
       )
-      this.charts[idx].create(filteredData, idx === 0 ? getParties() : null)
+      this.charts[idx].create(filteredData)
     })
   }
 
@@ -48,7 +50,7 @@ class Elections extends Component {
         .filter(d => d.type === electionType)
         .reduce((prev, curr) => prev.concat(curr.electionResults), [])
 
-      this.charts[idx].update(filteredData, idx === 0 ? this.getParties() : null)
+      this.charts[idx].update(filteredData)
     })
   }
 }
@@ -57,14 +59,6 @@ function getElectionTypes (data) {
   return data.reduce(
     (prev, curr) =>
       prev.indexOf(curr.type) === -1 ? prev.concat([curr.type]) : prev,
-    []
-  )
-}
-
-function getParties (data) {
-  return data.reduce(
-    (prev, curr) =>
-      prev.indexOf(curr.party) === -1 ? prev.concat([curr.party]) : prev,
     []
   )
 }
