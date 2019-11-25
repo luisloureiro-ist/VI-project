@@ -12,6 +12,7 @@ import * as d3 from 'd3'
   const containerSelector = '.divergent-charts-section'
   const components = []
 
+  setMapSectionHeading(defaultMunicipality)
   const mainSectionWidth = document.querySelector(containerSelector).offsetWidth
   const dispatch = registerEventListeners(data)
 
@@ -25,11 +26,7 @@ import * as d3 from 'd3'
   )
 
   components.push(
-    new ElectionsComponent(
-      dispatch,
-      containerSelector,
-      mainSectionWidth
-    )
+    new ElectionsComponent(dispatch, containerSelector, mainSectionWidth)
   )
 
   // Initialize dashboard components
@@ -63,6 +60,8 @@ function registerEventListeners (fullDataset) {
   d3.selectAll('.municipality').on('click', (d, i, nodesList) => {
     const newMunicipality = nodesList[i].value
 
+    setMapSectionHeading(newMunicipality)
+
     dispatch.call(
       'update_municipality',
       this,
@@ -85,4 +84,8 @@ function registerEventListeners (fullDataset) {
   )
 
   return dispatch
+}
+
+function setMapSectionHeading (text) {
+  d3.select('body .map-pane h2').text(text)
 }

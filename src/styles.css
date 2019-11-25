@@ -1,11 +1,14 @@
 body {
   font-family: sans-serif;
+  height: 728px;
+  width: 1536px;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-columns: 1fr 4fr 1fr;
   column-gap: 10px;
+  height: 100%;
 }
 
 .grid-container > * {
@@ -22,4 +25,8 @@ body {
 
 .grid-container .map-pane {
   grid-column: 3;
+}
+
+.grid-container .map-pane h2 {
+  text-align: center;
 }
