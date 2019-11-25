@@ -9,9 +9,15 @@ class CompaniesProductivity extends Component {
     this.activitySectors = []
     this.charts = []
 
-    dispatch.on('initialize', this.initialize.bind(this))
-    dispatch.on('update_municipality', this.update.bind(this))
-    dispatch.on('update_years', this.updateYears.bind(this))
+    dispatch.on('initialize.companies_productivity', this.initialize.bind(this))
+    dispatch.on(
+      'update_municipality.companies_productivity',
+      this.update.bind(this)
+    )
+    dispatch.on(
+      'update_years.companies_productivity',
+      this.updateYears.bind(this)
+    )
   }
 
   initialize ({ companiesData: data }, municipality) {
