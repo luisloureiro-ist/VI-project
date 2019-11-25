@@ -1,3 +1,5 @@
+import * as d3 from 'd3'
+
 import Component from './component'
 import DivergentBarChart from '../idioms/divergent_bar'
 
@@ -17,6 +19,8 @@ class CompaniesProductivity extends Component {
     super.setYears(getYears(data))
     super.setDataset(data)
     this.activitySectors = getActivitySectors(data)
+
+    this.updateSectionTitle()
 
     const chartWidth =
       Math.floor(super.getComponentSize() / this.activitySectors.length) - 5
@@ -42,6 +46,8 @@ class CompaniesProductivity extends Component {
   update (newData, newMunicipality) {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
+
+    this.updateSectionTitle()
 
     this.activitySectors.forEach((activitySector, idx) => {
       const filteredData = super
@@ -69,6 +75,12 @@ class CompaniesProductivity extends Component {
 
       this.charts[idx].update(filteredData, idx === 0 ? super.getYears() : null)
     })
+  }
+
+  updateSectionTitle () {
+    d3.select(super.getContainerSelector())
+      .select('.productivity-title')
+      .text(`Productivity of companies in ${super.getMunicipality()}`)
   }
 }
 
