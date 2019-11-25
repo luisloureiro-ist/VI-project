@@ -8,8 +8,8 @@ class Elections extends Component {
     this.parties = ['PS', 'PSD', 'CDS', 'PCP', 'BE', 'abstention']
     this.charts = []
 
-    // dispatch.on('initialize', this.initialize.bind(this))
-    // dispatch.on('update_municipality', this.update.bind(this))
+    dispatch.on('initialize', this.initialize.bind(this))
+    dispatch.on('update_municipality', this.update.bind(this))
   }
 
   initialize ({ electionsData: data }, municipality) {
@@ -24,10 +24,24 @@ class Elections extends Component {
       const filteredData = super
         .getDataset()
         .filter(d => d.type === electionType)
-        .map(d => this.parties.map(p => ({ key: p, value: d[p] })))
-        .slice(1)
-        .reduce((prev, curr) => curr, [])
-      // .sort((first, second) => second.year - first.year)
+        .reduce(
+          (prev, curr) =>
+            prev.concat(
+              this.parties.map(p => ({ key: p, results: [curr[p]] }))
+            ),
+          []
+        )
+        .reduce((prev, curr) => {
+          const idx = prev.findIndex(el => el.key === curr.key)
+
+          if (idx === -1) {
+            prev = prev.concat(curr)
+          } else {
+            prev[idx].results = prev[idx].results.concat(curr.results)
+          }
+
+          return prev
+        }, [])
 
       this.charts.push(
         new ClevelandDotPlot(
