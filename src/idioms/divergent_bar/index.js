@@ -18,11 +18,19 @@ class DivergentBarChart {
       .ease(d3.easeQuadInOut)
   }
 
-  create (data, yAxisDomain = null) {
+  create (data, yAxisDomain = null, chartTitle) {
     this.chart = this.chart
       .append('svg')
       .classed('svg-chart', true)
       .attr('width', this.chartWidth)
+
+    this.chart
+      .append('g')
+      .classed('sub-title', true)
+      .attr('transform', (d, i) => `translate(0, ${this.barHeight} )`)
+      .append('text')
+      .text(chartTitle)
+      .classed('is-size-6', true)
 
     if (yAxisDomain) {
       this.__createYAxis(yAxisDomain)
@@ -83,7 +91,10 @@ class DivergentBarChart {
     this.chart
       .append('g')
       .classed('y-axis', true)
-      .attr('transform', 'translate(35, 0)')
+      .attr(
+        'transform',
+        `translate(35, ${this.barHeight + this.barHeight / 2})`
+      )
       .transition(this.transition)
       .call(this.yAxis)
   }
@@ -93,7 +104,10 @@ class DivergentBarChart {
 
     this.chart
       .select('.y-axis')
-      .attr('transform', 'translate(35, 0)')
+      .attr(
+        'transform',
+        `translate(35, ${this.barHeight + this.barHeight / 2})`
+      )
       .transition(this.transition)
       .call(this.yAxis)
   }
@@ -121,7 +135,9 @@ class DivergentBarChart {
       .classed('x-axis', true)
       .attr(
         'transform',
-        `translate(${this.yAxisPadding}, ${this.barHeight * data.length})`
+        `translate(${this.yAxisPadding}, ${this.barHeight +
+          this.barHeight / 2 +
+          this.barHeight * data.length})`
       )
       .transition(this.transition)
       .call(this.xAxis)
@@ -134,7 +150,9 @@ class DivergentBarChart {
       .select('.x-axis')
       .attr(
         'transform',
-        `translate(${this.yAxisPadding}, ${this.barHeight * data.length})`
+        `translate(${this.yAxisPadding}, ${this.barHeight +
+          this.barHeight / 2 +
+          this.barHeight * data.length})`
       )
       .transition(this.transition)
       .call(this.xAxis)
@@ -160,7 +178,10 @@ class DivergentBarChart {
   }
 
   __setChartHeight (dataLength) {
-    this.chart.attr('height', this.barHeight * (dataLength + 1)) // +1 for the bottom axis
+    this.chart.attr(
+      'height',
+      this.barHeight * (dataLength + 1) + this.barHeight + this.barHeight / 2
+    ) // +1 for the bottom axis
   }
 
   __createRects (bars) {
@@ -188,12 +209,15 @@ class DivergentBarChart {
       )
       .attr('width', d => this.xScaler(Math.abs(d)))
       .attr('height', this.barHeight - 1)
-      .selection()[appendOrSelect]('title')
+      .selection()
+      [appendOrSelect]('title')
       .text(d => d)
   }
 
   __getTranslate (d, i) {
-    return `translate(0, ${i * this.barHeight} )`
+    return `translate(0, ${i * this.barHeight +
+      this.barHeight +
+      this.barHeight / 2} )`
   }
 }
 

@@ -8,6 +8,13 @@ class CompaniesProductivity extends Component {
     super(dispatch, parentSelector, componentSize)
     this.activitySectors = []
     this.charts = []
+    this.smallActivitySectorsNames = [
+      'Agriculture',
+      'Mining',
+      'Manufactoring',
+      'Contruction',
+      'Health'
+    ]
 
     dispatch.on('initialize.companies_productivity', this.initialize.bind(this))
     dispatch.on(
@@ -45,7 +52,11 @@ class CompaniesProductivity extends Component {
           idx === 0
         )
       )
-      this.charts[idx].create(filteredData, idx === 0 ? super.getYears() : null)
+      this.charts[idx].create(
+        filteredData,
+        idx === 0 ? super.getYears() : null,
+        this.smallActivitySectorsNames[idx]
+      )
     })
   }
 
