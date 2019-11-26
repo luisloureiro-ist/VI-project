@@ -55,7 +55,11 @@ class Elections extends Component {
           idx === 0
         )
       )
-      this.charts[idx].create(reducedData, getYears(filteredData))
+      this.charts[idx].create(
+        reducedData,
+        getYears(filteredData),
+        filteredData[idx].type
+      )
     })
   }
 
