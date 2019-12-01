@@ -1,12 +1,31 @@
 {
-  "name": "info_vis-fires",
-  "version": "1.0.0",
-  "description": "Fires between 2009 and 2017 and their relationship with companies, elections, firefighters and tourism",
+  "name": "impact-of-fires-in-portugal",
+  "version": "0.0.1",
+  "description": "Data visualization project that intends to highlight possible implications of the number of fires in politics, companies and tourism in Portugal.",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "python2 -m SimpleHTTPServer 8000"
   },
-  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisloureiro-ist/VI-project.git"
+  },
+  "keywords": [
+    "Portugal",
+    "fires",
+    "impact",
+    "companies",
+    "tourism",
+    "info-vis",
+    "data-visualization"
+  ],
+  "author": "group 40",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luisloureiro-ist/VI-project/issues"
+  },
+  "homepage": "https://github.com/luisloureiro-ist/VI-project#readme",
   "devDependencies": {
     "standard": "^14.3.1"
   },
