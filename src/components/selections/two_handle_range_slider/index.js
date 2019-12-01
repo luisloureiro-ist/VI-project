@@ -1,5 +1,3 @@
-import './index.css'
-
 /**
  * This class was created using the code present on the following link:
  * - https://www.simple.gy/blog/range-slider-two-handles/

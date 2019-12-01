@@ -1,7 +1,5 @@
-import * as d3 from 'd3'
-
-import Component from './component'
-import DivergentBarChart from '../idioms/divergent_bar'
+import Component from './component.js'
+import DivergentBarChart from '../idioms/divergent_bar/index.js'
 
 class CompaniesProductivity extends Component {
   constructor (dispatch, parentSelector, componentSize) {

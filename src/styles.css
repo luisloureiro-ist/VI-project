@@ -1,3 +1,7 @@
+@import '/src/bulma.min.css';
+@import '/src/components/selections/two_handle_range_slider/index.css';
+@import '/src/idioms/index.css';
+
 body {
   height: 728px;
   width: 1536px;

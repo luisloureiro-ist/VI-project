@@ -1,17 +1,12 @@
-import './styles.css'
-import 'bulma/css/bulma.css'
-
-import './components/selections'
-
-import * as d3 from 'd3'
-import companiesCSV from './datasets/companies_dataset.csv'
-import electionsCSV from './datasets/elections_dataset.csv'
-import firesCSV from './datasets/fires_dataset.csv'
-import CompaniesProductivityComponent from './components/companies_productivity'
-import ElectionsComponent from './components/elections'
+import CompaniesProductivityComponent from './components/companies_productivity.js'
+import ElectionsComponent from './components/elections.js'
 //
 //
 ;(async () => {
+  const companiesCSV = '/src/datasets/companies_dataset.csv'
+  const electionsCSV = '/src/datasets/elections_dataset.csv'
+  const firesCSV = '/src/datasets/fires_dataset.csv'
+
   const [companiesData, electionsData, firesData] = await Promise.all([
     d3.csv(companiesCSV, parseCompaniesData),
     d3.csv(electionsCSV, parseElectionsData),

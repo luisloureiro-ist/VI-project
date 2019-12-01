@@ -3,6 +3,7 @@
   <head>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/src/styles.css" />
   </head>
 
   <body>
@@ -74,16 +75,16 @@
       </aside>
       <main class="charts-pane">
         <section class="cleveland-dot-plot-section">
-            <h4 class="elections-title is-size-4"></h4>
+          <h4 class="elections-title is-size-4"></h4>
         </section>
         <section class="radar-chart-and-line-chart-section">
             <div style="width: 49%; display: inline-block; height: 250px;"><span class="number-of-companies-title is-size-4">Number of companies</span><br>
               <img src="src/radar-chat-image.png" width="300">
-            </div>
+          </div>
             <div style="width: 49%; display: inline-block; height: 250px; vertical-align:top;">
               <span class="fires-firefighters-tourism is-size-4">Number of fires, firefighters and tourists</span><br>
               <img src="src/line-chart-image.png" width="300">
-            </div>
+          </div>
         </section>
         <section class="divergent-charts-section">
           <h4 class="productivity-title is-size-4"></h4>
@@ -117,6 +118,9 @@
         </div>
       </section>
     </section>
-    <script src="src/index.js"></script>
+
+    <script src="/src/d3.min.js"></script>
+    <script src="/src/components/selections/index.js" type="module"></script>
+    <script src="/src/index.js" type="module"></script>
   </body>
 </html>
