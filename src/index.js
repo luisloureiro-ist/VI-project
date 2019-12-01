@@ -3,9 +3,9 @@ import ElectionsComponent from './components/elections.js'
 //
 //
 ;(async () => {
-  const companiesCSV = '/src/datasets/companies_dataset.csv'
-  const electionsCSV = '/src/datasets/elections_dataset.csv'
-  const firesCSV = '/src/datasets/fires_dataset.csv'
+  const companiesCSV = '/assets/datasets/companies_dataset.csv'
+  const electionsCSV = '/assets/datasets/elections_dataset.csv'
+  const firesCSV = '/assets/datasets/fires_dataset.csv'
 
   const [companiesData, electionsData, firesData] = await Promise.all([
     d3.csv(companiesCSV, parseCompaniesData),
