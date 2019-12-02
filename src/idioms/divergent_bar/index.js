@@ -1,6 +1,3 @@
-import './index.css'
-import * as d3 from 'd3'
-
 class DivergentBarChart {
   constructor (parentSelector, chartWidth, withYAxis = false, barHeight = 20) {
     this.parentSelector = parentSelector

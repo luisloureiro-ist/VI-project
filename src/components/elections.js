@@ -1,6 +1,5 @@
-import * as d3 from 'd3'
-import Component from './component'
-import ClevelandDotPlot from '../idioms/cleveland_dot_plots'
+import Component from './component.js'
+import ClevelandDotPlot from '../idioms/cleveland_dot_plots/index.js'
 
 class Elections extends Component {
   constructor (dispatch, parentSelector, componentSize) {
