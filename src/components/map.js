@@ -6,19 +6,24 @@ class Map extends Component {
     super(dispatch, parentSelector, componentSize)
 
     dispatch.on('initialize.map', this.initialize.bind(this))
+    dispatch.on('update_municipality.map', this.update.bind(this))
   }
 
   initialize ({ firesData: data }, municipality) {
     super.setMunicipality(municipality)
     super.setDataset(data)
-    super.setYears(getYears(data))
 
     this.updateSectionTitle()
 
-    this.chart = new ChoroplethMap(
-      super.getContainerSelector()
-    )
-    this.chart.create()
+    this.chart = new ChoroplethMap(super.getContainerSelector())
+    this.chart.create(this.__dispatchUpdateMunicipality.bind(this))
+  }
+
+  update ({ firesData: data }, newMunicipality) {
+    super.setMunicipality(newMunicipality)
+    super.setDataset(data)
+
+    this.updateSectionTitle()
   }
 
   updateSectionTitle () {
@@ -26,14 +31,10 @@ class Map extends Component {
       .select('.region-name')
       .text(`${super.getMunicipality()}`)
   }
-}
 
-function getYears (data) {
-  return data.reduce(
-    (prev, curr) =>
-      prev.indexOf(curr.year) === -1 ? prev.concat([curr.year]) : prev,
-    []
-  )
+  __dispatchUpdateMunicipality (NUTS, name) {
+    super.getDispatch().call('region_selected', this, NUTS, name)
+  }
 }
 
 export default Map
