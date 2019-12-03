@@ -1,5 +1,6 @@
 import CompaniesProductivityComponent from './components/companies_productivity.js'
 import ElectionsComponent from './components/elections.js'
+import MapComponent from './components/map.js'
 //
 //
 ;(async () => {
@@ -16,7 +17,6 @@ import ElectionsComponent from './components/elections.js'
   const defaultMunicipality = 'Continente'
   const components = []
 
-  setMapSectionHeading(defaultMunicipality)
   const mainSectionWidth = document.querySelector('.charts-pane').offsetWidth
   const dispatch = registerEventListeners({
     companiesData,
@@ -40,6 +40,8 @@ import ElectionsComponent from './components/elections.js'
       mainSectionWidth
     )
   )
+
+  components.push(new MapComponent(dispatch, '.map-pane', 0))
 
   // Initialize dashboard components
   dispatch.call(
@@ -69,8 +71,6 @@ function registerEventListeners ({ companiesData: fullDataset }) {
 
   d3.selectAll('.municipality').on('click', (d, i, nodesList) => {
     const newMunicipality = nodesList[i].value
-
-    setMapSectionHeading(newMunicipality)
 
     dispatch.call(
       'update_municipality',
@@ -131,8 +131,4 @@ function parseFiresData (datum) {
     firefighters: +datum.Firefighters,
     tourism: +datum.Tourism
   }
-}
-
-function setMapSectionHeading (text) {
-  d3.select('body .map-pane .region-name').text(text)
 }
