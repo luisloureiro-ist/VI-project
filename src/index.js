@@ -62,21 +62,27 @@ import MapComponent from './components/map.js'
   )
 })()
 
-function registerEventListeners ({ companiesData: fullDataset }) {
+function registerEventListeners ({ companiesData, firesData, electionsData }) {
   const dispatch = d3.dispatch(
     'initialize',
+    'region_selected',
     'update_municipality',
     'update_years'
   )
 
-  d3.selectAll('.municipality').on('click', (d, i, nodesList) => {
-    const newMunicipality = nodesList[i].value
+  dispatch.on('region_selected', (NUTS, name) => {
+    const filterCallback = value =>
+      value.NUTS === NUTS && value.location === name
 
     dispatch.call(
       'update_municipality',
       this,
-      fullDataset.filter(value => value.location === newMunicipality),
-      newMunicipality
+      {
+        companiesData: companiesData.filter(filterCallback),
+        electionsData: firesData.filter(filterCallback),
+        firesData: electionsData.filter(filterCallback)
+      },
+      name
     )
   })
 
