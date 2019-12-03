@@ -2,3 +2,10 @@
 #NUTS_III {
   display: none;
 }
+
+#Municipalities path,
+#NUTS_III path,
+#NUTS_II path,
+#NUTS_I path {
+  cursor: pointer;
+}
