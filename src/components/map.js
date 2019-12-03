@@ -32,8 +32,8 @@ class Map extends Component {
       .text(`${super.getMunicipality()}`)
   }
 
-  __dispatchUpdateMunicipality (NUTS, name) {
-    super.getDispatch().call('region_selected', this, NUTS, name)
+  __dispatchUpdateMunicipality (nuts, name) {
+    super.getDispatch().call('region_selected', this, nuts, name)
   }
 }
 

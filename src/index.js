@@ -70,9 +70,9 @@ function registerEventListeners ({ companiesData, firesData, electionsData }) {
     'update_years'
   )
 
-  dispatch.on('region_selected', (NUTS, name) => {
+  dispatch.on('region_selected', (nuts, name) => {
     const filterCallback = value =>
-      value.NUTS === NUTS && value.location === name
+      value.nuts === nuts && value.location === name
 
     dispatch.call(
       'update_municipality',
