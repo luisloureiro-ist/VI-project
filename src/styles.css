@@ -9,18 +9,23 @@ body {
   display: flex;
   height: 100%;
 }
-
+.grid-container .charts-pane, .grid-container .selections-pane, .grid-container .map-pane{
+  padding: 20px;
+}
 .grid-container .charts-pane {
   display: flex;
   flex: 4 ;
+  background-color: lightblue;
 }
 
 .grid-container .selections-pane {
   flex:  1;
+  background-color: lightgreen
 }
 
 .grid-container .map-pane {
   flex: 2;
+  background-color: lightsalmon
 }
 
 .grid-container .charts-pane .left-charts, .grid-container .charts-pane .right-charts{
