@@ -4,3 +4,6 @@ dist
 node_modules
 
 coverage
+
+venv
+__pycache__
