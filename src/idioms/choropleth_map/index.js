@@ -40,14 +40,16 @@ class ChoroplethMap {
   // Private (auxiliar) functions
   //
   __addLegend (title) {
-    this.chart.append(
-      () =>
-        new Legend({
-          color: this.colorScale,
-          title,
-          tickFormat: 'd'
-        })
-    )
+    this.chart
+      .append(
+        () =>
+          new Legend({
+            color: this.colorScale,
+            title,
+            tickFormat: 'd'
+          })
+      )
+      .classed('svg-legend', true)
   }
 
   __onPathClick (d, i, nodesList) {
