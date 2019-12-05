@@ -3,33 +3,37 @@
 @import '/src/idioms/index.css';
 
 body {
-  height: 728px;
-  width: 1536px;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  column-gap: 10px;
+  display: flex;
   height: 100%;
 }
-
+.grid-container .charts-pane, .grid-container .selections-pane, .grid-container .map-pane{
+  padding: 20px;
+}
 .grid-container .charts-pane {
-  grid-column: 2;
+  display: flex;
+  flex: 4 ;
+  background-color: lightblue;
 }
 
 .grid-container .selections-pane {
-  grid-column: 1;
+  flex:  1;
+  background-color: lightgreen
 }
 
 .grid-container .map-pane {
-  grid-column: 3;
+  flex: 2;
+  background-color: lightsalmon
 }
 
-.grid-container .map-pane h2 {
-  text-align: center;
-}
+.grid-container .charts-pane .left-charts, .grid-container .charts-pane .right-charts{
+  display: flex;
+  flex-direction: column;
+} 
 
-.grid-container .map-pane form input {
-  border: 1px solid grey;
+.grid-container .charts-pane .left-charts, 
+.grid-container .charts-pane .right-charts {
+  flex:1
 }
