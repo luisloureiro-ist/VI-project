@@ -58,7 +58,7 @@ class Elections extends Component {
     })
   }
 
-  update (newData, newMunicipality) {
+  update ({ electionsData: newData }, newMunicipality) {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
 
@@ -70,7 +70,7 @@ class Elections extends Component {
         .filter(d => d.type === electionType)
         .reduce((prev, curr) => prev.concat(curr.electionResults), [])
 
-      this.charts[idx].update(filteredData)
+      this.charts[idx].update(filteredData, getYears(filteredData))
     })
   }
 

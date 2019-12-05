@@ -9,6 +9,10 @@ class Component {
     this.municipality = ''
   }
 
+  getDispatch () {
+    return this.dispatch
+  }
+
   getContainerSelector () {
     return this.containerSelector
   }

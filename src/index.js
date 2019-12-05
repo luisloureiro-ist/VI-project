@@ -1,5 +1,6 @@
 import CompaniesProductivityComponent from './components/companies_productivity.js'
 import ElectionsComponent from './components/elections.js'
+import MapComponent from './components/map.js'
 //
 //
 ;(async () => {
@@ -16,7 +17,6 @@ import ElectionsComponent from './components/elections.js'
   const defaultMunicipality = 'Continente'
   const components = []
 
-  setMapSectionHeading(defaultMunicipality)
   const mainSectionWidth = document.querySelector('.charts-pane').offsetWidth
   const dispatch = registerEventListeners({
     companiesData,
@@ -41,6 +41,8 @@ import ElectionsComponent from './components/elections.js'
     )
   )
 
+  components.push(new MapComponent(dispatch, '.map-pane', 0))
+
   // Initialize dashboard components
   dispatch.call(
     'initialize',
@@ -52,31 +54,61 @@ import ElectionsComponent from './components/elections.js'
       electionsData: electionsData.filter(
         value => value.location === defaultMunicipality
       ),
-      firesData: firesData.filter(
-        value => value.location === defaultMunicipality
-      )
+      firesData: firesData
+        // Reduce the number of properties to the ones we need
+        .map(datum => ({
+          fires: datum.fires,
+          year: datum.year,
+          location: datum.location,
+          nuts: datum.nuts
+        }))
+        // Sum the number of fires for all years
+        .reduce((prev, curr) => {
+          const idx = prev.findIndex(
+            el => el.location === curr.location && el.nuts === curr.nuts
+          )
+
+          if (idx === -1) {
+            prev = prev.concat(Object.assign({ years: 1 }, curr))
+          } else {
+            prev[idx].fires += curr.fires
+            prev[idx].years += 1
+          }
+
+          return prev
+        }, [])
+        // Transform the data to the format we want
+        .map(datum => ({
+          value: Math.ceil(datum.fires / datum.years),
+          location: datum.location,
+          nuts: datum.nuts
+        }))
     },
     defaultMunicipality
   )
 })()
 
-function registerEventListeners ({ companiesData: fullDataset }) {
+function registerEventListeners ({ companiesData, firesData, electionsData }) {
   const dispatch = d3.dispatch(
     'initialize',
+    'region_selected',
     'update_municipality',
     'update_years'
   )
 
-  d3.selectAll('.municipality').on('click', (d, i, nodesList) => {
-    const newMunicipality = nodesList[i].value
-
-    setMapSectionHeading(newMunicipality)
+  dispatch.on('region_selected', (nuts, name) => {
+    const filterCallback = value =>
+      value.nuts === nuts && value.location === name
 
     dispatch.call(
       'update_municipality',
       this,
-      fullDataset.filter(value => value.location === newMunicipality),
-      newMunicipality
+      {
+        companiesData: companiesData.filter(filterCallback),
+        electionsData: firesData.filter(filterCallback),
+        firesData: electionsData.filter(filterCallback)
+      },
+      name
     )
   })
 
@@ -131,8 +163,4 @@ function parseFiresData (datum) {
     firefighters: +datum.Firefighters,
     tourism: +datum.Tourism
   }
-}
-
-function setMapSectionHeading (text) {
-  d3.select('body .map-pane .region-name').text(text)
 }
