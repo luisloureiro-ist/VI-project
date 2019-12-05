@@ -41,7 +41,7 @@ import MapComponent from './components/map.js'
     )
   )
 
-  components.push(new MapComponent(dispatch, '.map-section', 0))
+  components.push(new MapComponent(dispatch, '.map-pane', 0))
 
   // Initialize dashboard components
   dispatch.call(

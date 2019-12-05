@@ -17,7 +17,7 @@ class Map extends Component {
 
     const filteredData = data.filter(datum => datum.nuts === 'NUTS III')
 
-    this.chart = new ChoroplethMap(super.getContainerSelector())
+    this.chart = new ChoroplethMap(`${super.getContainerSelector()} .map-section`)
     this.chart.create(
       filteredData,
       this.__dispatchUpdateMunicipality.bind(this)
