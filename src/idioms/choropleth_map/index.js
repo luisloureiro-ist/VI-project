@@ -1,26 +1,55 @@
+import Legend from './legend.js'
+
 class ChoroplethMap {
   constructor (parentSelector) {
     this.parentSelector = parentSelector
-    this.chart = d3.select(this.parentSelector).select('svg')
+    this.chart = d3.select(this.parentSelector)
     this.transition = d3.transition().duration(200)
   }
 
-  create (clickCallback) {
+  create (data, clickCallback) {
     this.onClickCallback = clickCallback
+
+    // Update color scale
+    this.colorScale = d3.scaleQuantize(
+      [d3.min(data, d => d.value), d3.max(data, d => d.value)],
+      d3.schemeOranges[9]
+    )
 
     // Draw the map
     this.chart
-      .selectAll('#NUTS_II path')
-      .attr('fill', 'orange')
-      .style('opacity', 0.8)
+      .selectAll('svg #NUTS_III path')
+      .attr('fill', (d, i, nodesList) => {
+        const regionClicked = nodesList[i]
+        const datum = data.find(
+          datum =>
+            datum.location === regionClicked.dataset.name &&
+            datum.nuts === getNUTS(regionClicked)
+        )
+
+        return this.colorScale(datum.value)
+      })
       .on('click', this.__onPathClick.bind(this))
       .on('mouseover', this.__onMouseOver.bind(this))
       .on('mouseleave', this.__onMouseLeave.bind(this))
+
+    this.__addLegend('# Fires')
   }
 
   //
   // Private (auxiliar) functions
   //
+  __addLegend (title) {
+    this.chart.append(
+      () =>
+        new Legend({
+          color: this.colorScale,
+          title,
+          tickFormat: 'd'
+        })
+    )
+  }
+
   __onPathClick (d, i, nodesList) {
     const regionClicked = nodesList[i]
     const regionName = regionClicked.dataset.name
