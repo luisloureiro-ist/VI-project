@@ -206,8 +206,7 @@ class DivergentBarChart {
       )
       .attr('width', d => this.xScaler(Math.abs(d)))
       .attr('height', this.barHeight - 1)
-      .selection()
-      [appendOrSelect]('title')
+      .selection()[appendOrSelect]('title')
       .text(d => d)
   }
 

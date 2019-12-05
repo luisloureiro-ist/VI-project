@@ -58,7 +58,7 @@ class CompaniesProductivity extends Component {
     })
   }
 
-  update (newData, newMunicipality) {
+  update ({ companiesData: newData }, newMunicipality) {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
 
