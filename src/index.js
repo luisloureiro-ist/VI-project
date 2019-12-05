@@ -41,7 +41,7 @@ import MapComponent from './components/map.js'
     )
   )
 
-  components.push(new MapComponent(dispatch, '.map-pane', 0))
+  components.push(new MapComponent(dispatch, '.map-section', 0))
 
   // Initialize dashboard components
   dispatch.call(
@@ -54,9 +54,35 @@ import MapComponent from './components/map.js'
       electionsData: electionsData.filter(
         value => value.location === defaultMunicipality
       ),
-      firesData: firesData.filter(
-        value => value.location === defaultMunicipality
-      )
+      firesData: firesData
+        // Reduce the number of properties to the ones we need
+        .map(datum => ({
+          fires: datum.fires,
+          year: datum.year,
+          location: datum.location,
+          nuts: datum.nuts
+        }))
+        // Sum the number of fires for all years
+        .reduce((prev, curr) => {
+          const idx = prev.findIndex(
+            el => el.location === curr.location && el.nuts === curr.nuts
+          )
+
+          if (idx === -1) {
+            prev = prev.concat(Object.assign({ years: 1 }, curr))
+          } else {
+            prev[idx].fires += curr.fires
+            prev[idx].years += 1
+          }
+
+          return prev
+        }, [])
+        // Transform the data to the format we want
+        .map(datum => ({
+          value: Math.ceil(datum.fires / datum.years),
+          location: datum.location,
+          nuts: datum.nuts
+        }))
     },
     defaultMunicipality
   )
