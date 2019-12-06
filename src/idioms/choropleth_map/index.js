@@ -32,6 +32,17 @@ class ChoroplethMap {
       .on('click', this.__onPathClick.bind(this))
       .on('mouseover', this.__onMouseOver.bind(this))
       .on('mouseleave', this.__onMouseLeave.bind(this))
+      .select('title')
+      .text((d, i, nodesList) => {
+        const regionClicked = nodesList[i].parentElement
+        const datum = data.find(
+          datum =>
+            datum.location === regionClicked.dataset.name &&
+            datum.nuts === getNUTS(regionClicked)
+        )
+
+        return `Location: ${datum.location}\n\nAverage number of fires: ${datum.value}`
+      })
 
     this.__addLegend('# Fires')
   }
