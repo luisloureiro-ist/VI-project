@@ -1,6 +1,7 @@
 import CompaniesProductivityComponent from './components/companies_productivity.js'
 import ElectionsComponent from './components/elections.js'
 import MapComponent from './components/map.js'
+import FiresFirefightersComponent from './components/fires_firefighters.js'
 //
 //
 ;(async () => {
@@ -41,6 +42,13 @@ import MapComponent from './components/map.js'
     )
   )
 
+  components.push(
+    new FiresFirefightersComponent(
+      dispatch,
+      '.number-of-fires-firefighters-section',
+      mainSectionWidth
+    )
+  )
   components.push(new MapComponent(dispatch, '.map-pane', 0))
 
   // Initialize dashboard components
