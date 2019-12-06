@@ -2,38 +2,40 @@
 @import '/src/components/selections/two_handle_range_slider/index.css';
 @import '/src/idioms/index.css';
 
-body {
-}
-
 .grid-container {
   display: flex;
-  height: 100%;
 }
-.grid-container .charts-pane, .grid-container .selections-pane, .grid-container .map-pane{
+
+.grid-container .charts-pane,
+.grid-container .selections-pane,
+.grid-container .map-pane {
   padding: 20px;
+  height: 100vh;
 }
+
 .grid-container .charts-pane {
   display: flex;
-  flex: 4 ;
+  flex: 4;
   background-color: lightblue;
 }
 
 .grid-container .selections-pane {
-  flex:  1;
-  background-color: lightgreen
+  flex: 1;
+  background-color: lightgreen;
 }
 
 .grid-container .map-pane {
   flex: 2;
-  background-color: lightsalmon
+  background-color: lightsalmon;
 }
 
-.grid-container .charts-pane .left-charts, .grid-container .charts-pane .right-charts{
+.grid-container .charts-pane .left-charts,
+.grid-container .charts-pane .right-charts {
   display: flex;
   flex-direction: column;
-} 
+}
 
-.grid-container .charts-pane .left-charts, 
+.grid-container .charts-pane .left-charts,
 .grid-container .charts-pane .right-charts {
-  flex:1
+  flex: 1;
 }
