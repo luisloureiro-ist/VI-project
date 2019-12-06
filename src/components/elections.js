@@ -48,11 +48,7 @@ class Elections extends Component {
         }, [])
 
       this.charts.push(
-        new ClevelandDotPlot(
-          super.getContainerSelector(),
-          chartWidth,
-          idx === 0
-        )
+        new ClevelandDotPlot(super.getContainerSelector(), chartWidth)
       )
       this.charts[idx].create(reducedData, getYears(filteredData), electionType)
     })

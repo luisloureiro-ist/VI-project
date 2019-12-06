@@ -1,5 +1,5 @@
 class ClevelandDotPlots {
-  constructor (parentSelector, chartWidth, withYAxis = false, dotRadius = 7) {
+  constructor (parentSelector, chartWidth, dotRadius = 7) {
     this.parentSelector = parentSelector
     this.chartWidth = chartWidth
     this.dotRadius = dotRadius
@@ -8,7 +8,7 @@ class ClevelandDotPlots {
     this.xAxis = d3.axisBottom()
     this.yScaler = null
     this.yAxis = null
-    this.yAxisPadding = +(withYAxis && 35) // if false then equals 0
+    this.yAxisPadding = 35
     this.transition = d3
       .transition()
       .duration(1000)
