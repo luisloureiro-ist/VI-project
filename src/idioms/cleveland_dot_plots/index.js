@@ -1,7 +1,10 @@
 class ClevelandDotPlots {
-  constructor (parentSelector, chartWidth, dotRadius = 7) {
+  constructor (parentSelector, chartWidth, chartHeight, dotRadius = 7) {
     this.parentSelector = parentSelector
-    this.chartWidth = chartWidth
+    this.chartSize = {
+      width: chartWidth,
+      height: chartHeight
+    }
     this.dotRadius = dotRadius
     this.chart = d3.select(this.parentSelector)
     this.xScaler = d3.scaleLinear()
@@ -20,18 +23,12 @@ class ClevelandDotPlots {
     this.chart = this.chart
       .append('svg')
       .classed('svg-chart', true)
-      .attr('width', this.chartWidth)
-      .attr(
-        'height',
-        3 * this.dotRadius +
-          this.dotRadius * 2 * (data.length + 1) +
-          this.dotRadius * 2 +
-          35
-      )
+      .attr('width', this.chartSize.width)
+      .attr('height', this.chartSize.height)
 
     this.xScaler
       .domain([0, d3.max(data, d => Math.max(...d.results)) + 2])
-      .range([0, this.chartWidth - this.yAxisPadding])
+      .range([0, this.chartSize.width - this.yAxisPadding])
     this.yScaler = d3
       .scaleBand()
       .range([0, 2 * this.dotRadius * (data.length + 1)])
@@ -78,20 +75,13 @@ class ClevelandDotPlots {
 
     this.xScaler
       .domain([0, d3.max(data, d => Math.max(...d.results)) + 2])
-      .range([0, this.chartWidth - this.yAxisPadding])
+      .range([0, this.chartSize.width - this.yAxisPadding])
     this.yScaler = d3
       .scaleBand()
       .range([0, 2 * this.dotRadius * (data.length + 1)])
       .domain(data.map(d => d.key))
 
-    this.__setChartHeight(data.length)
-    this.chart.attr(
-      'height',
-      3 * this.dotRadius +
-        this.dotRadius * 2 * (data.length + 1) +
-        this.dotRadius * 2 +
-        35
-    )
+    this.chart.attr('height', this.chartSize.height)
 
     this.chart
       .select('.clevelands')

@@ -2,8 +2,11 @@ import Component from './component.js'
 import ClevelandDotPlot from '../idioms/cleveland_dot_plots/index.js'
 
 class Elections extends Component {
-  constructor (dispatch, parentSelector, componentSize) {
-    super(dispatch, parentSelector, componentSize)
+  constructor (dispatch, parentSelector) {
+    super(dispatch, parentSelector, {
+      width: document.querySelector(parentSelector).offsetWidth,
+      height: document.querySelector(parentSelector).offsetHeight - 36 // The height of the title
+    })
     this.electionTypes = []
     this.parties = ['PS', 'PSD', 'CDS', 'PCP', 'BE', 'Abs.']
     this.charts = []
@@ -18,9 +21,6 @@ class Elections extends Component {
     this.electionTypes = getElectionTypes(data)
 
     this.updateSectionTitle()
-
-    const chartWidth =
-      Math.floor(super.getComponentSize() / this.electionTypes.length) - 5
 
     this.electionTypes.forEach((electionType, idx) => {
       const filteredData = super
@@ -48,7 +48,11 @@ class Elections extends Component {
         }, [])
 
       this.charts.push(
-        new ClevelandDotPlot(super.getContainerSelector(), chartWidth)
+        new ClevelandDotPlot(
+          super.getContainerSelector(),
+          super.getComponentSize().width,
+          super.getComponentSize().height
+        )
       )
       this.charts[idx].create(reducedData, getYears(filteredData), electionType)
     })

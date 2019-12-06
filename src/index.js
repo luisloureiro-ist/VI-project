@@ -17,9 +17,6 @@ import MapComponent from './components/map.js'
   const defaultMunicipality = 'Continente'
   const components = []
 
-  const leftChartsSectionWidth = document.querySelector(
-    '.charts-pane .left-charts'
-  ).offsetWidth
   const rightChartsSectionWidth = document.querySelector(
     '.charts-pane .right-charts'
   ).offsetWidth
@@ -42,8 +39,7 @@ import MapComponent from './components/map.js'
   components.push(
     new ElectionsComponent(
       dispatch,
-      '.cleveland-dot-plot-section',
-      leftChartsSectionWidth
+      '.cleveland-dot-plot-section'
     )
   )
 
@@ -58,7 +54,8 @@ import MapComponent from './components/map.js'
         value => value.location === defaultMunicipality
       ),
       electionsData: electionsData.filter(
-        value => value.location === defaultMunicipality
+        value =>
+          value.location === defaultMunicipality && value.type === 'Local'
       ),
       firesData: firesData
         // Reduce the number of properties to the ones we need
