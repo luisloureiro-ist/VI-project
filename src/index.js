@@ -17,7 +17,13 @@ import MapComponent from './components/map.js'
   const defaultMunicipality = 'Continente'
   const components = []
 
-  const mainSectionWidth = document.querySelector('.charts-pane').offsetWidth
+  const leftChartsSectionWidth = document.querySelector(
+    '.charts-pane .left-charts'
+  ).offsetWidth
+  const rightChartsSectionWidth = document.querySelector(
+    '.charts-pane .right-charts'
+  ).offsetWidth
+
   const dispatch = registerEventListeners({
     companiesData,
     electionsData,
@@ -29,7 +35,7 @@ import MapComponent from './components/map.js'
     new CompaniesProductivityComponent(
       dispatch,
       '.divergent-charts-section',
-      mainSectionWidth
+      rightChartsSectionWidth
     )
   )
 
@@ -37,7 +43,7 @@ import MapComponent from './components/map.js'
     new ElectionsComponent(
       dispatch,
       '.cleveland-dot-plot-section',
-      mainSectionWidth
+      leftChartsSectionWidth
     )
   )
 
