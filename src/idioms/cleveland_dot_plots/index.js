@@ -11,7 +11,7 @@ class ClevelandDotPlots {
     this.xAxis = d3.axisBottom()
     this.yScaler = null
     this.yAxis = null
-    this.yAxisPadding = 35
+    this.yAxisWidth = 35
     this.transition = d3
       .transition()
       .duration(1000)
@@ -28,7 +28,7 @@ class ClevelandDotPlots {
 
     this.xScaler
       .domain([0, d3.max(data, d => Math.max(...d.results)) + 2])
-      .range([0, this.chartSize.width - this.yAxisPadding])
+      .range([0, this.chartSize.width - this.yAxisWidth])
     this.yScaler = d3
       .scaleBand()
       .range([0, 2 * this.dotRadius * (data.length + 1)])
@@ -59,7 +59,7 @@ class ClevelandDotPlots {
       lineAndCirclesGroup.call(this.__createDot.bind(this, idx))
     })
 
-    if (this.yAxisPadding !== 0) {
+    if (this.yAxisWidth !== 0) {
       this.__createYAxis(data)
     }
     this.__createXAxis(data)
@@ -67,7 +67,7 @@ class ClevelandDotPlots {
   }
 
   update (data, categories, chartTitle) {
-    if (this.yAxisPadding !== 0) {
+    if (this.yAxisWidth !== 0) {
       this.__updateYAxis(data)
     }
     this.__updateXAxis(data)
@@ -75,7 +75,7 @@ class ClevelandDotPlots {
 
     this.xScaler
       .domain([0, d3.max(data, d => Math.max(...d.results)) + 2])
-      .range([0, this.chartSize.width - this.yAxisPadding])
+      .range([0, this.chartSize.width - this.yAxisWidth])
     this.yScaler = d3
       .scaleBand()
       .range([0, 2 * this.dotRadius * (data.length + 1)])
@@ -116,7 +116,7 @@ class ClevelandDotPlots {
       .classed('x-axis', true)
       .attr(
         'transform',
-        `translate(${this.yAxisPadding}, ${3 * this.dotRadius +
+        `translate(${this.yAxisWidth}, ${3 * this.dotRadius +
           this.dotRadius * 2 * (data.length + 1) +
           8})` // +8 for padding
       )
@@ -131,7 +131,7 @@ class ClevelandDotPlots {
       .select('x-axis', true)
       .attr(
         'transform',
-        `translate(${this.yAxisPadding}, ${3 * this.dotRadius +
+        `translate(${this.yAxisWidth}, ${3 * this.dotRadius +
           this.dotRadius * 2 * (data.length + 1) +
           8})` // +8 for padding
       )
@@ -151,7 +151,7 @@ class ClevelandDotPlots {
       .classed('y-axis', true)
       .attr(
         'transform',
-        `translate(${this.yAxisPadding}, ${3 * this.dotRadius +
+        `translate(${this.yAxisWidth}, ${3 * this.dotRadius +
           this.dotRadius +
           2})` // +2 for padding
       )
@@ -170,7 +170,7 @@ class ClevelandDotPlots {
       .select('y-axis', true)
       .attr(
         'transform',
-        `translate(${this.yAxisPadding}, ${3 * this.dotRadius +
+        `translate(${this.yAxisWidth}, ${3 * this.dotRadius +
           this.dotRadius +
           2})` // +2 for padding
       )
@@ -183,7 +183,7 @@ class ClevelandDotPlots {
       .append('g')
       .classed('legend', true)
       .attr('height', 30)
-      .attr('transform', `translate(${this.yAxisPadding},30)`)
+      .attr('transform', `translate(${this.yAxisWidth},30)`)
     categories.forEach((category, idx) => {
       legend
         .append('circle')
@@ -206,7 +206,7 @@ class ClevelandDotPlots {
       .append('g')
       .classed('legend', true)
       .attr('height', 30)
-      .attr('transform', `translate(${this.yAxisPadding},30)`)
+      .attr('transform', `translate(${this.yAxisWidth},30)`)
     categories.forEach((category, idx) => {
       legend
         .append('circle')
@@ -228,7 +228,7 @@ class ClevelandDotPlots {
     lines
       .append('circle')
       .transition(this.transition)
-      .attr('cx', d => this.xScaler(d.results[resultsIdx]) + this.yAxisPadding)
+      .attr('cx', d => this.xScaler(d.results[resultsIdx]) + this.yAxisWidth)
       .attr('cy', d => this.yScaler(d.key) + this.dotRadius / 2)
       .attr('r', this.dotRadius)
       .style('fill', () => this.colors[resultsIdx])
@@ -241,7 +241,7 @@ class ClevelandDotPlots {
     lines
       .select('circle')
       .transition(this.transition)
-      .attr('cx', d => this.xScaler(d.results[resultsIdx]) + this.yAxisPadding)
+      .attr('cx', d => this.xScaler(d.results[resultsIdx]) + this.yAxisWidth)
       .attr('cy', d => this.yScaler(d.key) + this.dotRadius / 2)
       .attr('r', this.dotRadius)
       .style('fill', () => this.colors[resultsIdx])
