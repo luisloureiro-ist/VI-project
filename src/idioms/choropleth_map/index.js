@@ -61,28 +61,26 @@ class ChoroplethMap {
   }
 
   __onMouseOver (d, i, nodesList) {
-    this.chart
-      .selectAll('#NUTS_II path')
-      .interrupt() // Avoids "too late; already running" error
-      .transition(this.transition)
-      .style('opacity', 0.5)
+    this.__resetPathsStyle()
+
     d3.select(nodesList[i])
       .interrupt() // Avoids "too late; already running" error
       .transition(this.transition)
-      .style('opacity', 0.8)
       .style('stroke', 'black')
+      .style('stroke-width', '1px')
   }
 
-  __onMouseLeave (d, i, nodesList) {
+  __onMouseLeave () {
+    this.__resetPathsStyle()
+  }
+
+  __resetPathsStyle () {
     this.chart
-      .selectAll('#NUTS_II path')
-      .interrupt() // Avoids "too late; already running" error
-      .transition(this.transition)
-      .style('opacity', 0.8)
-    d3.select(nodesList[i])
+      .selectAll('#NUTS_III path')
       .interrupt() // Avoids "too late; already running" error
       .transition(this.transition)
       .style('stroke', 'inherit')
+      .style('stroke-width', 'inherit')
   }
 }
 
