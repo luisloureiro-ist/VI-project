@@ -5,8 +5,8 @@ class Map extends Component {
   constructor (dispatch, parentSelector, componentSize) {
     super(dispatch, parentSelector, componentSize)
 
-    dispatch.on('initialize.map', this.initialize.bind(this))
-    dispatch.on('update_municipality.map', this.update.bind(this))
+    // dispatch.on('initialize.map', this.initialize.bind(this))
+    // dispatch.on('update_municipality.map', this.update.bind(this))
   }
 
   initialize ({ firesData: data }, municipality) {
