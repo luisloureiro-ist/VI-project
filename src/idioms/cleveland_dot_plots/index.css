@@ -7,3 +7,7 @@
 .elections-section .elections-title {
   align-self: flex-start;
 }
+
+.elections-section .svg-legend .tick:last-of-type > line {
+  display: none;
+}
