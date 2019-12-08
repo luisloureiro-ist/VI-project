@@ -1,12 +1,15 @@
+import Legend from '../../../assets/js/d3.legend.js'
+
 class ClevelandDotPlots {
   constructor (parentSelector, chartWidth, chartHeight, dotRadius = 15) {
     this.parentSelector = parentSelector
+    this.legendHeight = 50
     this.chartSize = {
       width: chartWidth,
-      height: chartHeight
+      height: chartHeight - this.legendHeight
     }
     this.dotRadius = dotRadius
-    this.chart = d3.select(this.parentSelector)
+    this.sectionElement = d3.select(this.parentSelector)
     this.xScaler = d3.scaleLinear()
     this.xAxis = d3.axisBottom()
     this.yScaler = d3.scalePoint()
@@ -20,11 +23,11 @@ class ClevelandDotPlots {
       .transition()
       .duration(1000)
       .ease(d3.easeQuadInOut)
-    this.colors = ['#1b9e77', '#d95f02', '#7570b3']
+    this.colors = d3.schemeDark2
   }
 
   create (data, categories, chartTitle) {
-    this.chart = this.chart
+    const svgChart = this.sectionElement
       .append('svg')
       .classed('svg-chart', true)
       .attr('width', this.chartSize.width)
@@ -38,7 +41,7 @@ class ClevelandDotPlots {
       .rangeRound([this.subTitleHeight, this.yAxisHeight + this.subTitleHeight])
       .padding(0.5)
 
-    this.chart
+    svgChart
       .append('g')
       .classed('sub-title', true)
       .attr('transform', () => `translate(0, ${this.subTitleHeight} )`)
@@ -46,7 +49,7 @@ class ClevelandDotPlots {
       .text(chartTitle)
       .classed('is-size-6', true)
 
-    const lineAndCirclesGroup = this.chart
+    const lineAndCirclesGroup = svgChart
       .append('g')
       .classed('clevelands', true)
       .selectAll('g')
@@ -59,23 +62,25 @@ class ClevelandDotPlots {
       lineAndCirclesGroup.call(this.__createDot.bind(this, idx))
     })
 
-    this.__createYAxis(data)
-    this.__createXAxis(data)
+    this.__createYAxis(svgChart)
+    this.__createXAxis(svgChart)
     this.__createLegend(categories)
   }
 
   update (data, categories) {
-    this.__updateYAxis(data)
-    this.__updateXAxis(data)
+    const svgChart = this.sectionElement.select('svg-chart')
+
+    this.__updateYAxis(svgChart)
+    this.__updateXAxis(svgChart)
     this.__updateLegend(categories)
 
     this.xScaler
       .domain([0, d3.max(data, d => Math.max(...d.results)) + 2])
       .range([0, this.chartSize.width - this.yAxisWidth])
 
-    this.chart.attr('height', this.chartSize.height)
+    svgChart.attr('height', this.chartSize.height)
 
-    this.chart
+    svgChart
       .select('.clevelands')
       .selectAll('.cleveland')
       .data(data)
@@ -96,10 +101,10 @@ class ClevelandDotPlots {
     this.__updateXAxis(data)
   }
 
-  __createXAxis () {
+  __createXAxis (svgChart) {
     this.xAxis.scale(this.xScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
-    this.chart
+    svgChart
       .append('g')
       .classed('x-axis', true)
       .attr(
@@ -110,19 +115,19 @@ class ClevelandDotPlots {
       .call(this.xAxis)
   }
 
-  __updateXAxis () {
+  __updateXAxis (svgChart) {
     this.xAxis.scale(this.xScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
-    this.chart
+    svgChart
       .select('x-axis', true)
       .transition(this.transition)
       .call(this.xAxis)
   }
 
-  __createYAxis () {
+  __createYAxis (svgChart) {
     this.yAxis.scale(this.yScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
-    this.chart
+    svgChart
       .append('g')
       .classed('y-axis', true)
       .attr('transform', `translate(${this.yAxisWidth}, 0)`)
@@ -130,55 +135,36 @@ class ClevelandDotPlots {
       .call(this.yAxis)
   }
 
-  __updateYAxis () {
+  __updateYAxis (svgChart) {
     this.yAxis.scale(this.yScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
-    this.chart
+    svgChart
       .select('y-axis', true)
       .transition(this.transition)
       .call(this.yAxis)
   }
 
   __createLegend (categories) {
-    const legend = this.chart
-      .append('g')
-      .classed('legend', true)
-      .attr('height', 30)
-      .attr('transform', `translate(${this.yAxisWidth},30)`)
-    categories.forEach((category, idx) => {
-      legend
-        .append('circle')
-        .attr('cx', 50 + idx * 50)
-        .attr('cy', 130)
-        .attr('r', 6)
-        .style('fill', this.colors[idx])
-      legend
-        .append('text')
-        .attr('x', 50 + idx * 50 + 12)
-        .attr('y', 131)
-        .text(category)
-        .style('font-size', '12px')
-        .attr('alignment-baseline', 'middle')
-    })
+    this.sectionElement
+      .append(
+        () =>
+          new Legend({
+            color: d3.scaleThreshold(
+              categories,
+              this.colors.slice(0, categories.length)
+            ),
+            title: 'Election Years',
+            tickFormat: 'd',
+            width: 160
+          })
+      )
+      .classed('svg-legend', true)
   }
 
   __updateLegend (categories) {
-    const legend = this.chart.append('g').classed('legend', true)
-    categories.forEach((category, idx) => {
-      legend
-        .select('circle')
-        .attr('cx', 50 + idx * 50)
-        .attr('cy', 130)
-        .attr('r', 6)
-        .style('fill', this.colors[idx])
-      legend
-        .select('text')
-        .attr('x', 50 + idx * 50 + 12)
-        .attr('y', 131)
-        .text(category)
-        .style('font-size', '12px')
-        .attr('alignment-baseline', 'middle')
-    })
+    this.sectionElement.select('.svg-legend').remove()
+
+    this.__createLegend(categories)
   }
 
   __createDot (resultsIdx, lines) {
