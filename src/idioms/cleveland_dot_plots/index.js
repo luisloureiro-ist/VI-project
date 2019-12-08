@@ -57,6 +57,7 @@ class ClevelandDotPlots {
       .enter()
       .append('g')
       .classed('cleveland', true)
+      .call(this.__createLine.bind(this))
 
     data[0].results.forEach((result, idx) => {
       lineAndCirclesGroup.call(this.__createDot.bind(this, idx))
@@ -167,6 +168,18 @@ class ClevelandDotPlots {
     this.sectionElement.select('.svg-legend').remove()
 
     this.__createLegend(categories)
+  }
+
+  __createLine (lines) {
+    lines
+      .append('line')
+      .transition(this.transition)
+      .attr('x1', d => this.xScaler(d3.min(d.results)))
+      .attr('x2', d => this.xScaler(d3.max(d.results)))
+      .attr('y1', d => this.yScaler(d.key))
+      .attr('y2', d => this.yScaler(d.key))
+      .attr('stroke', 'grey')
+      .attr('stroke-width', 3)
   }
 
   __createDot (resultsIdx, lines) {
