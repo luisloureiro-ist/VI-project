@@ -36,12 +36,7 @@ import MapComponent from './components/map.js'
     )
   )
 
-  components.push(
-    new ElectionsComponent(
-      dispatch,
-      '.cleveland-dot-plot-section'
-    )
-  )
+  components.push(new ElectionsComponent(dispatch, '.elections-section'))
 
   components.push(new MapComponent(dispatch, '.map-pane', 0))
 

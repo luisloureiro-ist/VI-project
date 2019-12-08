@@ -1,9 +1,9 @@
-.cleveland-dot-plot-section {
+.elections-section {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.cleveland-dot-plot-section .elections-title {
+.elections-section .elections-title {
   align-self: flex-start;
 }
