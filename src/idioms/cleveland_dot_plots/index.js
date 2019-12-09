@@ -27,7 +27,7 @@ class ClevelandDotPlots {
     this.colors = d3.schemeDark2
   }
 
-  create (data, categories, chartTitle) {
+  create (data, categories, chartTitle, dotsTitleFn) {
     const svgChart = this.sectionElement
       .append('svg')
       .classed('svg-chart', true)
@@ -62,14 +62,14 @@ class ClevelandDotPlots {
       .append('g')
       .classed('circles-and-line', true)
       .call(this.__createLine.bind(this))
-      .call(this.__createDots.bind(this))
+      .call(this.__createDots.bind(this, dotsTitleFn, categories))
 
     this.__createYAxis(svgChart)
     this.__createXAxis(svgChart)
     this.__createLegend(categories)
   }
 
-  update (data, categories) {
+  update (data, categories, dotsTitleFn) {
     const svgChart = this.sectionElement.select('.svg-chart')
 
     this.xScaler
@@ -88,7 +88,7 @@ class ClevelandDotPlots {
         update =>
           update
             .call(this.__updateLine.bind(this))
-            .call(this.__updateDots.bind(this))
+            .call(this.__updateDots.bind(this, dotsTitleFn, categories))
       )
 
     this.__updateYAxis(svgChart)
@@ -188,7 +188,7 @@ class ClevelandDotPlots {
       .attr('stroke-width', 3)
   }
 
-  __createDots (lines) {
+  __createDots (titleFn, categories, lines) {
     lines
       .append('g')
       .classed('circles', true)
@@ -203,10 +203,10 @@ class ClevelandDotPlots {
       .style('fill', (d, i) => this.colors[i])
       .selection()
       .append('title')
-      .text(d => d.value)
+      .text((d, i) => titleFn(d.key, categories[i], d.value))
   }
 
-  __updateDots (lines) {
+  __updateDots (titleFn, categories, lines) {
     lines
       .select('.circles')
       .selectAll('circle')
@@ -220,7 +220,7 @@ class ClevelandDotPlots {
             .attr('cy', d => this.yScaler(d.key))
             .selection()
             .select('title')
-            .text(d => d.value)
+            .text((d, i) => titleFn(d.key, categories[i], d.value))
       )
   }
 }

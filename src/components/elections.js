@@ -36,7 +36,12 @@ class Elections extends Component {
           super.getComponentSize().height
         )
       )
-      this.charts[idx].create(reducedData, getYears(filteredData), electionType)
+      this.charts[idx].create(
+        reducedData,
+        getYears(filteredData),
+        electionType,
+        (party, year, result) => `${party} result in ${year}:\n${result}%`
+      )
     })
   }
 
@@ -53,7 +58,11 @@ class Elections extends Component {
 
       const reducedData = transformData.call(this, filteredData)
 
-      this.charts[idx].update(reducedData, getYears(filteredData))
+      this.charts[idx].update(
+        reducedData,
+        getYears(filteredData),
+        (party, year, result) => `${party} result in ${year}:\n${result}%`
+      )
     })
   }
 
