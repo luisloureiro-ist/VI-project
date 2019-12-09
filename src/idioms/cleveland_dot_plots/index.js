@@ -15,6 +15,7 @@ class ClevelandDotPlots {
     this.yScaler = d3.scalePoint()
     this.yAxis = d3.axisLeft()
     this.subTitleHeight = 21 + 20
+    this.xScalerDomainPadding = 2
     this.xAxisHeight = 35
     this.yAxisWidth = 35
     this.yAxisHeight =
@@ -34,7 +35,10 @@ class ClevelandDotPlots {
       .attr('height', this.chartSize.height)
 
     this.xScaler
-      .domain([0, d3.max(data, d => Math.max(...d.results)) + 2])
+      .domain([
+        -this.xScalerDomainPadding,
+        d3.max(data, d => Math.max(...d.results)) + this.xScalerDomainPadding
+      ])
       .range([this.yAxisWidth, this.chartSize.width])
     this.yScaler
       .domain(data.map(d => d.key))
@@ -49,19 +53,16 @@ class ClevelandDotPlots {
       .text(chartTitle)
       .classed('is-size-6', true)
 
-    const lineAndCirclesGroup = svgChart
+    svgChart
       .append('g')
       .classed('clevelands', true)
       .selectAll('g')
       .data(data)
       .enter()
       .append('g')
-      .classed('cleveland', true)
+      .classed('circles-and-line', true)
       .call(this.__createLine.bind(this))
-
-    data[0].results.forEach((result, idx) => {
-      lineAndCirclesGroup.call(this.__createDot.bind(this, idx))
-    })
+      .call(this.__createDots.bind(this))
 
     this.__createYAxis(svgChart)
     this.__createXAxis(svgChart)
@@ -71,35 +72,28 @@ class ClevelandDotPlots {
   update (data, categories) {
     const svgChart = this.sectionElement.select('svg-chart')
 
-    this.__updateYAxis(svgChart)
-    this.__updateXAxis(svgChart)
-    this.__updateLegend(categories)
-
     this.xScaler
-      .domain([0, d3.max(data, d => Math.max(...d.results)) + 2])
-      .range([0, this.chartSize.width - this.yAxisWidth])
-
-    svgChart.attr('height', this.chartSize.height)
+      .domain([
+        -this.xScalerDomainPadding,
+        d3.max(data, d => Math.max(...d.results)) + this.xScalerDomainPadding
+      ])
+      .range([this.yAxisWidth, this.chartSize.width])
 
     svgChart
       .select('.clevelands')
-      .selectAll('.cleveland')
+      .selectAll('.circles-and-line')
       .data(data)
       .join(
-        enter => {
-          const lineAndCirclesGroup = enter
-            .append('g')
-            .classed('cleveland', true)
-
-          data[0].results.forEach((result, idx) => {
-            lineAndCirclesGroup.call(this.__createDot.bind(this, idx))
-          })
-        },
-        update => update.call(this.__updateDot.bind(this)),
-        exit => exit.remove()
+        enter => enter,
+        update =>
+          update
+            .call(this.__updateLine.bind(this))
+            .call(this.__updateDots.bind(this))
       )
 
-    this.__updateXAxis(data)
+    this.__updateYAxis(svgChart)
+    this.__updateXAxis(svgChart)
+    this.__updateLegend(categories)
   }
 
   __createXAxis (svgChart) {
@@ -182,30 +176,52 @@ class ClevelandDotPlots {
       .attr('stroke-width', 3)
   }
 
-  __createDot (resultsIdx, lines) {
+  __updateLine (lines) {
     lines
-      .append('circle')
+      .select('line')
       .transition(this.transition)
-      .attr('cx', d => this.xScaler(d.results[resultsIdx]))
-      .attr('cy', d => this.yScaler(d.key))
-      .attr('r', this.dotRadius)
-      .style('fill', () => this.colors[resultsIdx])
-      .selection()
-      .append('title')
-      .text(d => d.results[resultsIdx])
+      .attr('x1', d => this.xScaler(d3.min(d.results)))
+      .attr('x2', d => this.xScaler(d3.max(d.results)))
+      .attr('y1', d => this.yScaler(d.key))
+      .attr('y2', d => this.yScaler(d.key))
+      .attr('stroke', 'grey')
+      .attr('stroke-width', 3)
   }
 
-  __updateDot (resultsIdx, lines) {
+  __createDots (lines) {
     lines
-      .select('circle')
+      .append('g')
+      .classed('circles', true)
+      .selectAll('circle')
+      .data(d => d.results.map(r => ({ key: d.key, value: r })))
+      .enter()
+      .append('circle')
       .transition(this.transition)
-      .attr('cx', d => this.xScaler(d.results[resultsIdx]) + this.yAxisWidth)
-      .attr('cy', d => this.yScaler(d.key) + this.dotRadius / 2)
+      .attr('cx', d => this.xScaler(d.value))
+      .attr('cy', d => this.yScaler(d.key))
       .attr('r', this.dotRadius)
-      .style('fill', () => this.colors[resultsIdx])
+      .style('fill', (d, i) => this.colors[i])
       .selection()
-      .select('title')
-      .text(d => d.results[resultsIdx])
+      .append('title')
+      .text(d => d.value)
+  }
+
+  __updateDots (lines) {
+    lines
+      .select('.circles')
+      .selectAll('circle')
+      .data(d => d.results.map(r => ({ key: d.key, value: r })))
+      .join(
+        enter => enter,
+        update =>
+          update
+            .transition(this.transition)
+            .attr('cx', d => this.xScaler(d.value))
+            .attr('cy', d => this.yScaler(d.key))
+            .selection()
+            .select('title')
+            .text(d => d.value)
+      )
   }
 }
 
