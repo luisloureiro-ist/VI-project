@@ -27,25 +27,7 @@ class Elections extends Component {
         .getDataset()
         .filter(d => d.type === electionType)
 
-      const reducedData = filteredData
-        .reduce(
-          (prev, curr) =>
-            prev.concat(
-              this.parties.map(p => ({ key: p, results: [curr[p]] }))
-            ),
-          []
-        )
-        .reduce((prev, curr) => {
-          const idx = prev.findIndex(el => el.key === curr.key)
-
-          if (idx === -1) {
-            prev = prev.concat(curr)
-          } else {
-            prev[idx].results = prev[idx].results.concat(curr.results)
-          }
-
-          return prev
-        }, [])
+      const reducedData = transformData.call(this, filteredData)
 
       this.charts.push(
         new ClevelandDotPlot(
@@ -69,25 +51,7 @@ class Elections extends Component {
         .getDataset()
         .filter(d => d.type === electionType)
 
-      const reducedData = filteredData
-        .reduce(
-          (prev, curr) =>
-            prev.concat(
-              this.parties.map(p => ({ key: p, results: [curr[p]] }))
-            ),
-          []
-        )
-        .reduce((prev, curr) => {
-          const idx = prev.findIndex(el => el.key === curr.key)
-
-          if (idx === -1) {
-            prev = prev.concat(curr)
-          } else {
-            prev[idx].results = prev[idx].results.concat(curr.results)
-          }
-
-          return prev
-        }, [])
+      const reducedData = transformData.call(this, filteredData)
 
       this.charts[idx].update(reducedData, getYears(filteredData))
     })
@@ -98,6 +62,26 @@ class Elections extends Component {
       .select('.elections-title')
       .text(`Elections in ${super.getMunicipality()}`)
   }
+}
+
+function transformData (data) {
+  return data
+    .reduce(
+      (prev, curr) =>
+        prev.concat(this.parties.map(p => ({ key: p, results: [curr[p]] }))),
+      []
+    )
+    .reduce((prev, curr) => {
+      const idx = prev.findIndex(el => el.key === curr.key)
+
+      if (idx === -1) {
+        prev = prev.concat(curr)
+      } else {
+        prev[idx].results = prev[idx].results.concat(curr.results)
+      }
+
+      return prev
+    }, [])
 }
 
 function getElectionTypes (data) {
