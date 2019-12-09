@@ -1,7 +1,7 @@
 import Legend from '../../../assets/js/d3.legend.js'
 
 class ClevelandDotPlots {
-  constructor (parentSelector, chartWidth, chartHeight, dotRadius = 15) {
+  constructor (parentSelector, chartWidth, chartHeight, dotRadius = 8) {
     this.parentSelector = parentSelector
     this.legendHeight = 50
     this.chartSize = {
@@ -70,7 +70,7 @@ class ClevelandDotPlots {
   }
 
   update (data, categories) {
-    const svgChart = this.sectionElement.select('svg-chart')
+    const svgChart = this.sectionElement.select('.svg-chart')
 
     this.xScaler
       .domain([
@@ -114,7 +114,7 @@ class ClevelandDotPlots {
     this.xAxis.scale(this.xScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
     svgChart
-      .select('x-axis', true)
+      .select('.x-axis')
       .transition(this.transition)
       .call(this.xAxis)
   }
@@ -134,7 +134,7 @@ class ClevelandDotPlots {
     this.yAxis.scale(this.yScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
     svgChart
-      .select('y-axis', true)
+      .select('.y-axis')
       .transition(this.transition)
       .call(this.yAxis)
   }
