@@ -1,263 +1,260 @@
+import Legend from '../../../assets/js/d3.legend.js'
+
 class ClevelandDotPlots {
-  constructor (parentSelector, chartWidth, withYAxis = false, dotRadius = 7) {
+  constructor (
+    parentSelector,
+    chartWidth,
+    chartHeight,
+    onMouseOverDotCallback,
+    onMouseLeaveDotCallback,
+    dotRadius = 8
+  ) {
     this.parentSelector = parentSelector
-    this.chartWidth = chartWidth
+    this.legendHeight = 50
+    this.chartSize = {
+      width: chartWidth,
+      height: chartHeight - this.legendHeight
+    }
     this.dotRadius = dotRadius
-    this.chart = d3.select(this.parentSelector)
+    this.sectionElement = d3.select(this.parentSelector)
     this.xScaler = d3.scaleLinear()
     this.xAxis = d3.axisBottom()
-    this.yScaler = null
-    this.yAxis = null
-    this.yAxisPadding = +(withYAxis && 35) // if false then equals 0
+    this.yScaler = d3.scalePoint()
+    this.yAxis = d3.axisLeft()
+    this.subTitleHeight = 21 + 20
+    this.xScalerDomainPadding = 2
+    this.xAxisHeight = 35
+    this.yAxisWidth = 35
+    this.yAxisHeight =
+      this.chartSize.height - this.xAxisHeight - this.subTitleHeight
     this.transition = d3
       .transition()
       .duration(1000)
       .ease(d3.easeQuadInOut)
-    this.colors = ['#1b9e77', '#d95f02', '#7570b3']
+    this.colors = d3.schemeDark2
+    this.onOverCallback = onMouseOverDotCallback
+    this.onLeaveCallback = onMouseLeaveDotCallback
   }
 
-  create (data, categories, chartTitle) {
-    this.chart = this.chart
+  create (data, categories, chartTitle, dotsTitleFn) {
+    const svgChart = this.sectionElement
       .append('svg')
       .classed('svg-chart', true)
-      .attr('width', this.chartWidth)
-      .attr(
-        'height',
-        3 * this.dotRadius +
-          this.dotRadius * 2 * (data.length + 1) +
-          this.dotRadius * 2 +
-          35
-      )
+      .attr('width', this.chartSize.width)
+      .attr('height', this.chartSize.height)
 
     this.xScaler
-      .domain([0, d3.max(data, d => Math.max(...d.results)) + 2])
-      .range([0, this.chartWidth - this.yAxisPadding])
-    this.yScaler = d3
-      .scaleBand()
-      .range([0, 2 * this.dotRadius * (data.length + 1)])
+      .domain([
+        -this.xScalerDomainPadding,
+        d3.max(data, d => Math.max(...d.results)) + this.xScalerDomainPadding
+      ])
+      .range([this.yAxisWidth, this.chartSize.width])
+    this.yScaler
       .domain(data.map(d => d.key))
+      .rangeRound([this.subTitleHeight, this.yAxisHeight + this.subTitleHeight])
+      .padding(0.5)
 
-    this.chart
+    svgChart
       .append('g')
       .classed('sub-title', true)
-      .attr('transform', (d, i) => `translate(0, ${3 * this.dotRadius} )`)
+      .attr('transform', () => `translate(0, ${this.subTitleHeight} )`)
       .append('text')
       .text(chartTitle)
       .classed('is-size-6', true)
 
-    const lineAndCirclesGroup = this.chart
+    svgChart
       .append('g')
       .classed('clevelands', true)
-      .attr(
-        'transform',
-        (d, i) => `translate(0, ${3 * this.dotRadius + this.dotRadius * 2} )`
-      )
       .selectAll('g')
       .data(data)
       .enter()
       .append('g')
-      .classed('cleveland', true)
+      .classed('circles-and-line', true)
+      .call(this.__createLine.bind(this))
+      .call(this.__createDots.bind(this, dotsTitleFn, categories))
+      .call(this.__attachEventsToCircles.bind(this, categories))
 
-    data[0].results.forEach((result, idx) => {
-      lineAndCirclesGroup.call(this.__createDot.bind(this, idx))
-    })
-
-    if (this.yAxisPadding !== 0) {
-      this.__createYAxis(data)
-    }
-    this.__createXAxis(data)
+    this.__createYAxis(svgChart)
+    this.__createXAxis(svgChart)
     this.__createLegend(categories)
   }
 
-  update (data, categories, chartTitle) {
-    if (this.yAxisPadding !== 0) {
-      this.__updateYAxis(data)
-    }
-    this.__updateXAxis(data)
-    this.__updateLegend(categories)
+  update (data, categories, dotsTitleFn) {
+    const svgChart = this.sectionElement.select('.svg-chart')
 
     this.xScaler
-      .domain([0, d3.max(data, d => Math.max(...d.results)) + 2])
-      .range([0, this.chartWidth - this.yAxisPadding])
-    this.yScaler = d3
-      .scaleBand()
-      .range([0, 2 * this.dotRadius * (data.length + 1)])
-      .domain(data.map(d => d.key))
+      .domain([
+        -this.xScalerDomainPadding,
+        d3.max(data, d => Math.max(...d.results)) + this.xScalerDomainPadding
+      ])
+      .range([this.yAxisWidth, this.chartSize.width])
 
-    this.__setChartHeight(data.length)
-    this.chart.attr(
-      'height',
-      3 * this.dotRadius +
-        this.dotRadius * 2 * (data.length + 1) +
-        this.dotRadius * 2 +
-        35
-    )
-
-    this.chart
+    svgChart
       .select('.clevelands')
-      .selectAll('.cleveland')
+      .selectAll('.circles-and-line')
       .data(data)
       .join(
-        enter => {
-          const lineAndCirclesGroup = enter
-            .append('g')
-            // .attr('transform', this.__getTranslate.bind(this))
-            .classed('cleveland', true)
-
-          data[0].results.forEach((result, idx) => {
-            lineAndCirclesGroup.call(this.__createDot.bind(this, idx))
-          })
-        },
+        enter => enter,
         update =>
           update
-            // .attr('transform', this.__getTranslate.bind(this))
-            .call(this.__updateDot.bind(this)),
-        exit => exit.remove()
+            .call(this.__updateLine.bind(this))
+            .call(this.__updateDots.bind(this, dotsTitleFn, categories))
       )
 
-    this.__updateXAxis(data)
+    this.__updateYAxis(svgChart)
+    this.__updateXAxis(svgChart)
+    this.__updateLegend(categories)
   }
 
-  __createXAxis (data) {
+  __createXAxis (svgChart) {
     this.xAxis.scale(this.xScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
-    this.chart
+    svgChart
       .append('g')
       .classed('x-axis', true)
       .attr(
         'transform',
-        `translate(${this.yAxisPadding}, ${3 * this.dotRadius +
-          this.dotRadius * 2 * (data.length + 1) +
-          8})` // +8 for padding
+        `translate(0, ${this.chartSize.height - this.xAxisHeight})`
       )
       .transition(this.transition)
       .call(this.xAxis)
   }
 
-  __updateXAxis (data) {
+  __updateXAxis (svgChart) {
     this.xAxis.scale(this.xScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
-    this.chart
-      .select('x-axis', true)
-      .attr(
-        'transform',
-        `translate(${this.yAxisPadding}, ${3 * this.dotRadius +
-          this.dotRadius * 2 * (data.length + 1) +
-          8})` // +8 for padding
-      )
+    svgChart
+      .select('.x-axis')
       .transition(this.transition)
       .call(this.xAxis)
   }
 
-  __createYAxis (domain) {
-    if (this.yAxis === null) {
-      this.yAxis = d3.axisLeft()
-    }
-
+  __createYAxis (svgChart) {
     this.yAxis.scale(this.yScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
-    this.chart
+    svgChart
       .append('g')
       .classed('y-axis', true)
-      .attr(
-        'transform',
-        `translate(${this.yAxisPadding}, ${3 * this.dotRadius +
-          this.dotRadius +
-          2})` // +2 for padding
-      )
+      .attr('transform', `translate(${this.yAxisWidth}, 0)`)
       .transition(this.transition)
       .call(this.yAxis)
   }
 
-  __updateYAxis (domain) {
-    if (this.yAxis === null) {
-      this.yAxis = d3.axisLeft()
-    }
-
+  __updateYAxis (svgChart) {
     this.yAxis.scale(this.yScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
 
-    this.chart
-      .select('y-axis', true)
-      .attr(
-        'transform',
-        `translate(${this.yAxisPadding}, ${3 * this.dotRadius +
-          this.dotRadius +
-          2})` // +2 for padding
-      )
+    svgChart
+      .select('.y-axis')
       .transition(this.transition)
       .call(this.yAxis)
   }
 
   __createLegend (categories) {
-    const legend = this.chart
-      .append('g')
-      .classed('legend', true)
-      .attr('height', 30)
-      .attr('transform', `translate(${this.yAxisPadding},30)`)
-    categories.forEach((category, idx) => {
-      legend
-        .append('circle')
-        .attr('cx', 50 + idx * 50)
-        .attr('cy', 130)
-        .attr('r', 6)
-        .style('fill', this.colors[idx])
-      legend
-        .append('text')
-        .attr('x', 50 + idx * 50 + 12)
-        .attr('y', 131)
-        .text(category)
-        .style('font-size', '12px')
-        .attr('alignment-baseline', 'middle')
-    })
+    this.sectionElement
+      .append(
+        () =>
+          new Legend({
+            color: d3.scaleThreshold(
+              categories,
+              this.colors.slice(0, categories.length)
+            ),
+            title: 'Years with elections',
+            tickFormat: 'd',
+            width: 108
+          })
+      )
+      .classed('svg-legend', true)
+      .selectAll('.tick text')
+      .attr('x', -18)
   }
 
   __updateLegend (categories) {
-    const legend = this.chart
-      .append('g')
-      .classed('legend', true)
-      .attr('height', 30)
-      .attr('transform', `translate(${this.yAxisPadding},30)`)
-    categories.forEach((category, idx) => {
-      legend
-        .append('circle')
-        .attr('cx', 50 + idx * 50)
-        .attr('cy', 130)
-        .attr('r', 6)
-        .style('fill', this.colors[idx])
-      legend
-        .append('text')
-        .attr('x', 50 + idx * 50 + 12)
-        .attr('y', 131)
-        .text(category)
-        .style('font-size', '12px')
-        .attr('alignment-baseline', 'middle')
-    })
+    this.sectionElement.select('.svg-legend').remove()
+
+    this.__createLegend(categories)
   }
 
-  __createDot (resultsIdx, lines) {
+  __createLine (lines) {
     lines
+      .append('line')
+      .transition(this.transition)
+      .attr('x1', d => this.xScaler(d3.min(d.results)))
+      .attr('x2', d => this.xScaler(d3.max(d.results)))
+      .attr('y1', d => this.yScaler(d.key))
+      .attr('y2', d => this.yScaler(d.key))
+      .attr('stroke', 'grey')
+      .attr('stroke-width', 3)
+  }
+
+  __updateLine (lines) {
+    lines
+      .select('line')
+      .transition(this.transition)
+      .attr('x1', d => this.xScaler(d3.min(d.results)))
+      .attr('x2', d => this.xScaler(d3.max(d.results)))
+      .attr('y1', d => this.yScaler(d.key))
+      .attr('y2', d => this.yScaler(d.key))
+      .attr('stroke', 'grey')
+      .attr('stroke-width', 3)
+  }
+
+  __createDots (titleFn, categories, lines) {
+    lines
+      .append('g')
+      .classed('circles', true)
+      .selectAll('circle')
+      .data(d => d.results.map(r => ({ key: d.key, value: r })))
+      .enter()
       .append('circle')
       .transition(this.transition)
-      .attr('cx', d => this.xScaler(d.results[resultsIdx]) + this.yAxisPadding)
-      .attr('cy', d => this.yScaler(d.key) + this.dotRadius / 2)
+      .attr('cx', d => this.xScaler(d.value))
+      .attr('cy', d => this.yScaler(d.key))
       .attr('r', this.dotRadius)
-      .style('fill', () => this.colors[resultsIdx])
+      .attr('opacity', 1)
+      .style('fill', (d, i) => this.colors[i])
       .selection()
       .append('title')
-      .text(d => d.results[resultsIdx])
+      .text((d, i) => titleFn(d.key, categories[i], d.value))
   }
 
-  __updateDot (resultsIdx, lines) {
+  __updateDots (titleFn, categories, lines) {
     lines
-      .select('circle')
-      .transition(this.transition)
-      .attr('cx', d => this.xScaler(d.results[resultsIdx]) + this.yAxisPadding)
-      .attr('cy', d => this.yScaler(d.key) + this.dotRadius / 2)
-      .attr('r', this.dotRadius)
-      .style('fill', () => this.colors[resultsIdx])
-      .selection()
-      .select('title')
-      .text(d => d.results[resultsIdx])
+      .select('.circles')
+      .selectAll('circle')
+      .data(d => d.results.map(r => ({ key: d.key, value: r })))
+      .join(
+        enter => enter,
+        update =>
+          update
+            .transition(this.transition)
+            .attr('cx', d => this.xScaler(d.value))
+            .attr('cy', d => this.yScaler(d.key))
+            .selection()
+            .select('title')
+            .text((d, i) => titleFn(d.key, categories[i], d.value))
+      )
+  }
+
+  __attachEventsToCircles (categories, lines) {
+    const allCircles = lines.selectAll('circle')
+    const numberOfCategories = categories.length
+
+    allCircles.on('mouseover', (datum, idx) => {
+      this.onOverCallback(categories[idx])
+
+      allCircles
+        .interrupt()
+        .transition(this.transition)
+        .attr('opacity', (d, i) => (i % numberOfCategories === idx ? 1 : 0.4))
+    })
+    allCircles.on('mouseleave', () => {
+      this.onLeaveCallback()
+
+      allCircles
+        .interrupt()
+        .transition(this.transition)
+        .attr('opacity', 1)
+    })
   }
 }
 

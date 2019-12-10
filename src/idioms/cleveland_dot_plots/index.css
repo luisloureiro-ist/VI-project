@@ -1,0 +1,13 @@
+.elections-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.elections-section .elections-title {
+  align-self: flex-start;
+}
+
+.elections-section .svg-legend .tick:last-of-type > line {
+  display: none;
+}

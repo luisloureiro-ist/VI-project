@@ -2,8 +2,11 @@ import Component from './component.js'
 import ClevelandDotPlot from '../idioms/cleveland_dot_plots/index.js'
 
 class Elections extends Component {
-  constructor (dispatch, parentSelector, componentSize) {
-    super(dispatch, parentSelector, componentSize)
+  constructor (dispatch, parentSelector) {
+    super(dispatch, parentSelector, {
+      width: document.querySelector(parentSelector).offsetWidth,
+      height: document.querySelector(parentSelector).offsetHeight - 36 // The height of the title
+    })
     this.electionTypes = []
     this.parties = ['PS', 'PSD', 'CDS', 'PCP', 'BE', 'Abs.']
     this.charts = []
@@ -19,42 +22,28 @@ class Elections extends Component {
 
     this.updateSectionTitle()
 
-    const chartWidth =
-      Math.floor(super.getComponentSize() / this.electionTypes.length) - 5
-
     this.electionTypes.forEach((electionType, idx) => {
       const filteredData = super
         .getDataset()
         .filter(d => d.type === electionType)
 
-      const reducedData = filteredData
-        .reduce(
-          (prev, curr) =>
-            prev.concat(
-              this.parties.map(p => ({ key: p, results: [curr[p]] }))
-            ),
-          []
-        )
-        .reduce((prev, curr) => {
-          const idx = prev.findIndex(el => el.key === curr.key)
-
-          if (idx === -1) {
-            prev = prev.concat(curr)
-          } else {
-            prev[idx].results = prev[idx].results.concat(curr.results)
-          }
-
-          return prev
-        }, [])
+      const reducedData = transformData.call(this, filteredData)
 
       this.charts.push(
         new ClevelandDotPlot(
           super.getContainerSelector(),
-          chartWidth,
-          idx === 0
+          super.getComponentSize().width,
+          super.getComponentSize().height,
+          year => super.getDispatch().call('year_selected', this, year),
+          () => super.getDispatch().call('year_deselected')
         )
       )
-      this.charts[idx].create(reducedData, getYears(filteredData), electionType)
+      this.charts[idx].create(
+        reducedData,
+        getYears(filteredData),
+        electionType,
+        (party, year, result) => `${party} result in ${year}:\n${result}%`
+      )
     })
   }
 
@@ -68,17 +57,42 @@ class Elections extends Component {
       const filteredData = super
         .getDataset()
         .filter(d => d.type === electionType)
-        .reduce((prev, curr) => prev.concat(curr.electionResults), [])
 
-      this.charts[idx].update(filteredData, getYears(filteredData))
+      const reducedData = transformData.call(this, filteredData)
+
+      this.charts[idx].update(
+        reducedData,
+        getYears(filteredData),
+        (party, year, result) => `${party} result in ${year}:\n${result}%`
+      )
     })
   }
 
   updateSectionTitle () {
     d3.select(super.getContainerSelector())
-      .select('.elections-title')
+      .select('.title')
       .text(`Elections in ${super.getMunicipality()}`)
   }
+}
+
+function transformData (data) {
+  return data
+    .reduce(
+      (prev, curr) =>
+        prev.concat(this.parties.map(p => ({ key: p, results: [curr[p]] }))),
+      []
+    )
+    .reduce((prev, curr) => {
+      const idx = prev.findIndex(el => el.key === curr.key)
+
+      if (idx === -1) {
+        prev = prev.concat(curr)
+      } else {
+        prev[idx].results = prev[idx].results.concat(curr.results)
+      }
+
+      return prev
+    }, [])
 }
 
 function getElectionTypes (data) {

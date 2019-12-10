@@ -18,7 +18,10 @@ import FiresFirefightersComponent from './components/fires_firefighters.js'
   const defaultMunicipality = 'Continente'
   const components = []
 
-  const mainSectionWidth = document.querySelector('.charts-pane').offsetWidth
+  const rightChartsSectionWidth = document.querySelector(
+    '.charts-pane .right-charts'
+  ).offsetWidth
+
   const dispatch = registerEventListeners({
     companiesData,
     electionsData,
@@ -30,17 +33,11 @@ import FiresFirefightersComponent from './components/fires_firefighters.js'
     new CompaniesProductivityComponent(
       dispatch,
       '.divergent-charts-section',
-      mainSectionWidth
+      rightChartsSectionWidth
     )
   )
 
-  components.push(
-    new ElectionsComponent(
-      dispatch,
-      '.cleveland-dot-plot-section',
-      mainSectionWidth
-    )
-  )
+  components.push(new ElectionsComponent(dispatch, '.elections-section'))
 
   components.push(
     new FiresFirefightersComponent(
@@ -59,7 +56,8 @@ import FiresFirefightersComponent from './components/fires_firefighters.js'
         value => value.location === defaultMunicipality
       ),
       electionsData: electionsData.filter(
-        value => value.location === defaultMunicipality
+        value =>
+          value.location === defaultMunicipality && value.type === 'Local'
       ),
       firesData: firesData.filter(
         value => value.location === defaultMunicipality
@@ -73,6 +71,8 @@ function registerEventListeners ({ companiesData, firesData, electionsData }) {
   const dispatch = d3.dispatch(
     'initialize',
     'region_selected',
+    'year_selected',
+    'year_deselected',
     'update_municipality',
     'update_years'
   )
@@ -86,8 +86,10 @@ function registerEventListeners ({ companiesData, firesData, electionsData }) {
       this,
       {
         companiesData: companiesData.filter(filterCallback),
-        electionsData: firesData.filter(filterCallback),
-        firesData: electionsData.filter(filterCallback)
+        electionsData: electionsData
+          .filter(filterCallback)
+          .filter(d => d.type === 'Local'),
+        firesData: firesData.filter(filterCallback)
       },
       name
     )
