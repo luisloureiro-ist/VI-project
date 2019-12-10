@@ -1,7 +1,14 @@
 import Legend from '../../../assets/js/d3.legend.js'
 
 class ClevelandDotPlots {
-  constructor (parentSelector, chartWidth, chartHeight, dotRadius = 8) {
+  constructor (
+    parentSelector,
+    chartWidth,
+    chartHeight,
+    onMouseOverDotCallback,
+    onMouseLeaveDotCallback,
+    dotRadius = 8
+  ) {
     this.parentSelector = parentSelector
     this.legendHeight = 50
     this.chartSize = {
@@ -25,6 +32,8 @@ class ClevelandDotPlots {
       .duration(1000)
       .ease(d3.easeQuadInOut)
     this.colors = d3.schemeDark2
+    this.onOverCallback = onMouseOverDotCallback
+    this.onLeaveCallback = onMouseLeaveDotCallback
   }
 
   create (data, categories, chartTitle, dotsTitleFn) {
@@ -63,6 +72,7 @@ class ClevelandDotPlots {
       .classed('circles-and-line', true)
       .call(this.__createLine.bind(this))
       .call(this.__createDots.bind(this, dotsTitleFn, categories))
+      .call(this.__attachEventsToCircles.bind(this, categories))
 
     this.__createYAxis(svgChart)
     this.__createXAxis(svgChart)
@@ -200,6 +210,7 @@ class ClevelandDotPlots {
       .attr('cx', d => this.xScaler(d.value))
       .attr('cy', d => this.yScaler(d.key))
       .attr('r', this.dotRadius)
+      .attr('opacity', 1)
       .style('fill', (d, i) => this.colors[i])
       .selection()
       .append('title')
@@ -222,6 +233,28 @@ class ClevelandDotPlots {
             .select('title')
             .text((d, i) => titleFn(d.key, categories[i], d.value))
       )
+  }
+
+  __attachEventsToCircles (categories, lines) {
+    const allCircles = lines.selectAll('circle')
+    const numberOfCategories = categories.length
+
+    allCircles.on('mouseover', (datum, idx) => {
+      this.onOverCallback(datum)
+
+      allCircles
+        .interrupt()
+        .transition(this.transition)
+        .attr('opacity', (d, i) => (i % numberOfCategories === idx ? 1 : 0.4))
+    })
+    allCircles.on('mouseleave', (datum, idx) => {
+      this.onLeaveCallback(datum)
+
+      allCircles
+        .interrupt()
+        .transition(this.transition)
+        .attr('opacity', 1)
+    })
   }
 }
 
