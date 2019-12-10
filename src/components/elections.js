@@ -70,7 +70,7 @@ class Elections extends Component {
 
   updateSectionTitle () {
     d3.select(super.getContainerSelector())
-      .select('.elections-title')
+      .select('.title')
       .text(`Elections in ${super.getMunicipality()}`)
   }
 }
