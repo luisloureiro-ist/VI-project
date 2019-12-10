@@ -33,9 +33,20 @@
 .grid-container .charts-pane .right-charts {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
-.grid-container .charts-pane .left-charts,
+.grid-container .charts-pane .left-charts {
+  padding-right: 20px;
+  padding-inline-end: 20px;
+}
+
 .grid-container .charts-pane .right-charts {
+  padding-left: 20px;
+  padding-inline-start: 20px;
+}
+
+.grid-container .charts-pane .left-charts > *,
+.grid-container .charts-pane .right-charts > * {
   flex: 1;
 }

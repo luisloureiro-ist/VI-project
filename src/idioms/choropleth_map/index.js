@@ -1,4 +1,4 @@
-import Legend from './legend.js'
+import Legend from '../../../assets/js/d3.legend.js'
 
 class ChoroplethMap {
   constructor (parentSelector) {
