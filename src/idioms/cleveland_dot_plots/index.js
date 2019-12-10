@@ -240,15 +240,15 @@ class ClevelandDotPlots {
     const numberOfCategories = categories.length
 
     allCircles.on('mouseover', (datum, idx) => {
-      this.onOverCallback(datum)
+      this.onOverCallback(categories[idx])
 
       allCircles
         .interrupt()
         .transition(this.transition)
         .attr('opacity', (d, i) => (i % numberOfCategories === idx ? 1 : 0.4))
     })
-    allCircles.on('mouseleave', (datum, idx) => {
-      this.onLeaveCallback(datum)
+    allCircles.on('mouseleave', () => {
+      this.onLeaveCallback()
 
       allCircles
         .interrupt()
