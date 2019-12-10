@@ -1,43 +1,55 @@
-import './index.css'
-import * as d3 from 'd3'
-
 class RadarChart {
-  constructor (parentSelector, chartWidth, withYAxis = false) {
+  constructor (parentSelector, chartWidth, chartHeight) {
     this.parentSelector = parentSelector
-    this.radius = 5
-    this.chartWidth = chartWidth
-    this.h = 600
-    this.factor = 1
-    this.factorLegend = 0.85
-    this.levels = 3
-    this.maxValue = 0
-    this.radians = (2 * Math.PI)
-    this.opacityArea = 0.5
-    this.ToRight = 5
-    this.TranslateX = 80
-    this.TranslateY = 30
-    this.ExtraWidthX = 100
-    this.ExtraWidthY = 100
+    this.chartSize = {
+      width: chartWidth,
+      height: chartHeight
+    }
+    this.sectionElement = d3.select(this.parentSelector)
+    this.chartRadius = Math.min(chartHeight, chartWidth)
     this.transition = d3
       .transition()
       .duration(1000)
       .ease(d3.easeQuadInOut)
-  };
+  }
 
-  create (data, yAxisDomain = null) {
-    this.chart = this.chart
+  create (data, categories) {
+    const chart = this.sectionElement
       .append('svg')
       .classed('svg-chart', true)
-      .attr('width', this.chartWidth)
-      .attr('height', this.dotHeight * data.length)
+      .attr('width', this.chartSize.width)
+      .attr('height', this.chartSize.height)
 
-    this.chart
+    // Create axes
+    chart
       .append('g')
-      .classed('radar', true)
-      .selectAll('g')
-      .data(data)
+      .classed('axes', true)
+      .selectAll('line')
+      .data(data, d => d.axis)
       .enter()
-      .append('g')
-      .classed('clevelands', true)
+      .append('line')
+      .attr('x1', Math.ceil(this.chartSize.width / 2))
+      .attr(
+        'x2',
+        (d, i) =>
+          (1 + Math.sin(convertToRadians(data.length, i))) *
+          Math.ceil(this.chartSize.width / 2)
+      )
+      .attr('y1', Math.ceil(this.chartSize.height / 2))
+      .attr(
+        'y2',
+        (d, i) =>
+          (1 - Math.cos(convertToRadians(data.length, i))) *
+          Math.ceil(this.chartSize.height / 2)
+      )
+      .style('stroke', 'grey')
+      .style('stroke-opacity', '0.75')
+      .style('stroke-width', '0.3px')
   }
 }
+
+function convertToRadians (numberOfItems, idx) {
+  return ((180 / numberOfItems) * idx * 2 * Math.PI) / 180
+}
+
+export default RadarChart
