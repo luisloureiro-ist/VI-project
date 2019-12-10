@@ -90,6 +90,8 @@ function registerEventListeners ({ companiesData, firesData, electionsData }) {
   const dispatch = d3.dispatch(
     'initialize',
     'region_selected',
+    'year_selected',
+    'year_deselected',
     'update_municipality',
     'update_years'
   )

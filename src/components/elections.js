@@ -33,7 +33,9 @@ class Elections extends Component {
         new ClevelandDotPlot(
           super.getContainerSelector(),
           super.getComponentSize().width,
-          super.getComponentSize().height
+          super.getComponentSize().height,
+          year => super.getDispatch().call('year_selected', this, year),
+          () => super.getDispatch().call('year_deselected')
         )
       )
       this.charts[idx].create(
