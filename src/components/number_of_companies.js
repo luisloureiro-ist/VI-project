@@ -5,7 +5,7 @@ class NumberOfCompanies extends Component {
   constructor (dispatch, parentSelector) {
     super(dispatch, parentSelector, {
       width: document.querySelector(parentSelector).offsetWidth,
-      height: document.querySelector(parentSelector).offsetHeight - 27 // The height of the title
+      height: document.querySelector(parentSelector).offsetHeight - 51 // The height+margin of the title
     })
     this.chart = null
     this.activitySectors = []
