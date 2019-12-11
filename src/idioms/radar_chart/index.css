@@ -4,11 +4,11 @@
   align-items: center;
 }
 
-.svg-chart .axes line {
+.svg-chart.radar .axes line {
   stroke: grey;
 }
 
-.svg-chart .area polygon {
+.svg-chart.radar .area polygon {
   fill: red;
   fill-opacity: 0.5;
   stroke: none;

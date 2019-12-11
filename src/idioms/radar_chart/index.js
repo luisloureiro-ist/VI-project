@@ -20,7 +20,7 @@ class RadarChart {
     }
     const chart = this.sectionElement
       .append('svg')
-      .classed('svg-chart', true)
+      .classed('svg-chart radar', true)
       .attr('width', this.chartSize.width)
       .attr('height', this.chartSize.height)
 
