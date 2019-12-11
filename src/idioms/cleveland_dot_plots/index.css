@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.elections-section .elections-title {
+.elections-section > .title {
   align-self: flex-start;
 }
 
