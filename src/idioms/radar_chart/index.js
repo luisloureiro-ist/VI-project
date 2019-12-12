@@ -35,11 +35,19 @@ class RadarChart {
       .append('line')
       .attr('x1', chartCenterCoordinates.width)
       .attr('x2', (d, i) =>
-        calcXCoordinate(chartCenterCoordinates.width, data.length, i)
+        calcMostDistantFromCenterXCoordinateOfItem(
+          chartCenterCoordinates.width,
+          data.length,
+          i
+        )
       )
       .attr('y1', chartCenterCoordinates.height)
       .attr('y2', (d, i) =>
-        calcYCoordinate(chartCenterCoordinates.height, data.length, i)
+        calcMostDistantFromCenterYCoordinateOfItem(
+          chartCenterCoordinates.height,
+          data.length,
+          i
+        )
       )
 
     // Add text to axes
@@ -60,11 +68,11 @@ class RadarChart {
       .attr(
         'transform',
         (d, i) =>
-          `translate(${calcXCoordinate(
+          `translate(${calcMostDistantFromCenterXCoordinateOfItem(
             chartCenterCoordinates.width,
             data.length,
             i
-          )}, ${calcYCoordinate(
+          )}, ${calcMostDistantFromCenterYCoordinateOfItem(
             chartCenterCoordinates.height,
             data.length,
             i
@@ -77,6 +85,7 @@ class RadarChart {
     // Create polygon / area
     const polygonData = data.reduce((prev, curr) => prev.concat(curr.value), [])
     const maxValue = Math.max(...polygonData) * (1 + 0.1) // 0.1 for padding
+
     chart
       .append('g')
       .classed('area', true)
@@ -84,7 +93,9 @@ class RadarChart {
       .data([polygonData])
       .enter()
       .append('polygon')
-      .attr('points', d => convertToPointsString(chartCenterCoordinates, d))
+      .attr('points', d =>
+        convertToPointsString(chartCenterCoordinates, d, maxValue)
+      )
 
     // Add circles to intersection points between polygon and axes
     chart
@@ -96,7 +107,7 @@ class RadarChart {
       .enter()
       .append('circle')
       .attr('cx', (d, i) =>
-        calcXPoint(
+        calcXCoordinate(
           d,
           maxValue,
           i,
@@ -105,7 +116,7 @@ class RadarChart {
         )
       )
       .attr('cy', (d, i) =>
-        calcYPoint(
+        calcYCoordinate(
           d,
           maxValue,
           i,
@@ -126,26 +137,34 @@ function convertToRadians (numberOfItems, idx) {
   return ((180 / numberOfItems) * idx * 2 * Math.PI) / 180
 }
 
-function calcXCoordinate (maxWidth, numItems, itemIdx) {
+function calcMostDistantFromCenterXCoordinateOfItem (
+  maxWidth,
+  numItems,
+  itemIdx
+) {
   return Math.round(
     (1 + Math.sin(convertToRadians(numItems, itemIdx))) * maxWidth
   )
 }
 
-function calcYCoordinate (maxHeight, numItems, itemIdx) {
+function calcMostDistantFromCenterYCoordinateOfItem (
+  maxHeight,
+  numItems,
+  itemIdx
+) {
   return Math.round(
     (1 - Math.cos(convertToRadians(numItems, itemIdx))) * maxHeight
   )
 }
 
-function calcXPoint (value, maxValue, idx, numberOfValues, width) {
+function calcXCoordinate (value, maxValue, idx, numberOfValues, width) {
   const ratio = value / maxValue
   const axisCoordinates = {
     start: {
       x: width
     },
     end: {
-      x: calcXCoordinate(width, numberOfValues, idx)
+      x: calcMostDistantFromCenterXCoordinateOfItem(width, numberOfValues, idx)
     }
   }
   return (
@@ -154,14 +173,14 @@ function calcXPoint (value, maxValue, idx, numberOfValues, width) {
   )
 }
 
-function calcYPoint (value, maxValue, idx, numberOfValues, height) {
+function calcYCoordinate (value, maxValue, idx, numberOfValues, height) {
   const ratio = value / maxValue
   const axisCoordinates = {
     start: {
       y: height
     },
     end: {
-      y: calcYCoordinate(height, numberOfValues, idx)
+      y: calcMostDistantFromCenterYCoordinateOfItem(height, numberOfValues, idx)
     }
   }
   return (
@@ -170,18 +189,20 @@ function calcYPoint (value, maxValue, idx, numberOfValues, height) {
   )
 }
 
-function convertToPointsString (chartCenterCoordinates, arrayWithValues) {
-  const maxValue = Math.max(...arrayWithValues) * (1 + 0.1) // 0.1 for padding
-
+function convertToPointsString (
+  chartCenterCoordinates,
+  arrayWithValues,
+  maxValue
+) {
   return arrayWithValues
     .map((value, idx) => {
-      return `${calcXPoint(
+      return `${calcXCoordinate(
         value,
         maxValue,
         idx,
         arrayWithValues.length,
         chartCenterCoordinates.width
-      )}, ${calcYPoint(
+      )}, ${calcYCoordinate(
         value,
         maxValue,
         idx,
