@@ -13,7 +13,7 @@ class RadarChart {
       .ease(d3.easeQuadInOut)
   }
 
-  create (data, categories) {
+  create (data, categories, circlesTitleFn) {
     const paddingForText = 30
     const chartCenterCoordinates = {
       width: Math.round(this.chartSize.width / 2) - paddingForText,
@@ -103,28 +103,30 @@ class RadarChart {
       .append('g')
       .classed('values', true)
       .selectAll('circles')
-      .data(polygonData)
+      .data(data)
       .enter()
       .append('circle')
       .attr('cx', (d, i) =>
         calcXCoordinate(
-          d,
+          d.value,
           maxValue,
           i,
-          polygonData.length,
+          data.length,
           chartCenterCoordinates.width
         )
       )
       .attr('cy', (d, i) =>
         calcYCoordinate(
-          d,
+          d.value,
           maxValue,
           i,
-          polygonData.length,
+          data.length,
           chartCenterCoordinates.height
         )
       )
       .attr('r', 3)
+      .append('title')
+      .text(d => circlesTitleFn(d.axis, d.value))
   }
 }
 

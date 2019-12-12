@@ -56,7 +56,7 @@ class NumberOfCompanies extends Component {
     this.chart.create(
       reducedData,
       years,
-      (type, years, result) =>
+      (type, result) =>
         `Total number of "${type}" companies between ${years[0]} and ${
           years[years.length - 1]
         }:\n${result}`
