@@ -70,6 +70,9 @@ class RadarChart {
             i
           )})`
       )
+      .attr('dominant-baseline', (d, i) =>
+        isInUpperQuadrants(data.length, i) ? 'auto' : 'hanging'
+      )
 
     // Create polygon / area
     const polygonData = data.reduce((prev, curr) => prev.concat(curr.value), [])
@@ -82,6 +85,11 @@ class RadarChart {
       .append('polygon')
       .attr('points', d => convertToPointsString(chartCenterCoordinates, d))
   }
+}
+
+function isInUpperQuadrants (numberOfItems, itemIdx) {
+  const degrees = Math.round(360 / numberOfItems) * itemIdx
+  return degrees > 270 || degrees < 90
 }
 
 function convertToRadians (numberOfItems, idx) {
