@@ -76,6 +76,7 @@ class RadarChart {
 
     // Create polygon / area
     const polygonData = data.reduce((prev, curr) => prev.concat(curr.value), [])
+    const maxValue = Math.max(...polygonData) * (1 + 0.1) // 0.1 for padding
     chart
       .append('g')
       .classed('area', true)
@@ -84,6 +85,35 @@ class RadarChart {
       .enter()
       .append('polygon')
       .attr('points', d => convertToPointsString(chartCenterCoordinates, d))
+
+    // Add circles to intersection points between polygon and axes
+    chart
+      .select('.area')
+      .append('g')
+      .classed('values', true)
+      .selectAll('circles')
+      .data(polygonData)
+      .enter()
+      .append('circle')
+      .attr('cx', (d, i) =>
+        calcXPoint(
+          d,
+          maxValue,
+          i,
+          polygonData.length,
+          chartCenterCoordinates.width
+        )
+      )
+      .attr('cy', (d, i) =>
+        calcYPoint(
+          d,
+          maxValue,
+          i,
+          polygonData.length,
+          chartCenterCoordinates.height
+        )
+      )
+      .attr('r', 3)
   }
 }
 
@@ -108,36 +138,56 @@ function calcYCoordinate (maxHeight, numItems, itemIdx) {
   )
 }
 
+function calcXPoint (value, maxValue, idx, numberOfValues, width) {
+  const ratio = value / maxValue
+  const axisCoordinates = {
+    start: {
+      x: width
+    },
+    end: {
+      x: calcXCoordinate(width, numberOfValues, idx)
+    }
+  }
+  return (
+    Math.round((axisCoordinates.start.x - axisCoordinates.end.x) * ratio) +
+    axisCoordinates.start.x
+  )
+}
+
+function calcYPoint (value, maxValue, idx, numberOfValues, height) {
+  const ratio = value / maxValue
+  const axisCoordinates = {
+    start: {
+      y: height
+    },
+    end: {
+      y: calcYCoordinate(height, numberOfValues, idx)
+    }
+  }
+  return (
+    Math.round((axisCoordinates.end.y - axisCoordinates.start.y) * ratio) +
+    axisCoordinates.start.y
+  )
+}
+
 function convertToPointsString (chartCenterCoordinates, arrayWithValues) {
   const maxValue = Math.max(...arrayWithValues) * (1 + 0.1) // 0.1 for padding
 
   return arrayWithValues
     .map((value, idx) => {
-      const ratio = value / maxValue
-      const axisCoordinates = {
-        start: {
-          x: chartCenterCoordinates.width,
-          y: chartCenterCoordinates.height
-        },
-        end: {
-          x: calcXCoordinate(
-            chartCenterCoordinates.width,
-            arrayWithValues.length,
-            idx
-          ),
-          y: calcYCoordinate(
-            chartCenterCoordinates.height,
-            arrayWithValues.length,
-            idx
-          )
-        }
-      }
-
-      return `${Math.round(
-        (axisCoordinates.start.x - axisCoordinates.end.x) * ratio
-      ) + axisCoordinates.start.x}, ${Math.round(
-        (axisCoordinates.end.y - axisCoordinates.start.y) * ratio
-      ) + axisCoordinates.start.y}`
+      return `${calcXPoint(
+        value,
+        maxValue,
+        idx,
+        arrayWithValues.length,
+        chartCenterCoordinates.width
+      )}, ${calcYPoint(
+        value,
+        maxValue,
+        idx,
+        arrayWithValues.length,
+        chartCenterCoordinates.height
+      )}`
     })
     .join(' ')
 }

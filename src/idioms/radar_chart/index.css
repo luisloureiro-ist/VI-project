@@ -17,8 +17,15 @@
   stroke: grey;
 }
 
-.svg-chart.radar .area polygon {
+.svg-chart.radar .area polygon,
+.svg-chart.radar .area circle {
   fill: red;
   fill-opacity: 0.5;
-  stroke: none;
+  stroke: red;
+  stroke-width: 0.6;
+}
+
+.svg-chart.radar .area circle {
+  cursor: pointer;
+  fill-opacity: 1;
 }
