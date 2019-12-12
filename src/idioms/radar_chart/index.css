@@ -19,13 +19,15 @@
 
 .svg-chart.radar .area polygon,
 .svg-chart.radar .area circle {
-  fill: red;
-  fill-opacity: 0.5;
-  stroke: red;
-  stroke-width: 0.6;
+  fill: #d94701;
+  fill-opacity: 0.7;
+  stroke: none;
 }
 
 .svg-chart.radar .area circle {
   cursor: pointer;
-  fill-opacity: 1;
+}
+
+.svg-legend.radar .tick > line {
+  display: none;
 }

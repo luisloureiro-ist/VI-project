@@ -1,9 +1,12 @@
+import Legend from '../../../assets/js/d3.legend.js'
+
 class RadarChart {
   constructor (parentSelector, chartWidth, chartHeight) {
     this.parentSelector = parentSelector
+    this.legendHeight = 50
     this.chartSize = {
       width: chartWidth,
-      height: chartHeight
+      height: chartHeight - this.legendHeight
     }
     this.sectionElement = d3.select(this.parentSelector)
     this.chartRadius = Math.min(chartHeight, chartWidth)
@@ -11,6 +14,7 @@ class RadarChart {
       .transition()
       .duration(1000)
       .ease(d3.easeQuadInOut)
+    this.colors = d3.schemeOranges
   }
 
   create (data, categories, circlesTitleFn) {
@@ -127,6 +131,29 @@ class RadarChart {
       .attr('r', 3)
       .append('title')
       .text(d => circlesTitleFn(d.axis, d.value))
+
+    this.__createLegend(categories)
+  }
+
+  __createLegend (categories) {
+    this.sectionElement
+      .append(
+        () =>
+          new Legend({
+            color: d3.scaleThreshold(
+              [categories[0], 'and', categories[categories.length - 1]],
+              [
+                this.colors[4][3],
+                this.colors[4][3],
+                this.colors[4][3],
+                this.colors[4][3]
+              ]
+            ),
+            title: 'Average number per year between:',
+            width: 108
+          })
+      )
+      .classed('svg-legend radar', true)
   }
 }
 
