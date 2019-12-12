@@ -57,9 +57,9 @@ class NumberOfCompanies extends Component {
       reducedData,
       years,
       (type, result) =>
-        `Total number of "${type}" companies between ${years[0]} and ${
-          years[years.length - 1]
-        }:\n${result}`
+        `Average number of "${type}" companies per year\n\nBetween ${
+          years[0]
+        } and ${years[years.length - 1]}: ${result}`
     )
   }
 
