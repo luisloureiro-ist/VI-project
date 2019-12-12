@@ -29,7 +29,7 @@ class RadarChart {
       .append('g')
       .classed('axes', true)
       .selectAll('line')
-      .data(data, d => d.axis)
+      .data(data)
       .enter()
       .append('line')
       .attr('x1', chartCenterCoordinates.width)
@@ -39,6 +39,33 @@ class RadarChart {
       .attr('y1', chartCenterCoordinates.height)
       .attr('y2', (d, i) =>
         calcYCoordinate(chartCenterCoordinates.height, data.length, i)
+      )
+
+    // Add text to axes
+    chart
+      .select('.axes')
+      .selectAll('text')
+      .data(data)
+      .enter()
+      .append('text')
+      .text(d => d.axis)
+      .attr(
+        'dx',
+        // Center align text in relation to axis
+        (d, i, nodesList) => -nodesList[i].getBoundingClientRect().width / 2
+      )
+      .attr(
+        'transform',
+        (d, i) =>
+          `translate(${calcXCoordinate(
+            chartCenterCoordinates.width,
+            data.length,
+            i
+          )}, ${calcYCoordinate(
+            chartCenterCoordinates.height,
+            data.length,
+            i
+          )})`
       )
 
     // Create polygon / area
