@@ -14,9 +14,10 @@ class RadarChart {
   }
 
   create (data, categories) {
+    const paddingForText = 30
     const chartCenterCoordinates = {
-      width: Math.round(this.chartSize.width / 2),
-      height: Math.round(this.chartSize.height / 2)
+      width: Math.round(this.chartSize.width / 2) - paddingForText,
+      height: Math.round(this.chartSize.height / 2) - paddingForText
     }
     const chart = this.sectionElement
       .append('svg')
@@ -44,6 +45,8 @@ class RadarChart {
     // Add text to axes
     chart
       .select('.axes')
+      .append('g')
+      .classed('labels', true)
       .selectAll('text')
       .data(data)
       .enter()
