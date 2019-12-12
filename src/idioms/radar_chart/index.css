@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.number-of-companies-section > .title {
+  align-self: flex-start;
+}
+
 .svg-chart.radar .axes line {
   stroke: grey;
 }
