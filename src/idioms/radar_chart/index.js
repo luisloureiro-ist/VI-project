@@ -51,7 +51,7 @@ class RadarChart {
     this.__createLegend(categories)
   }
 
-  updateData (newData, circlesTitleFn) {
+  updateData (newData) {
     const newPolygonData = newData.reduce(
       (prev, curr) => prev.concat(curr.value),
       []

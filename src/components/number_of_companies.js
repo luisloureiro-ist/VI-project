@@ -52,13 +52,11 @@ class NumberOfCompanies extends Component {
     super.setMunicipality(newMunicipality)
     super.setDataset(newData)
 
-    this.years = getYears(newData)
-
     this.updateSectionTitle()
 
     const reducedNewData = this.__transformData(newData)
 
-    this.chart.updateData(reducedNewData, generateTitleFunction(this.years))
+    this.chart.updateData(reducedNewData)
   }
 
   updateSectionTitle () {
