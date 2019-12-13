@@ -17,7 +17,7 @@ class RadarChart {
     this.colors = d3.schemeOranges
   }
 
-  create (data, categories, circlesTitleFn) {
+  create (data, categories, titleTextFunction) {
     const paddingForText = 30
     // To guarantee that the chart has a perfect circular shape
     const shortestMeasure = Math.min(
@@ -28,114 +28,25 @@ class RadarChart {
       width: Math.round(shortestMeasure / 2) - paddingForText,
       height: Math.round(shortestMeasure / 2) - paddingForText
     }
+    this.radarCenterCoordinates = chartCenterCoordinates
+    this.titleTextFunction = titleTextFunction
     const chart = this.sectionElement
       .append('svg')
       .classed('svg-chart radar', true)
       .attr('width', this.chartSize.width)
       .attr('height', this.chartSize.height)
 
-    // Create axes
-    chart
-      .append('g')
-      .classed('axes', true)
-      .selectAll('line')
-      .data(data)
-      .enter()
-      .append('line')
-      .attr('x1', chartCenterCoordinates.width)
-      .attr('x2', (d, i) =>
-        calcMostDistantFromCenterXCoordinateOfItem(
-          chartCenterCoordinates.width,
-          data.length,
-          i
-        )
-      )
-      .attr('y1', chartCenterCoordinates.height)
-      .attr('y2', (d, i) =>
-        calcMostDistantFromCenterYCoordinateOfItem(
-          chartCenterCoordinates.height,
-          data.length,
-          i
-        )
-      )
-
-    // Add text to axes
-    chart
-      .select('.axes')
-      .append('g')
-      .classed('labels', true)
-      .selectAll('text')
-      .data(data)
-      .enter()
-      .append('text')
-      .text(d => d.axis)
-      .attr(
-        'dx',
-        // Center align text in relation to axis
-        (d, i, nodesList) => -nodesList[i].getBoundingClientRect().width / 2
-      )
-      .attr(
-        'transform',
-        (d, i) =>
-          `translate(${calcMostDistantFromCenterXCoordinateOfItem(
-            chartCenterCoordinates.width,
-            data.length,
-            i
-          )}, ${calcMostDistantFromCenterYCoordinateOfItem(
-            chartCenterCoordinates.height,
-            data.length,
-            i
-          )})`
-      )
-      .attr('dominant-baseline', (d, i) =>
-        isInUpperQuadrants(data.length, i) ? 'auto' : 'hanging'
-      )
-
-    // Create polygon / area
     const polygonData = data.reduce((prev, curr) => prev.concat(curr.value), [])
-    const maxValue = Math.max(...polygonData) * (1 + 0.1) // 0.1 for padding
-
+    const maxValue = Math.round(Math.max(...polygonData) * (1 + 0.2)) // 0.2 for padding
     chart
-      .append('g')
-      .classed('area', true)
-      .selectAll('polygon')
-      .data([polygonData])
-      .enter()
-      .append('polygon')
-      .attr('points', d =>
-        convertToPointsString(chartCenterCoordinates, d, maxValue)
-      )
-
-    // Add circles to intersection points between polygon and axes
-    chart
-      .select('.area')
-      .append('g')
-      .classed('values', true)
-      .selectAll('circles')
-      .data(data)
-      .enter()
-      .append('circle')
-      .attr('cx', (d, i) =>
-        calcXCoordinate(
-          d.value,
-          maxValue,
-          i,
-          data.length,
-          chartCenterCoordinates.width
-        )
-      )
-      .attr('cy', (d, i) =>
-        calcYCoordinate(
-          d.value,
-          maxValue,
-          i,
-          data.length,
-          chartCenterCoordinates.height
-        )
-      )
-      .attr('r', 3)
-      .append('title')
-      .text(d => circlesTitleFn(d.axis, d.value))
+      // Create axes
+      .call(this.__createAxes.bind(this, data))
+      // Add text to axes
+      .call(this.__addTextToAxes.bind(this, data))
+      // Create polygon / area
+      .call(this.__createPolygon.bind(this, [polygonData], maxValue))
+      // Add circles to intersection points between polygon and axes
+      .call(this.__addIntersectionPoints.bind(this, data, maxValue))
 
     this.__createLegend(categories)
   }
@@ -201,6 +112,110 @@ class RadarChart {
             .select('title')
             .text(d => circlesTitleFn(d.axis, d.value))
       )
+  }
+
+  __createAxes (data, chart) {
+    chart
+      .append('g')
+      .classed('axes', true)
+      .selectAll('line')
+      .data(data)
+      .enter()
+      .append('line')
+      .attr('x1', this.radarCenterCoordinates.width)
+      .attr('x2', (d, i) =>
+        calcMostDistantFromCenterXCoordinateOfItem(
+          this.radarCenterCoordinates.width,
+          data.length,
+          i
+        )
+      )
+      .attr('y1', this.radarCenterCoordinates.height)
+      .attr('y2', (d, i) =>
+        calcMostDistantFromCenterYCoordinateOfItem(
+          this.radarCenterCoordinates.height,
+          data.length,
+          i
+        )
+      )
+  }
+
+  __addTextToAxes (data, chart) {
+    chart
+      .select('.axes')
+      .append('g')
+      .classed('labels', true)
+      .selectAll('text')
+      .data(data)
+      .enter()
+      .append('text')
+      .text(d => d.axis)
+      .attr(
+        'dx',
+        // Center align text in relation to axis
+        (d, i, nodesList) => -nodesList[i].getBoundingClientRect().width / 2
+      )
+      .attr(
+        'transform',
+        (d, i) =>
+          `translate(${calcMostDistantFromCenterXCoordinateOfItem(
+            this.radarCenterCoordinates.width,
+            data.length,
+            i
+          )}, ${calcMostDistantFromCenterYCoordinateOfItem(
+            this.radarCenterCoordinates.height,
+            data.length,
+            i
+          )})`
+      )
+      .attr('dominant-baseline', (d, i) =>
+        isInUpperQuadrants(data.length, i) ? 'auto' : 'hanging'
+      )
+  }
+
+  __createPolygon (data, maxValue, chart) {
+    chart
+      .append('g')
+      .classed('area', true)
+      .selectAll('polygon')
+      .data(data)
+      .enter()
+      .append('polygon')
+      .attr('points', d =>
+        convertToPointsString(this.radarCenterCoordinates, d, maxValue)
+      )
+  }
+
+  __addIntersectionPoints (data, maxValue, chart) {
+    chart
+      .select('.area')
+      .append('g')
+      .classed('values', true)
+      .selectAll('circles')
+      .data(data)
+      .enter()
+      .append('circle')
+      .attr('cx', (d, i) =>
+        calcXCoordinate(
+          d.value,
+          maxValue,
+          i,
+          data.length,
+          this.radarCenterCoordinates.width
+        )
+      )
+      .attr('cy', (d, i) =>
+        calcYCoordinate(
+          d.value,
+          maxValue,
+          i,
+          data.length,
+          this.radarCenterCoordinates.height
+        )
+      )
+      .attr('r', 3)
+      .append('title')
+      .text(d => this.titleTextFunction(d.axis, d.value))
   }
 
   __createLegend (categories) {
