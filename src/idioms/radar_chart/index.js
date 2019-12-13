@@ -197,7 +197,7 @@ function calcXCoordinate (value, maxValue, idx, numberOfValues, width) {
     }
   }
   return (
-    Math.round((axisCoordinates.start.x - axisCoordinates.end.x) * ratio) +
+    Math.round((axisCoordinates.end.x - axisCoordinates.start.x) * ratio) +
     axisCoordinates.start.x
   )
 }
