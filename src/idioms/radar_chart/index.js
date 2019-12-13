@@ -2,11 +2,19 @@ import Legend from '../../../assets/js/d3.legend.js'
 
 class RadarChart {
   constructor (parentSelector, chartWidth, chartHeight) {
+    const legendHeight = 50
+    const paddingForText = 30
+    // To guarantee that the chart has a perfect circular shape
+    const shortestMeasure = Math.min(chartWidth, chartHeight)
+
     this.parentSelector = parentSelector
-    this.legendHeight = 50
     this.chartSize = {
       width: chartWidth,
-      height: chartHeight - this.legendHeight
+      height: chartHeight - legendHeight
+    }
+    this.radarCenterCoordinates = {
+      width: Math.round(shortestMeasure / 2) - paddingForText,
+      height: Math.round(shortestMeasure / 2) - paddingForText
     }
     this.sectionElement = d3.select(this.parentSelector)
     this.chartRadius = Math.min(chartHeight, chartWidth)
@@ -18,17 +26,6 @@ class RadarChart {
   }
 
   create (data, categories, titleTextFunction) {
-    const paddingForText = 30
-    // To guarantee that the chart has a perfect circular shape
-    const shortestMeasure = Math.min(
-      this.chartSize.width,
-      this.chartSize.height
-    )
-    const chartCenterCoordinates = {
-      width: Math.round(shortestMeasure / 2) - paddingForText,
-      height: Math.round(shortestMeasure / 2) - paddingForText
-    }
-    this.radarCenterCoordinates = chartCenterCoordinates
     this.titleTextFunction = titleTextFunction
     const chart = this.sectionElement
       .append('svg')
