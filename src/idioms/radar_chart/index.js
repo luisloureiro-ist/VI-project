@@ -157,6 +157,7 @@ class RadarChart {
         enter => enter,
         update =>
           update
+            .interrupt() // Avoids "too late; already running" error
             .transition(this.transition)
             .attr('points', d =>
               convertToPointsString(this.radarCenterCoordinates, d, newMaxValue)
@@ -204,6 +205,7 @@ class RadarChart {
         enter => enter,
         update =>
           update
+            .interrupt() // Avoids "too late; already running" error
             .transition(this.transition)
             .attr('cx', (d, i) =>
               calcXCoordinate(
@@ -223,6 +225,7 @@ class RadarChart {
                 this.radarCenterCoordinates.height
               )
             )
+            .selection()
             .select('title')
             .text(d => this.titleTextFunction(d.axis, d.value))
       )
