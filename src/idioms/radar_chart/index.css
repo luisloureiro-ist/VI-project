@@ -18,7 +18,8 @@
 }
 
 .svg-chart.radar .area polygon,
-.svg-chart.radar .area circle {
+.svg-chart.radar .area circle,
+.svg-legend.radar rect {
   fill: #d94701;
   fill-opacity: 0.7;
   stroke: none;
