@@ -19,9 +19,14 @@ class RadarChart {
 
   create (data, categories, circlesTitleFn) {
     const paddingForText = 30
+    // To guarantee that the chart has a perfect circular shape
+    const shortestMeasure = Math.min(
+      this.chartSize.width,
+      this.chartSize.height
+    )
     const chartCenterCoordinates = {
-      width: Math.round(this.chartSize.width / 2) - paddingForText,
-      height: Math.round(this.chartSize.height / 2) - paddingForText
+      width: Math.round(shortestMeasure / 2) - paddingForText,
+      height: Math.round(shortestMeasure / 2) - paddingForText
     }
     const chart = this.sectionElement
       .append('svg')
