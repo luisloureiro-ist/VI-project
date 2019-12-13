@@ -53,14 +53,7 @@ class NumberOfCompanies extends Component {
         Object.assign({}, axis, { value: Math.ceil(axis.value / years.length) })
       )
 
-    this.chart.create(
-      reducedData,
-      years,
-      (type, result) =>
-        `Average number of "${type}" companies per year\n\nBetween ${
-          years[0]
-        } and ${years[years.length - 1]}: ${result}`
-    )
+    this.chart.create(reducedData, years, generateTitleFunction(years))
   }
 
   update ({ companiesData: newData }, newMunicipality) {
@@ -85,13 +78,7 @@ class NumberOfCompanies extends Component {
         Object.assign({}, axis, { value: Math.ceil(axis.value / years.length) })
       )
 
-    this.chart.updateData(
-      reducedNewData,
-      (type, result) =>
-        `Average number of "${type}" companies per year\n\nBetween ${
-          years[0]
-        } and ${years[years.length - 1]}: ${result}`
-    )
+    this.chart.updateData(reducedNewData, generateTitleFunction(years))
   }
 
   updateSectionTitle () {
@@ -115,6 +102,13 @@ function getYears (data) {
       prev.indexOf(curr.year) === -1 ? prev.concat([curr.year]) : prev,
     []
   )
+}
+
+function generateTitleFunction (years) {
+  return (type, result) =>
+    `Average number of "${type}" companies per year\n\nBetween ${
+      years[0]
+    } and ${years[years.length - 1]}: ${result}`
 }
 
 export default NumberOfCompanies
