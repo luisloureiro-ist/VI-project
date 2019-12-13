@@ -40,6 +40,10 @@
   stroke-width: 0.3;
 }
 
+.svg-chart.radar .axes .labels text:hover {
+  font-weight: 700;
+}
+
 .svg-legend.radar .tick > line {
   display: none;
 }
