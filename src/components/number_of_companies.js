@@ -27,6 +27,8 @@ class NumberOfCompanies extends Component {
   initialize ({ companiesData: data }, municipality) {
     super.setMunicipality(municipality)
     super.setDataset(data)
+
+    this.years = getYears(data)
     this.activitySectors = getActivitySectors(data)
 
     this.updateSectionTitle()
@@ -37,34 +39,37 @@ class NumberOfCompanies extends Component {
       super.getComponentSize().height
     )
 
-    const years = getYears(data)
+    const reducedData = this.__transformData(data)
 
-    const reducedData = data
-      .reduce((prev, curr) => {
-        const idx = prev.findIndex(ax => curr.type === ax.axis)
-        if (idx === -1) {
-          return prev.concat({ axis: curr.type, value: curr.number })
-        } else {
-          prev[idx].value += curr.number
-          return prev
-        }
-      }, [])
-      .map(axis =>
-        Object.assign({}, axis, { value: Math.ceil(axis.value / years.length) })
-      )
-
-    this.chart.create(reducedData, years, generateTitleFunction(years))
+    this.chart.create(
+      reducedData,
+      this.years,
+      generateTitleFunction(this.years)
+    )
   }
 
   update ({ companiesData: newData }, newMunicipality) {
     super.setMunicipality(newMunicipality)
     super.setDataset(newData)
 
+    this.years = getYears(newData)
+
     this.updateSectionTitle()
 
-    const years = getYears(newData)
+    const reducedNewData = this.__transformData(newData)
 
-    const reducedNewData = newData
+    this.chart.updateData(reducedNewData, generateTitleFunction(this.years))
+  }
+
+  updateSectionTitle () {
+    d3.select(super.getContainerSelector())
+      .select('.title')
+      .text(`Number of Companies in ${super.getMunicipality()}`)
+  }
+
+  // Private/auxiliar functions
+  __transformData (data) {
+    return data
       .reduce((prev, curr) => {
         const idx = prev.findIndex(ax => curr.type === ax.axis)
         if (idx === -1) {
@@ -75,16 +80,10 @@ class NumberOfCompanies extends Component {
         }
       }, [])
       .map(axis =>
-        Object.assign({}, axis, { value: Math.ceil(axis.value / years.length) })
+        Object.assign({}, axis, {
+          value: Math.ceil(axis.value / this.years.length)
+        })
       )
-
-    this.chart.updateData(reducedNewData, generateTitleFunction(years))
-  }
-
-  updateSectionTitle () {
-    d3.select(super.getContainerSelector())
-      .select('.title')
-      .text(`Number of Companies in ${super.getMunicipality()}`)
   }
 }
 
