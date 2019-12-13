@@ -8,14 +8,6 @@ class NumberOfCompanies extends Component {
       height: document.querySelector(parentSelector).offsetHeight - 51 // The height+margin of the title
     })
     this.chart = null
-    this.activitySectors = []
-    this.smallActivitySectorsNames = [
-      'Agriculture',
-      'Mining',
-      'Manufactoring',
-      'Contruction',
-      'Health'
-    ]
 
     dispatch.on('initialize.number_of_companies', this.initialize.bind(this))
     dispatch.on(
@@ -27,9 +19,7 @@ class NumberOfCompanies extends Component {
   initialize ({ companiesData: data }, municipality) {
     super.setMunicipality(municipality)
     super.setDataset(data)
-
-    this.years = getYears(data)
-    this.activitySectors = getActivitySectors(data)
+    super.setYears(getYears(data))
 
     this.updateSectionTitle()
 
@@ -43,8 +33,8 @@ class NumberOfCompanies extends Component {
 
     this.chart.create(
       reducedData,
-      this.years,
-      generateTitleFunction(this.years)
+      super.getYears(),
+      generateTitleFunction(super.getYears())
     )
   }
 
@@ -79,18 +69,10 @@ class NumberOfCompanies extends Component {
       }, [])
       .map(axis =>
         Object.assign({}, axis, {
-          value: Math.ceil(axis.value / this.years.length)
+          value: Math.ceil(axis.value / super.getYears().length)
         })
       )
   }
-}
-
-function getActivitySectors (data) {
-  return data.reduce(
-    (prev, curr) =>
-      prev.indexOf(curr.type) === -1 ? prev.concat([curr.type]) : prev,
-    []
-  )
 }
 
 function getYears (data) {
