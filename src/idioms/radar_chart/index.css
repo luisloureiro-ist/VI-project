@@ -10,7 +10,7 @@
 
 .svg-chart.radar .axes,
 .svg-chart.radar .area {
-  transform: translate(30px, 30px);
+  transform: translate(70px, 10px);
 }
 
 .svg-chart.radar .axes line {
