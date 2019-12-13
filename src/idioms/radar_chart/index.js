@@ -51,6 +51,8 @@ class RadarChart {
       .call(this.__addIntersectionPoints.bind(this, data, maxValue))
       // Append scale values to the first axis
       .call(this.__addScaleValues.bind(this, maxValue))
+      // Add a circumference for each scale value
+      .call(this.__addCircumferences.bind(this))
 
     this.__createLegend(categories)
   }
@@ -263,6 +265,23 @@ class RadarChart {
         enter => enter,
         update => update.text(d => d)
       )
+  }
+
+  __addCircumferences (chart) {
+    chart
+      .append('g')
+      .classed('circular-scales', true)
+      .call(chart => {
+        for (let i = 1; i <= this.nrOfScaleValues; i++) {
+          chart
+            .append('circle')
+            .attr('cx', this.radarCenterCoordinates.width)
+            .attr('cy', this.radarCenterCoordinates.height)
+            .transition(this.transition)
+            .attr('r', (this.radarCenterCoordinates.height * i) / 5)
+        }
+        return chart
+      })
   }
 
   __createLegend (categories) {

@@ -9,7 +9,8 @@
 }
 
 .svg-chart.radar .axes,
-.svg-chart.radar .area {
+.svg-chart.radar .area,
+.svg-chart.radar .circular-scales {
   transform: translate(70px, 10px);
 }
 
@@ -31,6 +32,12 @@
 
 .svg-chart.radar .area circle {
   cursor: pointer;
+}
+
+.svg-chart.radar .circular-scales circle {
+  fill: none;
+  stroke: grey;
+  stroke-width: 0.3;
 }
 
 .svg-legend.radar .tick > line {
