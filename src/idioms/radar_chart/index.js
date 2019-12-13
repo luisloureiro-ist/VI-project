@@ -3,15 +3,18 @@ import Legend from '../../../assets/js/d3.legend.js'
 class RadarChart {
   constructor (parentSelector, chartWidth, chartHeight) {
     const legendHeight = 50
-    const paddingForText = 30
-    // To guarantee that the chart has a perfect circular shape
-    const shortestMeasure = Math.min(chartWidth, chartHeight)
+    const paddingForText = 6 // Equivalent to half of the height of the text elements
 
     this.parentSelector = parentSelector
     this.chartSize = {
       width: chartWidth,
       height: chartHeight - legendHeight
     }
+    // To guarantee that the chart has a perfect circular shape
+    const shortestMeasure = Math.min(
+      this.chartSize.width,
+      this.chartSize.height
+    )
     this.radarCenterCoordinates = {
       width: Math.round(shortestMeasure / 2) - paddingForText,
       height: Math.round(shortestMeasure / 2) - paddingForText
