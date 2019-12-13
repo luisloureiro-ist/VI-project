@@ -27,7 +27,9 @@ class NumberOfCompanies extends Component {
     this.chart = new RadarChart(
       super.getContainerSelector(),
       super.getComponentSize().width,
-      super.getComponentSize().height
+      super.getComponentSize().height,
+      sector => super.getDispatch().call('activity_sector_selected', this, sector),
+      () => super.getDispatch().call('activity_sector_deselected')
     )
 
     const reducedData = this.__transformData(data)

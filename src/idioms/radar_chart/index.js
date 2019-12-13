@@ -1,7 +1,13 @@
 import Legend from '../../../assets/js/d3.legend.js'
 
 class RadarChart {
-  constructor (parentSelector, chartWidth, chartHeight) {
+  constructor (
+    parentSelector,
+    chartWidth,
+    chartHeight,
+    onMouseOverAxisTextCallback,
+    onMouseLeaveAxisTextCallback
+  ) {
     const legendHeight = 50
     const paddingForText = 6 // Equivalent to half of the height of the text elements
 
@@ -27,6 +33,8 @@ class RadarChart {
       .ease(d3.easeQuadInOut)
     this.colors = d3.schemeOranges
     this.nrOfScaleValues = 5
+    this.onOverCallback = onMouseOverAxisTextCallback
+    this.onLeaveCallback = onMouseLeaveAxisTextCallback
   }
 
   create (data, categories, titleTextFunction) {
@@ -134,6 +142,8 @@ class RadarChart {
       .attr('dominant-baseline', (d, i) =>
         isInUpperQuadrants(data.length, i) ? 'auto' : 'hanging'
       )
+      .call(this.__onMouseOver.bind(this))
+      .call(this.__onMouseLeave.bind(this))
   }
 
   __createPolygon (data, maxValue, chart) {
@@ -288,6 +298,14 @@ class RadarChart {
         }
         return chart
       })
+  }
+
+  __onMouseOver (axesTexts) {
+    axesTexts.on('mouseover', d => this.onOverCallback(d.axis))
+  }
+
+  __onMouseLeave (axesTexts) {
+    axesTexts.on('mouseleave', () => this.onLeaveCallback())
   }
 
   __createLegend (categories) {

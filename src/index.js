@@ -97,6 +97,8 @@ function registerEventListeners ({ companiesData, firesData, electionsData }) {
     'region_selected',
     'year_selected',
     'year_deselected',
+    'activity_sector_selected',
+    'activity_sector_deselected',
     'update_municipality',
     'update_years'
   )
