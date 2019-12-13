@@ -140,6 +140,69 @@ class RadarChart {
     this.__createLegend(categories)
   }
 
+  updateData (newData, circlesTitleFn) {
+    const paddingForText = 30
+    // To guarantee that the chart has a perfect circular shape
+    const shortestMeasure = Math.min(
+      this.chartSize.width,
+      this.chartSize.height
+    )
+    const chartCenterCoordinates = {
+      width: Math.round(shortestMeasure / 2) - paddingForText,
+      height: Math.round(shortestMeasure / 2) - paddingForText
+    }
+    // Update polygon / area
+    const newPolygonData = newData.reduce(
+      (prev, curr) => prev.concat(curr.value),
+      []
+    )
+    const newMaxValue = Math.round(Math.max(...newPolygonData) * (1 + 0.2)) // 0.2 for padding
+
+    d3.select(this.parentSelector)
+      .selectAll('.svg-chart.radar .area polygon')
+      .data([newPolygonData])
+      .join(
+        enter => enter,
+        update =>
+          update
+            .transition(this.transition)
+            .attr('points', d =>
+              convertToPointsString(chartCenterCoordinates, d, newMaxValue)
+            )
+      )
+
+    // Updateintersection circles
+    d3.select(this.parentSelector)
+      .selectAll('.svg-chart.radar .area .values circle')
+      .data(newData)
+      .join(
+        enter => enter,
+        update =>
+          update
+            .transition(this.transition)
+            .attr('cx', (d, i) =>
+              calcXCoordinate(
+                d.value,
+                newMaxValue,
+                i,
+                newData.length,
+                chartCenterCoordinates.width
+              )
+            )
+            .attr('cy', (d, i) =>
+              calcYCoordinate(
+                d.value,
+                newMaxValue,
+                i,
+                newData.length,
+                chartCenterCoordinates.height
+              )
+            )
+            .select('title')
+            .text(d => circlesTitleFn(d.axis, d.value))
+      )
+  }
+
   __createLegend (categories) {
     this.sectionElement
       .append(

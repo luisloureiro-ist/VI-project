@@ -63,11 +63,35 @@ class NumberOfCompanies extends Component {
     )
   }
 
-  update ({ companiesData: data }, newMunicipality) {
+  update ({ companiesData: newData }, newMunicipality) {
     super.setMunicipality(newMunicipality)
-    super.setDataset(data)
+    super.setDataset(newData)
 
     this.updateSectionTitle()
+
+    const years = getYears(newData)
+
+    const reducedNewData = newData
+      .reduce((prev, curr) => {
+        const idx = prev.findIndex(ax => curr.type === ax.axis)
+        if (idx === -1) {
+          return prev.concat({ axis: curr.type, value: curr.number })
+        } else {
+          prev[idx].value += curr.number
+          return prev
+        }
+      }, [])
+      .map(axis =>
+        Object.assign({}, axis, { value: Math.ceil(axis.value / years.length) })
+      )
+
+    this.chart.updateData(
+      reducedNewData,
+      (type, result) =>
+        `Average number of "${type}" companies per year\n\nBetween ${
+          years[0]
+        } and ${years[years.length - 1]}: ${result}`
+    )
   }
 
   updateSectionTitle () {
