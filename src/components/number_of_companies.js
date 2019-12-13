@@ -14,6 +14,7 @@ class NumberOfCompanies extends Component {
       'update_municipality.number_of_companies',
       this.update.bind(this)
     )
+    dispatch.on('update_years.number_of_companies', this.updateYears.bind(this))
   }
 
   initialize ({ companiesData: data }, municipality) {
@@ -49,6 +50,18 @@ class NumberOfCompanies extends Component {
     this.chart.updateData(reducedNewData)
   }
 
+  updateYears (newYears) {
+    super.setYears(newYears)
+
+    const reducedData = this.__transformData(super.getDataset())
+
+    this.chart.updateData(
+      reducedData,
+      super.getYears(),
+      generateTitleFunction(super.getYears())
+    )
+  }
+
   updateSectionTitle () {
     d3.select(super.getContainerSelector())
       .select('.title')
@@ -58,6 +71,7 @@ class NumberOfCompanies extends Component {
   // Private/auxiliar functions
   __transformData (data) {
     return data
+      .filter(d => super.getYears().indexOf(d.year) !== -1)
       .reduce((prev, curr) => {
         const idx = prev.findIndex(ax => curr.type === ax.axis)
         if (idx === -1) {

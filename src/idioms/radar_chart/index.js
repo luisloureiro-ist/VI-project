@@ -57,7 +57,8 @@ class RadarChart {
     this.__createLegend(categories)
   }
 
-  updateData (newData) {
+  updateData (newData, categories, titleTextFunction) {
+    this.titleTextFunction = titleTextFunction
     const newPolygonData = newData.reduce(
       (prev, curr) => prev.concat(curr.value),
       []
@@ -72,6 +73,8 @@ class RadarChart {
       .call(this.__updateIntersectionPoints.bind(this, newData, newMaxValue))
       // Update scale values
       .call(this.__updateScaleValues.bind(this, newMaxValue))
+
+    this.__updateLegend(categories)
   }
 
   __createAxes (data, chart) {
@@ -303,6 +306,12 @@ class RadarChart {
           })
       )
       .classed('svg-legend radar', true)
+  }
+
+  __updateLegend (categories) {
+    this.sectionElement.select('.svg-legend.radar').remove()
+
+    this.__createLegend(categories)
   }
 }
 
