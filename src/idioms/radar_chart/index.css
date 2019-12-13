@@ -17,6 +17,10 @@
   stroke: grey;
 }
 
+.svg-chart.radar .axes .scale-value {
+  fill: grey;
+}
+
 .svg-chart.radar .area polygon,
 .svg-chart.radar .area circle,
 .svg-legend.radar rect {

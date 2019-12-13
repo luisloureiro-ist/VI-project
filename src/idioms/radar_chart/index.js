@@ -26,6 +26,7 @@ class RadarChart {
       .duration(1000)
       .ease(d3.easeQuadInOut)
     this.colors = d3.schemeOranges
+    this.nrOfScaleValues = 5
   }
 
   create (data, categories, titleTextFunction) {
@@ -37,7 +38,8 @@ class RadarChart {
       .attr('height', this.chartSize.height)
 
     const polygonData = data.reduce((prev, curr) => prev.concat(curr.value), [])
-    const maxValue = Math.round(Math.max(...polygonData) * (1 + 0.2)) // 0.2 for padding
+    const maxValue = calcMaxValue(polygonData)
+
     chart
       // Create axes
       .call(this.__createAxes.bind(this, data))
@@ -47,6 +49,8 @@ class RadarChart {
       .call(this.__createPolygon.bind(this, [polygonData], maxValue))
       // Add circles to intersection points between polygon and axes
       .call(this.__addIntersectionPoints.bind(this, data, maxValue))
+      // Append scale values to the first axis
+      .call(this.__addScaleValues.bind(this, maxValue))
 
     this.__createLegend(categories)
   }
@@ -56,7 +60,7 @@ class RadarChart {
       (prev, curr) => prev.concat(curr.value),
       []
     )
-    const newMaxValue = Math.round(Math.max(...newPolygonData) * (1 + 0.2)) // 0.2 for padding
+    const newMaxValue = calcMaxValue(newPolygonData)
 
     d3.select(this.parentSelector)
       .selectAll('.svg-chart.radar')
@@ -64,6 +68,8 @@ class RadarChart {
       .call(this.__updatePolygon.bind(this, [newPolygonData], newMaxValue))
       // Update intersection circles
       .call(this.__updateIntersectionPoints.bind(this, newData, newMaxValue))
+      // Update scale values
+      .call(this.__updateScaleValues.bind(this, newMaxValue))
   }
 
   __createAxes (data, chart) {
@@ -217,6 +223,48 @@ class RadarChart {
       )
   }
 
+  __addScaleValues (maxValue, chart) {
+    const scales = []
+    for (let i = 1; i < this.nrOfScaleValues; i++) {
+      scales.push({
+        value: maxValue * (i / this.nrOfScaleValues),
+        y:
+          this.radarCenterCoordinates.height -
+          (this.radarCenterCoordinates.height * i) / this.nrOfScaleValues
+      })
+    }
+    chart
+      .select('.axes')
+      .append('g')
+      .classed('scale-values', true)
+      .selectAll('.scale-value')
+      .data(scales)
+      .enter()
+      .append('text')
+      .classed('scale-value', true)
+      .text(d => d.value)
+      .attr('dominant-baseline', 'hanging')
+      .attr('x', this.radarCenterCoordinates.width)
+      .attr('y', this.radarCenterCoordinates.height)
+      .transition(this.transition)
+      .attr('y', d => d.y)
+  }
+
+  __updateScaleValues (newMaxValue, chart) {
+    const scales = []
+    for (let i = 1; i < this.nrOfScaleValues; i++) {
+      scales.push(newMaxValue * (i / this.nrOfScaleValues))
+    }
+
+    chart
+      .selectAll('.axes .scale-values .scale-value')
+      .data(scales)
+      .join(
+        enter => enter,
+        update => update.text(d => d)
+      )
+  }
+
   __createLegend (categories) {
     this.sectionElement
       .append(
@@ -237,6 +285,15 @@ class RadarChart {
       )
       .classed('svg-legend radar', true)
   }
+}
+
+function calcMaxValue (values) {
+  const max = Math.max(...values)
+  const orderOfMagnitude = Math.floor(Math.log10(max))
+  return (
+    Math.round((max / Math.pow(10, orderOfMagnitude)) * (1 + 0.2)) * // 0.2 for padding
+    Math.pow(10, orderOfMagnitude)
+  )
 }
 
 function isInUpperQuadrants (numberOfItems, itemIdx) {
