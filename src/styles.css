@@ -16,17 +16,17 @@
 .grid-container .charts-pane {
   display: flex;
   flex: 4;
-  background-color: lightblue;
+  /* background-color: lightblue; */
 }
 
 .grid-container .selections-pane {
   flex: 1;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 .grid-container .map-pane {
   flex: 2;
-  background-color: lightsalmon;
+  /* background-color: lightsalmon; */
 }
 
 .grid-container .charts-pane .left-charts,

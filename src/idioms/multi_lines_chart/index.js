@@ -1,18 +1,21 @@
+import Legend from '../../../assets/js/d3.legend.js'
+
 class MultiLinesChart {
   constructor (parentSelector, chartWidth, chartHeight) {
     this.parentSelector = parentSelector
+    this.legendHeight = 50
     this.chartWidth = chartWidth
-    this.chartHeight = chartHeight
+    this.chartHeight = chartHeight - this.legendHeight
     this.chart = d3.select(this.parentSelector)
     this.yScaler = null
-    this.xAxisHeight = 20
+    this.xAxisHeight = 35
     this.yAxisWidth = 50
     this.titleHeight = 190
     this.padding = 10
   };
 
   create (data, years) {
-    this.chart = this.chart
+    const chart = this.chart
       .append('svg')
       .classed('svg-chart multi-lines', true)
       .attr('width', this.chartWidth)
@@ -42,13 +45,13 @@ class MultiLinesChart {
     var xAxis = d3.axisBottom().scale(x).tickValues(years).tickFormat(d3.format('d')).tickSizeOuter(0)
     var yAxis = d3.axisLeft().scale(y).tickSizeOuter(0).tickFormat(d3.format('d'))
 
-    this.chart
+    chart
       .append('g')
       .attr('class', 'x-axis')
       .attr('transform', `translate(0, ${this.chartHeight - this.xAxisHeight} )`)
       .call(xAxis)
 
-    this.chart
+    chart
       .append('g')
       .attr('class', 'y-axis')
       .attr('transform', `translate(${this.yAxisWidth}, 0)`)
@@ -76,7 +79,7 @@ class MultiLinesChart {
     //   .attr('width', this.chartWidth - this.yAxisWidth)
     //   .attr('height', this.chartHeight - 2 * this.padding)
 
-    this.chart
+    chart
       .append('g')
       .classed('fires', true)
       .append('path')
@@ -86,7 +89,7 @@ class MultiLinesChart {
       .attr('stroke-width', 1.5)
       .attr('d', lines)
 
-    this.chart
+    chart
       .append('g')
       .classed('firefighters', true)
       .append('path')
@@ -96,7 +99,7 @@ class MultiLinesChart {
       .attr('stroke-width', 1.5)
       .attr('d', lines)
 
-    this.chart
+    chart
       .select('.fires')
       .selectAll('circle')
       .data(data[0])
@@ -111,7 +114,7 @@ class MultiLinesChart {
       .append('title')
       .text('over 9000')
 
-    this.chart
+    chart
       .select('.firefighters')
       .selectAll('circle')
       .data(data[1])
@@ -123,6 +126,24 @@ class MultiLinesChart {
       .attr('cx', (d, i) => x(years[i]))
       .attr('cy', d => y(d))
       .attr('r', 3)
+
+    this.chart
+      .append(
+        () =>
+          new Legend({
+            color: d3.scaleThreshold(
+              ['Fires', 'Firefighters'],
+              ['red', 'orange']
+            ),
+            title: 'Absolute number of',
+            // tickFormat: 'd',
+            width: 108
+          })
+      )
+      // .attr('transform', `translate(${(this.chartWidth - this.yAxisWidth) / 2}, 0)`)
+      .classed('svg-legend multi-lines', true)
+      .selectAll('.tick text')
+      .attr('x', -26)
 
     // update(d3.select('#selectbox').property('value'), 0)
 

@@ -3,7 +3,10 @@ import MultiLinesChart from '../idioms/multi_lines_chart/index.js'
 
 class FiresFirefighters extends Component {
   constructor (dispatch, parentSelector) {
-    super(dispatch, parentSelector, { width: document.querySelector(parentSelector).offsetWidth, height: document.querySelector(parentSelector).offsetHeight - 36 })
+    super(dispatch, parentSelector, {
+      width: document.querySelector(parentSelector).offsetWidth,
+      height: document.querySelector(parentSelector).offsetHeight - 51
+    })
 
     dispatch.on('initialize.fires_firefighters', this.initialize.bind(this))
   }
@@ -26,8 +29,8 @@ class FiresFirefighters extends Component {
 
   updateSectionTitle () {
     d3.select(super.getContainerSelector())
-      .select('.fires-firefighters-title')
-      .text(`# Fires & Firefighters in ${super.getMunicipality()}`)
+      .select('.title')
+      .text(`Fires & Firefighters in ${super.getMunicipality()}`)
   }
 }
 
