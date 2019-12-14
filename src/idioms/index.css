@@ -1,6 +1,7 @@
 @import './cleveland_dot_plots/index.css';
 @import './radar_chart/index.css';
 @import './choropleth_map/index.css';
+@import './multi_lines_chart/index.css';
 
 .svg-chart g text {
   fill: black;

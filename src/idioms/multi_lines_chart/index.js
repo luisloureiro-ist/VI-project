@@ -14,7 +14,7 @@ class MultiLinesChart {
   create (data, years) {
     this.chart = this.chart
       .append('svg')
-      .classed('svg-chart', true)
+      .classed('svg-chart multi-lines', true)
       .attr('width', this.chartWidth)
       .attr('height', this.chartHeight)
 
@@ -77,6 +77,8 @@ class MultiLinesChart {
     //   .attr('height', this.chartHeight - 2 * this.padding)
 
     this.chart
+      .append('g')
+      .classed('fires', true)
       .append('path')
       .datum(data[0])
       .attr('fill', 'none')
@@ -85,12 +87,42 @@ class MultiLinesChart {
       .attr('d', lines)
 
     this.chart
+      .append('g')
+      .classed('firefighters', true)
       .append('path')
       .datum(data[1])
       .attr('fill', 'none')
       .attr('stroke', 'red')
       .attr('stroke-width', 1.5)
       .attr('d', lines)
+
+    this.chart
+      .select('.fires')
+      .selectAll('circle')
+      .data(data[0])
+      .enter()
+      .append('circle')
+      .attr('fill', 'orange')
+      .attr('stroke', 'orange')
+      .attr('stroke-width', 1.5)
+      .attr('cx', (d, i) => x(years[i]))
+      .attr('cy', d => y(d))
+      .attr('r', 3)
+      .append('title')
+      .text('over 9000')
+
+    this.chart
+      .select('.firefighters')
+      .selectAll('circle')
+      .data(data[1])
+      .enter()
+      .append('circle')
+      .attr('fill', 'red')
+      .attr('stroke', 'red')
+      .attr('stroke-width', 1.5)
+      .attr('cx', (d, i) => x(years[i]))
+      .attr('cy', d => y(d))
+      .attr('r', 3)
 
     // update(d3.select('#selectbox').property('value'), 0)
 
