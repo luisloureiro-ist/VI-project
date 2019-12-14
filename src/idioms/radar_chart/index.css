@@ -1,0 +1,49 @@
+.number-of-companies-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.number-of-companies-section > .title {
+  align-self: flex-start;
+}
+
+.svg-chart.radar .axes,
+.svg-chart.radar .area,
+.svg-chart.radar .circular-scales {
+  transform: translate(70px, 10px);
+}
+
+.svg-chart.radar .axes line {
+  stroke: grey;
+}
+
+.svg-chart.radar .axes .scale-value {
+  fill: grey;
+}
+
+.svg-chart.radar .area polygon,
+.svg-chart.radar .area circle,
+.svg-legend.radar rect {
+  fill: #d94701;
+  fill-opacity: 0.7;
+  stroke: none;
+}
+
+.svg-chart.radar .area circle {
+  cursor: pointer;
+}
+
+.svg-chart.radar .circular-scales circle {
+  fill: none;
+  stroke: grey;
+  stroke-width: 0.3;
+}
+
+.svg-chart.radar .axes .labels text:hover {
+  font-weight: 700;
+}
+
+.svg-legend.radar .tick > line {
+  display: none;
+}

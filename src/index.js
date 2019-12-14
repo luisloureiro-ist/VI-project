@@ -1,6 +1,7 @@
 import CompaniesProductivityComponent from './components/companies_productivity.js'
 import ElectionsComponent from './components/elections.js'
 import MapComponent from './components/map.js'
+import NumberOfCompaniesComponent from './components/number_of_companies.js'
 //
 //
 ;(async () => {
@@ -39,6 +40,10 @@ import MapComponent from './components/map.js'
   components.push(new ElectionsComponent(dispatch, '.elections-section'))
 
   components.push(new MapComponent(dispatch, '.map-pane', 0))
+
+  components.push(
+    new NumberOfCompaniesComponent(dispatch, '.number-of-companies-section')
+  )
 
   // Initialize dashboard components
   dispatch.call(
@@ -92,6 +97,8 @@ function registerEventListeners ({ companiesData, firesData, electionsData }) {
     'region_selected',
     'year_selected',
     'year_deselected',
+    'activity_sector_selected',
+    'activity_sector_deselected',
     'update_municipality',
     'update_years'
   )
