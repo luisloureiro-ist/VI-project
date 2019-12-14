@@ -33,12 +33,14 @@ class RadarChart {
       .ease(d3.easeQuadInOut)
     this.colors = d3.schemeOranges
     this.nrOfScaleValues = 5
+    this.categories = []
     this.onOverCallback = onMouseOverAxisTextCallback
     this.onLeaveCallback = onMouseLeaveAxisTextCallback
   }
 
   create (data, categories, titleTextFunction) {
     this.titleTextFunction = titleTextFunction
+    this.categories = categories
     const chart = this.sectionElement
       .append('svg')
       .classed('svg-chart radar', true)
@@ -62,11 +64,12 @@ class RadarChart {
       // Add a circumference for each scale value
       .call(this.__addCircumferences.bind(this))
 
-    this.__createLegend(categories)
+    this.__createLegend(this.categories)
   }
 
-  updateData (newData, categories, titleTextFunction) {
-    this.titleTextFunction = titleTextFunction
+  updateData (newData, categories = null, titleTextFunction = null) {
+    this.titleTextFunction = titleTextFunction || this.titleTextFunction
+    this.categories = categories || this.categories
     const newPolygonData = newData.reduce(
       (prev, curr) => prev.concat(curr.value),
       []
@@ -82,7 +85,7 @@ class RadarChart {
       // Update scale values
       .call(this.__updateScaleValues.bind(this, newMaxValue))
 
-    this.__updateLegend(categories)
+    this.__updateLegend(this.categories)
   }
 
   __createAxes (data, chart) {
