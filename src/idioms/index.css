@@ -1,4 +1,8 @@
 @import './cleveland_dot_plots/index.css';
-@import './divergent_bar/index.css';
 @import './radar_chart/index.css';
-@import './choropleth_map/index.css'
+@import './choropleth_map/index.css';
+
+.svg-chart g text {
+  fill: black;
+  font: 10px sans-serif;
+}

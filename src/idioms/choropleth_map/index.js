@@ -76,9 +76,10 @@ class ChoroplethMap {
 
     d3.select(nodesList[i])
       .interrupt() // Avoids "too late; already running" error
+      .raise()
       .transition(this.transition)
-      .style('stroke', 'black')
-      .style('stroke-width', '1px')
+      .style('stroke', 'grey')
+      .style('stroke-width', '2px')
   }
 
   __onMouseLeave () {
