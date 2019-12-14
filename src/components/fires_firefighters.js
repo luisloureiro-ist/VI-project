@@ -20,7 +20,8 @@ class FiresFirefighters extends Component {
       super.getComponentSize().height
     )
 
-    this.chart.create(getValues(data), getYears(data))
+    const filteredData = data.filter(d => d.location === municipality)
+    this.chart.create(getValues(filteredData), getYears(filteredData))
   }
 
   updateSectionTitle () {

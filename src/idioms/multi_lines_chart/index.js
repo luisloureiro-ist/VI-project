@@ -18,15 +18,18 @@ class MultiLinesChart {
       .attr('width', this.chartWidth)
       .attr('height', this.chartHeight)
 
-    var x = d3.scaleBand()
+    var x = d3.scalePoint()
       .range([this.yAxisWidth, this.chartWidth])
       .domain(years)
+      .padding(0.5)
+
+    var maxValue = d3.max([d3.max(data[0]), d3.max(data[1])])
 
     var y = d3.scaleLinear()
       .rangeRound([0, this.chartHeight - this.xAxisHeight])
       .domain([
-        d3.max([d3.max(data[0]), d3.max(data[1])]),
-        d3.min([d3.min(data[0]), d3.min(data[1])])
+        maxValue + maxValue / 3,
+        0
       ])
 
     // var z = d3.scaleOrdinal(d3.schemeCategory10)
@@ -51,21 +54,21 @@ class MultiLinesChart {
       .attr('transform', `translate(${this.yAxisWidth}, 0)`)
       .call(yAxis)
 
-    var focus = this.chart.append('g')
-      .attr('class', 'focus')
-      .style('display', 'none')
+    // var focus = this.chart.append('g')
+    //   .attr('class', 'focus')
+    //   .style('display', 'none')
 
-    focus.append('line').attr('class', 'lineHover')
-      .style('stroke', '#999')
-      .attr('stroke-width', 1)
-      .style('shape-rendering', 'crispEdges')
-      .style('opacity', 0.5)
-      .attr('y1', -this.chartHeight)
-      .attr('y2', 0)
+    // focus.append('line').attr('class', 'lineHover')
+    //   .style('stroke', '#999')
+    //   .attr('stroke-width', 1)
+    //   .style('shape-rendering', 'crispEdges')
+    //   .style('opacity', 0.5)
+    //   .attr('y1', -this.chartHeight)
+    //   .attr('y2', 0)
 
-    focus.append('text').attr('class', 'lineHoverDate')
-      .attr('text-anchor', 'middle')
-      .attr('font-size', 12)
+    // focus.append('text').attr('class', 'lineHoverDate')
+    //   .attr('text-anchor', 'middle')
+    //   .attr('font-size', 12)
 
     // var overlay = this.chart.append('rect')
     //   .attr('class', 'overlay')
@@ -82,7 +85,7 @@ class MultiLinesChart {
       .attr('d', lines)
 
     this.chart
-      .append('path2')
+      .append('path')
       .datum(data[1])
       .attr('fill', 'none')
       .attr('stroke', 'red')
