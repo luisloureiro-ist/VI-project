@@ -240,8 +240,7 @@ class ClevelandDotPlots {
   }
 
   __attachEventsToCircles (categories, lines) {
-    const allCircles = lines.selectAll('circle')
-    const numberOfCategories = categories.length
+    const allCircles = lines.selectAll('.circles').selectAll('circle')
 
     allCircles.on('mouseover', (datum, idx) => {
       this.onOverCallback(categories[idx])
@@ -249,7 +248,7 @@ class ClevelandDotPlots {
       allCircles
         .interrupt()
         .transition(this.transition)
-        .attr('opacity', (d, i) => (i % numberOfCategories === idx ? 1 : 0.4))
+        .attr('opacity', (d, i) => (i === idx ? 1 : 0.2))
     })
     allCircles.on('mouseleave', () => {
       this.onLeaveCallback()
