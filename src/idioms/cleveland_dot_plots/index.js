@@ -125,6 +125,7 @@ class ClevelandDotPlots {
 
     svgChart
       .select('.x-axis')
+      .interrupt() // Avoids "too late; already running" error
       .transition(this.transition)
       .call(this.xAxis)
   }
@@ -145,6 +146,7 @@ class ClevelandDotPlots {
 
     svgChart
       .select('.y-axis')
+      .interrupt() // Avoids "too late; already running" error
       .transition(this.transition)
       .call(this.yAxis)
   }
@@ -189,6 +191,7 @@ class ClevelandDotPlots {
   __updateLine (lines) {
     lines
       .select('line')
+      .interrupt() // Avoids "too late; already running" error
       .transition(this.transition)
       .attr('x1', d => this.xScaler(d3.min(d.results)))
       .attr('x2', d => this.xScaler(d3.max(d.results)))
@@ -226,6 +229,7 @@ class ClevelandDotPlots {
         enter => enter,
         update =>
           update
+            .interrupt() // Avoids "too late; already running" error
             .transition(this.transition)
             .attr('cx', d => this.xScaler(d.value))
             .attr('cy', d => this.yScaler(d.key))
