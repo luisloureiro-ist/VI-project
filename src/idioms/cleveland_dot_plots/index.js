@@ -39,7 +39,7 @@ class ClevelandDotPlots {
   create (data, categories, chartTitle, dotsTitleFn) {
     const svgChart = this.sectionElement
       .append('svg')
-      .classed('svg-chart', true)
+      .classed('svg-chart cleveland-dot-plot', true)
       .attr('width', this.chartSize.width)
       .attr('height', this.chartSize.height)
 

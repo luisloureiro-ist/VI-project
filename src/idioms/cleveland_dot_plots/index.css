@@ -11,3 +11,7 @@
 .elections-section .svg-legend .tick:last-of-type > line {
   display: none;
 }
+
+.svg-chart.cleveland-dot-plot circle {
+  cursor: pointer;
+}
