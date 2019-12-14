@@ -341,9 +341,13 @@ class RadarChart {
 
 function calcMaxValue (values) {
   const max = Math.max(...values)
-  const orderOfMagnitude = Math.floor(Math.log10(max))
+  let orderOfMagnitude = Math.floor(Math.log10(max))
+  // If the order of magnitude of the values is to big for rounding ...
+  if (orderOfMagnitude > 4) {
+    orderOfMagnitude = 4
+  }
   return (
-    Math.round((max / Math.pow(10, orderOfMagnitude)) * (1 + 0.2)) * // 0.2 for padding
+    Math.ceil(max / Math.pow(10, orderOfMagnitude)) *
     Math.pow(10, orderOfMagnitude)
   )
 }
