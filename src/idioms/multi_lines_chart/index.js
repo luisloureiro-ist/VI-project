@@ -9,35 +9,17 @@ class MultiLinesChart {
     this.yAxisWidth = 50
     this.titleHeight = 190
     this.padding = 10
-    // this.xlabel('years')
-    // this.ylabel('number')
   };
 
   create (data, years) {
-    // var keys = data.columns.slice(1)
-
-    // var parseTime = d3.timeParse('%Y%m%d')
-    // var formatDate = d3.timeFormat('%Y-%m-%d')
-    // var bisectDate = d3.bisector(d => d.date).left
-    // var formatValue = d3.format(',.0f')
-
-    // data.forEach(function (d) {
-    //   d.date = parseTime(d.date)
-    //   return d
-    // })
     this.chart = this.chart
       .append('svg')
       .classed('svg-chart', true)
       .attr('width', this.chartWidth)
       .attr('height', this.chartHeight)
 
-    // var margin = { top: 15, right: 35, bottom: 15, left: 35 }
-    // var width = +this.chart.attr('width') - margin.left - margin.right
-    // var height = +this.chart.attr('height') - margin.top - margin.bottom
-
     var x = d3.scaleBand()
       .range([this.yAxisWidth, this.chartWidth])
-      // .domain([years[0], years[years.length - 1]])
       .domain(years)
 
     var y = d3.scaleLinear()
@@ -50,12 +32,12 @@ class MultiLinesChart {
     // var z = d3.scaleOrdinal(d3.schemeCategory10)
 
     var lines = d3.line()
-      .curve(d3.curveCardinal)
+      // .curve(d3.curveCardinal)
       .x((d, i) => x(years[i]))
       .y(d => y(d))
 
     var xAxis = d3.axisBottom().scale(x).tickValues(years).tickFormat(d3.format('d')).tickSizeOuter(0)
-    var yAxis = d3.axisLeft().scale(y).tickSizeOuter(0)
+    var yAxis = d3.axisLeft().scale(y).tickSizeOuter(0).tickFormat(d3.format('d'))
 
     this.chart
       .append('g')
@@ -69,21 +51,21 @@ class MultiLinesChart {
       .attr('transform', `translate(${this.yAxisWidth}, 0)`)
       .call(yAxis)
 
-    // var focus = this.chart.append('g')
-    //   .attr('class', 'focus')
-    //   .style('display', 'none')
+    var focus = this.chart.append('g')
+      .attr('class', 'focus')
+      .style('display', 'none')
 
-    // focus.append('line').attr('class', 'lineHover')
-    //   .style('stroke', '#999')
-    //   .attr('stroke-width', 1)
-    //   .style('shape-rendering', 'crispEdges')
-    //   .style('opacity', 0.5)
-    //   .attr('y1', -this.chartHeight)
-    //   .attr('y2', 0)
+    focus.append('line').attr('class', 'lineHover')
+      .style('stroke', '#999')
+      .attr('stroke-width', 1)
+      .style('shape-rendering', 'crispEdges')
+      .style('opacity', 0.5)
+      .attr('y1', -this.chartHeight)
+      .attr('y2', 0)
 
-    // focus.append('text').attr('class', 'lineHoverDate')
-    //   .attr('text-anchor', 'middle')
-    //   .attr('font-size', 12)
+    focus.append('text').attr('class', 'lineHoverDate')
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 12)
 
     // var overlay = this.chart.append('rect')
     //   .attr('class', 'overlay')
@@ -91,31 +73,21 @@ class MultiLinesChart {
     //   .attr('width', this.chartWidth - this.yAxisWidth)
     //   .attr('height', this.chartHeight - 2 * this.padding)
 
-    // define the 1st line
-    var valueline = d3.line()
-      .x(function (d, i) { return x(years[i]) })
-      .y(function (d) { return y(d) })
-    // Add the valueline path.
     this.chart
       .append('path')
-      .data(data[0])
-      .attr('class', 'line')
-      .attr('d', valueline)
-    // this.chart
-    //   .append('path')
-    //   .data(data[0])
-    //   // .attr('fill', 'none')
-    //   .attr('stroke', 'orange')
-    //   .attr('stroke-width', 1.5)
-    //   .attr('d', lines)
+      .datum(data[0])
+      .attr('fill', 'none')
+      .attr('stroke', 'orange')
+      .attr('stroke-width', 1.5)
+      .attr('d', lines)
 
-    // this.chart
-    //   .append('path2')
-    //   .data(data[1])
-    // //  .attr('fill', 'none')
-    //   .attr('stroke', 'red')
-    //   .attr('stroke-width', 1.5)
-    //   .attr('d', lines)
+    this.chart
+      .append('path2')
+      .datum(data[1])
+      .attr('fill', 'none')
+      .attr('stroke', 'red')
+      .attr('stroke-width', 1.5)
+      .attr('d', lines)
 
     // update(d3.select('#selectbox').property('value'), 0)
 
