@@ -7,9 +7,9 @@ class ChoroplethMap {
     this.transition = d3.transition().duration(200)
   }
 
-  create (data, clickCallback, titleTextFunction) {
+  create (data, clickCallback, legendTextFunction) {
     this.onClickCallback = clickCallback
-    this.titleTextFunction = titleTextFunction
+    this.legendTextFunction = legendTextFunction
 
     // Update color scale
     this.colorScale = d3.scaleQuantize(
@@ -48,8 +48,8 @@ class ChoroplethMap {
     this.__addLegend()
   }
 
-  update (newData, newTitleTextFunction) {
-    this.titleTextFunction = newTitleTextFunction
+  update (newData, newlegendTextFunction) {
+    this.legendTextFunction = newlegendTextFunction
 
     // Update color scale
     this.colorScale = d3.scaleQuantize(
@@ -94,7 +94,7 @@ class ChoroplethMap {
         () =>
           new Legend({
             color: this.colorScale,
-            title: this.titleTextFunction(),
+            title: this.legendTextFunction(),
             tickFormat: 'd'
           })
       )
