@@ -2,8 +2,8 @@ import Component from './component.js'
 import ChoroplethMap from '../idioms/choropleth_map/index.js'
 
 class Map extends Component {
-  constructor (dispatch, parentSelector, componentSize) {
-    super(dispatch, parentSelector, componentSize)
+  constructor (dispatch, parentSelector) {
+    super(dispatch, parentSelector)
 
     dispatch.on('initialize.map', this.initialize.bind(this))
     dispatch.on('update_municipality.map', this.update.bind(this))
@@ -24,9 +24,7 @@ class Map extends Component {
       )
     const transformedData = transformData(filteredData)
 
-    this.chart = new ChoroplethMap(
-      `${super.getContainerSelector()} .map-section`
-    )
+    this.chart = new ChoroplethMap(super.getContainerSelector())
     this.chart.create(
       transformedData,
       this.__dispatchUpdateMunicipality.bind(this),
@@ -65,8 +63,8 @@ class Map extends Component {
 
   updateSectionTitle () {
     d3.select(super.getContainerSelector())
-      .select('.region-name')
-      .text(`${super.getMunicipality()}`)
+      .select('.title')
+      .text(`Selected region: ${super.getMunicipality()}`)
   }
 
   __dispatchUpdateMunicipality (nuts, name) {

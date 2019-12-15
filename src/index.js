@@ -40,7 +40,7 @@ import NumberOfCompaniesComponent from './components/number_of_companies.js'
 
   components.push(new ElectionsComponent(dispatch, '.elections-section'))
 
-  components.push(new MapComponent(dispatch, '.map-pane', 0))
+  components.push(new MapComponent(dispatch, '.map-section'))
 
   components.push(
     new NumberOfCompaniesComponent(dispatch, '.number-of-companies-section')
