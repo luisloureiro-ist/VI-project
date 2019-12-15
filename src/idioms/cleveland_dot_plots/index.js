@@ -72,6 +72,7 @@ class ClevelandDotPlots {
       .classed('circles-and-line', true)
       .call(this.__createLine.bind(this))
       .call(this.__createDots.bind(this, dotsTitleFn, categories))
+      .call(this.__createRects.bind(this))
       .call(this.__attachEventsToCircles.bind(this, categories))
       .call(this.__attachEventsToCirclesAndLinesGroup.bind(this))
 
@@ -100,6 +101,7 @@ class ClevelandDotPlots {
           update
             .call(this.__updateLine.bind(this))
             .call(this.__updateDots.bind(this, dotsTitleFn, categories))
+            .call(this.__updateRects.bind(this))
       )
 
     this.__updateYAxis(svgChart)
@@ -248,6 +250,43 @@ class ClevelandDotPlots {
       )
   }
 
+  __createRects (group) {
+    // For the mouse events to work correctly, we need to insert a rect
+    // Without this rect, these events wouldn't work when mouse is on an
+    // "empty" space,
+    // e.g., the space between the upper and lower borders of the 'g' element and 'path' inside this 'g'
+    group
+      .insert('rect', ':first-child')
+      .attr('height', this.dotRadius * 2)
+      .attr(
+        'width',
+        d =>
+          Math.abs(
+            this.xScaler(d3.min(d.results)) - this.xScaler(d3.max(d.results))
+          ) +
+          this.dotRadius * 2
+      )
+      .attr('x', d => this.xScaler(d3.min(d.results)) - this.dotRadius)
+      .attr('y', d => this.yScaler(d.key) + this.dotRadius)
+      .attr('transform', `translate(0, ${-this.dotRadius * 2})`)
+  }
+
+  __updateRects (group) {
+    group
+      .select('rect')
+      .attr(
+        'width',
+        d =>
+          Math.abs(
+            this.xScaler(d3.min(d.results)) - this.xScaler(d3.max(d.results))
+          ) +
+          this.dotRadius * 2
+      )
+      .attr('x', d => this.xScaler(d3.min(d.results)) - this.dotRadius)
+      .attr('y', d => this.yScaler(d.key) + this.dotRadius)
+      .attr('transform', `translate(0, ${-this.dotRadius * 2})`)
+  }
+
   __attachEventsToCircles (categories, lines) {
     const allCircles = lines.selectAll('.circles').selectAll('circle')
 
@@ -270,25 +309,6 @@ class ClevelandDotPlots {
   }
 
   __attachEventsToCirclesAndLinesGroup (group) {
-    // For the mouse events to work correctly, we need to insert a rect
-    // Without this rect, these events wouldn't work when mouse is on an
-    // "empty" space,
-    // e.g., the space between the upper and lower borders of the 'g' element and 'path' inside this 'g'
-    group
-      .insert('rect', ':first-child')
-      .attr('height', this.dotRadius * 2)
-      .attr(
-        'width',
-        d =>
-          Math.abs(
-            this.xScaler(d3.min(d.results)) - this.xScaler(d3.max(d.results))
-          ) +
-          this.dotRadius * 2
-      )
-      .attr('x', d => this.xScaler(d3.min(d.results)) - this.dotRadius)
-      .attr('y', d => this.yScaler(d.key) + this.dotRadius)
-      .attr('transform', `translate(0, ${-this.dotRadius * 2})`)
-
     group
       .call(this.__onMouseOver.bind(this))
       .call(this.__onMouseLeave.bind(this))
