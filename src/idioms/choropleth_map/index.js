@@ -12,10 +12,12 @@ class ChoroplethMap {
     this.legendTextFunction = legendTextFunction
 
     // Update color scale
-    this.colorScale = d3.scaleQuantize(
-      [d3.min(data, d => d.value), d3.max(data, d => d.value)],
-      d3.schemeOranges[9]
-    )
+    this.colorScale = d3
+      .scaleQuantize(
+        [d3.min(data, d => d.value), d3.max(data, d => d.value)],
+        d3.schemeOranges[7]
+      )
+      .nice()
 
     // Draw the map
     this.chart
@@ -52,10 +54,12 @@ class ChoroplethMap {
     this.legendTextFunction = newlegendTextFunction
 
     // Update color scale
-    this.colorScale = d3.scaleQuantize(
-      [d3.min(newData, d => d.value), d3.max(newData, d => d.value)],
-      d3.schemeOranges[9]
-    )
+    this.colorScale = d3
+      .scaleQuantize(
+        [d3.min(newData, d => d.value), d3.max(newData, d => d.value)],
+        d3.schemeOranges[7]
+      )
+      .nice()
 
     // update map colors
     this.chart
