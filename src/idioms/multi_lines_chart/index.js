@@ -12,6 +12,10 @@ class MultiLinesChart {
     this.yAxisWidth = 50
     this.titleHeight = 190
     this.padding = 10
+    this.transition = d3
+      .transition()
+      .duration(1000)
+      .ease(d3.easeQuadInOut)
   };
 
   create (data, years) {
@@ -38,7 +42,7 @@ class MultiLinesChart {
     // var z = d3.scaleOrdinal(d3.schemeCategory10)
 
     var lines = d3.line()
-      // .curve(d3.curveCardinal)
+      .curve(d3.curveCardinal)
       .x((d, i) => x(years[i]))
       .y(d => y(d))
 
@@ -136,11 +140,9 @@ class MultiLinesChart {
               ['red', 'orange']
             ),
             title: 'Absolute number of',
-            // tickFormat: 'd',
             width: 108
           })
       )
-      // .attr('transform', `translate(${(this.chartWidth - this.yAxisWidth) / 2}, 0)`)
       .classed('svg-legend multi-lines', true)
       .selectAll('.tick text')
       .attr('x', -26)
@@ -179,6 +181,85 @@ class MultiLinesChart {
     //     .attr('d', d => line(d.values))
 
     // tooltip(copy)
+  }
+
+  update (data, years) {
+    // const svgChart = this.sectionElement.select('.svg-chart')
+
+    var lines = d3.line()
+      .curve(d3.curveCardinal)
+      .x((d, i) => x(years[i]))
+      .y(d => y(d))
+
+    var x = d3.scalePoint()
+      .range([this.yAxisWidth, this.chartWidth])
+      .domain(years)
+      .padding(0.5)
+
+    var maxValue = d3.max([d3.max(data[0]), d3.max(data[1])])
+
+    var y = d3.scaleLinear()
+      .rangeRound([0, this.chartHeight - this.xAxisHeight])
+      .domain([
+        maxValue + maxValue / 3,
+        0
+      ])
+
+    // y-axis update
+    var yAxis = d3.axisLeft().scale(y).tickSizeOuter(0).tickFormat(d3.format('d'))
+
+    this.chart
+      .select('.y-axis')
+      .interrupt() // Avoids "too late; already running" error
+      .transition(this.transition)
+      .call(yAxis)
+
+    // fire's path update
+    this.chart
+      .select('.fires')
+      .selectAll('path')
+      .interrupt()
+      .datum(data[0])
+      .join(enter => enter, update => update
+        .transition(this.transition)
+        .attr('d', lines))
+
+    // firefighter's path update
+    this.chart
+      .select('.firefighters')
+      .selectAll('path')
+      .interrupt()
+      .datum(data[1])
+      .join(enter => enter, update => update
+        .transition(this.transition)
+        .attr('d', lines))
+
+    // fires circle's update
+    this.chart
+      .select('.fires')
+      .selectAll('circle')
+      .interrupt()
+      .data(data[0])
+      .join(enter => enter, update => update
+        .transition(this.transition)
+        .attr('cx', (d, i) => x(years[i]))
+        .attr('cy', d => y(d))
+      )
+      .append('title')
+      .text('over 9000')
+
+    // firefighters circle's update
+    this.chart
+      .select('.firefighters')
+      .selectAll('circle')
+      .interrupt()
+      .data(data[1])
+      .join(enter => enter, update => update
+        .transition(this.transition)
+        .attr('cx', (d, i) => x(years[i]))
+        .attr('cy', d => y(d)))
+      .append('title')
+      .text('over 9000')
   }
 
   // function tooltip (copy) {

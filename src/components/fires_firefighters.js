@@ -9,6 +9,10 @@ class FiresFirefighters extends Component {
     })
 
     dispatch.on('initialize.fires_firefighters', this.initialize.bind(this))
+    dispatch.on(
+      'update_municipality.fires_firefighters',
+      this.update.bind(this)
+    )
   }
 
   initialize ({ firesData: data }, municipality) {
@@ -31,6 +35,18 @@ class FiresFirefighters extends Component {
     d3.select(super.getContainerSelector())
       .select('.title')
       .text(`Fires & Firefighters in ${super.getMunicipality()}`)
+  }
+
+  update ({ firesData: newData }, newMunicipality) {
+    super.setDataset(newData)
+    super.setMunicipality(newMunicipality)
+
+    this.updateSectionTitle()
+
+    const filteredData = newData.filter(d => d.location === newMunicipality)
+
+    this.chart.update(getValues(filteredData), getYears(filteredData)
+    )
   }
 }
 
