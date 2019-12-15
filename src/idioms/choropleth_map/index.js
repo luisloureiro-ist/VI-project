@@ -70,6 +70,17 @@ class ChoroplethMap {
 
         return this.colorScale(datum.value)
       })
+      .select('title')
+      .text((d, i, nodesList) => {
+        const regionClicked = nodesList[i].parentElement
+        const datum = newData.find(
+          datum =>
+            datum.location === regionClicked.dataset.name &&
+            datum.nuts === getNUTS(regionClicked)
+        )
+
+        return `Location: ${datum.location}\n\nAverage number of fires: ${datum.value}`
+      })
 
     this.__updateLegend()
   }
