@@ -12,8 +12,14 @@
   display: none;
 }
 
-.svg-chart.cleveland-dot-plot .circles-and-line {
+.svg-chart.cleveland-dot-plot .clevelands .circles-and-line {
   cursor: pointer;
+}
+
+.svg-chart.cleveland-dot-plot .clevelands .circles-and-line path {
+  fill: none;
+  stroke: grey;
+  stroke-width: 3;
 }
 
 .svg-chart.cleveland-dot-plot .clevelands .circles-and-line rect {

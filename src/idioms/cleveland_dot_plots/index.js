@@ -177,29 +177,37 @@ class ClevelandDotPlots {
     this.__createLegend(categories)
   }
 
-  __createLine (lines) {
-    lines
-      .append('line')
+  __createLine (group) {
+    const lineGenerator = d3
+      .line()
+      .x((d, i) => this.xScaler(d.value))
+      .y(d => this.yScaler(d.key))
+
+    group
+      .append('path')
       .transition(this.transition)
-      .attr('x1', d => this.xScaler(d3.min(d.results)))
-      .attr('x2', d => this.xScaler(d3.max(d.results)))
-      .attr('y1', d => this.yScaler(d.key))
-      .attr('y2', d => this.yScaler(d.key))
-      .attr('stroke', 'grey')
-      .attr('stroke-width', 3)
+      .call(path =>
+        path.attr('d', d =>
+          lineGenerator(d.results.map(r => ({ key: d.key, value: r })))
+        )
+      )
   }
 
   __updateLine (lines) {
+    const lineGenerator = d3
+      .line()
+      .x((d, i) => this.xScaler(d.value))
+      .y(d => this.yScaler(d.key))
+
     lines
-      .select('line')
+      .select('path')
       .interrupt() // Avoids "too late; already running" error
       .transition(this.transition)
-      .attr('x1', d => this.xScaler(d3.min(d.results)))
-      .attr('x2', d => this.xScaler(d3.max(d.results)))
-      .attr('y1', d => this.yScaler(d.key))
-      .attr('y2', d => this.yScaler(d.key))
-      .attr('stroke', 'grey')
-      .attr('stroke-width', 3)
+      .call(path =>
+        path.attr('d', d =>
+          lineGenerator(d.results.map(r => ({ key: d.key, value: r })))
+        )
+      )
   }
 
   __createDots (titleFn, categories, lines) {
@@ -289,6 +297,20 @@ class ClevelandDotPlots {
   __onMouseOver (group) {
     group.on('mouseover', (d, i, nodesList) => {
       const circlesAndLine = d3.select(nodesList[i])
+      const lineGenerator = d3
+        .line()
+        .x((d, i) => this.xScaler(d.value))
+        .y((d, i) => this.yScaler(d.key) - this.dotRadius * 2 * (i - 1))
+
+      circlesAndLine
+        .select('path')
+        .interrupt()
+        .transition(this.transition)
+        .call(path =>
+          path.attr('d', d =>
+            lineGenerator(d.results.map(r => ({ key: d.key, value: r })))
+          )
+        )
 
       circlesAndLine
         .selectAll('circle')
@@ -316,6 +338,20 @@ class ClevelandDotPlots {
   __onMouseLeave (group) {
     group.on('mouseleave', (d, i, nodesList) => {
       const circlesAndLine = d3.select(nodesList[i])
+      const lineGenerator = d3
+        .line()
+        .x((d, i) => this.xScaler(d.value))
+        .y(d => this.yScaler(d.key))
+
+      group
+        .select('path')
+        .interrupt() // Avoids "too late; already running" error
+        .transition(this.transition)
+        .call(path =>
+          path.attr('d', d =>
+            lineGenerator(d.results.map(r => ({ key: d.key, value: r })))
+          )
+        )
 
       circlesAndLine
         .selectAll('circle')
