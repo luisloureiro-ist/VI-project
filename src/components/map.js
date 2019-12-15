@@ -17,16 +17,18 @@ class Map extends Component {
 
     this.updateSectionTitle()
 
-    const transformedData = transformData(data)
-    const filteredData = transformedData.filter(
-      datum => datum.nuts === 'NUTS III'
-    )
+    const filteredData = super
+      .getDataset()
+      .filter(
+        datum => datum.nuts === 'NUTS III' && years.indexOf(datum.year) !== -1
+      )
+    const transformedData = transformData(filteredData)
 
     this.chart = new ChoroplethMap(
       `${super.getContainerSelector()} .map-section`
     )
     this.chart.create(
-      filteredData,
+      transformedData,
       this.__dispatchUpdateMunicipality.bind(this),
       () =>
         `Average number of Fires between ${years[0]} and ${
@@ -45,13 +47,15 @@ class Map extends Component {
   updateYears (years) {
     super.setYears(years)
 
-    const transformedData = transformData(super.getDataset())
-    const filteredData = transformedData.filter(
-      datum => datum.nuts === 'NUTS III'
-    )
+    const filteredData = super
+      .getDataset()
+      .filter(
+        datum => datum.nuts === 'NUTS III' && years.indexOf(datum.year) !== -1
+      )
+    const transformedData = transformData(filteredData)
 
     this.chart.update(
-      filteredData,
+      transformedData,
       () =>
         `Average number of Fires between ${years[0]} and ${
           years[years.length - 1]
