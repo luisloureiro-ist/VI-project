@@ -68,6 +68,21 @@ class ChoroplethMap {
     const regionName = regionClicked.dataset.name
     const regionNUTS = getNUTS(regionClicked)
 
+    // Remove class from the last selected region ...
+    const selectedIdx = Array.prototype.findIndex.call(nodesList, node =>
+      node.classList.contains('selected')
+    )
+    if (selectedIdx !== -1) {
+      nodesList[selectedIdx].classList.remove('selected')
+    }
+
+    // ... append class to the newly selected region.
+    regionClicked.classList.add('selected')
+
+    d3.select(regionClicked)
+      .interrupt()
+      .raise()
+
     this.onClickCallback(regionNUTS, regionName)
   }
 
@@ -77,9 +92,16 @@ class ChoroplethMap {
     d3.select(nodesList[i])
       .interrupt() // Avoids "too late; already running" error
       .raise()
-      .transition(this.transition)
-      .style('stroke', 'grey')
-      .style('stroke-width', '2px')
+      // "raise" is used to guarantee that the whole path is visible with the same stroke-width across the entire path.
+      // Without this, adjacent paths (map regions) can overlap one another,
+      // because of the order in the DOM and because of the way the map SVG is created,
+      // and the one lower in this order shows a path with different stroke-width in some parts of the path
+      .classed('hovered', true)
+
+    this.chart
+      .select('#NUTS_III path.selected')
+      .interrupt()
+      .raise()
   }
 
   __onMouseLeave () {
@@ -90,9 +112,7 @@ class ChoroplethMap {
     this.chart
       .selectAll('#NUTS_III path')
       .interrupt() // Avoids "too late; already running" error
-      .transition(this.transition)
-      .style('stroke', 'inherit')
-      .style('stroke-width', 'inherit')
+      .classed('hovered', false)
   }
 }
 

@@ -24,4 +24,17 @@
 #NUTS_II path,
 #NUTS_I path {
   cursor: pointer;
+  pointer-events: all;
+}
+
+#NUTS_III path.selected,
+#NUTS_II path.selected {
+  stroke: #000;
+  stroke-width: 2;
+}
+
+#NUTS_III path.hovered,
+#NUTS_II path.hovered {
+  stroke: grey;
+  stroke-width: 2;
 }
