@@ -168,7 +168,7 @@ class ClevelandDotPlots {
             width: 108
           })
       )
-      .classed('svg-legend', true)
+      .classed('svg-legend cleveland-dot-plot', true)
       .selectAll('.tick text')
       .attr('x', -18)
   }

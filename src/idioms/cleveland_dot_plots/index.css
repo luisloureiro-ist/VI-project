@@ -8,7 +8,7 @@
   align-self: flex-start;
 }
 
-.elections-section .svg-legend .tick:last-of-type > line {
+.svg-legend.cleveland-dot-plot .tick:last-of-type > line {
   display: none;
 }
 
