@@ -12,6 +12,10 @@
   display: none;
 }
 
-.svg-chart.cleveland-dot-plot circle {
+.svg-chart.cleveland-dot-plot .circles-and-line {
   cursor: pointer;
+}
+
+.svg-chart.cleveland-dot-plot .clevelands .circles-and-line rect {
+  fill: transparent;
 }

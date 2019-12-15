@@ -7,7 +7,7 @@ class ClevelandDotPlots {
     chartHeight,
     onMouseOverDotCallback,
     onMouseLeaveDotCallback,
-    dotRadius = 8
+    dotRadius = 6
   ) {
     this.parentSelector = parentSelector
     this.legendHeight = 50
@@ -73,6 +73,7 @@ class ClevelandDotPlots {
       .call(this.__createLine.bind(this))
       .call(this.__createDots.bind(this, dotsTitleFn, categories))
       .call(this.__attachEventsToCircles.bind(this, categories))
+      .call(this.__attachEventsToCirclesAndLinesGroup.bind(this))
 
     this.__createYAxis(svgChart)
     this.__createXAxis(svgChart)
@@ -246,7 +247,7 @@ class ClevelandDotPlots {
       this.onOverCallback(categories[idx])
 
       allCircles
-        .interrupt()
+        .interrupt() // Avoids "too late; already running" error
         .transition(this.transition)
         .attr('opacity', (d, i) => (i === idx ? 1 : 0.2))
     })
@@ -254,9 +255,83 @@ class ClevelandDotPlots {
       this.onLeaveCallback()
 
       allCircles
-        .interrupt()
+        .interrupt() // Avoids "too late; already running" error
         .transition(this.transition)
         .attr('opacity', 1)
+    })
+  }
+
+  __attachEventsToCirclesAndLinesGroup (group) {
+    // For the mouse events to work correctly, we need to insert a rect
+    // Without this rect, these events wouldn't work when mouse is on an
+    // "empty" space,
+    // e.g., the space between the upper and lower borders of the 'g' element and 'path' inside this 'g'
+    group
+      .insert('rect', ':first-child')
+      .attr('height', this.dotRadius * 2)
+      .attr(
+        'width',
+        d =>
+          Math.abs(
+            this.xScaler(d3.min(d.results)) - this.xScaler(d3.max(d.results))
+          ) +
+          this.dotRadius * 2
+      )
+      .attr('x', d => this.xScaler(d3.min(d.results)) - this.dotRadius)
+      .attr('y', d => this.yScaler(d.key) + this.dotRadius)
+      .attr('transform', `translate(0, ${-this.dotRadius * 2})`)
+
+    group
+      .call(this.__onMouseOver.bind(this))
+      .call(this.__onMouseLeave.bind(this))
+  }
+
+  __onMouseOver (group) {
+    group.on('mouseover', (d, i, nodesList) => {
+      const circlesAndLine = d3.select(nodesList[i])
+
+      circlesAndLine
+        .selectAll('circle')
+        .interrupt() // Avoids "too late; already running" error
+        .transition(this.transition)
+        .call(circles =>
+          circles.attr(
+            'cy',
+            (d, i) => this.yScaler(d.key) - this.dotRadius * 2 * (i - 1)
+          )
+        )
+
+      circlesAndLine
+        .select('rect')
+        .interrupt() // Avoids "too late; already running" error
+        .transition(this.transition)
+        .call(rect =>
+          rect
+            .attr('height', this.dotRadius * 6)
+            .attr('y', d => this.yScaler(d.key) - this.dotRadius)
+        )
+    })
+  }
+
+  __onMouseLeave (group) {
+    group.on('mouseleave', (d, i, nodesList) => {
+      const circlesAndLine = d3.select(nodesList[i])
+
+      circlesAndLine
+        .selectAll('circle')
+        .interrupt() // Avoids "too late; already running" error
+        .transition(this.transition)
+        .call(circles => circles.attr('cy', (d, i) => this.yScaler(d.key)))
+
+      circlesAndLine
+        .select('rect')
+        .interrupt() // Avoids "too late; already running" error
+        .transition(this.transition)
+        .call(rect =>
+          rect
+            .attr('height', this.dotRadius * 2)
+            .attr('y', d => this.yScaler(d.key) + this.dotRadius)
+        )
     })
   }
 }
