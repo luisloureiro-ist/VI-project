@@ -39,8 +39,6 @@ class MultiLinesChart {
         0
       ])
 
-    // var z = d3.scaleOrdinal(d3.schemeCategory10)
-
     var lines = d3.line()
       .curve(d3.curveCardinal)
       .x((d, i) => x(years[i]))
@@ -61,33 +59,12 @@ class MultiLinesChart {
       .attr('transform', `translate(${this.yAxisWidth}, 0)`)
       .call(yAxis)
 
-    // var focus = this.chart.append('g')
-    //   .attr('class', 'focus')
-    //   .style('display', 'none')
-
-    // focus.append('line').attr('class', 'lineHover')
-    //   .style('stroke', '#999')
-    //   .attr('stroke-width', 1)
-    //   .style('shape-rendering', 'crispEdges')
-    //   .style('opacity', 0.5)
-    //   .attr('y1', -this.chartHeight)
-    //   .attr('y2', 0)
-
-    // focus.append('text').attr('class', 'lineHoverDate')
-    //   .attr('text-anchor', 'middle')
-    //   .attr('font-size', 12)
-
-    // var overlay = this.chart.append('rect')
-    //   .attr('class', 'overlay')
-    //   .attr('x', this.padding)
-    //   .attr('width', this.chartWidth - this.yAxisWidth)
-    //   .attr('height', this.chartHeight - 2 * this.padding)
-
     chart
       .append('g')
       .classed('fires', true)
       .append('path')
       .datum(data[0])
+      .transition(this.transition)
       .attr('fill', 'none')
       .attr('stroke', 'orange')
       .attr('stroke-width', 1.5)
@@ -98,6 +75,7 @@ class MultiLinesChart {
       .classed('firefighters', true)
       .append('path')
       .datum(data[1])
+      .transition(this.transition)
       .attr('fill', 'none')
       .attr('stroke', 'red')
       .attr('stroke-width', 1.5)
@@ -109,14 +87,23 @@ class MultiLinesChart {
       .data(data[0])
       .enter()
       .append('circle')
+      .on('mouseover', function () {
+        d3.select(this).interrupt().transition(this.transition).attr('r', 6)
+      })
+      .on('mouseleave', function () {
+        d3.select(this).interrupt().transition(this.transition).attr('r', 3)
+      })
+      .transition(this.transition)
       .attr('fill', 'orange')
       .attr('stroke', 'orange')
       .attr('stroke-width', 1.5)
       .attr('cx', (d, i) => x(years[i]))
       .attr('cy', d => y(d))
       .attr('r', 3)
+
+      .selection()
       .append('title')
-      .text('over 9000')
+      .text((d, i) => (d + ' fires in ' + years[i]))
 
     chart
       .select('.firefighters')
@@ -124,13 +111,24 @@ class MultiLinesChart {
       .data(data[1])
       .enter()
       .append('circle')
+      .on('mouseover', function () {
+        d3.select(this).interrupt().transition(this.transition).attr('r', 6)
+      })
+      .on('mouseleave', function () {
+        d3.select(this).interrupt().transition(this.transition).attr('r', 3)
+      })
+      .transition(this.transition)
       .attr('fill', 'red')
       .attr('stroke', 'red')
       .attr('stroke-width', 1.5)
       .attr('cx', (d, i) => x(years[i]))
       .attr('cy', d => y(d))
       .attr('r', 3)
+      .selection()
+      .append('title')
+      .text((d, i) => (d + ' firefighters in ' + years[i]))
 
+    // create legend
     this.chart
       .append(
         () =>
@@ -146,46 +144,9 @@ class MultiLinesChart {
       .classed('svg-legend multi-lines', true)
       .selectAll('.tick text')
       .attr('x', -26)
-
-    // update(d3.select('#selectbox').property('value'), 0)
-
-    // function update (input, speed) {
-    //   var copy = keys.filter(f => f.includes(input))
-
-    //   var cities = copy.map(function (id) {
-    //     return {
-    //       id: id,
-    //       values: data.map(d => { return { date: d.date, degrees: +d[id] } })
-    //     }
-    //   })
-
-    //   y.domain([
-    //     d3.min(cities, d => d3.min(d.values, c => c.degrees)),
-    //     d3.max(cities, d => d3.max(d.values, c => c.degrees))
-    //   ]).nice()
-
-    //   svg.selectAll('.y-axis').transition()
-    //     .duration(speed)
-    //     .call(d3.axisLeft(y).tickSize(-width + margin.right + margin.left))
-
-    //   var city = svg.selectAll('.cities')
-    //     .data(cities)
-
-    //   city.exit().remove()
-
-    //   city.enter().insert('g', '.focus').append('path')
-    //     .attr('class', 'line cities')
-    //     .style('stroke', d => z(d.id))
-    //     .merge(city)
-    //     .transition().duration(speed)
-    //     .attr('d', d => line(d.values))
-
-    // tooltip(copy)
   }
 
   update (data, years) {
-    // const svgChart = this.sectionElement.select('.svg-chart')
-
     var lines = d3.line()
       .curve(d3.curveCardinal)
       .x((d, i) => x(years[i]))
@@ -244,9 +205,9 @@ class MultiLinesChart {
         .transition(this.transition)
         .attr('cx', (d, i) => x(years[i]))
         .attr('cy', d => y(d))
+        .select('title')
+        .text((d, i) => (d + ' fires in ' + years[i]))
       )
-      .append('title')
-      .text('over 9000')
 
     // firefighters circle's update
     this.chart
@@ -257,76 +218,10 @@ class MultiLinesChart {
       .join(enter => enter, update => update
         .transition(this.transition)
         .attr('cx', (d, i) => x(years[i]))
-        .attr('cy', d => y(d)))
-      .append('title')
-      .text('over 9000')
+        .attr('cy', d => y(d))
+        .select('title')
+        .text((d, i) => (d + ' firefighters in ' + years[i]))
+      )
   }
-
-  // function tooltip (copy) {
-  //   var labels = focus.selectAll('.lineHoverText')
-  //     .data(copy)
-
-  //   labels.enter().append('text')
-  //     .attr('class', 'lineHoverText')
-  //     .style('fill', d => z(d))
-  //     .attr('text-anchor', 'start')
-  //     .attr('font-size', 12)
-  //     .attr('dy', (_, i) => 1 + i * 2 + 'em')
-  //     .merge(labels)
-
-  //   var circles = focus.selectAll('.hoverCircle')
-  //     .data(copy)
-
-  //   circles.enter().append('circle')
-  //     .attr('class', 'hoverCircle')
-  //     .style('fill', d => z(d))
-  //     .attr('r', 2.5)
-  //     .merge(circles)
-
-  //   svg.selectAll('.overlay')
-  //     .on('mouseover', function () { focus.style('display', null) })
-  //     .on('mouseout', function () { focus.style('display', 'none') })
-  // .on('mousemove', mousemove)
-
-  // function mousemove () {
-  //   var x0 = x.invert(d3.mouse(this)[0])
-  //   var i = bisectDate(data, x0, 1)
-  //   var d0 = data[i - 1]
-  //   var d1 = data[i]
-  //   var d = x0 - d0.date > d1.date - x0 ? d1 : d0
-
-  //   focus.select('.lineHover')
-  //     .attr('transform', 'translate(' + x(d.date) + ',' + height + ')')
-
-  //   focus.select('.lineHoverDate')
-  //     .attr('transform',
-  //       'translate(' + x(d.date) + ',' + (height + margin.bottom) + ')')
-  //     .text(formatDate(d.date))
-
-  //   focus.selectAll('.hoverCircle')
-  //     .attr('cy', e => y(d[e]))
-  //     .attr('cx', x(d.date))
-
-  //   focus.selectAll('.lineHoverText')
-  //     .attr('transform',
-  //       'translate(' + (x(d.date)) + ',' + height / 2.5 + ')')
-  //     .text(e => e + ' ' + 'º' + formatValue(d[e]))
-
-  //   x(d.date) > (width - width / 4)
-  //     ? focus.selectAll('text.lineHoverText')
-  //       .attr('text-anchor', 'end')
-  //       .attr('dx', -10)
-  //     : focus.selectAll('text.lineHoverText')
-  //       .attr('text-anchor', 'start')
-  //       .attr('dx', 10)
-  // }
 }
-
-//   var selectbox = d3.select('#selectbox')
-//     .on('change', function () {
-//       update(this.value, 750)
-//     })
-// }
-// }
-
 export default MultiLinesChart
