@@ -9,7 +9,7 @@
   flex: 9;
 }
 
-.map-section > .svg-legend {
+.map-section > .svg-legend.map {
   flex: 1;
 }
 

@@ -48,6 +48,32 @@ class ChoroplethMap {
     this.__addLegend()
   }
 
+  update (newData, newTitleTextFunction) {
+    this.titleTextFunction = newTitleTextFunction
+
+    // Update color scale
+    this.colorScale = d3.scaleQuantize(
+      [d3.min(newData, d => d.value), d3.max(newData, d => d.value)],
+      d3.schemeOranges[9]
+    )
+
+    // update map colors
+    this.chart
+      .selectAll('svg #NUTS_III path')
+      .attr('fill', (d, i, nodesList) => {
+        const regionClicked = nodesList[i]
+        const datum = newData.find(
+          datum =>
+            datum.location === regionClicked.dataset.name &&
+            datum.nuts === getNUTS(regionClicked)
+        )
+
+        return this.colorScale(datum.value)
+      })
+
+    this.__updateLegend()
+  }
+
   //
   // Private (auxiliar) functions
   //
@@ -61,7 +87,13 @@ class ChoroplethMap {
             tickFormat: 'd'
           })
       )
-      .classed('svg-legend', true)
+      .classed('svg-legend map', true)
+  }
+
+  __updateLegend () {
+    this.chart.select('.svg-legend.map').remove()
+
+    this.__addLegend()
   }
 
   __onPathClick (d, i, nodesList) {
