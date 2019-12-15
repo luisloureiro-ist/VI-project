@@ -4,7 +4,6 @@ class ChoroplethMap {
   constructor (parentSelector) {
     this.parentSelector = parentSelector
     this.chart = d3.select(this.parentSelector)
-    this.transition = d3.transition().duration(200)
   }
 
   create (data, clickCallback, legendTextFunction) {
@@ -23,12 +22,7 @@ class ChoroplethMap {
     this.chart
       .selectAll('svg #NUTS_III path')
       .attr('fill', (d, i, nodesList) => {
-        const regionClicked = nodesList[i]
-        const datum = data.find(
-          datum =>
-            datum.location === regionClicked.dataset.name &&
-            datum.nuts === getNUTS(regionClicked)
-        )
+        const datum = getDataForRegion(data, nodesList[i])
 
         return this.colorScale(datum.value)
       })
@@ -37,12 +31,7 @@ class ChoroplethMap {
       .on('mouseleave', this.__onMouseLeave.bind(this))
       .select('title')
       .text((d, i, nodesList) => {
-        const regionClicked = nodesList[i].parentElement
-        const datum = data.find(
-          datum =>
-            datum.location === regionClicked.dataset.name &&
-            datum.nuts === getNUTS(regionClicked)
-        )
+        const datum = getDataForRegion(data, nodesList[i].parentElement)
 
         return `Location: ${datum.location}\n\nAverage number of fires: ${datum.value}`
       })
@@ -65,23 +54,13 @@ class ChoroplethMap {
     this.chart
       .selectAll('svg #NUTS_III path')
       .attr('fill', (d, i, nodesList) => {
-        const regionClicked = nodesList[i]
-        const datum = newData.find(
-          datum =>
-            datum.location === regionClicked.dataset.name &&
-            datum.nuts === getNUTS(regionClicked)
-        )
+        const datum = getDataForRegion(newData, nodesList[i])
 
         return this.colorScale(datum.value)
       })
       .select('title')
       .text((d, i, nodesList) => {
-        const regionClicked = nodesList[i].parentElement
-        const datum = newData.find(
-          datum =>
-            datum.location === regionClicked.dataset.name &&
-            datum.nuts === getNUTS(regionClicked)
-        )
+        const datum = getDataForRegion(newData, nodesList[i].parentElement)
 
         return `Location: ${datum.location}\n\nAverage number of fires: ${datum.value}`
       })
@@ -175,6 +154,14 @@ function getNUTS (nodeElement) {
   }
 
   return parent.dataset.name
+}
+
+function getDataForRegion (data, node) {
+  const datum = data.find(
+    datum =>
+      datum.location === node.dataset.name && datum.nuts === getNUTS(node)
+  )
+  return datum
 }
 
 export default ChoroplethMap
