@@ -7,8 +7,9 @@ class ChoroplethMap {
     this.transition = d3.transition().duration(200)
   }
 
-  create (data, clickCallback) {
+  create (data, clickCallback, titleTextFunction) {
     this.onClickCallback = clickCallback
+    this.titleTextFunction = titleTextFunction
 
     // Update color scale
     this.colorScale = d3.scaleQuantize(
@@ -44,19 +45,19 @@ class ChoroplethMap {
         return `Location: ${datum.location}\n\nAverage number of fires: ${datum.value}`
       })
 
-    this.__addLegend('# Fires')
+    this.__addLegend()
   }
 
   //
   // Private (auxiliar) functions
   //
-  __addLegend (title) {
+  __addLegend () {
     this.chart
       .append(
         () =>
           new Legend({
             color: this.colorScale,
-            title,
+            title: this.titleTextFunction(),
             tickFormat: 'd'
           })
       )

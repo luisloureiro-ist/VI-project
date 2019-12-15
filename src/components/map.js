@@ -9,9 +9,10 @@ class Map extends Component {
     dispatch.on('update_municipality.map', this.update.bind(this))
   }
 
-  initialize ({ firesData: data }, municipality) {
+  initialize ({ firesData: data }, municipality, years) {
     super.setMunicipality(municipality)
     super.setDataset(data)
+    super.setYears(years)
 
     this.updateSectionTitle()
 
@@ -21,7 +22,11 @@ class Map extends Component {
     this.chart = new ChoroplethMap(`${super.getContainerSelector()} .map-section`)
     this.chart.create(
       filteredData,
-      this.__dispatchUpdateMunicipality.bind(this)
+      this.__dispatchUpdateMunicipality.bind(this),
+      () =>
+        `Average number of Fires between ${years[0]} and ${
+          years[years.length - 1]
+        }`
     )
   }
 
@@ -45,33 +50,36 @@ class Map extends Component {
 
 function transformData (data) {
   // Reduce the number of properties to the ones we need
-  return data.map(datum => ({
-    fires: datum.fires,
-    year: datum.year,
-    location: datum.location,
-    nuts: datum.nuts
-  }))
-    // Sum the number of fires for all years
-    .reduce((prev, curr) => {
-      const idx = prev.findIndex(
-        el => el.location === curr.location && el.nuts === curr.nuts
-      )
+  return (
+    data
+      .map(datum => ({
+        fires: datum.fires,
+        year: datum.year,
+        location: datum.location,
+        nuts: datum.nuts
+      }))
+      // Sum the number of fires for all years
+      .reduce((prev, curr) => {
+        const idx = prev.findIndex(
+          el => el.location === curr.location && el.nuts === curr.nuts
+        )
 
-      if (idx === -1) {
-        prev = prev.concat(Object.assign({ years: 1 }, curr))
-      } else {
-        prev[idx].fires += curr.fires
-        prev[idx].years += 1
-      }
+        if (idx === -1) {
+          prev = prev.concat(Object.assign({ years: 1 }, curr))
+        } else {
+          prev[idx].fires += curr.fires
+          prev[idx].years += 1
+        }
 
-      return prev
-    }, [])
-    // Transform the data to the format we want
-    .map(datum => ({
-      value: Math.ceil(datum.fires / datum.years),
-      location: datum.location,
-      nuts: datum.nuts
-    }))
+        return prev
+      }, [])
+      // Transform the data to the format we want
+      .map(datum => ({
+        value: Math.ceil(datum.fires / datum.years),
+        location: datum.location,
+        nuts: datum.nuts
+      }))
+  )
 }
 
 export default Map

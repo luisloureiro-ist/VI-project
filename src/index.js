@@ -16,6 +16,7 @@ import NumberOfCompaniesComponent from './components/number_of_companies.js'
   ])
 
   const defaultMunicipality = 'Continente'
+  const defaultYears = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]
   const components = []
 
   const rightChartsSectionWidth = document.querySelector(
@@ -58,7 +59,9 @@ import NumberOfCompaniesComponent from './components/number_of_companies.js'
           value.location === defaultMunicipality && value.type === 'Local'
       ),
       firesData: firesData
-    }, defaultMunicipality
+    },
+    defaultMunicipality,
+    defaultYears
   )
 })()
 
