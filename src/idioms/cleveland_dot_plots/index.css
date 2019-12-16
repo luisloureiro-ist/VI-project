@@ -8,10 +8,20 @@
   align-self: flex-start;
 }
 
-.elections-section .svg-legend .tick:last-of-type > line {
+.svg-legend.cleveland-dot-plot .tick:last-of-type > line {
   display: none;
 }
 
-.svg-chart.cleveland-dot-plot circle {
+.svg-chart.cleveland-dot-plot .clevelands .circles-and-line {
   cursor: pointer;
+}
+
+.svg-chart.cleveland-dot-plot .clevelands .circles-and-line path {
+  fill: none;
+  stroke: grey;
+  stroke-width: 3;
+}
+
+.svg-chart.cleveland-dot-plot .clevelands .circles-and-line rect {
+  fill: transparent;
 }
