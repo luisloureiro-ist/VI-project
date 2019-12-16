@@ -17,6 +17,7 @@ import YearsRangeSlider from './components/range_slider/index.js'
   ])
 
   const defaultMunicipality = 'Continente'
+  const defaultYears = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]
   const components = []
 
   const rightChartsSectionWidth = document.querySelector(
@@ -40,7 +41,7 @@ import YearsRangeSlider from './components/range_slider/index.js'
 
   components.push(new ElectionsComponent(dispatch, '.elections-section'))
 
-  components.push(new MapComponent(dispatch, '.map-pane', 0))
+  components.push(new MapComponent(dispatch, '.map-section'))
 
   components.push(
     new NumberOfCompaniesComponent(dispatch, '.number-of-companies-section')
@@ -59,36 +60,9 @@ import YearsRangeSlider from './components/range_slider/index.js'
           value.location === defaultMunicipality && value.type === 'Local'
       ),
       firesData: firesData
-        // Reduce the number of properties to the ones we need
-        .map(datum => ({
-          fires: datum.fires,
-          year: datum.year,
-          location: datum.location,
-          nuts: datum.nuts
-        }))
-        // Sum the number of fires for all years
-        .reduce((prev, curr) => {
-          const idx = prev.findIndex(
-            el => el.location === curr.location && el.nuts === curr.nuts
-          )
-
-          if (idx === -1) {
-            prev = prev.concat(Object.assign({ years: 1 }, curr))
-          } else {
-            prev[idx].fires += curr.fires
-            prev[idx].years += 1
-          }
-
-          return prev
-        }, [])
-        // Transform the data to the format we want
-        .map(datum => ({
-          value: Math.ceil(datum.fires / datum.years),
-          location: datum.location,
-          nuts: datum.nuts
-        }))
     },
-    defaultMunicipality
+    defaultMunicipality,
+    defaultYears
   )
 })()
 

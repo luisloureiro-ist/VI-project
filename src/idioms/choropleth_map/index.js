@@ -4,28 +4,25 @@ class ChoroplethMap {
   constructor (parentSelector) {
     this.parentSelector = parentSelector
     this.chart = d3.select(this.parentSelector)
-    this.transition = d3.transition().duration(200)
   }
 
-  create (data, clickCallback) {
+  create (data, clickCallback, legendTextFunction) {
     this.onClickCallback = clickCallback
+    this.legendTextFunction = legendTextFunction
 
     // Update color scale
-    this.colorScale = d3.scaleQuantize(
-      [d3.min(data, d => d.value), d3.max(data, d => d.value)],
-      d3.schemeOranges[9]
-    )
+    this.colorScale = d3
+      .scaleQuantize(
+        [d3.min(data, d => d.value), d3.max(data, d => d.value)],
+        d3.schemeOranges[7]
+      )
+      .nice()
 
     // Draw the map
     this.chart
       .selectAll('svg #NUTS_III path')
       .attr('fill', (d, i, nodesList) => {
-        const regionClicked = nodesList[i]
-        const datum = data.find(
-          datum =>
-            datum.location === regionClicked.dataset.name &&
-            datum.nuts === getNUTS(regionClicked)
-        )
+        const datum = getDataForRegion(data, nodesList[i])
 
         return this.colorScale(datum.value)
       })
@@ -34,33 +31,63 @@ class ChoroplethMap {
       .on('mouseleave', this.__onMouseLeave.bind(this))
       .select('title')
       .text((d, i, nodesList) => {
-        const regionClicked = nodesList[i].parentElement
-        const datum = data.find(
-          datum =>
-            datum.location === regionClicked.dataset.name &&
-            datum.nuts === getNUTS(regionClicked)
-        )
+        const datum = getDataForRegion(data, nodesList[i].parentElement)
 
         return `Location: ${datum.location}\n\nAverage number of fires: ${datum.value}`
       })
 
-    this.__addLegend('# Fires')
+    this.__addLegend()
+  }
+
+  update (newData, newlegendTextFunction) {
+    this.legendTextFunction = newlegendTextFunction
+
+    // Update color scale
+    this.colorScale = d3
+      .scaleQuantize(
+        [d3.min(newData, d => d.value), d3.max(newData, d => d.value)],
+        d3.schemeOranges[7]
+      )
+      .nice()
+
+    // update map colors
+    this.chart
+      .selectAll('svg #NUTS_III path')
+      .attr('fill', (d, i, nodesList) => {
+        const datum = getDataForRegion(newData, nodesList[i])
+
+        return this.colorScale(datum.value)
+      })
+      .select('title')
+      .text((d, i, nodesList) => {
+        const datum = getDataForRegion(newData, nodesList[i].parentElement)
+
+        return `Location: ${datum.location}\n\nAverage number of fires: ${datum.value}`
+      })
+
+    this.__updateLegend()
   }
 
   //
   // Private (auxiliar) functions
   //
-  __addLegend (title) {
+  __addLegend () {
     this.chart
       .append(
         () =>
           new Legend({
             color: this.colorScale,
-            title,
+            title: this.legendTextFunction(),
             tickFormat: 'd'
           })
       )
-      .classed('svg-legend', true)
+      .classed('svg-legend map', true)
+  }
+
+  __updateLegend () {
+    this.chart.select('.svg-legend.map').remove()
+
+    this.__addLegend()
   }
 
   __onPathClick (d, i, nodesList) {
@@ -127,6 +154,14 @@ function getNUTS (nodeElement) {
   }
 
   return parent.dataset.name
+}
+
+function getDataForRegion (data, node) {
+  const datum = data.find(
+    datum =>
+      datum.location === node.dataset.name && datum.nuts === getNUTS(node)
+  )
+  return datum
 }
 
 export default ChoroplethMap
