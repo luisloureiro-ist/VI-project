@@ -16,9 +16,11 @@ class MultiLinesChart {
       .transition()
       .duration(1000)
       .ease(d3.easeQuadInOut)
+    this.categories = []
   }
 
   create (data, years, categories) {
+    this.categories = categories
     const chart = this.chart
       .append('svg')
       .classed('svg-chart multi-lines', true)
@@ -157,7 +159,10 @@ class MultiLinesChart {
       .domain(years)
       .padding(0.5)
 
-    var maxValue = d3.max([d3.max(data[0]), d3.max(data[1])])
+    var maxValue = data.reduce((prev, curr) => {
+      const currMax = d3.max(curr)
+      return currMax > prev ? currMax : prev
+    }, 0)
 
     var y = d3.scaleLinear()
       .rangeRound([this.padding, this.chartHeight - this.xAxisHeight])
@@ -175,71 +180,47 @@ class MultiLinesChart {
       .transition(this.transition)
       .call(yAxis)
 
-    // fire's path update
-    this.chart
-      .select('.static-fires')
-      .selectAll('path')
-      .interrupt()
-      .datum(data[0])
-      .join(enter => enter, update => update
-        .transition(this.transition)
-        .attr('d', lines))
+    const __updateStaticPath = selection =>
+      selection.select('.static').attr('d', lines)
+
+    const __updateDynamicPath = selection =>
+      selection.select('.dynamic').attr('d', lines)
+
+    const __updateDynamicCircles = selection =>
+      selection
+        .selectAll('circle')
+        .data((d, i) => d.map(d => ({ category: i, value: d })))
+        .join(
+          enter => enter,
+          update =>
+            update
+              .interrupt()
+              .transition(this.transition)
+              .attr('cx', (d, i) => x(years[i]))
+              .attr('cy', d => y(d.value))
+              .select('title')
+              .text(
+                (d, i) =>
+                  `${d.value} ${this.categories[d.category].label} in ${
+                    years[i]
+                  }`
+              )
+        )
 
     this.chart
-      .select('.dynamic-fires')
-      .selectAll('path')
-      .interrupt()
-      .datum(data[0])
-      .join(enter => enter, update => update
-        .transition(this.transition)
-        .attr('d', lines))
-
-    // firefighter's path update
-    this.chart
-      .select('.static-firefighters')
-      .selectAll('path')
-      .interrupt()
-      .datum(data[1])
-      .join(enter => enter, update => update
-        .transition(this.transition)
-        .attr('d', lines))
-
-    this.chart
-      .select('.dynamic-firefighters')
-      .selectAll('path')
-      .interrupt()
-      .datum(data[1])
-      .join(enter => enter, update => update
-        .transition(this.transition)
-        .attr('d', lines))
-
-    // fires circle's update
-    this.chart
-      .select('.dynamic-fires')
-      .selectAll('circle')
-      .interrupt()
-      .data(data[0])
-      .join(enter => enter, update => update
+      .select('.lines')
+      .selectAll('g')
+      .data(data)
+      .join(
+        enter => enter,
+        update =>
+          update
+            .interrupt()
             .transition(this.transition)
-            .attr('cx', (d, i) => x(years[i]))
-            .attr('cy', d => y(d))
-            .select('title')
-        .text((d, i) => (d + ' fires in ' + years[i]))
+            .call(__updateStaticPath)
+            .call(__updateDynamicPath)
       )
-
-    // firefighters circle's update
-    this.chart
-      .select('.dynamic-firefighters')
-      .selectAll('circle')
-      .interrupt()
-      .data(data[1])
-      .join(enter => enter, update => update
-            .transition(this.transition)
-            .attr('cx', (d, i) => x(years[i]))
-            .attr('cy', d => y(d))
-            .select('title')
-        .text((d, i) => (d + ' firefighters in ' + years[i]))
-      )
+      .call(__updateDynamicCircles)
   }
 
   updateYears (data, years) {
