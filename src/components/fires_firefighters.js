@@ -27,24 +27,51 @@ class FiresFirefighters extends Component {
       super.getComponentSize().height
     )
 
-    const filteredData = data.filter(d => d.location === municipality.name && d.nuts === municipality.nuts)
-    this.chart.create(getValues(filteredData), getYears(filteredData))
+    const categories = [
+      {
+        label: 'Fires',
+        color: 'orange'
+      },
+      {
+        label: 'Firefighters',
+        color: 'red'
+      }
+    ]
+
+    const filteredData = data.filter(
+      d => d.location === municipality.name && d.nuts === municipality.nuts
+    )
+    this.chart.create(
+      getValues(filteredData),
+      getYears(filteredData),
+      categories
+    )
   }
 
   updateLocation ({ firesData: newData }, newMunicipality) {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
 
-    const filteredNewData = newData.filter(d => d.location === newMunicipality.name && d.nuts === newMunicipality.nuts)
-    this.chart.update(getValues(filteredNewData), getYears(filteredNewData)
+    const filteredNewData = newData.filter(
+      d =>
+        d.location === newMunicipality.name && d.nuts === newMunicipality.nuts
     )
+    this.chart.update(getValues(filteredNewData), getYears(filteredNewData))
   }
 
   updateYears (newYears) {
     super.setYears(newYears)
 
-    const filteredNewData = super.getDataset().filter(d => d.location === super.getMunicipality().name && super.getYears().indexOf(d.year) !== -1)
-    this.chart.updateYears(getValues(filteredNewData), getYears(filteredNewData)
+    const filteredNewData = super
+      .getDataset()
+      .filter(
+        d =>
+          d.location === super.getMunicipality().name &&
+          super.getYears().indexOf(d.year) !== -1
+      )
+    this.chart.updateYears(
+      getValues(filteredNewData),
+      getYears(filteredNewData)
     )
   }
 }

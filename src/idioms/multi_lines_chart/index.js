@@ -16,9 +16,9 @@ class MultiLinesChart {
       .transition()
       .duration(1000)
       .ease(d3.easeQuadInOut)
-  };
+  }
 
-  create (data, years) {
+  create (data, years, categories) {
     const chart = this.chart
       .append('svg')
       .classed('svg-chart multi-lines', true)
@@ -30,7 +30,10 @@ class MultiLinesChart {
       .domain(years)
       .padding(0.5)
 
-    var maxValue = d3.max([d3.max(data[0]), d3.max(data[1])])
+    var maxValue = data.reduce((prev, curr) => {
+      const currMax = d3.max(curr)
+      return currMax > prev ? currMax : prev
+    }, 0)
 
     var y = d3.scaleLinear()
       .rangeRound([this.padding, this.chartHeight - this.xAxisHeight])
@@ -62,101 +65,68 @@ class MultiLinesChart {
       .call(yAxis)
 
     // create fix fires path
+    const __appendStaticPath = selection =>
+      selection
+        .append('path')
+        .classed('static', true)
+        .transition(this.transition)
+        .attr('fill', 'none')
+        .attr('stroke', (d, i) => categories[i].color)
+        .attr('stroke-opacity', 0.5)
+        .attr('stroke-width', 1.5)
+        .attr('d', lines)
+
+    const __appendDynamicPath = selection =>
+      selection
+        .append('path')
+        .classed('dynamic', true)
+        .transition(this.transition)
+        .attr('fill', 'none')
+        .attr('stroke', (d, i) => categories[i].color)
+        .attr('stroke-width', 1.5)
+        .attr('d', lines)
+
+    const __appendDynamicCircles = (selection, i) =>
+      selection
+        .selectAll('circle')
+        .data((d, i) => d.map(d => ({ category: i, value: d })))
+        .enter()
+        .append('circle')
+        .on('mouseover', function () {
+          d3.select(this)
+            .interrupt()
+            .transition(this.transition)
+            .attr('r', 6)
+        })
+        .on('mouseleave', function () {
+          d3.select(this)
+            .interrupt()
+            .transition(this.transition)
+            .attr('r', 3)
+        })
+        .transition(this.transition)
+        .attr('fill', d => categories[d.category].color)
+        .attr('stroke', d => categories[d.category].color)
+        .attr('stroke-width', 1.5)
+        .attr('cx', (d, i) => x(years[i]))
+        .attr('cy', d => y(d.value))
+        .attr('r', 3)
+        .selection()
+        .append('title')
+        .text(
+          (d, i) => `${d.value} ${categories[d.category].label} in ${years[i]}`
+        )
+
     chart
       .append('g')
-      .classed('static-fires', true)
-      .append('path')
-      .datum(data[0])
-      .transition(this.transition)
-      .attr('fill', 'none')
-      .attr('stroke', 'orange')
-      .attr('stroke-opacity', 0.5)
-      .attr('stroke-width', 1.5)
-      .attr('d', lines)
-
-    // create dynamic fires path
-    chart
-      .append('g')
-      .classed('dynamic-fires', true)
-      .append('path')
-      .datum(data[0])
-      .transition(this.transition)
-      .attr('fill', 'none')
-      .attr('stroke', 'orange')
-      .attr('stroke-width', 1.5)
-      .attr('d', lines)
-
-    // create static firefighters path
-    chart
-      .append('g')
-      .classed('static-firefighters', true)
-      .append('path')
-      .datum(data[1])
-      .transition(this.transition)
-      .attr('fill', 'none')
-      .attr('stroke', 'red')
-      .attr('stroke-width', 1.5)
-      .attr('d', lines)
-
-    // create dynamic firefighters path
-    chart
-      .append('g')
-      .classed('dynamic-firefighters', true)
-      .append('path')
-      .datum(data[1])
-      .transition(this.transition)
-      .attr('fill', 'none')
-      .attr('stroke', 'red')
-      .attr('stroke-width', 1.5)
-      .attr('stroke-opacity', 0.5)
-      .attr('d', lines)
-
-    chart
-      .select('.dynamic-fires')
-      .selectAll('circle')
-      .data(data[0])
+      .classed('lines', true)
+      .selectAll('g')
+      .data(data)
       .enter()
-      .append('circle')
-      .on('mouseover', function () {
-        d3.select(this).interrupt().transition(this.transition).attr('r', 6)
-      })
-      .on('mouseleave', function () {
-        d3.select(this).interrupt().transition(this.transition).attr('r', 3)
-      })
-      .transition(this.transition)
-      .attr('fill', 'orange')
-      .attr('stroke', 'orange')
-      .attr('stroke-width', 1.5)
-      .attr('cx', (d, i) => x(years[i]))
-      .attr('cy', d => y(d))
-      .attr('r', 3)
-
-      .selection()
-      .append('title')
-      .text((d, i) => (d + ' fires in ' + years[i]))
-
-    chart
-      .select('.dynamic-firefighters')
-      .selectAll('circle')
-      .data(data[1])
-      .enter()
-      .append('circle')
-      .on('mouseover', function () {
-        d3.select(this).interrupt().transition(this.transition).attr('r', 6)
-      })
-      .on('mouseleave', function () {
-        d3.select(this).interrupt().transition(this.transition).attr('r', 3)
-      })
-      .transition(this.transition)
-      .attr('fill', 'red')
-      .attr('stroke', 'red')
-      .attr('stroke-width', 1.5)
-      .attr('cx', (d, i) => x(years[i]))
-      .attr('cy', d => y(d))
-      .attr('r', 3)
-      .selection()
-      .append('title')
-      .text((d, i) => (d + ' firefighters in ' + years[i]))
+      .append('g')
+      .call(__appendStaticPath)
+      .call(__appendDynamicPath)
+      .call(__appendDynamicCircles)
 
     // create legend
     this.chart
@@ -164,11 +134,11 @@ class MultiLinesChart {
         () =>
           new Legend({
             color: d3.scaleThreshold(
-              ['Firefighters', 'Fires'],
-              ['red', 'orange']
+              categories.map(c => c.label),
+              categories.map(c => c.color)
             ),
             title: 'Absolute number of',
-            width: 108
+            width: 54 * categories.length
           })
       )
       .classed('svg-legend multi-lines', true)
@@ -250,10 +220,10 @@ class MultiLinesChart {
       .interrupt()
       .data(data[0])
       .join(enter => enter, update => update
-        .transition(this.transition)
-        .attr('cx', (d, i) => x(years[i]))
-        .attr('cy', d => y(d))
-        .select('title')
+            .transition(this.transition)
+            .attr('cx', (d, i) => x(years[i]))
+            .attr('cy', d => y(d))
+            .select('title')
         .text((d, i) => (d + ' fires in ' + years[i]))
       )
 
@@ -264,10 +234,10 @@ class MultiLinesChart {
       .interrupt()
       .data(data[1])
       .join(enter => enter, update => update
-        .transition(this.transition)
-        .attr('cx', (d, i) => x(years[i]))
-        .attr('cy', d => y(d))
-        .select('title')
+            .transition(this.transition)
+            .attr('cx', (d, i) => x(years[i]))
+            .attr('cy', d => y(d))
+            .select('title')
         .text((d, i) => (d + ' firefighters in ' + years[i]))
       )
   }
