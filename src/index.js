@@ -60,11 +60,15 @@ import YearsRangeSlider from './components/range_slider/index.js'
     this,
     {
       companiesData: companiesData.filter(
-        value => value.location === defaultMunicipality
+        value =>
+          value.location === defaultMunicipality.name &&
+          value.nuts === defaultMunicipality.nuts
       ),
       electionsData: electionsData.filter(
         value =>
-          value.location === defaultMunicipality && value.type === 'Local'
+          value.location === defaultMunicipality.name &&
+          value.nuts === defaultMunicipality.nuts &&
+          value.type === 'Local'
       ),
       firesData: firesData
     },
