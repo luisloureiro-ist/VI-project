@@ -189,9 +189,11 @@ class ClevelandDotPlots {
       .append('path')
       .transition(this.transition)
       .call(path =>
-        path.attr('d', d =>
-          lineGenerator(d.results.map(r => ({ key: d.key, value: r })))
-        )
+        path
+          .attr('d', d =>
+            lineGenerator(d.results.map(r => ({ key: d.key, value: r })))
+          )
+          .attr('stroke-opacity', 1)
       )
   }
 
@@ -220,12 +222,12 @@ class ClevelandDotPlots {
       .data(d => d.results.map(r => ({ key: d.key, value: r })))
       .enter()
       .append('circle')
-      .transition(this.transition)
       .attr('cx', d => this.xScaler(d.value))
       .attr('cy', d => this.yScaler(d.key))
       .attr('r', this.dotRadius)
-      .attr('opacity', 1)
-      .style('fill', (d, i) => this.colors[i])
+      .transition(this.transition)
+      .attr('fill-opacity', 1)
+      .attr('fill', (d, i) => this.colors[i])
       .selection()
       .append('title')
       .text((d, i) => titleFn(d.key, categories[i], d.value))
@@ -296,7 +298,7 @@ class ClevelandDotPlots {
       allCircles
         .interrupt() // Avoids "too late; already running" error
         .transition(this.transition)
-        .attr('opacity', (d, i) => (i === idx ? 1 : 0.2))
+        .attr('fill-opacity', (d, i) => (i === idx ? 1 : 0.2))
     })
     allCircles.on('mouseleave', () => {
       this.onLeaveCallback()
@@ -304,7 +306,7 @@ class ClevelandDotPlots {
       allCircles
         .interrupt() // Avoids "too late; already running" error
         .transition(this.transition)
-        .attr('opacity', 1)
+        .attr('fill-opacity', 1)
     })
   }
 
