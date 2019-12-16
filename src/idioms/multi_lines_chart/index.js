@@ -231,51 +231,73 @@ class MultiLinesChart {
   }
 
   updateYears (data, years) {
+    const __updateDynamicPath = selection =>
+      selection.select('.dynamic').attr('d', this.lines)
+
+    const __updateDynamicCircles = selection =>
+      selection
+        .selectAll('circle')
+        .data((d, i) => d.map(d => ({ category: i, value: d })))
+        .join(
+          enter => enter
+            .append('circle')
+            .on('mouseover', function () {
+              d3.select(this)
+                .interrupt()
+                .transition(this.transition)
+                .attr('r', 6)
+            })
+            .on('mouseleave', function () {
+              d3.select(this)
+                .interrupt()
+                .transition(this.transition)
+                .attr('r', 3)
+            })
+            .transition(this.transition)
+            .attr('fill', d => this.categories[d.category].color)
+            .attr('stroke', d => this.categories[d.category].color)
+            .attr('stroke-width', 1.5)
+            .attr('cx', (d, i) => this.x(years[i]))
+            .attr('cy', d => this.y(d.value))
+            .attr('r', 3)
+            .selection()
+            .append('title')
+            .text(
+              (d, i) => `${d.value} ${this.categories[d.category].label} in ${years[i]}`
+            ),
+          update =>
+            update
+              .interrupt()
+              .transition(this.transition)
+              .attr('cx', (d, i) => this.x(years[i]))
+              .attr('cy', d => this.y(d.value))
+              .select('title')
+              .text(
+                (d, i) =>
+                `${d.value} ${this.categories[d.category].label} in ${
+                  years[i]
+                }`
+              )
+        )
     this.years = years
-    this.maxValue = d3.max([d3.max(data[0]), d3.max(data[1])])
 
-    // this.y.domain([
-    //   this.maxValue + this.maxValue / 3,
-    //   0
-    // ])
-
-    this.chart
-      .select('.dynamic-fires')
-      .selectAll('path')
-      .interrupt()
-      .datum(data[0])
-      .transition(this.transition)
-      .attr('d', this.lines)
+    this.maxValue = data.reduce((prev, curr) => {
+      const currMax = d3.max(curr)
+      return currMax > prev ? currMax : prev
+    }, 0)
 
     this.chart
-      .select('.dynamic-fires')
-      .selectAll('circle')
-      .interrupt()
-      .data(data[0])
-      .transition(this.transition)
-      .attr('cx', (d, i) => this.x(this.years[i]))
-      .attr('cy', d => this.y(d))
-      .select('title')
-      .text((d, i) => d + ' fires in ' + this.years[i])
-
-    this.chart
-      .select('.dynamic-firefighters')
-      .selectAll('path')
-      .interrupt()
-      .datum(data[1])
-      .transition(this.transition)
-      .attr('d', this.lines)
-
-    this.chart
-      .select('.dynamic-firefighters')
-      .selectAll('circle')
-      .interrupt()
-      .data(data[1])
-      .transition(this.transition)
-      .attr('cx', (d, i) => this.x(this.years[i]))
-      .attr('cy', d => this.y(d))
-      .select('title')
-      .text((d, i) => d + ' fires in ' + this.years[i])
+      .select('.lines')
+      .selectAll('g')
+      .data(data)
+      .join(
+        enter => enter,
+        update =>
+          update
+            .interrupt()
+            .transition(this.transition)
+            .call(__updateDynamicPath))
+      .call(__updateDynamicCircles)
   }
 }
 export default MultiLinesChart
