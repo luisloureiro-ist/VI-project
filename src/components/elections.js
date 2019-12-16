@@ -46,7 +46,6 @@ class Elections extends Component {
       this.charts[idx].create(
         reducedData,
         getYears(filteredData),
-        electionType,
         (party, year, result) =>
           `"${
             this.parties.find(p => p.acronym === party).text

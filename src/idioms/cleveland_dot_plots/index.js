@@ -34,7 +34,7 @@ class ClevelandDotPlots {
     this.onLeaveCallback = onMouseLeaveDotCallback
   }
 
-  create (data, categories, chartTitle, dotsTitleFn) {
+  create (data, categories, dotsTitleFn) {
     const svgChart = this.sectionElement
       .append('svg')
       .classed('svg-chart cleveland-dot-plot', true)
@@ -51,13 +51,6 @@ class ClevelandDotPlots {
       .domain(data.map(d => d.key))
       .rangeRound([0, this.yAxisHeight])
       .padding(0.5)
-
-    svgChart
-      .append('g')
-      .classed('sub-title', true)
-      .append('text')
-      .text(chartTitle)
-      .classed('is-size-6', true)
 
     svgChart
       .append('g')
