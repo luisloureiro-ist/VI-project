@@ -21,12 +21,10 @@ class ClevelandDotPlots {
     this.xAxis = d3.axisBottom()
     this.yScaler = d3.scalePoint()
     this.yAxis = d3.axisLeft()
-    this.subTitleHeight = 21 + 20
     this.xScalerDomainPadding = 2
     this.xAxisHeight = 35
     this.yAxisWidth = 35
-    this.yAxisHeight =
-      this.chartSize.height - this.xAxisHeight - this.subTitleHeight
+    this.yAxisHeight = this.chartSize.height - this.xAxisHeight
     this.transition = d3
       .transition()
       .duration(1000)
@@ -51,13 +49,12 @@ class ClevelandDotPlots {
       .range([this.yAxisWidth, this.chartSize.width])
     this.yScaler
       .domain(data.map(d => d.key))
-      .rangeRound([this.subTitleHeight, this.yAxisHeight + this.subTitleHeight])
+      .rangeRound([0, this.yAxisHeight])
       .padding(0.5)
 
     svgChart
       .append('g')
       .classed('sub-title', true)
-      .attr('transform', () => `translate(0, ${this.subTitleHeight} )`)
       .append('text')
       .text(chartTitle)
       .classed('is-size-6', true)
