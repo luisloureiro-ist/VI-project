@@ -8,7 +8,14 @@ class Elections extends Component {
       height: document.querySelector(parentSelector).offsetHeight - 51 // The height+margin of the title
     })
     this.electionTypes = []
-    this.parties = ['PS', 'PSD', 'CDS', 'PCP', 'BE', 'Abs.']
+    this.parties = [
+      { acronym: 'PS', text: 'PS' },
+      { acronym: 'PSD', text: 'PSD' },
+      { acronym: 'CDS', text: 'CDS' },
+      { acronym: 'PCP', text: 'PCP' },
+      { acronym: 'BE', text: 'BE' },
+      { acronym: 'Abs.', text: 'Abstention' }
+    ]
     this.charts = []
 
     dispatch.on('initialize.elections', this.initialize.bind(this))
@@ -19,8 +26,6 @@ class Elections extends Component {
     super.setMunicipality(municipality)
     super.setDataset(data)
     this.electionTypes = getElectionTypes(data)
-
-    this.updateSectionTitle()
 
     this.electionTypes.forEach((electionType, idx) => {
       const filteredData = super
@@ -42,7 +47,10 @@ class Elections extends Component {
         reducedData,
         getYears(filteredData),
         electionType,
-        (party, year, result) => `${party} result in ${year}:\n${result}%`
+        (party, year, result) =>
+          `"${
+            this.parties.find(p => p.acronym === party).text
+          }" result in ${year}:\n${result}%`
       )
     })
   }
@@ -50,8 +58,6 @@ class Elections extends Component {
   update ({ electionsData: newData }, newMunicipality) {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
-
-    this.updateSectionTitle()
 
     this.electionTypes.forEach((electionType, idx) => {
       const filteredData = super
@@ -67,19 +73,18 @@ class Elections extends Component {
       )
     })
   }
-
-  updateSectionTitle () {
-    d3.select(super.getContainerSelector())
-      .select('.title')
-      .text(`Elections in ${super.getMunicipality()}`)
-  }
 }
 
 function transformData (data) {
   return data
     .reduce(
       (prev, curr) =>
-        prev.concat(this.parties.map(p => ({ key: p, results: [curr[p]] }))),
+        prev.concat(
+          this.parties.map(p => ({
+            key: p.acronym,
+            results: [curr[p.acronym]]
+          }))
+        ),
       []
     )
     .reduce((prev, curr) => {

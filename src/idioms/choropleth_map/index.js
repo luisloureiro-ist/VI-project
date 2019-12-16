@@ -4,6 +4,10 @@ class ChoroplethMap {
   constructor (parentSelector) {
     this.parentSelector = parentSelector
     this.chart = d3.select(this.parentSelector)
+    this.transition = d3
+      .transition()
+      .duration(1000)
+      .ease(d3.easeQuadInOut)
   }
 
   create (data, clickCallback, legendTextFunction) {
@@ -21,11 +25,14 @@ class ChoroplethMap {
     // Draw the map
     this.chart
       .selectAll('svg #NUTS_III path')
+      .transition(this.transition)
       .attr('fill', (d, i, nodesList) => {
         const datum = getDataForRegion(data, nodesList[i])
 
         return this.colorScale(datum.value)
       })
+      .attr('fill-opacity', 1)
+      .selection()
       .on('click', this.__onPathClick.bind(this))
       .on('mouseover', this.__onMouseOver.bind(this))
       .on('mouseleave', this.__onMouseLeave.bind(this))
@@ -36,6 +43,8 @@ class ChoroplethMap {
         return `Location: ${datum.location}\n\nAverage number of fires: ${datum.value}`
       })
 
+    // to avoid displaying some edges while the transition of the descendent paths is running.
+    this.chart.select('svg').style('opacity', 1)
     this.__addLegend()
   }
 

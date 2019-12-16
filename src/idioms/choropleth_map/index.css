@@ -11,6 +11,7 @@
 }
 
 .map-section > .svg-map {
+  opacity: 0;
   flex: 8;
 }
 
