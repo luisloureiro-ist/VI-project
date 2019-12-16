@@ -1,5 +1,5 @@
 @import '/assets/css/bulma.min.css';
-@import '/src/components/selections/two_handle_range_slider/index.css';
+@import '/assets/css/nouislider.min.css';
 @import '/src/idioms/index.css';
 
 .grid-container {

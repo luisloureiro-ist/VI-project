@@ -2,6 +2,7 @@ import CompaniesProductivityComponent from './components/companies_productivity.
 import ElectionsComponent from './components/elections.js'
 import MapComponent from './components/map.js'
 import NumberOfCompaniesComponent from './components/number_of_companies.js'
+import YearsRangeSlider from './components/range_slider/index.js'
 //
 //
 ;(async () => {
@@ -121,12 +122,11 @@ function registerEventListeners ({ companiesData, firesData, electionsData }) {
     )
   })
 
-  d3.selectAll('.years-range > input[type=range').on(
-    'input mousedown',
-    (d, i, nodesList) => {
+  new YearsRangeSlider('years-range-slider').registerUpdateEventHandler(
+    ([min, max]) => {
       const datesRange = []
 
-      for (let i = +nodesList[0].value; i <= +nodesList[1].value; i++) {
+      for (let i = min; i <= max; i++) {
         datesRange.push(i)
       }
 
