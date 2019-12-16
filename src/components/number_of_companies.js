@@ -22,8 +22,6 @@ class NumberOfCompanies extends Component {
     super.setDataset(data)
     super.setYears(getYears(data))
 
-    this.updateSectionTitle()
-
     this.chart = new RadarChart(
       super.getContainerSelector(),
       super.getComponentSize().width,
@@ -45,8 +43,6 @@ class NumberOfCompanies extends Component {
     super.setMunicipality(newMunicipality)
     super.setDataset(newData)
 
-    this.updateSectionTitle()
-
     const reducedNewData = this.__transformData(newData)
 
     this.chart.updateData(reducedNewData)
@@ -62,12 +58,6 @@ class NumberOfCompanies extends Component {
       super.getYears(),
       generateTitleFunction(super.getYears())
     )
-  }
-
-  updateSectionTitle () {
-    d3.select(super.getContainerSelector())
-      .select('.title')
-      .text(`Number of Companies in ${super.getMunicipality()}`)
   }
 
   // Private/auxiliar functions

@@ -20,8 +20,6 @@ class Elections extends Component {
     super.setDataset(data)
     this.electionTypes = getElectionTypes(data)
 
-    this.updateSectionTitle()
-
     this.electionTypes.forEach((electionType, idx) => {
       const filteredData = super
         .getDataset()
@@ -51,8 +49,6 @@ class Elections extends Component {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
 
-    this.updateSectionTitle()
-
     this.electionTypes.forEach((electionType, idx) => {
       const filteredData = super
         .getDataset()
@@ -66,12 +62,6 @@ class Elections extends Component {
         (party, year, result) => `${party} result in ${year}:\n${result}%`
       )
     })
-  }
-
-  updateSectionTitle () {
-    d3.select(super.getContainerSelector())
-      .select('.title')
-      .text(`Elections in ${super.getMunicipality()}`)
   }
 }
 
