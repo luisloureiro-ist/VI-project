@@ -62,11 +62,13 @@ class ChoroplethMap {
     // update map colors
     this.chart
       .selectAll('svg #NUTS_III path')
+      .transition(this.transition)
       .attr('fill', (d, i, nodesList) => {
         const datum = getDataForRegion(newData, nodesList[i])
 
         return this.colorScale(datum.value)
       })
+      .selection()
       .select('title')
       .text((d, i, nodesList) => {
         const datum = getDataForRegion(newData, nodesList[i].parentElement)

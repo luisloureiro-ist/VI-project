@@ -25,8 +25,16 @@ class Slider {
   }
 
   registerUpdateEventHandler (handler) {
+    let timeoutId = null
     // Format numbers to int. Default is to return values as float
-    this.slider.noUiSlider.on('update', values => handler(values.map(v => +v)))
+    this.slider.noUiSlider.on('update', values => {
+      if (timeoutId !== null) {
+        clearTimeout(timeoutId)
+        timeoutId = null
+      }
+
+      timeoutId = setTimeout(() => handler(values.map(v => +v)), 250)
+    })
   }
 }
 
