@@ -224,7 +224,7 @@ class ClevelandDotPlots {
       .attr('fill', (d, i) => this.colors[i])
       .selection()
       .append('title')
-      .text((d, i) => titleFn(d.key, categories[i], d.value))
+      .text((d, i) => titleFn(d.key, categories[i], d3.format('.2%')(d.value)))
   }
 
   __updateDots (titleFn, categories, lines) {
@@ -242,7 +242,9 @@ class ClevelandDotPlots {
             .attr('cy', d => this.yScaler(d.key))
             .selection()
             .select('title')
-            .text((d, i) => titleFn(d.key, categories[i], d.value))
+            .text((d, i) =>
+              titleFn(d.key, categories[i], d3.format('.2%')(d.value))
+            )
       )
   }
 

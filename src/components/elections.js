@@ -49,7 +49,7 @@ class Elections extends Component {
         (party, year, result) =>
           `"${
             this.parties.find(p => p.acronym === party).text
-          }" result in ${year}:\n${result * 100}%`
+          }" result in ${year}:\n${result}`
       )
     })
   }
@@ -68,7 +68,7 @@ class Elections extends Component {
       this.charts[idx].update(
         reducedData,
         getYears(filteredData),
-        (party, year, result) => `${party} result in ${year}:\n${result * 100}%`
+        (party, year, result) => `${party} result in ${year}:\n${result}`
       )
     })
   }
