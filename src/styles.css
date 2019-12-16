@@ -1,5 +1,6 @@
 @import '/assets/css/bulma.min.css';
 @import '/assets/css/nouislider.min.css';
+@import '/src/components/range_slider/index.css';
 @import '/src/idioms/index.css';
 
 .grid-container {
