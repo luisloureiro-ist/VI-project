@@ -49,7 +49,7 @@
 
 .grid-container .charts-pane .left-charts > *,
 .grid-container .charts-pane .right-charts > * {
-  flex: 9;
+  flex: 8;
 }
 
 .grid-container .charts-pane .right-charts > .years-range-section {
