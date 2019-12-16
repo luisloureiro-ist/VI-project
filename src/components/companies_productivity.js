@@ -31,8 +31,6 @@ class CompaniesProductivity extends Component {
     super.setDataset(data)
     this.activitySectors = getActivitySectors(data)
 
-    this.updateSectionTitle()
-
     const chartWidth =
       Math.floor(super.getComponentSize() / this.activitySectors.length) - 5
 
@@ -62,8 +60,6 @@ class CompaniesProductivity extends Component {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
 
-    this.updateSectionTitle()
-
     this.activitySectors.forEach((activitySector, idx) => {
       const filteredData = super
         .getDataset()
@@ -90,12 +86,6 @@ class CompaniesProductivity extends Component {
 
       this.charts[idx].update(filteredData, idx === 0 ? super.getYears() : null)
     })
-  }
-
-  updateSectionTitle () {
-    d3.select(super.getContainerSelector())
-      .select('.productivity-title')
-      .text(`Productivity of companies in ${super.getMunicipality()}`)
   }
 }
 

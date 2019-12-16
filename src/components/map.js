@@ -64,7 +64,7 @@ class Map extends Component {
   updateSectionTitle () {
     d3.select(super.getContainerSelector())
       .select('.title')
-      .text(`Selected region: ${super.getMunicipality()}`)
+      .text(`Selected region: ${super.getMunicipality().name}`)
   }
 
   __dispatchUpdateMunicipality (nuts, name) {
