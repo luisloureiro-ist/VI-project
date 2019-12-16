@@ -92,7 +92,7 @@ function registerEventListeners ({ companiesData, firesData, electionsData }) {
           .filter(d => d.type === 'Local'),
         firesData: firesData
       },
-      name
+      { name, nuts }
     )
   })
 
