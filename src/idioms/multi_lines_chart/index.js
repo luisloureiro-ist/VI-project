@@ -33,7 +33,7 @@ class MultiLinesChart {
     var maxValue = d3.max([d3.max(data[0]), d3.max(data[1])])
 
     var y = d3.scaleLinear()
-      .rangeRound([0, this.chartHeight - this.xAxisHeight])
+      .rangeRound([this.padding, this.chartHeight - this.xAxisHeight])
       .domain([
         maxValue + maxValue / 3,
         0
@@ -47,21 +47,37 @@ class MultiLinesChart {
     var xAxis = d3.axisBottom().scale(x).tickValues(years).tickFormat(d3.format('d')).tickSizeOuter(0)
     var yAxis = d3.axisLeft().scale(y).tickSizeOuter(0).tickFormat(d3.format('d'))
 
+    // create x-axis
     chart
       .append('g')
       .attr('class', 'x-axis')
       .attr('transform', `translate(0, ${this.chartHeight - this.xAxisHeight} )`)
       .call(xAxis)
 
+    // create y-axis
     chart
       .append('g')
       .attr('class', 'y-axis')
       .attr('transform', `translate(${this.yAxisWidth}, 0)`)
       .call(yAxis)
 
+    // create fix fires path
     chart
       .append('g')
-      .classed('fires', true)
+      .classed('static-fires', true)
+      .append('path')
+      .datum(data[0])
+      .transition(this.transition)
+      .attr('fill', 'none')
+      .attr('stroke', 'orange')
+      .attr('stroke-opacity', 0.5)
+      .attr('stroke-width', 1.5)
+      .attr('d', lines)
+
+    // create dynamic fires path
+    chart
+      .append('g')
+      .classed('dynamic-fires', true)
       .append('path')
       .datum(data[0])
       .transition(this.transition)
@@ -70,9 +86,10 @@ class MultiLinesChart {
       .attr('stroke-width', 1.5)
       .attr('d', lines)
 
+    // create static firefighters path
     chart
       .append('g')
-      .classed('firefighters', true)
+      .classed('static-firefighters', true)
       .append('path')
       .datum(data[1])
       .transition(this.transition)
@@ -81,8 +98,21 @@ class MultiLinesChart {
       .attr('stroke-width', 1.5)
       .attr('d', lines)
 
+    // create dynamic firefighters path
     chart
-      .select('.fires')
+      .append('g')
+      .classed('dynamic-firefighters', true)
+      .append('path')
+      .datum(data[1])
+      .transition(this.transition)
+      .attr('fill', 'none')
+      .attr('stroke', 'red')
+      .attr('stroke-width', 1.5)
+      .attr('stroke-opacity', 0.5)
+      .attr('d', lines)
+
+    chart
+      .select('.dynamic-fires')
       .selectAll('circle')
       .data(data[0])
       .enter()
@@ -106,7 +136,7 @@ class MultiLinesChart {
       .text((d, i) => (d + ' fires in ' + years[i]))
 
     chart
-      .select('.firefighters')
+      .select('.dynamic-firefighters')
       .selectAll('circle')
       .data(data[1])
       .enter()
@@ -134,7 +164,7 @@ class MultiLinesChart {
         () =>
           new Legend({
             color: d3.scaleThreshold(
-              ['Fires', 'Firefighters'],
+              ['Firefighters', 'Fires'],
               ['red', 'orange']
             ),
             title: 'Absolute number of',
@@ -160,7 +190,7 @@ class MultiLinesChart {
     var maxValue = d3.max([d3.max(data[0]), d3.max(data[1])])
 
     var y = d3.scaleLinear()
-      .rangeRound([0, this.chartHeight - this.xAxisHeight])
+      .rangeRound([this.padding, this.chartHeight - this.xAxisHeight])
       .domain([
         maxValue + maxValue / 3,
         0
@@ -177,7 +207,16 @@ class MultiLinesChart {
 
     // fire's path update
     this.chart
-      .select('.fires')
+      .select('.static-fires')
+      .selectAll('path')
+      .interrupt()
+      .datum(data[0])
+      .join(enter => enter, update => update
+        .transition(this.transition)
+        .attr('d', lines))
+
+    this.chart
+      .select('.dynamic-fires')
       .selectAll('path')
       .interrupt()
       .datum(data[0])
@@ -187,7 +226,16 @@ class MultiLinesChart {
 
     // firefighter's path update
     this.chart
-      .select('.firefighters')
+      .select('.static-firefighters')
+      .selectAll('path')
+      .interrupt()
+      .datum(data[1])
+      .join(enter => enter, update => update
+        .transition(this.transition)
+        .attr('d', lines))
+
+    this.chart
+      .select('.dynamic-firefighters')
       .selectAll('path')
       .interrupt()
       .datum(data[1])
@@ -197,7 +245,7 @@ class MultiLinesChart {
 
     // fires circle's update
     this.chart
-      .select('.fires')
+      .select('.dynamic-fires')
       .selectAll('circle')
       .interrupt()
       .data(data[0])
@@ -211,7 +259,7 @@ class MultiLinesChart {
 
     // firefighters circle's update
     this.chart
-      .select('.firefighters')
+      .select('.dynamic-firefighters')
       .selectAll('circle')
       .interrupt()
       .data(data[1])
@@ -222,6 +270,36 @@ class MultiLinesChart {
         .select('title')
         .text((d, i) => (d + ' firefighters in ' + years[i]))
       )
+  }
+
+  updateYears (data, years) {
+    var x = d3.scalePoint()
+      .range([this.yAxisWidth, this.chartWidth])
+      .domain(years)
+      .padding(0.5)
+
+    var maxValue = d3.max([d3.max(data[0]), d3.max(data[1])])
+
+    var y = d3.scaleLinear()
+      .rangeRound([this.padding, this.chartHeight - this.xAxisHeight])
+      .domain([
+        maxValue + maxValue / 3,
+        0
+      ])
+
+    var lines = d3.line()
+      .curve(d3.curveCardinal)
+      .x((d, i) => x(years[i]))
+      .y(d => y(d))
+
+    this.chart
+      .select('.dynamic-fires')
+      .selectAll('path')
+      .interrupt()
+      .datum(data[0])
+      .join(enter => enter, update => update
+        .transition(this.transition)
+        .attr('d', lines))
   }
 }
 export default MultiLinesChart

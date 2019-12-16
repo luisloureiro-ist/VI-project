@@ -1,12 +1,15 @@
 .svg-chart.multi-lines circle{
-    cursor: pointer;
+  cursor: pointer;
 }
 .svg-legend.multi-lines .tick:last-of-type > line {
-    display: none;
-  }
+  display: none;
+}
 
-  .number-of-fires-firefighters-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.number-of-fires-firefighters-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.number-of-fires-firefighters-section .title {
+  align-self: flex-start
+}
