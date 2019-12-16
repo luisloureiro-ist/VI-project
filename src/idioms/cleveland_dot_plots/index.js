@@ -7,7 +7,7 @@ class ClevelandDotPlots {
     chartHeight,
     onMouseOverDotCallback,
     onMouseLeaveDotCallback,
-    dotRadius = 8
+    dotRadius = 6
   ) {
     this.parentSelector = parentSelector
     this.legendHeight = 50
@@ -39,7 +39,7 @@ class ClevelandDotPlots {
   create (data, categories, chartTitle, dotsTitleFn) {
     const svgChart = this.sectionElement
       .append('svg')
-      .classed('svg-chart', true)
+      .classed('svg-chart cleveland-dot-plot', true)
       .attr('width', this.chartSize.width)
       .attr('height', this.chartSize.height)
 
@@ -72,7 +72,9 @@ class ClevelandDotPlots {
       .classed('circles-and-line', true)
       .call(this.__createLine.bind(this))
       .call(this.__createDots.bind(this, dotsTitleFn, categories))
+      .call(this.__createRects.bind(this))
       .call(this.__attachEventsToCircles.bind(this, categories))
+      .call(this.__attachEventsToCirclesAndLinesGroup.bind(this))
 
     this.__createYAxis(svgChart)
     this.__createXAxis(svgChart)
@@ -99,6 +101,7 @@ class ClevelandDotPlots {
           update
             .call(this.__updateLine.bind(this))
             .call(this.__updateDots.bind(this, dotsTitleFn, categories))
+            .call(this.__updateRects.bind(this))
       )
 
     this.__updateYAxis(svgChart)
@@ -165,7 +168,7 @@ class ClevelandDotPlots {
             width: 108
           })
       )
-      .classed('svg-legend', true)
+      .classed('svg-legend cleveland-dot-plot', true)
       .selectAll('.tick text')
       .attr('x', -18)
   }
@@ -176,29 +179,37 @@ class ClevelandDotPlots {
     this.__createLegend(categories)
   }
 
-  __createLine (lines) {
-    lines
-      .append('line')
+  __createLine (group) {
+    const lineGenerator = d3
+      .line()
+      .x((d, i) => this.xScaler(d.value))
+      .y(d => this.yScaler(d.key))
+
+    group
+      .append('path')
       .transition(this.transition)
-      .attr('x1', d => this.xScaler(d3.min(d.results)))
-      .attr('x2', d => this.xScaler(d3.max(d.results)))
-      .attr('y1', d => this.yScaler(d.key))
-      .attr('y2', d => this.yScaler(d.key))
-      .attr('stroke', 'grey')
-      .attr('stroke-width', 3)
+      .call(path =>
+        path.attr('d', d =>
+          lineGenerator(d.results.map(r => ({ key: d.key, value: r })))
+        )
+      )
   }
 
   __updateLine (lines) {
+    const lineGenerator = d3
+      .line()
+      .x((d, i) => this.xScaler(d.value))
+      .y(d => this.yScaler(d.key))
+
     lines
-      .select('line')
+      .select('path')
       .interrupt() // Avoids "too late; already running" error
       .transition(this.transition)
-      .attr('x1', d => this.xScaler(d3.min(d.results)))
-      .attr('x2', d => this.xScaler(d3.max(d.results)))
-      .attr('y1', d => this.yScaler(d.key))
-      .attr('y2', d => this.yScaler(d.key))
-      .attr('stroke', 'grey')
-      .attr('stroke-width', 3)
+      .call(path =>
+        path.attr('d', d =>
+          lineGenerator(d.results.map(r => ({ key: d.key, value: r })))
+        )
+      )
   }
 
   __createDots (titleFn, categories, lines) {
@@ -239,25 +250,144 @@ class ClevelandDotPlots {
       )
   }
 
+  __createRects (group) {
+    // For the mouse events to work correctly, we need to insert a rect
+    // Without this rect, these events wouldn't work when mouse is on an
+    // "empty" space,
+    // e.g., the space between the upper and lower borders of the 'g' element and 'path' inside this 'g'
+    group
+      .insert('rect', ':first-child')
+      .attr('height', this.dotRadius * 2)
+      .attr(
+        'width',
+        d =>
+          Math.abs(
+            this.xScaler(d3.min(d.results)) - this.xScaler(d3.max(d.results))
+          ) +
+          this.dotRadius * 2
+      )
+      .attr('x', d => this.xScaler(d3.min(d.results)) - this.dotRadius)
+      .attr('y', d => this.yScaler(d.key) + this.dotRadius)
+      .attr('transform', `translate(0, ${-this.dotRadius * 2})`)
+  }
+
+  __updateRects (group) {
+    group
+      .select('rect')
+      .attr(
+        'width',
+        d =>
+          Math.abs(
+            this.xScaler(d3.min(d.results)) - this.xScaler(d3.max(d.results))
+          ) +
+          this.dotRadius * 2
+      )
+      .attr('x', d => this.xScaler(d3.min(d.results)) - this.dotRadius)
+      .attr('y', d => this.yScaler(d.key) + this.dotRadius)
+      .attr('transform', `translate(0, ${-this.dotRadius * 2})`)
+  }
+
   __attachEventsToCircles (categories, lines) {
-    const allCircles = lines.selectAll('circle')
-    const numberOfCategories = categories.length
+    const allCircles = lines.selectAll('.circles').selectAll('circle')
 
     allCircles.on('mouseover', (datum, idx) => {
       this.onOverCallback(categories[idx])
 
       allCircles
-        .interrupt()
+        .interrupt() // Avoids "too late; already running" error
         .transition(this.transition)
-        .attr('opacity', (d, i) => (i % numberOfCategories === idx ? 1 : 0.4))
+        .attr('opacity', (d, i) => (i === idx ? 1 : 0.2))
     })
     allCircles.on('mouseleave', () => {
       this.onLeaveCallback()
 
       allCircles
-        .interrupt()
+        .interrupt() // Avoids "too late; already running" error
         .transition(this.transition)
         .attr('opacity', 1)
+    })
+  }
+
+  __attachEventsToCirclesAndLinesGroup (group) {
+    group
+      .call(this.__onMouseOver.bind(this))
+      .call(this.__onMouseLeave.bind(this))
+  }
+
+  __onMouseOver (group) {
+    group.on('mouseover', (d, i, nodesList) => {
+      const circlesAndLine = d3.select(nodesList[i])
+      const lineGenerator = d3
+        .line()
+        .x((d, i) => this.xScaler(d.value))
+        .y((d, i) => this.yScaler(d.key) - this.dotRadius * 2 * (i - 1))
+
+      circlesAndLine
+        .select('path')
+        .interrupt()
+        .transition(this.transition)
+        .call(path =>
+          path.attr('d', d =>
+            lineGenerator(d.results.map(r => ({ key: d.key, value: r })))
+          )
+        )
+
+      circlesAndLine
+        .selectAll('circle')
+        .interrupt() // Avoids "too late; already running" error
+        .transition(this.transition)
+        .call(circles =>
+          circles.attr(
+            'cy',
+            (d, i) => this.yScaler(d.key) - this.dotRadius * 2 * (i - 1)
+          )
+        )
+
+      circlesAndLine
+        .select('rect')
+        .interrupt() // Avoids "too late; already running" error
+        .transition(this.transition)
+        .call(rect =>
+          rect
+            .attr('height', this.dotRadius * 6)
+            .attr('y', d => this.yScaler(d.key) - this.dotRadius)
+        )
+    })
+  }
+
+  __onMouseLeave (group) {
+    group.on('mouseleave', (d, i, nodesList) => {
+      const circlesAndLine = d3.select(nodesList[i])
+      const lineGenerator = d3
+        .line()
+        .x((d, i) => this.xScaler(d.value))
+        .y(d => this.yScaler(d.key))
+
+      group
+        .select('path')
+        .interrupt() // Avoids "too late; already running" error
+        .transition(this.transition)
+        .call(path =>
+          path.attr('d', d =>
+            lineGenerator(d.results.map(r => ({ key: d.key, value: r })))
+          )
+        )
+
+      circlesAndLine
+        .selectAll('circle')
+        .interrupt() // Avoids "too late; already running" error
+        .transition(this.transition)
+        .call(circles => circles.attr('cy', (d, i) => this.yScaler(d.key)))
+
+      circlesAndLine
+        .select('rect')
+        .interrupt() // Avoids "too late; already running" error
+        .transition(this.transition)
+        .call(rect =>
+          rect
+            .attr('height', this.dotRadius * 2)
+            .attr('y', d => this.yScaler(d.key) + this.dotRadius)
+        )
     })
   }
 }

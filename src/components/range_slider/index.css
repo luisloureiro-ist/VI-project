@@ -1,0 +1,17 @@
+#years-range-slider {
+  height: 15px;
+}
+
+#years-range-slider .noUi-handle {
+  cursor: grab;
+  width: 26px;
+  height: 26px;
+  right: -12px;
+}
+
+#years-range-slider .noUi-handle::before {
+  left: 10px;
+}
+#years-range-slider .noUi-handle::after {
+  left: 13px;
+}

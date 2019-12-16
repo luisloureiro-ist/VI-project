@@ -3,6 +3,7 @@ import ElectionsComponent from './components/elections.js'
 import MapComponent from './components/map.js'
 import FiresFirefightersComponent from './components/fires_firefighters.js'
 import NumberOfCompaniesComponent from './components/number_of_companies.js'
+import YearsRangeSlider from './components/range_slider/index.js'
 //
 //
 ;(async () => {
@@ -17,6 +18,7 @@ import NumberOfCompaniesComponent from './components/number_of_companies.js'
   ])
 
   const defaultMunicipality = 'Continente'
+  const defaultYears = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]
   const components = []
 
   const rightChartsSectionWidth = document.querySelector(
@@ -46,7 +48,7 @@ import NumberOfCompaniesComponent from './components/number_of_companies.js'
       '.number-of-fires-firefighters-section'
     )
   )
-  components.push(new MapComponent(dispatch, '.map-pane', 0))
+  components.push(new MapComponent(dispatch, '.map-section'))
 
   components.push(
     new NumberOfCompaniesComponent(dispatch, '.number-of-companies-section')
@@ -65,7 +67,9 @@ import NumberOfCompaniesComponent from './components/number_of_companies.js'
           value.location === defaultMunicipality && value.type === 'Local'
       ),
       firesData: firesData
-    }, defaultMunicipality
+    },
+    defaultMunicipality,
+    defaultYears
   )
 })()
 
@@ -99,12 +103,11 @@ function registerEventListeners ({ companiesData, firesData, electionsData }) {
     )
   })
 
-  d3.selectAll('.years-range > input[type=range').on(
-    'input mousedown',
-    (d, i, nodesList) => {
+  new YearsRangeSlider('years-range-slider').registerUpdateEventHandler(
+    ([min, max]) => {
       const datesRange = []
 
-      for (let i = +nodesList[0].value; i <= +nodesList[1].value; i++) {
+      for (let i = min; i <= max; i++) {
         datesRange.push(i)
       }
 

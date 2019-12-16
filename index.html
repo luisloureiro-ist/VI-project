@@ -65,12 +65,6 @@
               </li>
             </ul>
           </div>
-          <h3 class="is-size-3">Years</h3>
-          <div class="years-range">
-            <input id="min" type="range" min="2009" max="2013" value="2009" />
-            <input id="max" type="range" min="2014" max="2017" value="2017" />
-          </div>
-          <output id="result"></output>
         </form>
       </aside>
       <main class="charts-pane">
@@ -91,19 +85,15 @@
                   <h4 class="productivity-title is-size-4"></h4>
                </div>
             </section>
+            <section class="years-range-section">
+              <div id="years-range-slider"></div>
+              <div id="years-range-slider-value"></div>
+            </section>
         </section>
       </main>
       <section class="map-pane">
-        <h3 class="region-name is-size-3"></h3>
-        <form>
-          <input
-            class="input is-rounded is-small"
-            name="municipality-search"
-            type="text"
-            placeholder="Search a municipality"
-          />
-        </form>
         <section class="map-section">
+          <h3 class="title is-size-3"></h3>
           <svg class="svg-map" enable-background="new" data-name="148d35fc-e959-456f-8859-1d32f46c38d2" version="1.1" viewBox="0 0 435.31 878.2"
             xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -1157,7 +1147,7 @@
     </section>
 
     <script src="/assets/js/d3.min.js"></script>
-    <script src="/src/components/selections/index.js" type="module"></script>
+    <script src="/assets/js/nouislider.min.js"></script>
     <script src="/src/index.js" type="module"></script>
   </body>
 </html>
