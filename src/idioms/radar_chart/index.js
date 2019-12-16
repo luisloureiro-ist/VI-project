@@ -157,9 +157,11 @@ class RadarChart {
       .data(data)
       .enter()
       .append('polygon')
+      .transition(this.transition)
       .attr('points', d =>
         convertToPointsString(this.radarCenterCoordinates, d, maxValue)
       )
+      .attr('fill-opacity', 0.7)
   }
 
   __updatePolygon (newData, newMaxValue, chart) {
@@ -206,6 +208,9 @@ class RadarChart {
         )
       )
       .attr('r', 3)
+      .transition(this.transition)
+      .attr('fill-opacity', 0.7)
+      .selection()
       .append('title')
       .text(d => this.titleTextFunction(d.axis, d.value))
   }
