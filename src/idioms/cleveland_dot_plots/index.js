@@ -21,7 +21,7 @@ class ClevelandDotPlots {
     this.xAxis = d3.axisBottom()
     this.yScaler = d3.scalePoint()
     this.yAxis = d3.axisLeft()
-    this.xScalerDomainPadding = 2
+    this.xScalerDomainPadding = 0.02
     this.xAxisHeight = 35
     this.yAxisWidth = 35
     this.yAxisHeight = this.chartSize.height - this.xAxisHeight
@@ -100,7 +100,11 @@ class ClevelandDotPlots {
   }
 
   __createXAxis (svgChart) {
-    this.xAxis.scale(this.xScaler).tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
+    var formatPercent = d3.format('.0%')
+    this.xAxis
+      .scale(this.xScaler)
+      .tickSizeOuter(0) // suppresses the square ends of the domain path, instead producing a straight line.
+      .tickFormat(formatPercent)
 
     svgChart
       .append('g')
