@@ -163,7 +163,7 @@ class ClevelandDotPlots {
               categories,
               this.colors.slice(0, categories.length)
             ),
-            title: 'Years with elections',
+            title: 'Years with elections:',
             tickFormat: 'd',
             width: 108
           })

@@ -29,9 +29,9 @@ class Map extends Component {
       transformedData,
       this.__dispatchUpdateMunicipality.bind(this),
       () =>
-        `Average number of Fires per year between ${years[0]} and ${
+        `Average number of fires per year between ${years[0]} and ${
           years[years.length - 1]
-        }`
+        }:`
     )
   }
 
@@ -55,9 +55,9 @@ class Map extends Component {
     this.chart.update(
       transformedData,
       () =>
-        `Average number of Fires per year between ${years[0]} and ${
+        `Average number of fires per year between ${years[0]} and ${
           years[years.length - 1]
-        }`
+        }:`
     )
   }
 
