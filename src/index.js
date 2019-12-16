@@ -90,7 +90,7 @@ function registerEventListeners ({ companiesData, firesData, electionsData }) {
         electionsData: electionsData
           .filter(filterCallback)
           .filter(d => d.type === 'Local'),
-        firesData: firesData.filter(filterCallback)
+        firesData: firesData
       },
       name
     )
