@@ -54,9 +54,12 @@ class FiresFirefighters extends Component {
 
     const filteredNewData = newData.filter(
       d =>
-        d.location === newMunicipality.name && d.nuts === newMunicipality.nuts && super.getYears().indexOf(d.year) !== -1
-    )
-    this.chart.update(getValues(filteredNewData), super.getYears())
+        d.location === newMunicipality.name && d.nuts === newMunicipality.nuts)
+
+    const filteredNewData2 = newData.filter(
+      d =>
+        d.location === newMunicipality.name && d.nuts === newMunicipality.nuts && super.getYears().indexOf(d.year) !== -1)
+    this.chart.update(getValues(filteredNewData), getValues(filteredNewData2), super.getYears())
   }
 
   updateYears (newYears) {

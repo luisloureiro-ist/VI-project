@@ -19,11 +19,16 @@ class MultiLinesChart {
     this.categories = []
 
     this.years = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]
+    this.staticYears = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]
 
     this.lines = d3
       .line()
-      // .curve(d3.curveCardinal)
       .x((d, i) => this.x(this.years[i]))
+      .y(d => this.y(d))
+
+    this.staticLines = d3
+      .line()
+      .x((d, i) => this.x(this.staticYears[i]))
       .y(d => this.y(d))
 
     this.x = d3
@@ -90,9 +95,9 @@ class MultiLinesChart {
         .transition(this.transition)
         .attr('fill', 'none')
         .attr('stroke', (d, i) => categories[i].color)
-        .attr('stroke-opacity', 0.5)
-        .attr('stroke-width', 1.5)
-        .attr('d', this.lines)
+        .attr('stroke-opacity', 0.25)
+        .attr('stroke-width', 1)
+        .attr('d', this.staticLines)
 
     const __appendDynamicPath = selection =>
       selection
@@ -164,10 +169,10 @@ class MultiLinesChart {
       .attr('x', -26)
   }
 
-  update (data, years) {
+  update (data1, data2, years) {
     this.years = years
 
-    this.maxValue = data.reduce((prev, curr) => {
+    this.maxValue = data1.reduce((prev, curr) => {
       const currMax = d3.max(curr)
       return currMax > prev ? currMax : prev
     }, 0)
@@ -188,7 +193,7 @@ class MultiLinesChart {
       .call(yAxis)
 
     const __updateStaticPath = selection =>
-      selection.select('.static').attr('d', this.lines)
+      selection.select('.static').attr('d', this.staticLines)
 
     const __updateDynamicPath = selection =>
       selection.select('.dynamic').attr('d', this.lines)
@@ -217,7 +222,7 @@ class MultiLinesChart {
     this.chart
       .select('.lines')
       .selectAll('g')
-      .data(data)
+      .data(data1)
       .join(
         enter => enter,
         update =>
@@ -225,6 +230,18 @@ class MultiLinesChart {
             .interrupt()
             .transition(this.transition)
             .call(__updateStaticPath)
+      )
+
+    this.chart
+      .select('.lines')
+      .selectAll('g')
+      .data(data2)
+      .join(
+        enter => enter,
+        update =>
+          update
+            .interrupt()
+            .transition(this.transition)
             .call(__updateDynamicPath)
       )
       .call(__updateDynamicCircles)
