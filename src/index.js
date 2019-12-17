@@ -21,10 +21,6 @@ import YearsRangeSlider from './components/range_slider/index.js'
   const defaultYears = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]
   const components = []
 
-  const rightChartsSectionWidth = document.querySelector(
-    '.charts-pane .right-charts'
-  ).offsetWidth
-
   const dispatch = registerEventListeners({
     companiesData,
     electionsData,
@@ -32,129 +28,135 @@ import YearsRangeSlider from './components/range_slider/index.js'
   })
 
   // Create all the components of the dashboard
-  components.push(
-    new CompaniesProductivityComponent(
-      dispatch,
-      '.divergent-charts-section',
-      rightChartsSectionWidth
-    )
-  )
-
-  components.push(new ElectionsComponent(dispatch, '.elections-section'))
-
-  components.push(
-    new FiresFirefightersComponent(
-      dispatch,
-      '.number-of-fires-firefighters-section'
-    )
-  )
-  components.push(new MapComponent(dispatch, '.map-section'))
-
-  components.push(
-    new NumberOfCompaniesComponent(dispatch, '.number-of-companies-section')
-  )
-
+  __createAllComponents()
   // Initialize dashboard components
-  dispatch.call(
-    'initialize',
-    this,
-    {
-      companiesData: companiesData.filter(
-        value =>
-          value.location === defaultMunicipality.name &&
-          value.nuts === defaultMunicipality.nuts
-      ),
-      electionsData: electionsData.filter(
-        value =>
-          value.location === defaultMunicipality.name &&
-          value.nuts === defaultMunicipality.nuts &&
-          value.type === 'Local'
-      ),
-      firesData: firesData
-    },
-    defaultMunicipality,
-    defaultYears
-  )
-})()
+  __initialize()
 
-function registerEventListeners ({ companiesData, firesData, electionsData }) {
-  const dispatch = d3.dispatch(
-    'initialize',
-    'region_selected',
-    'year_selected',
-    'year_deselected',
-    'activity_sector_selected',
-    'activity_sector_deselected',
-    'update_municipality',
-    'update_years'
-  )
-
-  dispatch.on('region_selected', (nuts, name) => {
-    const filterCallback = value =>
-      value.nuts === nuts && value.location === name
-
+  function __initialize () {
     dispatch.call(
-      'update_municipality',
+      'initialize',
       this,
       {
-        companiesData: companiesData.filter(filterCallback),
-        electionsData: electionsData
-          .filter(filterCallback)
-          .filter(d => d.type === 'Local'),
+        companiesData: companiesData.filter(
+          value =>
+            value.location === defaultMunicipality.name &&
+            value.nuts === defaultMunicipality.nuts
+        ),
+        electionsData: electionsData.filter(
+          value =>
+            value.location === defaultMunicipality.name &&
+            value.nuts === defaultMunicipality.nuts &&
+            value.type === 'Local'
+        ),
         firesData: firesData
       },
-      { name, nuts }
+      defaultMunicipality,
+      defaultYears
     )
-  })
+  }
 
-  new YearsRangeSlider('years-range-slider').registerUpdateEventHandler(
-    ([min, max]) => {
-      const datesRange = []
+  function __createAllComponents () {
+    components.push(
+      new CompaniesProductivityComponent(
+        dispatch,
+        '.companies-productivity-section'
+      )
+    )
 
-      for (let i = min; i <= max; i++) {
-        datesRange.push(i)
+    components.push(new ElectionsComponent(dispatch, '.elections-section'))
+
+    components.push(
+      new FiresFirefightersComponent(
+        dispatch,
+        '.number-of-fires-firefighters-section'
+      )
+    )
+    components.push(new MapComponent(dispatch, '.map-section'))
+
+    components.push(
+      new NumberOfCompaniesComponent(dispatch, '.number-of-companies-section')
+    )
+  }
+
+  function registerEventListeners ({ companiesData, firesData, electionsData }) {
+    const dispatch = d3.dispatch(
+      'initialize',
+      'region_selected',
+      'year_selected',
+      'year_deselected',
+      'activity_sector_selected',
+      'activity_sector_deselected',
+      'update_municipality',
+      'update_years'
+    )
+
+    dispatch.on('region_selected', (nuts, name) => {
+      const filterCallback = value =>
+        value.nuts === nuts && value.location === name
+
+      dispatch.call(
+        'update_municipality',
+        this,
+        {
+          companiesData: companiesData.filter(filterCallback),
+          electionsData: electionsData
+            .filter(filterCallback)
+            .filter(d => d.type === 'Local'),
+          firesData: firesData
+        },
+        { name, nuts }
+      )
+    })
+
+    new YearsRangeSlider('years-range-slider').registerUpdateEventHandler(
+      ([min, max]) => {
+        const datesRange = []
+
+        for (let i = min; i <= max; i++) {
+          datesRange.push(i)
+        }
+
+        dispatch.call('update_years', this, datesRange)
       }
+    )
 
-      dispatch.call('update_years', this, datesRange)
+    return dispatch
+  }
+
+  function parseCompaniesData (datum) {
+    return {
+      nuts: datum.NUTS,
+      location: datum.Location,
+      year: +datum.Year,
+      type: datum['Company Type'],
+      number: +datum['Number of Companies'],
+      productivity: +datum.Productivity
     }
-  )
-
-  return dispatch
-}
-
-function parseCompaniesData (datum) {
-  return {
-    nuts: datum.NUTS,
-    location: datum.Location,
-    year: +datum.Year,
-    type: datum['Company Type'],
-    number: +datum['Number of Companies'],
-    productivity: +datum.Productivity
   }
-}
 
-function parseElectionsData (datum) {
-  return {
-    nuts: datum.NUTS,
-    location: datum.Location,
-    year: +datum.Year,
-    type: datum['Election Type'],
-    PS: +datum.PS,
-    PSD: +datum.PSD,
-    CDS: +datum.CDS,
-    PCP: +datum.PCP,
-    BE: +datum.BE,
-    'Abs.': +datum.Abstention
+  function parseElectionsData (datum) {
+    return {
+      nuts: datum.NUTS,
+      location: datum.Location,
+      year: +datum.Year,
+      type: datum['Election Type'],
+      PS: +datum.PS,
+      PSD: +datum.PSD,
+      CDS: +datum.CDS,
+      PCP: +datum.PCP,
+      BE: +datum.BE,
+      'Abs.': +datum.Abstention
+    }
   }
-}
 
-function parseFiresData (datum) {
-  return {
-    nuts: datum.NUTS,
-    location: datum.Location,
-    year: +datum.Year,
-    fires: +datum.Fires,
-    firefighters: +datum.Firefighters,
-    tourism: +datum.Tourism
+  function parseFiresData (datum) {
+    return {
+      nuts: datum.NUTS,
+      location: datum.Location,
+      year: +datum.Year,
+      fires: +datum.Fires,
+      firefighters: +datum.Firefighters,
+      tourism: +datum.Tourism
+    }
   }
-}
+})()

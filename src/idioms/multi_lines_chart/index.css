@@ -1,15 +1,17 @@
-.svg-chart.multi-lines circle{
+.svg-chart.multi-lines circle {
   cursor: pointer;
 }
 .svg-legend.multi-lines .tick:last-of-type > line {
   display: none;
 }
 
-.number-of-fires-firefighters-section {
+.number-of-fires-firefighters-section,
+.companies-productivity-section {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.number-of-fires-firefighters-section .title {
-  align-self: flex-start
+.number-of-fires-firefighters-section .title,
+.companies-productivity-section .title {
+  align-self: flex-start;
 }
