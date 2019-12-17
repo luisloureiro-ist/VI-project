@@ -5,7 +5,7 @@ class Slider {
     // 'noUiSlider' globally imported
     noUiSlider.create(this.slider, {
       start: [2009, 2017],
-      // connect: true,
+      connect: true,
       step: 1,
       range: {
         min: 2009,

@@ -1,6 +1,11 @@
 #years-range-slider {
   height: 1em;
   margin-top: 1.5em;
+  margin-left: 50px;
+}
+
+#years-range-slider .noUi-connect {
+  background-color: #4a4a4a;
 }
 
 #years-range-slider .noUi-handle {
@@ -8,6 +13,7 @@
   width: 26px;
   height: 26px;
   right: -12px;
+  outline-color: #4a4a4a;
 }
 
 #years-range-slider .noUi-handle::before {
