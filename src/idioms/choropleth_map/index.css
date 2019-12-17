@@ -19,8 +19,8 @@
   stroke: grey;
 }
 
-#NUTS_I path {
-  stroke-width: 3;
+#NUTS_III path {
+  stroke-width: 0.5;
 }
 
 #NUTS_III path.selected,
@@ -28,7 +28,11 @@
   stroke-width: 2;
 }
 
+#NUTS_I path {
+  stroke-width: 6;
+}
+
 #NUTS_I path.selected,
 #NUTS_I path.hovered {
-  stroke-width: 5;
+  stroke-width: 8;
 }
