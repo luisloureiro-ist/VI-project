@@ -1,25 +1,34 @@
 #Municipalities,
-#NUTS_I,
 #NUTS_II {
   display: none;
 }
 
-#Municipalities path,
 #NUTS_III path,
-#NUTS_II path,
 #NUTS_I path {
   cursor: pointer;
   pointer-events: all;
 }
 
 #NUTS_III path.selected,
-#NUTS_II path.selected {
-  stroke: #000;
-  stroke-width: 2;
+#NUTS_I path.selected {
+  stroke: #4a4a4a;
 }
 
 #NUTS_III path.hovered,
-#NUTS_II path.hovered {
+#NUTS_I path.hovered {
   stroke: grey;
+}
+
+#NUTS_I path {
+  stroke-width: 3;
+}
+
+#NUTS_III path.selected,
+#NUTS_III path.hovered {
   stroke-width: 2;
+}
+
+#NUTS_I path.selected,
+#NUTS_I path.hovered {
+  stroke-width: 5;
 }
