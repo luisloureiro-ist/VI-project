@@ -1,5 +1,5 @@
 #years-range-slider {
-  height: 1em;
+  height: 0.8em;
   margin-top: 1.5em;
   margin-left: 50px;
 }
@@ -26,4 +26,10 @@
 
 #years-range-slider .noUi-pips-horizontal {
   height: 40px;
+  font-size: 12px;
+  color: white;
+}
+
+#years-range-slider .noUi-marker-horizontal.noUi-marker-large {
+  height: 5px;
 }
