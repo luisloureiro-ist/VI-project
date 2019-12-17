@@ -7,7 +7,7 @@ class ClevelandDotPlots {
     chartHeight,
     onMouseOverDotCallback,
     onMouseLeaveDotCallback,
-    dotRadius = 8
+    dotRadius = 6
   ) {
     this.parentSelector = parentSelector
     this.legendHeight = 50

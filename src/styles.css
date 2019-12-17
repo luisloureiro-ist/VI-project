@@ -26,17 +26,21 @@
   height: calc(100vh - 40px);
 }
 
-.grid-container .map-pane .map-section > .svg-map {
+.grid-container .map-pane .map-section .svg-map {
   opacity: 0;
   flex: 8;
 }
 
-.grid-container .map-pane .map-section > .title,
-.grid-container .map-pane .map-section > .svg-legend.map {
+.grid-container .map-pane .map-section .title,
+.grid-container .map-pane .map-section .svg-legend.map {
   flex: 1;
 }
 
-.grid-container .map-pane .map-section > .title {
+.grid-container .map-pane .map-section h1 {
+  line-height: 1.2;
+}
+
+.grid-container .map-pane .map-section .title {
   margin-bottom: 0;
 }
 
