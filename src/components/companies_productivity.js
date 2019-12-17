@@ -7,6 +7,7 @@ class CompaniesProductivity extends Component {
       width: document.querySelector(parentSelector).offsetWidth,
       height: document.querySelector(parentSelector).offsetHeight - 51
     })
+    this.totalYears = []
 
     this.colors = d3.schemeTableau10
     this.categories = [
@@ -52,6 +53,7 @@ class CompaniesProductivity extends Component {
     super.setMunicipality(municipality)
     super.setDataset(data)
     super.setYears(years)
+    this.totalYears = years
 
     this.chart = new MultiLinesChart(
       super.getContainerSelector(),
@@ -59,24 +61,8 @@ class CompaniesProductivity extends Component {
       super.getComponentSize().height
     )
 
-    const filteredData = data.filter(
-      d =>
-        d.location === municipality.name &&
-        d.nuts === municipality.nuts &&
-        super.getYears().indexOf(d.year) !== -1
-    )
-    const transformedData = filteredData.reduce((prev, curr) => {
-      const ret = prev.concat()
-      const idx = years.indexOf(curr.year)
-      if (!ret[idx]) {
-        // if there's no array for this year ...
-        ret.splice(idx, 0, { year: curr.year })
-      }
-
-      ret[idx][curr.type] = curr.productivity
-
-      return ret
-    }, [])
+    const filteredData = this.__filterData(data, super.getYears())
+    const transformedData = this.__transformData(filteredData, super.getYears())
     this.chart.create(
       getValues(transformedData, this.categories),
       years,
@@ -88,42 +74,15 @@ class CompaniesProductivity extends Component {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
 
-    const filteredNewDataStatic = newData.filter(
-      d =>
-        d.location === newMunicipality.name && d.nuts === newMunicipality.nuts
+    const filteredNewDataStatic = this.__filterData(newData, this.totalYears)
+    const filteredNewDataDynamic = this.__filterData(newData, super.getYears())
+    const transformedNewDataStatic = this.__transformData(
+      filteredNewDataStatic,
+      this.totalYears
     )
-    const filteredNewDataDynamic = filteredNewDataStatic.filter(
-      d => super.getYears().indexOf(d.year) !== -1
-    )
-    const transformedNewDataStatic = filteredNewDataStatic.reduce(
-      (prev, curr) => {
-        const ret = prev.concat()
-        const idx = super.getYears().indexOf(curr.year)
-        if (!ret[idx]) {
-          // if there's no array for this year ...
-          ret.splice(idx, 0, { year: curr.year })
-        }
-
-        ret[idx][curr.type] = curr.productivity
-
-        return ret
-      },
-      []
-    )
-    const transformedNewDataDynamic = filteredNewDataDynamic.reduce(
-      (prev, curr) => {
-        const ret = prev.concat()
-        const idx = super.getYears().indexOf(curr.year)
-        if (!ret[idx]) {
-          // if there's no array for this year ...
-          ret.splice(idx, 0, { year: curr.year })
-        }
-
-        ret[idx][curr.type] = curr.productivity
-
-        return ret
-      },
-      []
+    const transformedNewDataDynamic = this.__transformData(
+      filteredNewDataDynamic,
+      super.getYears()
     )
 
     this.chart.update(
@@ -136,31 +95,37 @@ class CompaniesProductivity extends Component {
   updateYears (newYears) {
     super.setYears(newYears)
 
-    const filteredData = super
-      .getDataset()
-      .filter(
-        d =>
-          d.location === super.getMunicipality().name &&
-          d.nuts === super.getMunicipality().nuts &&
-          super.getYears().indexOf(d.year) !== -1
-      )
+    const filteredData = this.__filterData(super.getDataset(), super.getYears())
+    const transformedData = this.__transformData(filteredData, super.getYears())
 
-    const transformedData = filteredData.reduce((prev, curr) => {
+    this.chart.updateYears(
+      getValues(transformedData, this.categories),
+      newYears
+    )
+  }
+
+  __filterData (data, years) {
+    return data.filter(
+      d =>
+        d.location === super.getMunicipality().name &&
+        d.nuts === super.getMunicipality().nuts &&
+        years.indexOf(d.year) !== -1
+    )
+  }
+
+  __transformData (data, years) {
+    return data.reduce((prev, curr) => {
       const ret = prev.concat()
-      const idx = super.getYears().indexOf(curr.year)
+      let idx = years.indexOf(curr.year)
       if (!ret[idx]) {
         // if there's no array for this year ...
-        ret.splice(idx, 0, { year: curr.year })
+        idx = ret.push({ year: curr.year }) - 1 // -1 because push returns the new length and not the "new" idx
       }
 
       ret[idx][curr.type] = curr.productivity
 
       return ret
     }, [])
-    this.chart.updateYears(
-      getValues(transformedData, this.categories),
-      newYears
-    )
   }
 }
 
