@@ -1,5 +1,6 @@
 #years-range-slider {
-  height: 15px;
+  height: 1em;
+  margin-top: 1.5em;
 }
 
 #years-range-slider .noUi-handle {
