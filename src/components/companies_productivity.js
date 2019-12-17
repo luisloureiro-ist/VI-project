@@ -8,12 +8,44 @@ class CompaniesProductivity extends Component {
       height: document.querySelector(parentSelector).offsetHeight - 51
     })
 
+    this.colors = d3.schemeTableau10
+    this.categories = [
+      {
+        label: 'Mining',
+        fullname: 'Mining and quarrying',
+        color: this.colors[0]
+      },
+      {
+        label: 'Construction',
+        fullname: 'Construction',
+        color: this.colors[1]
+      },
+      {
+        label: 'Health',
+        fullname: 'Human health and social work activities',
+        color: this.colors[2]
+      },
+      {
+        label: 'Agriculture',
+        fullname: 'Agriculture, farming, hunting, forestry and fishing',
+        color: this.colors[3]
+      },
+      {
+        label: 'Manufacturing',
+        fullname: 'Manufacturing',
+        color: this.colors[4]
+      }
+    ]
+
     dispatch.on('initialize.companies_productivity', this.initialize.bind(this))
     dispatch.on(
       'update_municipality.companies_productivity',
       this.updateLocation.bind(this)
     )
-    dispatch.on('update_years.companies_productivity', this.updateYears.bind(this))
+    dispatch.on(
+      'update_years.companies_productivity',
+      this.updateYears.bind(this)
+    )
   }
 
   initialize ({ companiesData: data }, municipality, years) {
@@ -27,38 +59,11 @@ class CompaniesProductivity extends Component {
       super.getComponentSize().height
     )
 
-    const colors = d3.schemeTableau10
-
-    const categories = [
-      {
-        label: 'Mining',
-        fullname: 'Mining and quarrying',
-        color: colors[0]
-      },
-      {
-        label: 'Construction',
-        fullname: 'Construction',
-        color: colors[1]
-      },
-      {
-        label: 'Health',
-        fullname: 'Human health and social work activities',
-        color: colors[2]
-      },
-      {
-        label: 'Agriculture',
-        fullname: 'Agriculture, farming, hunting, forestry and fishing',
-        color: colors[3]
-      },
-      {
-        label: 'Manufacturing',
-        fullname: 'Manufacturing',
-        color: colors[4]
-      }
-    ]
-
     const filteredData = data.filter(
-      d => d.location === municipality.name && d.nuts === municipality.nuts && super.getYears().indexOf(d.year) !== -1
+      d =>
+        d.location === municipality.name &&
+        d.nuts === municipality.nuts &&
+        super.getYears().indexOf(d.year) !== -1
     )
     const transformedData = filteredData.reduce((prev, curr) => {
       const ret = prev.concat()
@@ -72,21 +77,60 @@ class CompaniesProductivity extends Component {
 
       return ret
     }, [])
-    this.chart.create(getValues(transformedData, categories), years, categories)
+    this.chart.create(
+      getValues(transformedData, this.categories),
+      years,
+      this.categories
+    )
   }
 
   updateLocation ({ companiesData: newData }, newMunicipality) {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
 
-    const filteredNewData = newData.filter(
+    const filteredNewDataStatic = newData.filter(
       d =>
-        d.location === newMunicipality.name && d.nuts === newMunicipality.nuts)
+        d.location === newMunicipality.name && d.nuts === newMunicipality.nuts
+    )
+    const filteredNewDataDynamic = filteredNewDataStatic.filter(
+      d => super.getYears().indexOf(d.year) !== -1
+    )
+    const transformedNewDataStatic = filteredNewDataStatic.reduce(
+      (prev, curr) => {
+        const ret = prev.concat()
+        const idx = super.getYears().indexOf(curr.year)
+        if (!ret[idx]) {
+          // if there's no array for this year ...
+          ret.splice(idx, 0, { year: curr.year })
+        }
 
-    const filteredNewData2 = newData.filter(
-      d =>
-        d.location === newMunicipality.name && d.nuts === newMunicipality.nuts && super.getYears().indexOf(d.year) !== -1)
-    this.chart.update(getValues(filteredNewData), getValues(filteredNewData2), super.getYears())
+        ret[idx][curr.type] = curr.productivity
+
+        return ret
+      },
+      []
+    )
+    const transformedNewDataDynamic = filteredNewDataDynamic.reduce(
+      (prev, curr) => {
+        const ret = prev.concat()
+        const idx = super.getYears().indexOf(curr.year)
+        if (!ret[idx]) {
+          // if there's no array for this year ...
+          ret.splice(idx, 0, { year: curr.year })
+        }
+
+        ret[idx][curr.type] = curr.productivity
+
+        return ret
+      },
+      []
+    )
+
+    this.chart.update(
+      getValues(transformedNewDataStatic, this.categories),
+      getValues(transformedNewDataDynamic, this.categories),
+      super.getYears()
+    )
   }
 
   updateYears (newYears) {
