@@ -1,107 +1,83 @@
 import Component from './component.js'
-import DivergentBarChart from '../idioms/divergent_bar/index.js'
+import MultiLinesChartProductivity from '../idioms/multi_lines_chart_productivity/index.js'
 
 class CompaniesProductivity extends Component {
-  constructor (dispatch, parentSelector, componentSize) {
-    super(dispatch, parentSelector, componentSize)
-    this.activitySectors = []
-    this.charts = []
-    this.smallActivitySectorsNames = [
-      'Agriculture',
-      'Mining',
-      'Manufactoring',
-      'Contruction',
-      'Health'
-    ]
+  constructor (dispatch, parentSelector) {
+    super(dispatch, parentSelector, {
+      width: document.querySelector(parentSelector).offsetWidth,
+      height: document.querySelector(parentSelector).offsetHeight - 51
+    })
 
     dispatch.on('initialize.companies_productivity', this.initialize.bind(this))
     dispatch.on(
       'update_municipality.companies_productivity',
-      this.update.bind(this)
+      this.updateLocation.bind(this)
     )
-    dispatch.on(
-      'update_years.companies_productivity',
-      this.updateYears.bind(this)
-    )
+    dispatch.on('update_years.companies_productivity', this.updateYears.bind(this))
   }
 
-  initialize ({ companiesData: data }, municipality) {
+  initialize ({ companiesData: data }, municipality, years) {
     super.setMunicipality(municipality)
-    super.setYears(getYears(data))
     super.setDataset(data)
-    this.activitySectors = getActivitySectors(data)
+    super.setYears(years)
 
-    const chartWidth =
-      Math.floor(super.getComponentSize() / this.activitySectors.length) - 5
+    this.chart = new MultiLinesChartProductivity(
+      super.getContainerSelector(),
+      super.getComponentSize().width,
+      super.getComponentSize().height
+    )
 
-    this.activitySectors.forEach((activitySector, idx) => {
-      const filteredData = super
-        .getDataset()
-        .filter(d => d.type === activitySector)
-        .sort((first, second) => second.year - first.year)
-        .reduce((prev, curr) => prev.concat(curr.productivity), [])
+    const activitySectors = [
+      { text: 'Mining' },
+      { text: 'Construction' },
+      { text: 'Health' },
+      { text: 'Manufacturing' },
+      { text: 'Agriculture' }
+    ]
 
-      this.charts.push(
-        new DivergentBarChart(
-          super.getContainerSelector(),
-          chartWidth,
-          idx === 0
-        )
-      )
-      this.charts[idx].create(
-        filteredData,
-        idx === 0 ? super.getYears() : null,
-        this.smallActivitySectorsNames[idx]
-      )
-    })
+    const filteredData = data.filter(
+      d => d.location === municipality.name && d.nuts === municipality.nuts && super.getYears().indexOf(d.year) !== -1
+    )
+    this.chart.create(
+      getValues(filteredData),
+      years,
+      activitySectors
+    )
   }
 
-  update ({ companiesData: newData }, newMunicipality) {
+  updateLocation ({ companiesData: newData }, newMunicipality) {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
 
-    this.activitySectors.forEach((activitySector, idx) => {
-      const filteredData = super
-        .getDataset()
-        .filter(d => d.type === activitySector)
-        .sort((first, second) => second.year - first.year)
-        .reduce((prev, curr) => prev.concat(curr.productivity), [])
+    const filteredNewData = newData.filter(
+      d =>
+        d.location === newMunicipality.name && d.nuts === newMunicipality.nuts)
 
-      this.charts[idx].update(filteredData, idx === 0 ? super.getYears() : null)
-    })
+    const filteredNewData2 = newData.filter(
+      d =>
+        d.location === newMunicipality.name && d.nuts === newMunicipality.nuts && super.getYears().indexOf(d.year) !== -1)
+    this.chart.update(getValues(filteredNewData), getValues(filteredNewData2), super.getYears())
   }
 
-  updateYears (datesRange) {
-    super.setYears(datesRange)
+  updateYears (newYears) {
+    super.setYears(newYears)
 
-    this.activitySectors.forEach((activitySector, idx) => {
-      const filteredData = super
-        .getDataset()
-        .filter(
-          d =>
-            d.type === activitySector && super.getYears().indexOf(d.year) !== -1
-        )
-        .sort((first, second) => second.year - first.year)
-        .reduce((prev, curr) => prev.concat(curr.productivity), [])
+    const filteredNewData = super.getDataset().filter(d => d.location === super.getMunicipality().name)
+    const municipality = filteredNewData.filter(d => d.nuts === super.getMunicipality().nuts)
 
-      this.charts[idx].update(filteredData, idx === 0 ? super.getYears() : null)
-    })
+    const yearsFilter = municipality.filter(d => super.getYears().indexOf(d.year) !== -1)
+    this.chart.updateYears(getValues(yearsFilter), newYears)
   }
 }
 
-function getActivitySectors (data) {
+function getValues (data) {
   return data.reduce(
-    (prev, curr) =>
-      prev.indexOf(curr.type) === -1 ? prev.concat([curr.type]) : prev,
-    []
-  )
-}
-
-function getYears (data) {
-  return data.reduce(
-    (prev, curr) =>
-      prev.indexOf(curr.year) === -1 ? prev.concat([curr.year]) : prev,
-    []
+    (prev, curr) => {
+      prev[0].push(curr.fires)
+      prev[1].push(curr.firefighters)
+      return prev
+    },
+    [[], []]
   )
 }
 
