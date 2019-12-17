@@ -63,6 +63,8 @@ class RadarChart {
       .call(this.__addScaleValues.bind(this, maxValue))
       // Add a circumference for each scale value
       .call(this.__addCircumferences.bind(this))
+      // Translate groups to center them in the component
+      .call(this.__adjustPositioningOfRadarContents.bind(this))
 
     this.__createLegend(this.categories)
   }
@@ -318,6 +320,16 @@ class RadarChart {
         }
         return chart
       })
+  }
+
+  __adjustPositioningOfRadarContents (chart) {
+    chart
+      .selectAll('.axes, .area, .circular-scales')
+      .attr(
+        'transform',
+        `translate(${this.chartSize.width / 2 -
+          this.radarCenterCoordinates.width}, 10)`
+      )
   }
 
   __onMouseOver (axesTexts) {
