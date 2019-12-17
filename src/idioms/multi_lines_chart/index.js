@@ -161,12 +161,12 @@ class MultiLinesChart {
               categories.map(c => c.color)
             ),
             title: 'Absolute number of',
-            width: 54 * categories.length
+            width: 70 * categories.length
           })
       )
       .classed('svg-legend multi-lines', true)
       .selectAll('.tick text')
-      .attr('x', -26)
+      .attr('x', -35)
   }
 
   update (data1, data2, years) {
