@@ -159,12 +159,12 @@ class ClevelandDotPlots {
             ),
             title: 'Years with elections:',
             tickFormat: 'd',
-            width: 70 * categories.length
+            width: 80 * categories.length
           })
       )
       .classed('svg-legend cleveland-dot-plot', true)
       .selectAll('.tick text')
-      .attr('x', -35)
+      .attr('x', -40)
   }
 
   __updateLegend (categories) {

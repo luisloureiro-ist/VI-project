@@ -165,12 +165,12 @@ class MultiLinesChart {
               categories.map(c => c.color)
             ),
             title: legendTitle,
-            width: 70 * categories.length
+            width: 80 * categories.length
           })
       )
       .classed('svg-legend multi-lines', true)
       .selectAll('.tick text')
-      .attr('x', -35)
+      .attr('x', -40)
   }
 
   update (data1, data2, years, titleTextFunction) {

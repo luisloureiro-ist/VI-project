@@ -3,7 +3,9 @@
 @import './choropleth_map/index.css';
 @import './multi_lines_chart/index.css';
 
-.svg-chart g text {
+.svg-chart g text,
+.svg-legend g text {
   fill: black;
-  font: 10px sans-serif;
+  font-size: 12px;
+  font-family: sans-serif;
 }

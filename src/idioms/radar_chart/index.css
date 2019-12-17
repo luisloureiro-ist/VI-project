@@ -1,7 +1,7 @@
 .svg-chart.radar .axes,
 .svg-chart.radar .area,
 .svg-chart.radar .circular-scales {
-  transform: translate(70px, 10px);
+  transform: translate(60px, 10px);
 }
 
 .svg-chart.radar .axes line {
