@@ -6,6 +6,8 @@ Project made by:
 - Duarte Meneses - IST169740
 - Luís Loureiro - IST194070
 
+This project can be access in the following url: https://impact-of-fires-in-portugal.azurewebsites.net/
+
 ### Run local server
 
 - `npm start` to start a local python HTTP server listening on port 8000
