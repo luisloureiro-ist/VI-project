@@ -8,6 +8,13 @@ class NumberOfCompanies extends Component {
       height: document.querySelector(parentSelector).offsetHeight - 51 // The height+margin of the title
     })
     this.chart = null
+    this.categories = {
+      'Mining and quarrying': 'Mining',
+      Construction: 'Construction',
+      'Human health and social work activities': 'Health',
+      'Agriculture, farming, hunting, forestry and fishing': 'Agriculture',
+      Manufacturing: 'Manufacturing'
+    }
 
     dispatch.on('initialize.number_of_companies', this.initialize.bind(this))
     dispatch.on(
@@ -65,9 +72,12 @@ class NumberOfCompanies extends Component {
     return data
       .filter(d => super.getYears().indexOf(d.year) !== -1)
       .reduce((prev, curr) => {
-        const idx = prev.findIndex(ax => curr.type === ax.axis)
+        const idx = prev.findIndex(ax => this.categories[curr.type] === ax.axis)
         if (idx === -1) {
-          return prev.concat({ axis: curr.type, value: curr.number })
+          return prev.concat({
+            axis: this.categories[curr.type],
+            value: curr.number
+          })
         } else {
           prev[idx].value += curr.number
           return prev
