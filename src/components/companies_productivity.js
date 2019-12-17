@@ -66,7 +66,10 @@ class CompaniesProductivity extends Component {
     this.chart.create(
       getValues(transformedData, this.categories),
       years,
-      this.categories
+      this.categories,
+      'Euros (€) per worker per year in:',
+      (value, label, year) =>
+        `${d3.format('.2f')(value)}€ per worker in "${label}" in ${year}`
     )
   }
 
@@ -88,7 +91,9 @@ class CompaniesProductivity extends Component {
     this.chart.update(
       getValues(transformedNewDataStatic, this.categories),
       getValues(transformedNewDataDynamic, this.categories),
-      super.getYears()
+      super.getYears(),
+      (value, label, year) =>
+        `${d3.format('.2f')(value)}€ per worker in "${label}" in ${year}`
     )
   }
 
@@ -100,7 +105,9 @@ class CompaniesProductivity extends Component {
 
     this.chart.updateYears(
       getValues(transformedData, this.categories),
-      newYears
+      newYears,
+      (value, label, year) =>
+        `${d3.format('.2f')(value)}€ per worker in "${label}" in ${year}`
     )
   }
 
