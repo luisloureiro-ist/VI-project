@@ -16,6 +16,8 @@ class Elections extends Component {
       { acronym: 'BE', text: 'BE' },
       { acronym: 'Abs.', text: 'Abstention' }
     ]
+    this.colors = d3.schemeSet2.slice(3)
+
     this.charts = []
 
     dispatch.on('initialize.elections', this.initialize.bind(this))
@@ -45,7 +47,10 @@ class Elections extends Component {
       )
       this.charts[idx].create(
         reducedData,
-        getYears(filteredData),
+        getYears(filteredData).map((year, idx) => ({
+          label: year,
+          color: this.colors[idx]
+        })),
         (party, year, result) =>
           `"${
             this.parties.find(p => p.acronym === party).text
@@ -67,7 +72,10 @@ class Elections extends Component {
 
       this.charts[idx].update(
         reducedData,
-        getYears(filteredData),
+        getYears(filteredData).map((year, idx) => ({
+          label: year,
+          color: this.colors[idx]
+        })),
         (party, year, result) => `${party} result in ${year}:\n${result}`
       )
     })

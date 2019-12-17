@@ -7,7 +7,7 @@ class ClevelandDotPlots {
     chartHeight,
     onMouseOverDotCallback,
     onMouseLeaveDotCallback,
-    dotRadius = 6
+    dotRadius = 8
   ) {
     this.parentSelector = parentSelector
     this.legendHeight = 50
@@ -29,7 +29,6 @@ class ClevelandDotPlots {
       .transition()
       .duration(1000)
       .ease(d3.easeQuadInOut)
-    this.colors = d3.schemeDark2
     this.onOverCallback = onMouseOverDotCallback
     this.onLeaveCallback = onMouseLeaveDotCallback
   }
@@ -154,8 +153,8 @@ class ClevelandDotPlots {
         () =>
           new Legend({
             color: d3.scaleThreshold(
-              categories,
-              this.colors.slice(0, categories.length)
+              categories.map(c => c.label),
+              categories.map(c => c.color)
             ),
             title: 'Years with elections:',
             tickFormat: 'd',
@@ -221,10 +220,12 @@ class ClevelandDotPlots {
       .attr('r', this.dotRadius)
       .transition(this.transition)
       .attr('fill-opacity', 1)
-      .attr('fill', (d, i) => this.colors[i])
+      .attr('fill', (d, i) => categories[i].color)
       .selection()
       .append('title')
-      .text((d, i) => titleFn(d.key, categories[i], d3.format('.2%')(d.value)))
+      .text((d, i) =>
+        titleFn(d.key, categories[i].label, d3.format('.2%')(d.value))
+      )
   }
 
   __updateDots (titleFn, categories, lines) {
@@ -243,7 +244,7 @@ class ClevelandDotPlots {
             .selection()
             .select('title')
             .text((d, i) =>
-              titleFn(d.key, categories[i], d3.format('.2%')(d.value))
+              titleFn(d.key, categories[i].label, d3.format('.2%')(d.value))
             )
       )
   }
@@ -289,7 +290,7 @@ class ClevelandDotPlots {
     const allCircles = lines.selectAll('.circles').selectAll('circle')
 
     allCircles.on('mouseover', (datum, idx) => {
-      this.onOverCallback(categories[idx])
+      this.onOverCallback(categories[idx].label)
 
       allCircles
         .interrupt() // Avoids "too late; already running" error
