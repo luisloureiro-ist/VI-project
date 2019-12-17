@@ -1,5 +1,5 @@
 import Component from './component.js'
-import MultiLinesChartProductivity from '../idioms/multi_lines_chart_productivity/index.js'
+import MultiLinesChart from '../idioms/multi_lines_chart/index.js'
 
 class CompaniesProductivity extends Component {
   constructor (dispatch, parentSelector) {
@@ -21,28 +21,58 @@ class CompaniesProductivity extends Component {
     super.setDataset(data)
     super.setYears(years)
 
-    this.chart = new MultiLinesChartProductivity(
+    this.chart = new MultiLinesChart(
       super.getContainerSelector(),
       super.getComponentSize().width,
       super.getComponentSize().height
     )
 
-    const activitySectors = [
-      { text: 'Mining' },
-      { text: 'Construction' },
-      { text: 'Health' },
-      { text: 'Manufacturing' },
-      { text: 'Agriculture' }
+    const colors = d3.schemeTableau10
+
+    const categories = [
+      {
+        label: 'Mining',
+        fullname: 'Mining and quarrying',
+        color: colors[0]
+      },
+      {
+        label: 'Construction',
+        fullname: 'Construction',
+        color: colors[1]
+      },
+      {
+        label: 'Health',
+        fullname: 'Human health and social work activities',
+        color: colors[2]
+      },
+      {
+        label: 'Agriculture',
+        fullname: 'Agriculture, farming, hunting, forestry and fishing',
+        color: colors[3]
+      },
+      {
+        label: 'Manufacturing',
+        fullname: 'Manufacturing',
+        color: colors[4]
+      }
     ]
 
     const filteredData = data.filter(
       d => d.location === municipality.name && d.nuts === municipality.nuts && super.getYears().indexOf(d.year) !== -1
     )
-    this.chart.create(
-      getValues(filteredData),
-      years,
-      activitySectors
-    )
+    const transformedData = filteredData.reduce((prev, curr) => {
+      const ret = prev.concat()
+      const idx = years.indexOf(curr.year)
+      if (!ret[idx]) {
+        // if there's no array for this year ...
+        ret.splice(idx, 0, { year: curr.year })
+      }
+
+      ret[idx][curr.type] = curr.productivity
+
+      return ret
+    }, [])
+    this.chart.create(getValues(transformedData, categories), years, categories)
   }
 
   updateLocation ({ companiesData: newData }, newMunicipality) {
@@ -70,14 +100,18 @@ class CompaniesProductivity extends Component {
   }
 }
 
-function getValues (data) {
+function getValues (data, categories) {
   return data.reduce(
     (prev, curr) => {
-      prev[0].push(curr.fires)
-      prev[1].push(curr.firefighters)
-      return prev
+      const ret = prev.concat()
+      ret[0].push(curr[categories[0].fullname])
+      ret[1].push(curr[categories[1].fullname])
+      ret[2].push(curr[categories[2].fullname])
+      ret[3].push(curr[categories[3].fullname])
+      ret[4].push(curr[categories[4].fullname])
+      return ret
     },
-    [[], []]
+    [[], [], [], [], []]
   )
 }
 
