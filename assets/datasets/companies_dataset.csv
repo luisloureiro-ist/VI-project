@@ -1,5 +1,5 @@
 NUTS,Location,Year,Company Type,Number of Companies,Productivity
-NUTS I,Continente,2009,Mining and quarrying,1377,42777.6
+NUTS I,Portugal Continental,2009,Mining and quarrying,1377,42777.6
 NUTS II,Norte,2009,Mining and quarrying,451,18616.7
 NUTS III,Alto Minho,2009,Mining and quarrying,72,18616.7
 Município,Arcos de Valdevez,2009,Mining and quarrying,2,-
@@ -306,7 +306,7 @@ Município,Silves,2009,Mining and quarrying,3,-
 Município,Tavira,2009,Mining and quarrying,5,-
 Município,Vila do Bispo,2009,Mining and quarrying,0,-
 Município,Vila Real de Santo António,2009,Mining and quarrying,0,-
-NUTS I,Continente,2009,Construction,111314,19934.8
+NUTS I,Portugal Continental,2009,Construction,111314,19934.8
 NUTS II,Norte,2009,Construction,35216,18706.1
 NUTS III,Alto Minho,2009,Construction,4159,13007.1
 Município,Arcos de Valdevez,2009,Construction,359,9704.2
@@ -613,7 +613,7 @@ Município,Silves,2009,Construction,708,15117.2
 Município,Tavira,2009,Construction,501,16623.7
 Município,Vila do Bispo,2009,Construction,76,32383.1
 Município,Vila Real de Santo António,2009,Construction,356,12229.1
-NUTS I,Continente,2009,Human health and social work activities,79309,19676.9
+NUTS I,Portugal Continental,2009,Human health and social work activities,79309,19676.9
 NUTS II,Norte,2009,Human health and social work activities,27497,19049.2
 NUTS III,Alto Minho,2009,Human health and social work activities,1504,18159
 Município,Arcos de Valdevez,2009,Human health and social work activities,113,13367
@@ -920,7 +920,7 @@ Município,Silves,2009,Human health and social work activities,164,13935.5
 Município,Tavira,2009,Human health and social work activities,129,16138.6
 Município,Vila do Bispo,2009,Human health and social work activities,13,6810.3
 Município,Vila Real de Santo António,2009,Human health and social work activities,71,13792.1
-NUTS I,Continente,2009,"Agriculture, farming, hunting, forestry and fishing",49076,9944.2
+NUTS I,Portugal Continental,2009,"Agriculture, farming, hunting, forestry and fishing",49076,9944.2
 NUTS II,Norte,2009,"Agriculture, farming, hunting, forestry and fishing",11556,9143.3
 NUTS III,Alto Minho,2009,"Agriculture, farming, hunting, forestry and fishing",912,8007.5
 Município,Arcos de Valdevez,2009,"Agriculture, farming, hunting, forestry and fishing",50,4664.8
@@ -1227,7 +1227,7 @@ Município,Silves,2009,"Agriculture, farming, hunting, forestry and fishing",465
 Município,Tavira,2009,"Agriculture, farming, hunting, forestry and fishing",344,6357.1
 Município,Vila do Bispo,2009,"Agriculture, farming, hunting, forestry and fishing",116,-
 Município,Vila Real de Santo António,2009,"Agriculture, farming, hunting, forestry and fishing",139,16870.7
-NUTS I,Continente,2009,Manufacturing,75150,23493.4
+NUTS I,Portugal Continental,2009,Manufacturing,75150,23493.4
 NUTS II,Norte,2009,Manufacturing,36404,18875.3
 NUTS III,Alto Minho,2009,Manufacturing,1712,18875.3
 Município,Arcos de Valdevez,2009,Manufacturing,124,21037.1
@@ -1534,7 +1534,7 @@ Município,Silves,2009,Manufacturing,218,14044.9
 Município,Tavira,2009,Manufacturing,97,10304.6
 Município,Vila do Bispo,2009,Manufacturing,27,9285.7
 Município,Vila Real de Santo António,2009,Manufacturing,89,12415.7
-NUTS I,Continente,2010,Mining and quarrying,1282,50089.1
+NUTS I,Portugal Continental,2010,Mining and quarrying,1282,50089.1
 NUTS II,Norte,2010,Mining and quarrying,430,18032.3
 NUTS III,Alto Minho,2010,Mining and quarrying,64,24816.5
 Município,Arcos de Valdevez,2010,Mining and quarrying,2,-
@@ -1841,7 +1841,7 @@ Município,Silves,2010,Mining and quarrying,3,-
 Município,Tavira,2010,Mining and quarrying,6,-
 Município,Vila do Bispo,2010,Mining and quarrying,0,-
 Município,Vila Real de Santo António,2010,Mining and quarrying,0,-
-NUTS I,Continente,2010,Construction,100898,19847.8
+NUTS I,Portugal Continental,2010,Construction,100898,19847.8
 NUTS II,Norte,2010,Construction,33215,18892.4
 NUTS III,Alto Minho,2010,Construction,3996,13098.1
 Município,Arcos de Valdevez,2010,Construction,356,10329.8
@@ -2148,7 +2148,7 @@ Município,Silves,2010,Construction,594,13497.5
 Município,Tavira,2010,Construction,407,15444.3
 Município,Vila do Bispo,2010,Construction,70,20156.7
 Município,Vila Real de Santo António,2010,Construction,296,11948.9
-NUTS I,Continente,2010,Human health and social work activities,80117,19913.9
+NUTS I,Portugal Continental,2010,Human health and social work activities,80117,19913.9
 NUTS II,Norte,2010,Human health and social work activities,28040,19970.1
 NUTS III,Alto Minho,2010,Human health and social work activities,1535,18098.9
 Município,Arcos de Valdevez,2010,Human health and social work activities,134,13926.5
@@ -2455,7 +2455,7 @@ Município,Silves,2010,Human health and social work activities,184,11646.2
 Município,Tavira,2010,Human health and social work activities,129,14113
 Município,Vila do Bispo,2010,Human health and social work activities,12,6732.3
 Município,Vila Real de Santo António,2010,Human health and social work activities,82,12955.9
-NUTS I,Continente,2010,"Agriculture, farming, hunting, forestry and fishing",47875,10899.1
+NUTS I,Portugal Continental,2010,"Agriculture, farming, hunting, forestry and fishing",47875,10899.1
 NUTS II,Norte,2010,"Agriculture, farming, hunting, forestry and fishing",11350,9749.5
 NUTS III,Alto Minho,2010,"Agriculture, farming, hunting, forestry and fishing",916,9799.3
 Município,Arcos de Valdevez,2010,"Agriculture, farming, hunting, forestry and fishing",51,6997.6
@@ -2762,7 +2762,7 @@ Município,Silves,2010,"Agriculture, farming, hunting, forestry and fishing",463
 Município,Tavira,2010,"Agriculture, farming, hunting, forestry and fishing",340,8746.2
 Município,Vila do Bispo,2010,"Agriculture, farming, hunting, forestry and fishing",109,-
 Município,Vila Real de Santo António,2010,"Agriculture, farming, hunting, forestry and fishing",129,14823.5
-NUTS I,Continente,2010,Manufacturing,70310,26294
+NUTS I,Portugal Continental,2010,Manufacturing,70310,26294
 NUTS II,Norte,2010,Manufacturing,34109,20883.2
 NUTS III,Alto Minho,2010,Manufacturing,1655,28634.9
 Município,Arcos de Valdevez,2010,Manufacturing,123,23522.9
@@ -3069,7 +3069,7 @@ Município,Silves,2010,Manufacturing,186,12917.2
 Município,Tavira,2010,Manufacturing,88,9028.2
 Município,Vila do Bispo,2010,Manufacturing,21,7797.2
 Município,Vila Real de Santo António,2010,Manufacturing,89,11340
-NUTS I,Continente,2011,Mining and quarrying,1222,48003.2
+NUTS I,Portugal Continental,2011,Mining and quarrying,1222,48003.2
 NUTS II,Norte,2011,Mining and quarrying,414,17855.5
 NUTS III,Alto Minho,2011,Mining and quarrying,66,22704.3
 Município,Arcos de Valdevez,2011,Mining and quarrying,2,-
@@ -3376,7 +3376,7 @@ Município,Silves,2011,Mining and quarrying,2,-
 Município,Tavira,2011,Mining and quarrying,5,-
 Município,Vila do Bispo,2011,Mining and quarrying,0,-
 Município,Vila Real de Santo António,2011,Mining and quarrying,0,-
-NUTS I,Continente,2011,Construction,93868,18606.5
+NUTS I,Portugal Continental,2011,Construction,93868,18606.5
 NUTS II,Norte,2011,Construction,31876,17861.6
 NUTS III,Alto Minho,2011,Construction,3893,11401.8
 Município,Arcos de Valdevez,2011,Construction,358,9304.8
@@ -3683,7 +3683,7 @@ Município,Silves,2011,Construction,523,11710.2
 Município,Tavira,2011,Construction,364,9411.2
 Município,Vila do Bispo,2011,Construction,61,31369.6
 Município,Vila Real de Santo António,2011,Construction,237,15308.8
-NUTS I,Continente,2011,Human health and social work activities,80509,19042.8
+NUTS I,Portugal Continental,2011,Human health and social work activities,80509,19042.8
 NUTS II,Norte,2011,Human health and social work activities,28356,18566.6
 NUTS III,Alto Minho,2011,Human health and social work activities,1598,17137.7
 Município,Arcos de Valdevez,2011,Human health and social work activities,131,12537.8
@@ -3990,7 +3990,7 @@ Município,Silves,2011,Human health and social work activities,180,12934.5
 Município,Tavira,2011,Human health and social work activities,128,14329.7
 Município,Vila do Bispo,2011,Human health and social work activities,11,-
 Município,Vila Real de Santo António,2011,Human health and social work activities,89,10528.4
-NUTS I,Continente,2011,"Agriculture, farming, hunting, forestry and fishing",49917,10030.9
+NUTS I,Portugal Continental,2011,"Agriculture, farming, hunting, forestry and fishing",49917,10030.9
 NUTS II,Norte,2011,"Agriculture, farming, hunting, forestry and fishing",12625,9400.6
 NUTS III,Alto Minho,2011,"Agriculture, farming, hunting, forestry and fishing",987,9160.4
 Município,Arcos de Valdevez,2011,"Agriculture, farming, hunting, forestry and fishing",62,6975.1
@@ -4297,7 +4297,7 @@ Município,Silves,2011,"Agriculture, farming, hunting, forestry and fishing",481
 Município,Tavira,2011,"Agriculture, farming, hunting, forestry and fishing",357,7998.5
 Município,Vila do Bispo,2011,"Agriculture, farming, hunting, forestry and fishing",107,6845.9
 Município,Vila Real de Santo António,2011,"Agriculture, farming, hunting, forestry and fishing",125,13219.3
-NUTS I,Continente,2011,Manufacturing,68765,25563
+NUTS I,Portugal Continental,2011,Manufacturing,68765,25563
 NUTS II,Norte,2011,Manufacturing,33804,20439.6
 NUTS III,Alto Minho,2011,Manufacturing,1630,25253.9
 Município,Arcos de Valdevez,2011,Manufacturing,113,26126.1
@@ -4604,7 +4604,7 @@ Município,Silves,2011,Manufacturing,182,9332.4
 Município,Tavira,2011,Manufacturing,84,10158.4
 Município,Vila do Bispo,2011,Manufacturing,21,8637.5
 Município,Vila Real de Santo António,2011,Manufacturing,80,12226.4
-NUTS I,Continente,2012,Mining and quarrying,1133,47078.6
+NUTS I,Portugal Continental,2012,Mining and quarrying,1133,47078.6
 NUTS II,Norte,2012,Mining and quarrying,369,16684
 NUTS III,Alto Minho,2012,Mining and quarrying,59,16684
 Município,Arcos de Valdevez,2012,Mining and quarrying,2,-
@@ -4911,7 +4911,7 @@ Município,Silves,2012,Mining and quarrying,2,-
 Município,Tavira,2012,Mining and quarrying,8,-
 Município,Vila do Bispo,2012,Mining and quarrying,0,-
 Município,Vila Real de Santo António,2012,Mining and quarrying,0,-
-NUTS I,Continente,2012,Construction,84238,17660.2
+NUTS I,Portugal Continental,2012,Construction,84238,17660.2
 NUTS II,Norte,2012,Construction,29334,17258.8
 NUTS III,Alto Minho,2012,Construction,3635,11931.2
 Município,Arcos de Valdevez,2012,Construction,327,9210
@@ -5218,7 +5218,7 @@ Município,Silves,2012,Construction,424,12046.3
 Município,Tavira,2012,Construction,279,5512.2
 Município,Vila do Bispo,2012,Construction,42,18555.4
 Município,Vila Real de Santo António,2012,Construction,205,12352.5
-NUTS I,Continente,2012,Human health and social work activities,79049,18590
+NUTS I,Portugal Continental,2012,Human health and social work activities,79049,18590
 NUTS II,Norte,2012,Human health and social work activities,27853,17922.2
 NUTS III,Alto Minho,2012,Human health and social work activities,1561,16467.2
 Município,Arcos de Valdevez,2012,Human health and social work activities,129,12589.3
@@ -5525,7 +5525,7 @@ Município,Silves,2012,Human health and social work activities,179,13861.5
 Município,Tavira,2012,Human health and social work activities,131,14564.1
 Município,Vila do Bispo,2012,Human health and social work activities,13,5189.9
 Município,Vila Real de Santo António,2012,Human health and social work activities,91,10381.8
-NUTS I,Continente,2012,"Agriculture, farming, hunting, forestry and fishing",49191,10675.6
+NUTS I,Portugal Continental,2012,"Agriculture, farming, hunting, forestry and fishing",49191,10675.6
 NUTS II,Norte,2012,"Agriculture, farming, hunting, forestry and fishing",12578,9085
 NUTS III,Alto Minho,2012,"Agriculture, farming, hunting, forestry and fishing",963,8856.7
 Município,Arcos de Valdevez,2012,"Agriculture, farming, hunting, forestry and fishing",63,7809.1
@@ -5832,7 +5832,7 @@ Município,Silves,2012,"Agriculture, farming, hunting, forestry and fishing",495
 Município,Tavira,2012,"Agriculture, farming, hunting, forestry and fishing",337,8137.2
 Município,Vila do Bispo,2012,"Agriculture, farming, hunting, forestry and fishing",107,9535.8
 Município,Vila Real de Santo António,2012,"Agriculture, farming, hunting, forestry and fishing",125,14659.6
-NUTS I,Continente,2012,Manufacturing,65755,25336.4
+NUTS I,Portugal Continental,2012,Manufacturing,65755,25336.4
 NUTS II,Norte,2012,Manufacturing,32693,20884.1
 NUTS III,Alto Minho,2012,Manufacturing,1590,29450
 Município,Arcos de Valdevez,2012,Manufacturing,110,23082.8
@@ -6139,7 +6139,7 @@ Município,Silves,2012,Manufacturing,171,10218.1
 Município,Tavira,2012,Manufacturing,80,8865
 Município,Vila do Bispo,2012,Manufacturing,17,-
 Município,Vila Real de Santo António,2012,Manufacturing,81,11360.9
-NUTS I,Continente,2013,Mining and quarrying,1117,45166.7
+NUTS I,Portugal Continental,2013,Mining and quarrying,1117,45166.7
 NUTS II,Norte,2013,Mining and quarrying,360,16126.9
 NUTS III,Alto Minho,2013,Mining and quarrying,58,16126.9
 Município,Arcos de Valdevez,2013,Mining and quarrying,2,-
@@ -6446,7 +6446,7 @@ Município,Silves,2013,Mining and quarrying,1,-
 Município,Tavira,2013,Mining and quarrying,6,-
 Município,Vila do Bispo,2013,Mining and quarrying,0,-
 Município,Vila Real de Santo António,2013,Mining and quarrying,1,-
-NUTS I,Continente,2013,Construction,78355,17899.3
+NUTS I,Portugal Continental,2013,Construction,78355,17899.3
 NUTS II,Norte,2013,Construction,27593,17560.2
 NUTS III,Alto Minho,2013,Construction,3508,12300.3
 Município,Arcos de Valdevez,2013,Construction,324,9048.3
@@ -6753,7 +6753,7 @@ Município,Silves,2013,Construction,384,11814.6
 Município,Tavira,2013,Construction,240,5127.7
 Município,Vila do Bispo,2013,Construction,44,27547.5
 Município,Vila Real de Santo António,2013,Construction,179,11931.3
-NUTS I,Continente,2013,Human health and social work activities,78630,18643.7
+NUTS I,Portugal Continental,2013,Human health and social work activities,78630,18643.7
 NUTS II,Norte,2013,Human health and social work activities,27725,18019.4
 NUTS III,Alto Minho,2013,Human health and social work activities,1582,15459
 Município,Arcos de Valdevez,2013,Human health and social work activities,122,12301.7
@@ -7060,7 +7060,7 @@ Município,Silves,2013,Human health and social work activities,174,13522.2
 Município,Tavira,2013,Human health and social work activities,126,13043.4
 Município,Vila do Bispo,2013,Human health and social work activities,14,7293.3
 Município,Vila Real de Santo António,2013,Human health and social work activities,83,11023.6
-NUTS I,Continente,2013,"Agriculture, farming, hunting, forestry and fishing",96673,7587.4
+NUTS I,Portugal Continental,2013,"Agriculture, farming, hunting, forestry and fishing",96673,7587.4
 NUTS II,Norte,2013,"Agriculture, farming, hunting, forestry and fishing",42016,4808.1
 NUTS III,Alto Minho,2013,"Agriculture, farming, hunting, forestry and fishing",4287,3273.7
 Município,Arcos de Valdevez,2013,"Agriculture, farming, hunting, forestry and fishing",637,1143.4
@@ -7367,7 +7367,7 @@ Município,Silves,2013,"Agriculture, farming, hunting, forestry and fishing",632
 Município,Tavira,2013,"Agriculture, farming, hunting, forestry and fishing",396,6617.9
 Município,Vila do Bispo,2013,"Agriculture, farming, hunting, forestry and fishing",119,8409.3
 Município,Vila Real de Santo António,2013,"Agriculture, farming, hunting, forestry and fishing",141,12928
-NUTS I,Continente,2013,Manufacturing,64763,26388.2
+NUTS I,Portugal Continental,2013,Manufacturing,64763,26388.2
 NUTS II,Norte,2013,Manufacturing,32448,22146.7
 NUTS III,Alto Minho,2013,Manufacturing,1624,30158.1
 Município,Arcos de Valdevez,2013,Manufacturing,107,23360.9
@@ -7674,7 +7674,7 @@ Município,Silves,2013,Manufacturing,172,13261.2
 Município,Tavira,2013,Manufacturing,90,7258.1
 Município,Vila do Bispo,2013,Manufacturing,24,10597.5
 Município,Vila Real de Santo António,2013,Manufacturing,72,15159.9
-NUTS I,Continente,2014,Mining and quarrying,64529,26941.6
+NUTS I,Portugal Continental,2014,Mining and quarrying,64529,26941.6
 NUTS II,Norte,2014,Mining and quarrying,32412,22917.7
 NUTS III,Alto Minho,2014,Mining and quarrying,1611,31616.6
 Município,Arcos de Valdevez,2014,Mining and quarrying,110,30853.8
@@ -7981,7 +7981,7 @@ Município,Silves,2014,Mining and quarrying,178,15221.6
 Município,Tavira,2014,Mining and quarrying,90,9369.5
 Município,Vila do Bispo,2014,Mining and quarrying,25,12394.1
 Município,Vila Real de Santo António,2014,Mining and quarrying,69,13861.7
-NUTS I,Continente,2014,Construction,80705,18620.8
+NUTS I,Portugal Continental,2014,Construction,80705,18620.8
 NUTS II,Norte,2014,Construction,28144,18019
 NUTS III,Alto Minho,2014,Construction,1630,16329.2
 Município,Arcos de Valdevez,2014,Construction,132,12890.9
@@ -8288,7 +8288,7 @@ Município,Silves,2014,Construction,184,13284.4
 Município,Tavira,2014,Construction,131,12681.5
 Município,Vila do Bispo,2014,Construction,13,5155.5
 Município,Vila Real de Santo António,2014,Construction,85,10641.9
-NUTS I,Continente,2014,Human health and social work activities,1065,45715.5
+NUTS I,Portugal Continental,2014,Human health and social work activities,1065,45715.5
 NUTS II,Norte,2014,Human health and social work activities,330,16333.2
 NUTS III,Alto Minho,2014,Human health and social work activities,52,16333.2
 Município,Arcos de Valdevez,2014,Human health and social work activities,2,-
@@ -8595,7 +8595,7 @@ Município,Silves,2014,Human health and social work activities,1,-
 Município,Tavira,2014,Human health and social work activities,7,33571.9
 Município,Vila do Bispo,2014,Human health and social work activities,0,-
 Município,Vila Real de Santo António,2014,Human health and social work activities,0,-
-NUTS I,Continente,2014,"Agriculture, farming, hunting, forestry and fishing",1065,45715.5
+NUTS I,Portugal Continental,2014,"Agriculture, farming, hunting, forestry and fishing",1065,45715.5
 NUTS II,Norte,2014,"Agriculture, farming, hunting, forestry and fishing",330,16333.2
 NUTS III,Alto Minho,2014,"Agriculture, farming, hunting, forestry and fishing",52,16333.2
 Município,Arcos de Valdevez,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
@@ -8902,7 +8902,7 @@ Município,Silves,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
 Município,Tavira,2014,"Agriculture, farming, hunting, forestry and fishing",7,33571.9
 Município,Vila do Bispo,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Vila Real de Santo António,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
-NUTS I,Continente,2014,Manufacturing,75144,18100.9
+NUTS I,Portugal Continental,2014,Manufacturing,75144,18100.9
 NUTS II,Norte,2014,Manufacturing,26668,18396.9
 NUTS III,Alto Minho,2014,Manufacturing,3344,13055.7
 Município,Arcos de Valdevez,2014,Manufacturing,306,9053.4
@@ -9209,7 +9209,7 @@ Município,Silves,2014,Manufacturing,375,10062.2
 Município,Tavira,2014,Manufacturing,246,9118.8
 Município,Vila do Bispo,2014,Manufacturing,42,28183.8
 Município,Vila Real de Santo António,2014,Manufacturing,161,12750.5
-NUTS I,Continente,2015,Mining and quarrying,1027,43188.8
+NUTS I,Portugal Continental,2015,Mining and quarrying,1027,43188.8
 NUTS II,Norte,2015,Mining and quarrying,318,18719.9
 NUTS III,Alto Minho,2015,Mining and quarrying,47,18719.9
 Município,Arcos de Valdevez,2015,Mining and quarrying,1,-
@@ -9516,7 +9516,7 @@ Município,Silves,2015,Mining and quarrying,1,-
 Município,Tavira,2015,Mining and quarrying,5,26007
 Município,Vila do Bispo,2015,Mining and quarrying,0,-
 Município,Vila Real de Santo António,2015,Mining and quarrying,0,-
-NUTS I,Continente,2015,Construction,75317,18193.6
+NUTS I,Portugal Continental,2015,Construction,75317,18193.6
 NUTS II,Norte,2015,Construction,26843,18559
 NUTS III,Alto Minho,2015,Construction,3352,13169.4
 Município,Arcos de Valdevez,2015,Construction,305,10982.5
@@ -9823,7 +9823,7 @@ Município,Silves,2015,Construction,391,15015.5
 Município,Tavira,2015,Construction,248,16073.2
 Município,Vila do Bispo,2015,Construction,42,30410.2
 Município,Vila Real de Santo António,2015,Construction,152,18283.4
-NUTS I,Continente,2015,Human health and social work activities,83878,18790.5
+NUTS I,Portugal Continental,2015,Human health and social work activities,83878,18790.5
 NUTS II,Norte,2015,Human health and social work activities,29487,17811.5
 NUTS III,Alto Minho,2015,Human health and social work activities,1693,15831.3
 Município,Arcos de Valdevez,2015,Human health and social work activities,121,14818.9
@@ -10130,7 +10130,7 @@ Município,Silves,2015,Human health and social work activities,178,13630
 Município,Tavira,2015,Human health and social work activities,124,12240.7
 Município,Vila do Bispo,2015,Human health and social work activities,13,6639.5
 Município,Vila Real de Santo António,2015,Human health and social work activities,92,12202
-NUTS I,Continente,2015,"Agriculture, farming, hunting, forestry and fishing",121453,8161.1
+NUTS I,Portugal Continental,2015,"Agriculture, farming, hunting, forestry and fishing",121453,8161.1
 NUTS II,Norte,2015,"Agriculture, farming, hunting, forestry and fishing",55400,4637
 NUTS III,Alto Minho,2015,"Agriculture, farming, hunting, forestry and fishing",5925,3503.4
 Município,Arcos de Valdevez,2015,"Agriculture, farming, hunting, forestry and fishing",986,1002.8
@@ -10437,7 +10437,7 @@ Município,Silves,2015,"Agriculture, farming, hunting, forestry and fishing",843
 Município,Tavira,2015,"Agriculture, farming, hunting, forestry and fishing",709,8676.4
 Município,Vila do Bispo,2015,"Agriculture, farming, hunting, forestry and fishing",114,8412.9
 Município,Vila Real de Santo António,2015,"Agriculture, farming, hunting, forestry and fishing",191,9573.6
-NUTS I,Continente,2015,Manufacturing,65040,28880.9
+NUTS I,Portugal Continental,2015,Manufacturing,65040,28880.9
 NUTS II,Norte,2015,Manufacturing,32805,23650.8
 NUTS III,Alto Minho,2015,Manufacturing,1678,28745.7
 Município,Arcos de Valdevez,2015,Manufacturing,113,30725.8
@@ -10744,7 +10744,7 @@ Município,Silves,2015,Manufacturing,174,15687.5
 Município,Tavira,2015,Manufacturing,91,8693.9
 Município,Vila do Bispo,2015,Manufacturing,28,12231
 Município,Vila Real de Santo António,2015,Manufacturing,66,15024.5
-NUTS I,Continente,2016,Mining and quarrying,1008,44394
+NUTS I,Portugal Continental,2016,Mining and quarrying,1008,44394
 NUTS II,Norte,2016,Mining and quarrying,313,17981.6
 NUTS III,Alto Minho,2016,Mining and quarrying,45,17981.6
 Município,Arcos de Valdevez,2016,Mining and quarrying,1,-
@@ -11051,7 +11051,7 @@ Município,Silves,2016,Mining and quarrying,0,-
 Município,Tavira,2016,Mining and quarrying,5,29557.5
 Município,Vila do Bispo,2016,Mining and quarrying,0,-
 Município,Vila Real de Santo António,2016,Mining and quarrying,0,-
-NUTS I,Continente,2016,Construction,76319,17761.3
+NUTS I,Portugal Continental,2016,Construction,76319,17761.3
 NUTS II,Norte,2016,Construction,27258,17920.6
 NUTS III,Alto Minho,2016,Construction,3432,13034.6
 Município,Arcos de Valdevez,2016,Construction,329,10576.3
@@ -11358,7 +11358,7 @@ Município,Silves,2016,Construction,396,14990.6
 Município,Tavira,2016,Construction,269,10894.3
 Município,Vila do Bispo,2016,Construction,49,25534.2
 Município,Vila Real de Santo António,2016,Construction,149,14150.1
-NUTS I,Continente,2016,Human health and social work activities,87500,18632.2
+NUTS I,Portugal Continental,2016,Human health and social work activities,87500,18632.2
 NUTS II,Norte,2016,Human health and social work activities,31132,17720.1
 NUTS III,Alto Minho,2016,Human health and social work activities,1762,15761.5
 Município,Arcos de Valdevez,2016,Human health and social work activities,124,14098.6
@@ -11665,7 +11665,7 @@ Município,Silves,2016,Human health and social work activities,196,13193.8
 Município,Tavira,2016,Human health and social work activities,132,12884
 Município,Vila do Bispo,2016,Human health and social work activities,12,7518.5
 Município,Vila Real de Santo António,2016,Human health and social work activities,101,12861.6
-NUTS I,Continente,2016,"Agriculture, farming, hunting, forestry and fishing",120824,8584.3
+NUTS I,Portugal Continental,2016,"Agriculture, farming, hunting, forestry and fishing",120824,8584.3
 NUTS II,Norte,2016,"Agriculture, farming, hunting, forestry and fishing",54527,5009.4
 NUTS III,Alto Minho,2016,"Agriculture, farming, hunting, forestry and fishing",5698,4233.6
 Município,Arcos de Valdevez,2016,"Agriculture, farming, hunting, forestry and fishing",943,1206.3
@@ -11972,7 +11972,7 @@ Município,Silves,2016,"Agriculture, farming, hunting, forestry and fishing",834
 Município,Tavira,2016,"Agriculture, farming, hunting, forestry and fishing",703,10855.2
 Município,Vila do Bispo,2016,"Agriculture, farming, hunting, forestry and fishing",117,10421
 Município,Vila Real de Santo António,2016,"Agriculture, farming, hunting, forestry and fishing",181,14712
-NUTS I,Continente,2016,Manufacturing,65266,29517.3
+NUTS I,Portugal Continental,2016,Manufacturing,65266,29517.3
 NUTS II,Norte,2016,Manufacturing,33004,24580.5
 NUTS III,Alto Minho,2016,Manufacturing,1677,32295.3
 Município,Arcos de Valdevez,2016,Manufacturing,120,31928.7
@@ -12279,7 +12279,7 @@ Município,Silves,2016,Manufacturing,175,16259.5
 Município,Tavira,2016,Manufacturing,98,8830.8
 Município,Vila do Bispo,2016,Manufacturing,25,15616.8
 Município,Vila Real de Santo António,2016,Manufacturing,65,19782.3
-NUTS I,Continente,2017,Mining and quarrying,1028,49232.8
+NUTS I,Portugal Continental,2017,Mining and quarrying,1028,49232.8
 NUTS II,Norte,2017,Mining and quarrying,324,18313.2
 NUTS III,Alto Minho,2017,Mining and quarrying,49,18313.2
 Município,Arcos de Valdevez,2017,Mining and quarrying,1,-
@@ -12586,7 +12586,7 @@ Município,Silves,2017,Mining and quarrying,0,-
 Município,Tavira,2017,Mining and quarrying,5,19366.1
 Município,Vila do Bispo,2017,Mining and quarrying,0,-
 Município,Vila Real de Santo António,2017,Mining and quarrying,0,-
-NUTS I,Continente,2017,Construction,78962,19051.9
+NUTS I,Portugal Continental,2017,Construction,78962,19051.9
 NUTS II,Norte,2017,Construction,28150,19168.8
 NUTS III,Alto Minho,2017,Construction,3536,14022.2
 Município,Arcos de Valdevez,2017,Construction,313,10226.5
@@ -12893,7 +12893,7 @@ Município,Silves,2017,Construction,438,16637.8
 Município,Tavira,2017,Construction,291,9839.7
 Município,Vila do Bispo,2017,Construction,55,22460.8
 Município,Vila Real de Santo António,2017,Construction,165,17660.8
-NUTS I,Continente,2017,Human health and social work activities,91405,19123.4
+NUTS I,Portugal Continental,2017,Human health and social work activities,91405,19123.4
 NUTS II,Norte,2017,Human health and social work activities,32893,18062.8
 NUTS III,Alto Minho,2017,Human health and social work activities,1858,15225
 Município,Arcos de Valdevez,2017,Human health and social work activities,136,13087.9
@@ -13200,7 +13200,7 @@ Município,Silves,2017,Human health and social work activities,193,14858.2
 Município,Tavira,2017,Human health and social work activities,151,13717.8
 Município,Vila do Bispo,2017,Human health and social work activities,13,9808.5
 Município,Vila Real de Santo António,2017,Human health and social work activities,108,14138.1
-NUTS I,Continente,2017,"Agriculture, farming, hunting, forestry and fishing",121021,9557.7
+NUTS I,Portugal Continental,2017,"Agriculture, farming, hunting, forestry and fishing",121021,9557.7
 NUTS II,Norte,2017,"Agriculture, farming, hunting, forestry and fishing",53827,5285.3
 NUTS III,Alto Minho,2017,"Agriculture, farming, hunting, forestry and fishing",5620,4553.1
 Município,Arcos de Valdevez,2017,"Agriculture, farming, hunting, forestry and fishing",873,1119.9
@@ -13507,7 +13507,7 @@ Município,Silves,2017,"Agriculture, farming, hunting, forestry and fishing",883
 Município,Tavira,2017,"Agriculture, farming, hunting, forestry and fishing",740,10563.4
 Município,Vila do Bispo,2017,"Agriculture, farming, hunting, forestry and fishing",113,13026.2
 Município,Vila Real de Santo António,2017,"Agriculture, farming, hunting, forestry and fishing",188,16017.6
-NUTS I,Continente,2017,Manufacturing,65831,30858.6
+NUTS I,Portugal Continental,2017,Manufacturing,65831,30858.6
 NUTS II,Norte,2017,Manufacturing,33223,25336.5
 NUTS III,Alto Minho,2017,Manufacturing,1697,33621.9
 Município,Arcos de Valdevez,2017,Manufacturing,119,32304.9

@@ -17,7 +17,7 @@ import YearsRangeSlider from './components/range_slider/index.js'
     d3.csv(firesCSV, parseFiresData)
   ])
 
-  const defaultMunicipality = { name: 'Continente', nuts: 'NUTS I' }
+  const defaultMunicipality = { name: 'Portugal Continental', nuts: 'NUTS I' }
   const defaultYears = [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]
   const components = []
 

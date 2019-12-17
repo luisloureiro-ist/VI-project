@@ -1,5 +1,5 @@
 NUTS,Location,Year,Fires,Firefighters,Tourism
-NUTS I,Continente,2009,29782,31003,48.3
+NUTS I,Portugal Continental,2009,29782,31003,48.3
 NUTS II,Norte,2009,18867,10562,34.5
 NUTS III,Alto Minho,2009,2059,702,23.3
 Município,Arcos de Valdevez,2009,309,58,7.7
@@ -306,7 +306,7 @@ Município,Silves,2009,83,141,56.5
 Município,Tavira,2009,38,52,48.5
 Município,Vila do Bispo,2009,11,40,50.7
 Município,Vila Real de Santo António,2009,16,64,53.1
-NUTS I,Continente,2010,26113,28522,49.1
+NUTS I,Portugal Continental,2010,26113,28522,49.1
 NUTS II,Norte,2010,15419,9431,36.7
 NUTS III,Alto Minho,2010,2269,636,24.2
 Município,Arcos de Valdevez,2010,333,42,9.3
@@ -613,7 +613,7 @@ Município,Silves,2010,47,127,59.9
 Município,Tavira,2010,32,45,54.2
 Município,Vila do Bispo,2010,7,39,54.7
 Município,Vila Real de Santo António,2010,10,66,48.3
-NUTS I,Continente,2011,29782,28940,51.3
+NUTS I,Portugal Continental,2011,29782,28940,51.3
 NUTS II,Norte,2011,18715,9941,38.1
 NUTS III,Alto Minho,2011,2428,571,25.8
 Município,Arcos de Valdevez,2011,372,52,14.4
@@ -920,7 +920,7 @@ Município,Silves,2011,56,121,60.5
 Município,Tavira,2011,40,45,53.5
 Município,Vila do Bispo,2011,12,44,65.9
 Município,Vila Real de Santo António,2011,17,61,53
-NUTS I,Continente,2012,25352,30049,53.8
+NUTS I,Portugal Continental,2012,25352,30049,53.8
 NUTS II,Norte,2012,13934,10358,39.5
 NUTS III,Alto Minho,2012,1331,668,26.8
 Município,Arcos de Valdevez,2012,193,51,16.1
@@ -1227,7 +1227,7 @@ Município,Silves,2012,68,123,65.4
 Município,Tavira,2012,46,45,58
 Município,Vila do Bispo,2012,8,43,81.9
 Município,Vila Real de Santo António,2012,18,64,57.2
-NUTS I,Continente,2013,23129,28227,55.9
+NUTS I,Portugal Continental,2013,23129,28227,55.9
 NUTS II,Norte,2013,13797,9721,42.2
 NUTS III,Alto Minho,2013,1882,652,28.9
 Município,Arcos de Valdevez,2013,291,39,24.3
@@ -1534,7 +1534,7 @@ Município,Silves,2013,78,118,67.1
 Município,Tavira,2013,42,44,58.4
 Município,Vila do Bispo,2013,13,39,78.8
 Município,Vila Real de Santo António,2013,8,59,54.2
-NUTS I,Continente,2014,9388,28509,56.1
+NUTS I,Portugal Continental,2014,9388,28509,56.1
 NUTS II,Norte,2014,4045,9912,43.9
 NUTS III,Alto Minho,2014,382,603,29.5
 Município,Arcos de Valdevez,2014,81,39,22.9
@@ -1841,7 +1841,7 @@ Município,Silves,2014,46,114,65.5
 Município,Tavira,2014,27,43,60.9
 Município,Vila do Bispo,2014,5,42,79.1
 Município,Vila Real de Santo António,2014,9,57,50.7
-NUTS I,Continente,2015,19643,27427,56.9
+NUTS I,Portugal Continental,2015,19643,27427,56.9
 NUTS II,Norte,2015,10671,9646,45.9
 NUTS III,Alto Minho,2015,1321,566,30.6
 Município,Arcos de Valdevez,2015,302,37,13.5
@@ -2148,7 +2148,7 @@ Município,Silves,2015,55,105,68.6
 Município,Tavira,2015,34,43,57.9
 Município,Vila do Bispo,2015,12,41,80.6
 Município,Vila Real de Santo António,2015,6,57,48.6
-NUTS I,Continente,2016,16104,26734,58.5
+NUTS I,Portugal Continental,2016,16104,26734,58.5
 NUTS II,Norte,2016,9521,9301,48.3
 NUTS III,Alto Minho,2016,1109,563,29.6
 Município,Arcos de Valdevez,2016,225,39,15.3
@@ -2455,7 +2455,7 @@ Município,Silves,2016,43,107,77.1
 Município,Tavira,2016,19,50,61.5
 Município,Vila do Bispo,2016,4,43,79.3
 Município,Vila Real de Santo António,2016,9,59,49.2
-NUTS I,Continente,2017,21006,26110,60.5
+NUTS I,Portugal Continental,2017,21006,26110,60.5
 NUTS II,Norte,2017,11755,9040,50.8
 NUTS III,Alto Minho,2017,1163,538,32
 Município,Arcos de Valdevez,2017,282,36,18.9
