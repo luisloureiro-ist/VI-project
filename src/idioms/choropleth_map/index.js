@@ -8,23 +8,30 @@ class ChoroplethMap {
       .transition()
       .duration(1000)
       .ease(d3.easeQuadInOut)
+    this.allRelevantPathsSelectors = [
+      'svg #NUTS_III path',
+      'svg #NUTS_I path'
+    ].join(', ')
   }
 
   create (data, clickCallback, legendTextFunction) {
     this.onClickCallback = clickCallback
     this.legendTextFunction = legendTextFunction
 
+    // hack to fix problems in scale: remove the outlier
+    const dataWithoutNUTSI = data.filter(d => d.nuts === 'NUTS III')
+
     // Update color scale
     this.colorScale = d3
       .scaleQuantize(
-        [d3.min(data, d => d.value), d3.max(data, d => d.value)],
+        [d3.min(dataWithoutNUTSI, d => d.value), d3.max(dataWithoutNUTSI, d => d.value)],
         d3.schemeOranges[7]
       )
       .nice()
 
     // Draw the map
     this.chart
-      .selectAll('svg #NUTS_III path')
+      .selectAll(this.allRelevantPathsSelectors)
       .transition(this.transition)
       .attr('fill', (d, i, nodesList) => {
         const datum = getDataForRegion(data, nodesList[i])
@@ -51,17 +58,23 @@ class ChoroplethMap {
   update (newData, newlegendTextFunction) {
     this.legendTextFunction = newlegendTextFunction
 
+    // hack to fix problems in scale: remove the outlier
+    const newDataWithoutNUTSI = newData.filter(d => d.nuts === 'NUTS III')
+
     // Update color scale
     this.colorScale = d3
       .scaleQuantize(
-        [d3.min(newData, d => d.value), d3.max(newData, d => d.value)],
+        [
+          d3.min(newDataWithoutNUTSI, d => d.value),
+          d3.max(newDataWithoutNUTSI, d => d.value)
+        ],
         d3.schemeOranges[7]
       )
       .nice()
 
     // update map colors
     this.chart
-      .selectAll('svg #NUTS_III path')
+      .selectAll(this.allRelevantPathsSelectors)
       .transition(this.transition)
       .attr('fill', (d, i, nodesList) => {
         const datum = getDataForRegion(newData, nodesList[i])
@@ -137,7 +150,7 @@ class ChoroplethMap {
       .classed('hovered', true)
 
     this.chart
-      .select('#NUTS_III path.selected')
+      .select('svg path.selected')
       .interrupt()
       .raise()
   }
@@ -148,7 +161,7 @@ class ChoroplethMap {
 
   __resetPathsStyle () {
     this.chart
-      .selectAll('#NUTS_III path')
+      .selectAll(this.allRelevantPathsSelectors)
       .interrupt() // Avoids "too late; already running" error
       .classed('hovered', false)
   }
