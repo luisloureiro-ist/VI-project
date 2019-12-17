@@ -136,11 +136,31 @@ class CompaniesProductivity extends Component {
   updateYears (newYears) {
     super.setYears(newYears)
 
-    const filteredNewData = super.getDataset().filter(d => d.location === super.getMunicipality().name)
-    const municipality = filteredNewData.filter(d => d.nuts === super.getMunicipality().nuts)
+    const filteredData = super
+      .getDataset()
+      .filter(
+        d =>
+          d.location === super.getMunicipality().name &&
+          d.nuts === super.getMunicipality().nuts &&
+          super.getYears().indexOf(d.year) !== -1
+      )
 
-    const yearsFilter = municipality.filter(d => super.getYears().indexOf(d.year) !== -1)
-    this.chart.updateYears(getValues(yearsFilter), newYears)
+    const transformedData = filteredData.reduce((prev, curr) => {
+      const ret = prev.concat()
+      const idx = super.getYears().indexOf(curr.year)
+      if (!ret[idx]) {
+        // if there's no array for this year ...
+        ret.splice(idx, 0, { year: curr.year })
+      }
+
+      ret[idx][curr.type] = curr.productivity
+
+      return ret
+    }, [])
+    this.chart.updateYears(
+      getValues(transformedData, this.categories),
+      newYears
+    )
   }
 }
 
