@@ -208,6 +208,18 @@ class RadarChart {
         )
       )
       .attr('r', 3)
+      .on('mouseover', function () {
+        d3.select(this)
+          .interrupt()
+          .transition(this.transition)
+          .attr('r', 6)
+      })
+      .on('mouseleave', function () {
+        d3.select(this)
+          .interrupt()
+          .transition(this.transition)
+          .attr('r', 3)
+      })
       .transition(this.transition)
       .attr('fill-opacity', 0.7)
       .selection()
