@@ -8,6 +8,10 @@ Project made by:
 
 This project can be access in the following url: https://impact-of-fires-in-portugal.azurewebsites.net/
 
+### Recommended screen resolution
+
+We guarantee that this visualization works fine on screens with resolution equal of greater than 1600 x 900 (16:9)
+
 ### Run local server
 
 - `npm start` to start a local python HTTP server listening on port 8000
