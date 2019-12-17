@@ -19,9 +19,7 @@ class Map extends Component {
 
     const filteredData = super
       .getDataset()
-      .filter(
-        datum => datum.nuts === 'NUTS III' && years.indexOf(datum.year) !== -1
-      )
+      .filter(datum => years.indexOf(datum.year) !== -1)
     const transformedData = transformData(filteredData)
 
     this.chart = new ChoroplethMap(super.getContainerSelector())
@@ -47,9 +45,7 @@ class Map extends Component {
 
     const filteredData = super
       .getDataset()
-      .filter(
-        datum => datum.nuts === 'NUTS III' && years.indexOf(datum.year) !== -1
-      )
+      .filter(datum => years.indexOf(datum.year) !== -1)
     const transformedData = transformData(filteredData)
 
     this.chart.update(
