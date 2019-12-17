@@ -8,7 +8,6 @@
 }
 
 .grid-container .charts-pane,
-.grid-container .selections-pane,
 .grid-container .map-pane {
   padding: 20px;
   height: 100vh;
@@ -16,11 +15,7 @@
 
 .grid-container .charts-pane {
   display: flex;
-  flex: 4;
-}
-
-.grid-container .selections-pane {
-  flex: 1;
+  flex: 5;
 }
 
 .grid-container .map-pane {
@@ -72,7 +67,10 @@
   flex: 2;
 }
 
-.grid-container .charts-pane .right-charts .number-of-fires-firefighters-section,
+.grid-container
+  .charts-pane
+  .right-charts
+  .number-of-fires-firefighters-section,
 .grid-container .charts-pane .right-charts .companies-productivity-section,
 .grid-container .charts-pane .left-charts .number-of-companies-section,
 .grid-container .charts-pane .left-charts .elections-section,
@@ -82,11 +80,18 @@
   align-items: center;
 }
 
-.grid-container .charts-pane .right-charts .number-of-fires-firefighters-section .title,
-.grid-container .charts-pane .right-charts .companies-productivity-section .title,
+.grid-container
+  .charts-pane
+  .right-charts
+  .number-of-fires-firefighters-section
+  .title,
+.grid-container
+  .charts-pane
+  .right-charts
+  .companies-productivity-section
+  .title,
 .grid-container .charts-pane .left-charts .number-of-companies-section .title,
 .grid-container .charts-pane .left-charts .elections-section .title,
 .grid-container .map-pane .map-section .title {
   align-self: flex-start;
 }
-
