@@ -1,13 +1,3 @@
-.number-of-companies-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.number-of-companies-section > .title {
-  align-self: flex-start;
-}
-
 .svg-chart.radar .axes,
 .svg-chart.radar .area,
 .svg-chart.radar .circular-scales {

@@ -1,13 +1,3 @@
-.elections-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.elections-section > .title {
-  align-self: flex-start;
-}
-
 .svg-legend.cleveland-dot-plot .tick:last-of-type > line {
   display: none;
 }
