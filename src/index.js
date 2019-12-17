@@ -1,6 +1,7 @@
 import CompaniesProductivityComponent from './components/companies_productivity.js'
 import ElectionsComponent from './components/elections.js'
 import MapComponent from './components/map.js'
+import FiresFirefightersComponent from './components/fires_firefighters.js'
 import NumberOfCompaniesComponent from './components/number_of_companies.js'
 import YearsRangeSlider from './components/range_slider/index.js'
 //
@@ -41,6 +42,12 @@ import YearsRangeSlider from './components/range_slider/index.js'
 
   components.push(new ElectionsComponent(dispatch, '.elections-section'))
 
+  components.push(
+    new FiresFirefightersComponent(
+      dispatch,
+      '.number-of-fires-firefighters-section'
+    )
+  )
   components.push(new MapComponent(dispatch, '.map-section'))
 
   components.push(

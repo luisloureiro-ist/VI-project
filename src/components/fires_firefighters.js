@@ -1,38 +1,41 @@
 import Component from './component.js'
-import MultiLinesChartProductivity from '../idioms/multi_lines_chart_productivity/index.js'
+import MultiLinesChart from '../idioms/multi_lines_chart/index.js'
 
-class CompaniesProductivity extends Component {
+class FiresFirefighters extends Component {
   constructor (dispatch, parentSelector) {
     super(dispatch, parentSelector, {
       width: document.querySelector(parentSelector).offsetWidth,
       height: document.querySelector(parentSelector).offsetHeight - 51
     })
 
-    dispatch.on('initialize.companies_productivity', this.initialize.bind(this))
+    dispatch.on('initialize.fires_firefighters', this.initialize.bind(this))
     dispatch.on(
-      'update_municipality.companies_productivity',
+      'update_municipality.fires_firefighters',
       this.updateLocation.bind(this)
     )
-    dispatch.on('update_years.companies_productivity', this.updateYears.bind(this))
+    dispatch.on('update_years.fires_firefighters', this.updateYears.bind(this))
   }
 
-  initialize ({ companiesData: data }, municipality, years) {
+  initialize ({ firesData: data }, municipality, years) {
     super.setMunicipality(municipality)
     super.setDataset(data)
     super.setYears(years)
 
-    this.chart = new MultiLinesChartProductivity(
+    this.chart = new MultiLinesChart(
       super.getContainerSelector(),
       super.getComponentSize().width,
       super.getComponentSize().height
     )
 
-    const activitySectors = [
-      { text: 'Mining' },
-      { text: 'Construction' },
-      { text: 'Health' },
-      { text: 'Manufacturing' },
-      { text: 'Agriculture' }
+    const categories = [
+      {
+        label: 'Fires',
+        color: 'orange'
+      },
+      {
+        label: 'Firefighters',
+        color: 'red'
+      }
     ]
 
     const filteredData = data.filter(
@@ -41,11 +44,11 @@ class CompaniesProductivity extends Component {
     this.chart.create(
       getValues(filteredData),
       years,
-      activitySectors
+      categories
     )
   }
 
-  updateLocation ({ companiesData: newData }, newMunicipality) {
+  updateLocation ({ firesData: newData }, newMunicipality) {
     super.setDataset(newData)
     super.setMunicipality(newMunicipality)
 
@@ -81,4 +84,4 @@ function getValues (data) {
   )
 }
 
-export default CompaniesProductivity
+export default FiresFirefighters
