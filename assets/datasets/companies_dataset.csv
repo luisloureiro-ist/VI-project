@@ -1,7 +1,7 @@
 NUTS,Location,Year,Company Type,Number of Companies,Productivity
 NUTS I,Continente,2009,Mining and quarrying,1377,42777.6
 NUTS II,Norte,2009,Mining and quarrying,451,18616.7
-NUTS III,Alto Minho,2009,Mining and quarrying,72,-
+NUTS III,Alto Minho,2009,Mining and quarrying,72,18616.7
 Município,Arcos de Valdevez,2009,Mining and quarrying,2,-
 Município,Caminha,2009,Mining and quarrying,1,-
 Município,Melgaço,2009,Mining and quarrying,0,-
@@ -28,7 +28,7 @@ Município,Póvoa de Lanhoso,2009,Mining and quarrying,5,-
 Município,Vieira do Minho,2009,Mining and quarrying,1,-
 Município,Vila Nova de Famalicão,2009,Mining and quarrying,7,14056.1
 Município,Vizela,2009,Mining and quarrying,0,-
-NUTS III,Área Metropolitana do Porto,2009,Mining and quarrying,54,-
+NUTS III,Área Metropolitana do Porto,2009,Mining and quarrying,54,18616.7
 Município,Arouca,2009,Mining and quarrying,8,15122.3
 Município,Espinho,2009,Mining and quarrying,0,-
 Município,Gondomar,2009,Mining and quarrying,1,-
@@ -109,7 +109,7 @@ Município,Óbidos,2009,Mining and quarrying,2,-
 Município,Peniche,2009,Mining and quarrying,2,-
 Município,Sobral de Monte Agraço,2009,Mining and quarrying,0,-
 Município,Torres Vedras,2009,Mining and quarrying,4,16453.1
-NUTS III,Região de Aveiro,2009,Mining and quarrying,40,-
+NUTS III,Região de Aveiro,2009,Mining and quarrying,40,32946
 Município,Águeda,2009,Mining and quarrying,12,-
 Município,Albergaria-a-Velha,2009,Mining and quarrying,1,-
 Município,Anadia,2009,Mining and quarrying,1,-
@@ -152,7 +152,7 @@ Município,Marinha Grande,2009,Mining and quarrying,2,-
 Município,Pedrógão Grande,2009,Mining and quarrying,0,-
 Município,Pombal,2009,Mining and quarrying,17,52950.4
 Município,Porto de Mós,2009,Mining and quarrying,128,36740.2
-NUTS III,Viseu Dão Lafões,2009,Mining and quarrying,52,-
+NUTS III,Viseu Dão Lafões,2009,Mining and quarrying,52,32946
 Município,Aguiar da Beira,2009,Mining and quarrying,3,35726.3
 Município,Carregal do Sal,2009,Mining and quarrying,2,-
 Município,Castro Daire,2009,Mining and quarrying,12,-
@@ -174,7 +174,7 @@ Município,Oleiros,2009,Mining and quarrying,0,-
 Município,Penamacor,2009,Mining and quarrying,0,-
 Município,Proença-a-Nova,2009,Mining and quarrying,0,-
 Município,Vila Velha de Ródão,2009,Mining and quarrying,1,-
-NUTS III,Médio Tejo,2009,Mining and quarrying,17,-
+NUTS III,Médio Tejo,2009,Mining and quarrying,17,32946
 Município,Abrantes,2009,Mining and quarrying,1,-
 Município,Alcanena,2009,Mining and quarrying,3,17059.5
 Município,Constância,2009,Mining and quarrying,2,-
@@ -1229,7 +1229,7 @@ Município,Vila do Bispo,2009,"Agriculture, farming, hunting, forestry and fishi
 Município,Vila Real de Santo António,2009,"Agriculture, farming, hunting, forestry and fishing",139,16870.7
 NUTS I,Continente,2009,Manufacturing,75150,23493.4
 NUTS II,Norte,2009,Manufacturing,36404,18875.3
-NUTS III,Alto Minho,2009,Manufacturing,1712,-
+NUTS III,Alto Minho,2009,Manufacturing,1712,18875.3
 Município,Arcos de Valdevez,2009,Manufacturing,124,21037.1
 Município,Caminha,2009,Manufacturing,103,-
 Município,Melgaço,2009,Manufacturing,51,15786.5
@@ -1240,14 +1240,14 @@ Município,Ponte de Lima,2009,Manufacturing,287,18743.6
 Município,Valença,2009,Manufacturing,90,15890.8
 Município,Viana do Castelo,2009,Manufacturing,753,23392.9
 Município,Vila Nova de Cerveira,2009,Manufacturing,73,28198.9
-NUTS III,Cávado,2009,Manufacturing,5001,-
+NUTS III,Cávado,2009,Manufacturing,5001,18875.3
 Município,Amares,2009,Manufacturing,115,22941.9
 Município,Barcelos,2009,Manufacturing,2755,14247.1
 Município,Braga,2009,Manufacturing,1317,18921.7
 Município,Esposende,2009,Manufacturing,383,17952.3
 Município,Terras de Bouro,2009,Manufacturing,23,-
 Município,Vila Verde,2009,Manufacturing,408,10803.1
-NUTS III,Ave,2009,Manufacturing,5765,-
+NUTS III,Ave,2009,Manufacturing,5765,18875.3
 Município,Cabeceiras de Basto,2009,Manufacturing,90,8613.7
 Município,Fafe,2009,Manufacturing,826,12508.1
 Município,Guimarães,2009,Manufacturing,2388,14917.6
@@ -1256,7 +1256,7 @@ Município,Póvoa de Lanhoso,2009,Manufacturing,251,12945.5
 Município,Vieira do Minho,2009,Manufacturing,54,7948
 Município,Vila Nova de Famalicão,2009,Manufacturing,1758,23280.3
 Município,Vizela,2009,Manufacturing,362,12114.7
-NUTS III,Área Metropolitana do Porto,2009,Manufacturing,16906,-
+NUTS III,Área Metropolitana do Porto,2009,Manufacturing,16906,18875.3
 Município,Arouca,2009,Manufacturing,230,-
 Município,Espinho,2009,Manufacturing,227,16144.1
 Município,Gondomar,2009,Manufacturing,1699,15430.5
@@ -1274,14 +1274,14 @@ Município,Vale de Cambra,2009,Manufacturing,337,25501.5
 Município,Valongo,2009,Manufacturing,844,18266.9
 Município,Vila do Conde,2009,Manufacturing,616,17217.6
 Município,Vila Nova de Gaia,2009,Manufacturing,2127,27098.6
-NUTS III,Alto Tâmega,2009,Manufacturing,495,-
+NUTS III,Alto Tâmega,2009,Manufacturing,495,18875.3
 Município,Boticas,2009,Manufacturing,26,17572.4
 Município,Chaves,2009,Manufacturing,231,17124.2
 Município,Montalegre,2009,Manufacturing,43,-
 Município,Ribeira de Pena,2009,Manufacturing,27,11461
 Município,Valpaços,2009,Manufacturing,100,12061.9
 Município,Vila Pouca de Aguiar,2009,Manufacturing,68,39061.7
-NUTS III,Tâmega e Sousa,2009,Manufacturing,4785,-
+NUTS III,Tâmega e Sousa,2009,Manufacturing,4785,18875.3
 Município,Amarante,2009,Manufacturing,394,17978.7
 Município,Baião,2009,Manufacturing,77,11594.1
 Município,Castelo de Paiva,2009,Manufacturing,100,16344.9
@@ -1293,7 +1293,7 @@ Município,Marco de Canaveses,2009,Manufacturing,360,11585.7
 Município,Paços de Ferreira,2009,Manufacturing,1388,10404.9
 Município,Penafiel,2009,Manufacturing,480,12931.8
 Município,Resende,2009,Manufacturing,48,-
-NUTS III,Douro,2009,Manufacturing,1053,-
+NUTS III,Douro,2009,Manufacturing,1053,18875.3
 Município,Alijó,2009,Manufacturing,84,18968.8
 Município,Armamar,2009,Manufacturing,25,14983.4
 Município,Carrazeda de Ansiães,2009,Manufacturing,46,13730.2
@@ -1313,7 +1313,7 @@ Município,Tarouca,2009,Manufacturing,30,39145.1
 Município,Torre de Moncorvo,2009,Manufacturing,52,11490.6
 Município,Vila Nova de Foz Côa,2009,Manufacturing,54,24511
 Município,Vila Real,2009,Manufacturing,219,16259.5
-NUTS III,Terras de Trás-os-Montes,2009,Manufacturing,687,-
+NUTS III,Terras de Trás-os-Montes,2009,Manufacturing,687,18875.3
 Município,Alfândega da Fé,2009,Manufacturing,18,-
 Município,Bragança,2009,Manufacturing,151,31890.9
 Município,Macedo de Cavaleiros,2009,Manufacturing,95,10833.3
@@ -1453,13 +1453,13 @@ Município,Setúbal,2009,Manufacturing,483,52407
 Município,Sintra,2009,Manufacturing,2434,45291.3
 Município,Vila Franca de Xira,2009,Manufacturing,642,36898
 NUTS II,Alentejo,2009,Manufacturing,4683,21975.6
-NUTS III,Alentejo Litoral,2009,Manufacturing,487,-
+NUTS III,Alentejo Litoral,2009,Manufacturing,487,21975.6
 Município,Alcácer do Sal,2009,Manufacturing,83,29173.6
 Município,Grândola,2009,Manufacturing,84,-
 Município,Odemira,2009,Manufacturing,115,10261.7
 Município,Santiago do Cacém,2009,Manufacturing,137,19400.6
 Município,Sines,2009,Manufacturing,68,8995
-NUTS III,Baixo Alentejo,2009,Manufacturing,760,-
+NUTS III,Baixo Alentejo,2009,Manufacturing,760,21975.6
 Município,Aljustrel,2009,Manufacturing,67,24583.4
 Município,Almodôvar,2009,Manufacturing,49,12721
 Município,Alvito,2009,Manufacturing,17,10412.6
@@ -1473,7 +1473,7 @@ Município,Moura,2009,Manufacturing,85,25064.6
 Município,Ourique,2009,Manufacturing,33,11981.6
 Município,Serpa,2009,Manufacturing,94,14662.1
 Município,Vidigueira,2009,Manufacturing,46,20769.7
-NUTS III,Lezíria do Tejo,2009,Manufacturing,1569,-
+NUTS III,Lezíria do Tejo,2009,Manufacturing,1569,21975.6
 Município,Almeirim,2009,Manufacturing,129,17309.5
 Município,Alpiarça,2009,Manufacturing,43,23168
 Município,Azambuja,2009,Manufacturing,105,36429.8
@@ -1485,7 +1485,7 @@ Município,Golegã,2009,Manufacturing,27,23243.8
 Município,Rio Maior,2009,Manufacturing,205,27570.8
 Município,Salvaterra de Magos,2009,Manufacturing,132,14243.8
 Município,Santarém,2009,Manufacturing,456,23065.6
-NUTS III,Alto Alentejo,2009,Manufacturing,676,-
+NUTS III,Alto Alentejo,2009,Manufacturing,676,21975.6
 Município,Alter do Chão,2009,Manufacturing,18,27187.7
 Município,Arronches,2009,Manufacturing,17,9070.1
 Município,Avis,2009,Manufacturing,30,25578.2
@@ -1501,7 +1501,7 @@ Município,Nisa,2009,Manufacturing,73,12353
 Município,Ponte de Sor,2009,Manufacturing,85,20237.7
 Município,Portalegre,2009,Manufacturing,124,26309.4
 Município,Sousel,2009,Manufacturing,43,17006
-NUTS III,Alentejo Central,2009,Manufacturing,1191,-
+NUTS III,Alentejo Central,2009,Manufacturing,1191,21975.6
 Município,Alandroal,2009,Manufacturing,55,11806
 Município,Arraiolos,2009,Manufacturing,67,15518
 Município,Borba,2009,Manufacturing,83,27104.9
@@ -1644,7 +1644,7 @@ Município,Óbidos,2010,Mining and quarrying,2,-
 Município,Peniche,2010,Mining and quarrying,2,-
 Município,Sobral de Monte Agraço,2010,Mining and quarrying,0,-
 Município,Torres Vedras,2010,Mining and quarrying,3,-
-NUTS III,Região de Aveiro,2010,Mining and quarrying,40,-
+NUTS III,Região de Aveiro,2010,Mining and quarrying,40,32053.8
 Município,Águeda,2010,Mining and quarrying,12,26301.4
 Município,Albergaria-a-Velha,2010,Mining and quarrying,1,-
 Município,Anadia,2010,Mining and quarrying,1,-
@@ -1656,7 +1656,7 @@ Município,Oliveira do Bairro,2010,Mining and quarrying,3,19723.4
 Município,Ovar,2010,Mining and quarrying,5,17199.6
 Município,Sever do Vouga,2010,Mining and quarrying,7,9621.4
 Município,Vagos,2010,Mining and quarrying,2,-
-NUTS III,Região de Coimbra,2010,Mining and quarrying,62,-
+NUTS III,Região de Coimbra,2010,Mining and quarrying,62,32053.8
 Município,Arganil,2010,Mining and quarrying,2,-
 Município,Cantanhede,2010,Mining and quarrying,8,21658.7
 Município,Coimbra,2010,Mining and quarrying,5,23581.5
@@ -1687,7 +1687,7 @@ Município,Marinha Grande,2010,Mining and quarrying,1,-
 Município,Pedrógão Grande,2010,Mining and quarrying,0,-
 Município,Pombal,2010,Mining and quarrying,15,60052.5
 Município,Porto de Mós,2010,Mining and quarrying,119,35211.8
-NUTS III,Viseu Dão Lafões,2010,Mining and quarrying,47,-
+NUTS III,Viseu Dão Lafões,2010,Mining and quarrying,47,32053.8
 Município,Aguiar da Beira,2010,Mining and quarrying,3,30512.8
 Município,Carregal do Sal,2010,Mining and quarrying,1,-
 Município,Castro Daire,2010,Mining and quarrying,10,8438.6
@@ -1702,14 +1702,14 @@ Município,Tondela,2010,Mining and quarrying,4,13746.2
 Município,Vila Nova de Paiva,2010,Mining and quarrying,1,-
 Município,Viseu,2010,Mining and quarrying,10,19583.2
 Município,Vouzela,2010,Mining and quarrying,0,-
-NUTS III,Beira Baixa,2010,Mining and quarrying,7,-
+NUTS III,Beira Baixa,2010,Mining and quarrying,7,32053.8
 Município,Castelo Branco,2010,Mining and quarrying,6,56477
 Município,Idanha-a-Nova,2010,Mining and quarrying,0,-
 Município,Oleiros,2010,Mining and quarrying,0,-
 Município,Penamacor,2010,Mining and quarrying,0,-
 Município,Proença-a-Nova,2010,Mining and quarrying,0,-
 Município,Vila Velha de Ródão,2010,Mining and quarrying,1,-
-NUTS III,Médio Tejo,2010,Mining and quarrying,16,-
+NUTS III,Médio Tejo,2010,Mining and quarrying,16,32053.8
 Município,Abrantes,2010,Mining and quarrying,1,-
 Município,Alcanena,2010,Mining and quarrying,3,25733.6
 Município,Constância,2010,Mining and quarrying,2,-
@@ -1723,7 +1723,7 @@ Município,Tomar,2010,Mining and quarrying,3,21031.1
 Município,Torres Novas,2010,Mining and quarrying,0,-
 Município,Vila de Rei,2010,Mining and quarrying,0,-
 Município,Vila Nova da Barquinha,2010,Mining and quarrying,0,-
-NUTS III,Beiras e Serra da Estrela,2010,Mining and quarrying,56,-
+NUTS III,Beiras e Serra da Estrela,2010,Mining and quarrying,56,32053.8
 Município,Almeida,2010,Mining and quarrying,6,-
 Município,Belmonte,2010,Mining and quarrying,0,-
 Município,Celorico da Beira,2010,Mining and quarrying,2,-
@@ -3179,7 +3179,7 @@ Município,Óbidos,2011,Mining and quarrying,2,-
 Município,Peniche,2011,Mining and quarrying,1,-
 Município,Sobral de Monte Agraço,2011,Mining and quarrying,0,-
 Município,Torres Vedras,2011,Mining and quarrying,3,7427.3
-NUTS III,Região de Aveiro,2011,Mining and quarrying,39,-
+NUTS III,Região de Aveiro,2011,Mining and quarrying,39,32658.1
 Município,Águeda,2011,Mining and quarrying,12,35069.4
 Município,Albergaria-a-Velha,2011,Mining and quarrying,1,-
 Município,Anadia,2011,Mining and quarrying,1,-
@@ -3191,7 +3191,7 @@ Município,Oliveira do Bairro,2011,Mining and quarrying,4,21397
 Município,Ovar,2011,Mining and quarrying,5,26347.1
 Município,Sever do Vouga,2011,Mining and quarrying,7,10660.4
 Município,Vagos,2011,Mining and quarrying,2,-
-NUTS III,Região de Coimbra,2011,Mining and quarrying,63,-
+NUTS III,Região de Coimbra,2011,Mining and quarrying,63,32658.1
 Município,Arganil,2011,Mining and quarrying,2,-
 Município,Cantanhede,2011,Mining and quarrying,8,22777.7
 Município,Coimbra,2011,Mining and quarrying,5,35500.5
@@ -3222,7 +3222,7 @@ Município,Marinha Grande,2011,Mining and quarrying,1,-
 Município,Pedrógão Grande,2011,Mining and quarrying,0,-
 Município,Pombal,2011,Mining and quarrying,15,53218.6
 Município,Porto de Mós,2011,Mining and quarrying,113,35420.1
-NUTS III,Viseu Dão Lafões,2011,Mining and quarrying,46,-
+NUTS III,Viseu Dão Lafões,2011,Mining and quarrying,46,32658.1
 Município,Aguiar da Beira,2011,Mining and quarrying,3,29886.8
 Município,Carregal do Sal,2011,Mining and quarrying,1,-
 Município,Castro Daire,2011,Mining and quarrying,11,9020.3
@@ -3237,14 +3237,14 @@ Município,Tondela,2011,Mining and quarrying,5,10618.1
 Município,Vila Nova de Paiva,2011,Mining and quarrying,1,-
 Município,Viseu,2011,Mining and quarrying,9,16428
 Município,Vouzela,2011,Mining and quarrying,0,-
-NUTS III,Beira Baixa,2011,Mining and quarrying,4,-
+NUTS III,Beira Baixa,2011,Mining and quarrying,4,32658.1
 Município,Castelo Branco,2011,Mining and quarrying,3,67269.4
 Município,Idanha-a-Nova,2011,Mining and quarrying,0,-
 Município,Oleiros,2011,Mining and quarrying,0,-
 Município,Penamacor,2011,Mining and quarrying,0,-
 Município,Proença-a-Nova,2011,Mining and quarrying,0,-
 Município,Vila Velha de Ródão,2011,Mining and quarrying,1,-
-NUTS III,Médio Tejo,2011,Mining and quarrying,14,-
+NUTS III,Médio Tejo,2011,Mining and quarrying,14,32658.1
 Município,Abrantes,2011,Mining and quarrying,1,-
 Município,Alcanena,2011,Mining and quarrying,2,-
 Município,Constância,2011,Mining and quarrying,2,-
@@ -3258,7 +3258,7 @@ Município,Tomar,2011,Mining and quarrying,3,20110
 Município,Torres Novas,2011,Mining and quarrying,0,-
 Município,Vila de Rei,2011,Mining and quarrying,0,-
 Município,Vila Nova da Barquinha,2011,Mining and quarrying,0,-
-NUTS III,Beiras e Serra da Estrela,2011,Mining and quarrying,53,-
+NUTS III,Beiras e Serra da Estrela,2011,Mining and quarrying,53,32658.1
 Município,Almeida,2011,Mining and quarrying,7,-
 Município,Belmonte,2011,Mining and quarrying,0,-
 Município,Celorico da Beira,2011,Mining and quarrying,2,-
@@ -4606,7 +4606,7 @@ Município,Vila do Bispo,2011,Manufacturing,21,8637.5
 Município,Vila Real de Santo António,2011,Manufacturing,80,12226.4
 NUTS I,Continente,2012,Mining and quarrying,1133,47078.6
 NUTS II,Norte,2012,Mining and quarrying,369,16684
-NUTS III,Alto Minho,2012,Mining and quarrying,59,-
+NUTS III,Alto Minho,2012,Mining and quarrying,59,16684
 Município,Arcos de Valdevez,2012,Mining and quarrying,2,-
 Município,Caminha,2012,Mining and quarrying,2,-
 Município,Melgaço,2012,Mining and quarrying,0,-
@@ -4617,14 +4617,14 @@ Município,Ponte de Lima,2012,Mining and quarrying,19,12578.1
 Município,Valença,2012,Mining and quarrying,10,11813.5
 Município,Viana do Castelo,2012,Mining and quarrying,9,48291.4
 Município,Vila Nova de Cerveira,2012,Mining and quarrying,1,-
-NUTS III,Cávado,2012,Mining and quarrying,43,-
+NUTS III,Cávado,2012,Mining and quarrying,43,16684
 Município,Amares,2012,Mining and quarrying,2,-
 Município,Barcelos,2012,Mining and quarrying,7,14681.4
 Município,Braga,2012,Mining and quarrying,14,-
 Município,Esposende,2012,Mining and quarrying,12,34465.3
 Município,Terras de Bouro,2012,Mining and quarrying,0,-
 Município,Vila Verde,2012,Mining and quarrying,8,13843.9
-NUTS III,Ave,2012,Mining and quarrying,47,-
+NUTS III,Ave,2012,Mining and quarrying,47,16684
 Município,Cabeceiras de Basto,2012,Mining and quarrying,2,-
 Município,Fafe,2012,Mining and quarrying,2,-
 Município,Guimarães,2012,Mining and quarrying,14,17242.9
@@ -4633,7 +4633,7 @@ Município,Póvoa de Lanhoso,2012,Mining and quarrying,5,13639.1
 Município,Vieira do Minho,2012,Mining and quarrying,1,-
 Município,Vila Nova de Famalicão,2012,Mining and quarrying,7,5345
 Município,Vizela,2012,Mining and quarrying,0,-
-NUTS III,Área Metropolitana do Porto,2012,Mining and quarrying,40,-
+NUTS III,Área Metropolitana do Porto,2012,Mining and quarrying,40,16684
 Município,Arouca,2012,Mining and quarrying,4,11303.4
 Município,Espinho,2012,Mining and quarrying,0,-
 Município,Gondomar,2012,Mining and quarrying,0,-
@@ -4651,14 +4651,14 @@ Município,Vale de Cambra,2012,Mining and quarrying,1,-
 Município,Valongo,2012,Mining and quarrying,5,37471.2
 Município,Vila do Conde,2012,Mining and quarrying,3,-
 Município,Vila Nova de Gaia,2012,Mining and quarrying,4,9690.8
-NUTS III,Alto Tâmega,2012,Mining and quarrying,48,-
+NUTS III,Alto Tâmega,2012,Mining and quarrying,48,16684
 Município,Boticas,2012,Mining and quarrying,4,18647.4
 Município,Chaves,2012,Mining and quarrying,9,12690
 Município,Montalegre,2012,Mining and quarrying,6,-
 Município,Ribeira de Pena,2012,Mining and quarrying,0,-
 Município,Valpaços,2012,Mining and quarrying,4,28967.8
 Município,Vila Pouca de Aguiar,2012,Mining and quarrying,25,14528.2
-NUTS III,Tâmega e Sousa,2012,Mining and quarrying,77,-
+NUTS III,Tâmega e Sousa,2012,Mining and quarrying,77,16684
 Município,Amarante,2012,Mining and quarrying,9,-
 Município,Baião,2012,Mining and quarrying,0,-
 Município,Castelo de Paiva,2012,Mining and quarrying,1,-
@@ -4670,7 +4670,7 @@ Município,Marco de Canaveses,2012,Mining and quarrying,25,19007.2
 Município,Paços de Ferreira,2012,Mining and quarrying,8,8720
 Município,Penafiel,2012,Mining and quarrying,30,11299.9
 Município,Resende,2012,Mining and quarrying,0,-
-NUTS III,Douro,2012,Mining and quarrying,42,-
+NUTS III,Douro,2012,Mining and quarrying,42,16684
 Município,Alijó,2012,Mining and quarrying,0,-
 Município,Armamar,2012,Mining and quarrying,2,-
 Município,Carrazeda de Ansiães,2012,Mining and quarrying,0,-
@@ -4690,7 +4690,7 @@ Município,Tarouca,2012,Mining and quarrying,1,-
 Município,Torre de Moncorvo,2012,Mining and quarrying,2,-
 Município,Vila Nova de Foz Côa,2012,Mining and quarrying,7,22518.5
 Município,Vila Real,2012,Mining and quarrying,12,21529.8
-NUTS III,Terras de Trás-os-Montes,2012,Mining and quarrying,13,-
+NUTS III,Terras de Trás-os-Montes,2012,Mining and quarrying,13,16684
 Município,Alfândega da Fé,2012,Mining and quarrying,0,-
 Município,Bragança,2012,Mining and quarrying,4,-
 Município,Macedo de Cavaleiros,2012,Mining and quarrying,3,35965.3
@@ -4701,7 +4701,7 @@ Município,Vila Flor,2012,Mining and quarrying,1,-
 Município,Vimioso,2012,Mining and quarrying,0,-
 Município,Vinhais,2012,Mining and quarrying,2,-
 NUTS II,Centro,2012,Mining and quarrying,433,30520.3
-NUTS III,Oeste,2012,Mining and quarrying,78,-
+NUTS III,Oeste,2012,Mining and quarrying,78,30520.3
 Município,Alcobaça,2012,Mining and quarrying,36,33983.8
 Município,Alenquer,2012,Mining and quarrying,16,12630.6
 Município,Arruda dos Vinhos,2012,Mining and quarrying,0,-
@@ -4714,7 +4714,7 @@ Município,Óbidos,2012,Mining and quarrying,2,-
 Município,Peniche,2012,Mining and quarrying,1,-
 Município,Sobral de Monte Agraço,2012,Mining and quarrying,0,-
 Município,Torres Vedras,2012,Mining and quarrying,3,4391.9
-NUTS III,Região de Aveiro,2012,Mining and quarrying,33,-
+NUTS III,Região de Aveiro,2012,Mining and quarrying,33,30520.3
 Município,Águeda,2012,Mining and quarrying,10,-
 Município,Albergaria-a-Velha,2012,Mining and quarrying,1,-
 Município,Anadia,2012,Mining and quarrying,1,-
@@ -4726,7 +4726,7 @@ Município,Oliveira do Bairro,2012,Mining and quarrying,3,42651
 Município,Ovar,2012,Mining and quarrying,4,7423.6
 Município,Sever do Vouga,2012,Mining and quarrying,6,12430.9
 Município,Vagos,2012,Mining and quarrying,2,-
-NUTS III,Região de Coimbra,2012,Mining and quarrying,59,-
+NUTS III,Região de Coimbra,2012,Mining and quarrying,59,30520.3
 Município,Arganil,2012,Mining and quarrying,1,-
 Município,Cantanhede,2012,Mining and quarrying,8,22449.3
 Município,Coimbra,2012,Mining and quarrying,5,11040.7
@@ -4746,7 +4746,7 @@ Município,Penela,2012,Mining and quarrying,0,-
 Município,Soure,2012,Mining and quarrying,4,-
 Município,Tábua,2012,Mining and quarrying,3,6681
 Município,Vila Nova de Poiares,2012,Mining and quarrying,0,-
-NUTS III,Região de Leiria,2012,Mining and quarrying,159,-
+NUTS III,Região de Leiria,2012,Mining and quarrying,159,30520.3
 Município,Alvaiázere,2012,Mining and quarrying,1,-
 Município,Ansião,2012,Mining and quarrying,9,8737.8
 Município,Batalha,2012,Mining and quarrying,13,26928.4
@@ -4757,7 +4757,7 @@ Município,Marinha Grande,2012,Mining and quarrying,1,-
 Município,Pedrógão Grande,2012,Mining and quarrying,0,-
 Município,Pombal,2012,Mining and quarrying,15,49880.4
 Município,Porto de Mós,2012,Mining and quarrying,105,35325.1
-NUTS III,Viseu Dão Lafões,2012,Mining and quarrying,44,-
+NUTS III,Viseu Dão Lafões,2012,Mining and quarrying,44,30520.3
 Município,Aguiar da Beira,2012,Mining and quarrying,3,25768.1
 Município,Carregal do Sal,2012,Mining and quarrying,1,-
 Município,Castro Daire,2012,Mining and quarrying,10,9816.3
@@ -4772,14 +4772,14 @@ Município,Tondela,2012,Mining and quarrying,5,8181.6
 Município,Vila Nova de Paiva,2012,Mining and quarrying,1,-
 Município,Viseu,2012,Mining and quarrying,7,14984.7
 Município,Vouzela,2012,Mining and quarrying,0,-
-NUTS III,Beira Baixa,2012,Mining and quarrying,3,-
+NUTS III,Beira Baixa,2012,Mining and quarrying,3,30520.3
 Município,Castelo Branco,2012,Mining and quarrying,2,-
 Município,Idanha-a-Nova,2012,Mining and quarrying,0,-
 Município,Oleiros,2012,Mining and quarrying,0,-
 Município,Penamacor,2012,Mining and quarrying,0,-
 Município,Proença-a-Nova,2012,Mining and quarrying,0,-
 Município,Vila Velha de Ródão,2012,Mining and quarrying,1,-
-NUTS III,Médio Tejo,2012,Mining and quarrying,14,-
+NUTS III,Médio Tejo,2012,Mining and quarrying,14,30520.3
 Município,Abrantes,2012,Mining and quarrying,1,-
 Município,Alcanena,2012,Mining and quarrying,2,-
 Município,Constância,2012,Mining and quarrying,2,-
@@ -4793,7 +4793,7 @@ Município,Tomar,2012,Mining and quarrying,3,18222.9
 Município,Torres Novas,2012,Mining and quarrying,0,-
 Município,Vila de Rei,2012,Mining and quarrying,0,-
 Município,Vila Nova da Barquinha,2012,Mining and quarrying,0,-
-NUTS III,Beiras e Serra da Estrela,2012,Mining and quarrying,43,-
+NUTS III,Beiras e Serra da Estrela,2012,Mining and quarrying,43,30520.3
 Município,Almeida,2012,Mining and quarrying,5,-2528.7
 Município,Belmonte,2012,Mining and quarrying,0,-
 Município,Celorico da Beira,2012,Mining and quarrying,2,-
@@ -6141,7 +6141,7 @@ Município,Vila do Bispo,2012,Manufacturing,17,-
 Município,Vila Real de Santo António,2012,Manufacturing,81,11360.9
 NUTS I,Continente,2013,Mining and quarrying,1117,45166.7
 NUTS II,Norte,2013,Mining and quarrying,360,16126.9
-NUTS III,Alto Minho,2013,Mining and quarrying,58,-
+NUTS III,Alto Minho,2013,Mining and quarrying,58,16126.9
 Município,Arcos de Valdevez,2013,Mining and quarrying,2,-
 Município,Caminha,2013,Mining and quarrying,2,-
 Município,Melgaço,2013,Mining and quarrying,1,-
@@ -6152,14 +6152,14 @@ Município,Ponte de Lima,2013,Mining and quarrying,17,-
 Município,Valença,2013,Mining and quarrying,9,18452.8
 Município,Viana do Castelo,2013,Mining and quarrying,9,39537.1
 Município,Vila Nova de Cerveira,2013,Mining and quarrying,1,-
-NUTS III,Cávado,2013,Mining and quarrying,38,-
+NUTS III,Cávado,2013,Mining and quarrying,38,16126.9
 Município,Amares,2013,Mining and quarrying,2,-
 Município,Barcelos,2013,Mining and quarrying,6,15344.2
 Município,Braga,2013,Mining and quarrying,14,-815.9
 Município,Esposende,2013,Mining and quarrying,10,20448.3
 Município,Terras de Bouro,2013,Mining and quarrying,0,-
 Município,Vila Verde,2013,Mining and quarrying,6,-
-NUTS III,Ave,2013,Mining and quarrying,45,-
+NUTS III,Ave,2013,Mining and quarrying,45,16126.9
 Município,Cabeceiras de Basto,2013,Mining and quarrying,2,-
 Município,Fafe,2013,Mining and quarrying,2,-
 Município,Guimarães,2013,Mining and quarrying,14,17287.5
@@ -6168,7 +6168,7 @@ Município,Póvoa de Lanhoso,2013,Mining and quarrying,5,15552.9
 Município,Vieira do Minho,2013,Mining and quarrying,1,-
 Município,Vila Nova de Famalicão,2013,Mining and quarrying,7,7835.9
 Município,Vizela,2013,Mining and quarrying,0,-
-NUTS III,Área Metropolitana do Porto,2013,Mining and quarrying,43,-
+NUTS III,Área Metropolitana do Porto,2013,Mining and quarrying,43,16126.9
 Município,Arouca,2013,Mining and quarrying,6,10679.4
 Município,Espinho,2013,Mining and quarrying,0,-
 Município,Gondomar,2013,Mining and quarrying,0,-
@@ -6186,14 +6186,14 @@ Município,Vale de Cambra,2013,Mining and quarrying,1,-
 Município,Valongo,2013,Mining and quarrying,5,24593
 Município,Vila do Conde,2013,Mining and quarrying,3,16113.3
 Município,Vila Nova de Gaia,2013,Mining and quarrying,4,15797.9
-NUTS III,Alto Tâmega,2013,Mining and quarrying,48,-
+NUTS III,Alto Tâmega,2013,Mining and quarrying,48,16126.9
 Município,Boticas,2013,Mining and quarrying,5,11507.2
 Município,Chaves,2013,Mining and quarrying,9,18720.8
 Município,Montalegre,2013,Mining and quarrying,5,-
 Município,Ribeira de Pena,2013,Mining and quarrying,0,-
 Município,Valpaços,2013,Mining and quarrying,6,29143.1
 Município,Vila Pouca de Aguiar,2013,Mining and quarrying,23,16618.8
-NUTS III,Tâmega e Sousa,2013,Mining and quarrying,76,-
+NUTS III,Tâmega e Sousa,2013,Mining and quarrying,76,16126.9
 Município,Amarante,2013,Mining and quarrying,6,18292.3
 Município,Baião,2013,Mining and quarrying,0,-
 Município,Castelo de Paiva,2013,Mining and quarrying,1,-
@@ -6205,7 +6205,7 @@ Município,Marco de Canaveses,2013,Mining and quarrying,30,16071.5
 Município,Paços de Ferreira,2013,Mining and quarrying,10,10106.7
 Município,Penafiel,2013,Mining and quarrying,27,10137.2
 Município,Resende,2013,Mining and quarrying,0,-
-NUTS III,Douro,2013,Mining and quarrying,39,-
+NUTS III,Douro,2013,Mining and quarrying,39,16126.9
 Município,Alijó,2013,Mining and quarrying,0,-
 Município,Armamar,2013,Mining and quarrying,2,-
 Município,Carrazeda de Ansiães,2013,Mining and quarrying,0,-
@@ -6225,7 +6225,7 @@ Município,Tarouca,2013,Mining and quarrying,1,-
 Município,Torre de Moncorvo,2013,Mining and quarrying,2,-
 Município,Vila Nova de Foz Côa,2013,Mining and quarrying,6,22506.3
 Município,Vila Real,2013,Mining and quarrying,11,17356.7
-NUTS III,Terras de Trás-os-Montes,2013,Mining and quarrying,13,-
+NUTS III,Terras de Trás-os-Montes,2013,Mining and quarrying,13,16126.9
 Município,Alfândega da Fé,2013,Mining and quarrying,0,-
 Município,Bragança,2013,Mining and quarrying,4,-
 Município,Macedo de Cavaleiros,2013,Mining and quarrying,3,22343
@@ -6236,7 +6236,7 @@ Município,Vila Flor,2013,Mining and quarrying,1,-
 Município,Vimioso,2013,Mining and quarrying,0,-
 Município,Vinhais,2013,Mining and quarrying,2,-
 NUTS II,Centro,2013,Mining and quarrying,430,28319.1
-NUTS III,Oeste,2013,Mining and quarrying,78,-
+NUTS III,Oeste,2013,Mining and quarrying,78,28319.1
 Município,Alcobaça,2013,Mining and quarrying,38,36783
 Município,Alenquer,2013,Mining and quarrying,13,7395.9
 Município,Arruda dos Vinhos,2013,Mining and quarrying,0,-
@@ -6249,7 +6249,7 @@ Município,Óbidos,2013,Mining and quarrying,2,-
 Município,Peniche,2013,Mining and quarrying,2,-
 Município,Sobral de Monte Agraço,2013,Mining and quarrying,0,-
 Município,Torres Vedras,2013,Mining and quarrying,3,58
-NUTS III,Região de Aveiro,2013,Mining and quarrying,32,-
+NUTS III,Região de Aveiro,2013,Mining and quarrying,32,28319.1
 Município,Águeda,2013,Mining and quarrying,8,22011.2
 Município,Albergaria-a-Velha,2013,Mining and quarrying,1,-
 Município,Anadia,2013,Mining and quarrying,1,-
@@ -6261,7 +6261,7 @@ Município,Oliveira do Bairro,2013,Mining and quarrying,3,29392.3
 Município,Ovar,2013,Mining and quarrying,3,-416.4
 Município,Sever do Vouga,2013,Mining and quarrying,6,9361.6
 Município,Vagos,2013,Mining and quarrying,4,18348.5
-NUTS III,Região de Coimbra,2013,Mining and quarrying,60,-
+NUTS III,Região de Coimbra,2013,Mining and quarrying,60,28319.1
 Município,Arganil,2013,Mining and quarrying,1,-
 Município,Cantanhede,2013,Mining and quarrying,9,18715.2
 Município,Coimbra,2013,Mining and quarrying,5,9831.1
@@ -6281,7 +6281,7 @@ Município,Penela,2013,Mining and quarrying,0,-
 Município,Soure,2013,Mining and quarrying,4,-
 Município,Tábua,2013,Mining and quarrying,2,-
 Município,Vila Nova de Poiares,2013,Mining and quarrying,0,-
-NUTS III,Região de Leiria,2013,Mining and quarrying,162,-
+NUTS III,Região de Leiria,2013,Mining and quarrying,162,28319.1
 Município,Alvaiázere,2013,Mining and quarrying,1,-
 Município,Ansião,2013,Mining and quarrying,8,9469.1
 Município,Batalha,2013,Mining and quarrying,13,29063.7
@@ -6292,7 +6292,7 @@ Município,Marinha Grande,2013,Mining and quarrying,1,-
 Município,Pedrógão Grande,2013,Mining and quarrying,0,-
 Município,Pombal,2013,Mining and quarrying,16,46679.7
 Município,Porto de Mós,2013,Mining and quarrying,106,28837.9
-NUTS III,Viseu Dão Lafões,2013,Mining and quarrying,42,-
+NUTS III,Viseu Dão Lafões,2013,Mining and quarrying,42,28319.1
 Município,Aguiar da Beira,2013,Mining and quarrying,3,32773.9
 Município,Carregal do Sal,2013,Mining and quarrying,1,-
 Município,Castro Daire,2013,Mining and quarrying,8,11483
@@ -6307,14 +6307,14 @@ Município,Tondela,2013,Mining and quarrying,6,8808.2
 Município,Vila Nova de Paiva,2013,Mining and quarrying,1,-
 Município,Viseu,2013,Mining and quarrying,7,18827.3
 Município,Vouzela,2013,Mining and quarrying,0,-
-NUTS III,Beira Baixa,2013,Mining and quarrying,3,-
+NUTS III,Beira Baixa,2013,Mining and quarrying,3,28319.1
 Município,Castelo Branco,2013,Mining and quarrying,3,-
 Município,Idanha-a-Nova,2013,Mining and quarrying,0,-
 Município,Oleiros,2013,Mining and quarrying,0,-
 Município,Penamacor,2013,Mining and quarrying,0,-
 Município,Proença-a-Nova,2013,Mining and quarrying,0,-
 Município,Vila Velha de Ródão,2013,Mining and quarrying,0,-
-NUTS III,Médio Tejo,2013,Mining and quarrying,12,-
+NUTS III,Médio Tejo,2013,Mining and quarrying,12,28319.1
 Município,Abrantes,2013,Mining and quarrying,0,-
 Município,Alcanena,2013,Mining and quarrying,0,-
 Município,Constância,2013,Mining and quarrying,1,-
@@ -6328,7 +6328,7 @@ Município,Tomar,2013,Mining and quarrying,3,-
 Município,Torres Novas,2013,Mining and quarrying,0,-
 Município,Vila de Rei,2013,Mining and quarrying,1,-
 Município,Vila Nova da Barquinha,2013,Mining and quarrying,0,-
-NUTS III,Beiras e Serra da Estrela,2013,Mining and quarrying,41,-
+NUTS III,Beiras e Serra da Estrela,2013,Mining and quarrying,41,28319.1
 Município,Almeida,2013,Mining and quarrying,3,-
 Município,Belmonte,2013,Mining and quarrying,0,-
 Município,Celorico da Beira,2013,Mining and quarrying,2,-
@@ -7080,7 +7080,7 @@ Município,Braga,2013,"Agriculture, farming, hunting, forestry and fishing",442,
 Município,Esposende,2013,"Agriculture, farming, hunting, forestry and fishing",490,6157.5
 Município,Terras de Bouro,2013,"Agriculture, farming, hunting, forestry and fishing",144,-
 Município,Vila Verde,2013,"Agriculture, farming, hunting, forestry and fishing",409,5201.1
-NUTS III,Ave,2013,"Agriculture, farming, hunting, forestry and fishing",1704,-
+NUTS III,Ave,2013,"Agriculture, farming, hunting, forestry and fishing",1704,4808.1
 Município,Cabeceiras de Basto,2013,"Agriculture, farming, hunting, forestry and fishing",281,2859.3
 Município,Fafe,2013,"Agriculture, farming, hunting, forestry and fishing",90,4980.9
 Município,Guimarães,2013,"Agriculture, farming, hunting, forestry and fishing",349,10035.8
@@ -7107,14 +7107,14 @@ Município,Vale de Cambra,2013,"Agriculture, farming, hunting, forestry and fish
 Município,Valongo,2013,"Agriculture, farming, hunting, forestry and fishing",222,3413
 Município,Vila do Conde,2013,"Agriculture, farming, hunting, forestry and fishing",679,9621.2
 Município,Vila Nova de Gaia,2013,"Agriculture, farming, hunting, forestry and fishing",438,9384.8
-NUTS III,Alto Tâmega,2013,"Agriculture, farming, hunting, forestry and fishing",4058,-
+NUTS III,Alto Tâmega,2013,"Agriculture, farming, hunting, forestry and fishing",4058,4808.1
 Município,Boticas,2013,"Agriculture, farming, hunting, forestry and fishing",232,3836.1
 Município,Chaves,2013,"Agriculture, farming, hunting, forestry and fishing",676,4469.3
 Município,Montalegre,2013,"Agriculture, farming, hunting, forestry and fishing",672,1514
 Município,Ribeira de Pena,2013,"Agriculture, farming, hunting, forestry and fishing",227,-
 Município,Valpaços,2013,"Agriculture, farming, hunting, forestry and fishing",1773,1778.6
 Município,Vila Pouca de Aguiar,2013,"Agriculture, farming, hunting, forestry and fishing",478,2712
-NUTS III,Tâmega e Sousa,2013,"Agriculture, farming, hunting, forestry and fishing",3451,-
+NUTS III,Tâmega e Sousa,2013,"Agriculture, farming, hunting, forestry and fishing",3451,4808.1
 Município,Amarante,2013,"Agriculture, farming, hunting, forestry and fishing",510,3496.6
 Município,Baião,2013,"Agriculture, farming, hunting, forestry and fishing",293,3489.9
 Município,Castelo de Paiva,2013,"Agriculture, farming, hunting, forestry and fishing",110,-
@@ -7146,7 +7146,7 @@ Município,Tarouca,2013,"Agriculture, farming, hunting, forestry and fishing",19
 Município,Torre de Moncorvo,2013,"Agriculture, farming, hunting, forestry and fishing",244,3209.4
 Município,Vila Nova de Foz Côa,2013,"Agriculture, farming, hunting, forestry and fishing",517,4128.6
 Município,Vila Real,2013,"Agriculture, farming, hunting, forestry and fishing",1599,2309.9
-NUTS III,Terras de Trás-os-Montes,2013,"Agriculture, farming, hunting, forestry and fishing",7573,-
+NUTS III,Terras de Trás-os-Montes,2013,"Agriculture, farming, hunting, forestry and fishing",7573,4808.1
 Município,Alfândega da Fé,2013,"Agriculture, farming, hunting, forestry and fishing",360,2006.5
 Município,Bragança,2013,"Agriculture, farming, hunting, forestry and fishing",2213,2435.9
 Município,Macedo de Cavaleiros,2013,"Agriculture, farming, hunting, forestry and fishing",1259,1996.5
@@ -7593,13 +7593,13 @@ Município,Setúbal,2013,Manufacturing,400,-
 Município,Sintra,2013,Manufacturing,1855,-
 Município,Vila Franca de Xira,2013,Manufacturing,498,-
 NUTS II,Alentejo,2013,Manufacturing,3935,23527.3
-NUTS III,Alentejo Litoral,2013,Manufacturing,405,-
+NUTS III,Alentejo Litoral,2013,Manufacturing,405,23527.3
 Município,Alcácer do Sal,2013,Manufacturing,64,17581.6
 Município,Grândola,2013,Manufacturing,62,-
 Município,Odemira,2013,Manufacturing,97,11135.9
 Município,Santiago do Cacém,2013,Manufacturing,122,19226.7
 Município,Sines,2013,Manufacturing,60,16342.3
-NUTS III,Baixo Alentejo,2013,Manufacturing,651,-
+NUTS III,Baixo Alentejo,2013,Manufacturing,651,23527.3
 Município,Aljustrel,2013,Manufacturing,56,29498
 Município,Almodôvar,2013,Manufacturing,35,11285.5
 Município,Alvito,2013,Manufacturing,9,8964.7
@@ -7613,7 +7613,7 @@ Município,Moura,2013,Manufacturing,70,14907.7
 Município,Ourique,2013,Manufacturing,31,14903.6
 Município,Serpa,2013,Manufacturing,78,14810.5
 Município,Vidigueira,2013,Manufacturing,42,16289.3
-NUTS III,Lezíria do Tejo,2013,Manufacturing,1292,-
+NUTS III,Lezíria do Tejo,2013,Manufacturing,1292,23527.3
 Município,Almeirim,2013,Manufacturing,103,17212.5
 Município,Alpiarça,2013,Manufacturing,34,34217.4
 Município,Azambuja,2013,Manufacturing,86,36529.2
@@ -7625,7 +7625,7 @@ Município,Golegã,2013,Manufacturing,26,-
 Município,Rio Maior,2013,Manufacturing,170,29886.9
 Município,Salvaterra de Magos,2013,Manufacturing,101,18376.2
 Município,Santarém,2013,Manufacturing,367,25434.4
-NUTS III,Alto Alentejo,2013,Manufacturing,573,-
+NUTS III,Alto Alentejo,2013,Manufacturing,573,23527.3
 Município,Alter do Chão,2013,Manufacturing,18,38308.5
 Município,Arronches,2013,Manufacturing,13,14679.7
 Município,Avis,2013,Manufacturing,21,21230.2
@@ -7641,7 +7641,7 @@ Município,Nisa,2013,Manufacturing,61,10530.6
 Município,Ponte de Sor,2013,Manufacturing,77,34966.9
 Município,Portalegre,2013,Manufacturing,107,1226.8
 Município,Sousel,2013,Manufacturing,35,13627.7
-NUTS III,Alentejo Central,2013,Manufacturing,1014,-
+NUTS III,Alentejo Central,2013,Manufacturing,1014,23527.3
 Município,Alandroal,2013,Manufacturing,42,11202.5
 Município,Arraiolos,2013,Manufacturing,67,20341.4
 Município,Borba,2013,Manufacturing,71,28934
@@ -8290,7 +8290,7 @@ Município,Vila do Bispo,2014,Construction,13,5155.5
 Município,Vila Real de Santo António,2014,Construction,85,10641.9
 NUTS I,Continente,2014,Human health and social work activities,1065,45715.5
 NUTS II,Norte,2014,Human health and social work activities,330,16333.2
-NUTS III,Alto Minho,2014,Human health and social work activities,52,-
+NUTS III,Alto Minho,2014,Human health and social work activities,52,16333.2
 Município,Arcos de Valdevez,2014,Human health and social work activities,2,-
 Município,Caminha,2014,Human health and social work activities,1,-
 Município,Melgaço,2014,Human health and social work activities,0,-
@@ -8301,14 +8301,14 @@ Município,Ponte de Lima,2014,Human health and social work activities,13,-
 Município,Valença,2014,Human health and social work activities,11,21123.7
 Município,Viana do Castelo,2014,Human health and social work activities,7,29399.7
 Município,Vila Nova de Cerveira,2014,Human health and social work activities,2,-
-NUTS III,Cávado,2014,Human health and social work activities,34,-
+NUTS III,Cávado,2014,Human health and social work activities,34,16333.2
 Município,Amares,2014,Human health and social work activities,2,-
 Município,Barcelos,2014,Human health and social work activities,5,16700.3
 Município,Braga,2014,Human health and social work activities,14,-1979.7
 Município,Esposende,2014,Human health and social work activities,7,26881.7
 Município,Terras de Bouro,2014,Human health and social work activities,0,-
 Município,Vila Verde,2014,Human health and social work activities,6,-
-NUTS III,Ave,2014,Human health and social work activities,39,-
+NUTS III,Ave,2014,Human health and social work activities,39,16333.2
 Município,Cabeceiras de Basto,2014,Human health and social work activities,2,-
 Município,Fafe,2014,Human health and social work activities,2,-
 Município,Guimarães,2014,Human health and social work activities,13,14755.9
@@ -8317,7 +8317,7 @@ Município,Póvoa de Lanhoso,2014,Human health and social work activities,5,1580
 Município,Vieira do Minho,2014,Human health and social work activities,1,-
 Município,Vila Nova de Famalicão,2014,Human health and social work activities,5,1236.8
 Município,Vizela,2014,Human health and social work activities,0,-
-NUTS III,Área Metropolitana do Porto,2014,Human health and social work activities,39,-
+NUTS III,Área Metropolitana do Porto,2014,Human health and social work activities,39,16333.2
 Município,Arouca,2014,Human health and social work activities,6,10899.6
 Município,Espinho,2014,Human health and social work activities,0,-
 Município,Gondomar,2014,Human health and social work activities,0,-
@@ -8335,14 +8335,14 @@ Município,Vale de Cambra,2014,Human health and social work activities,1,-
 Município,Valongo,2014,Human health and social work activities,5,23257.6
 Município,Vila do Conde,2014,Human health and social work activities,1,-
 Município,Vila Nova de Gaia,2014,Human health and social work activities,4,18722.8
-NUTS III,Alto Tâmega,2014,Human health and social work activities,45,-
+NUTS III,Alto Tâmega,2014,Human health and social work activities,45,16333.2
 Município,Boticas,2014,Human health and social work activities,3,-
 Município,Chaves,2014,Human health and social work activities,11,19019.3
 Município,Montalegre,2014,Human health and social work activities,4,5826.8
 Município,Ribeira de Pena,2014,Human health and social work activities,0,-
 Município,Valpaços,2014,Human health and social work activities,5,28091.2
 Município,Vila Pouca de Aguiar,2014,Human health and social work activities,22,17015.8
-NUTS III,Tâmega e Sousa,2014,Human health and social work activities,69,-
+NUTS III,Tâmega e Sousa,2014,Human health and social work activities,69,16333.2
 Município,Amarante,2014,Human health and social work activities,5,17930.1
 Município,Baião,2014,Human health and social work activities,0,-
 Município,Castelo de Paiva,2014,Human health and social work activities,1,-
@@ -8354,7 +8354,7 @@ Município,Marco de Canaveses,2014,Human health and social work activities,27,18
 Município,Paços de Ferreira,2014,Human health and social work activities,8,7883
 Município,Penafiel,2014,Human health and social work activities,26,10720.6
 Município,Resende,2014,Human health and social work activities,0,-
-NUTS III,Douro,2014,Human health and social work activities,37,-
+NUTS III,Douro,2014,Human health and social work activities,37,16333.2
 Município,Alijó,2014,Human health and social work activities,0,-
 Município,Armamar,2014,Human health and social work activities,2,-
 Município,Carrazeda de Ansiães,2014,Human health and social work activities,0,-
@@ -8374,7 +8374,7 @@ Município,Tarouca,2014,Human health and social work activities,1,-
 Município,Torre de Moncorvo,2014,Human health and social work activities,2,-
 Município,Vila Nova de Foz Côa,2014,Human health and social work activities,6,25735.9
 Município,Vila Real,2014,Human health and social work activities,10,13030.4
-NUTS III,Terras de Trás-os-Montes,2014,Human health and social work activities,15,-
+NUTS III,Terras de Trás-os-Montes,2014,Human health and social work activities,15,16333.2
 Município,Alfândega da Fé,2014,Human health and social work activities,0,-
 Município,Bragança,2014,Human health and social work activities,6,11561.7
 Município,Macedo de Cavaleiros,2014,Human health and social work activities,2,-
@@ -8385,7 +8385,7 @@ Município,Vila Flor,2014,Human health and social work activities,1,-
 Município,Vimioso,2014,Human health and social work activities,0,-
 Município,Vinhais,2014,Human health and social work activities,3,-
 NUTS II,Centro,2014,Human health and social work activities,405,28630.9
-NUTS III,Oeste,2014,Human health and social work activities,73,-
+NUTS III,Oeste,2014,Human health and social work activities,73,28630.9
 Município,Alcobaça,2014,Human health and social work activities,40,28145.7
 Município,Alenquer,2014,Human health and social work activities,14,8585.4
 Município,Arruda dos Vinhos,2014,Human health and social work activities,0,-
@@ -8398,7 +8398,7 @@ Município,Óbidos,2014,Human health and social work activities,1,-
 Município,Peniche,2014,Human health and social work activities,2,-
 Município,Sobral de Monte Agraço,2014,Human health and social work activities,0,-
 Município,Torres Vedras,2014,Human health and social work activities,2,-
-NUTS III,Região de Aveiro,2014,Human health and social work activities,32,-
+NUTS III,Região de Aveiro,2014,Human health and social work activities,32,28630.9
 Município,Águeda,2014,Human health and social work activities,12,26264.1
 Município,Albergaria-a-Velha,2014,Human health and social work activities,1,-
 Município,Anadia,2014,Human health and social work activities,1,-
@@ -8410,7 +8410,7 @@ Município,Oliveira do Bairro,2014,Human health and social work activities,1,-
 Município,Ovar,2014,Human health and social work activities,2,-
 Município,Sever do Vouga,2014,Human health and social work activities,6,2097.5
 Município,Vagos,2014,Human health and social work activities,2,-
-NUTS III,Região de Coimbra,2014,Human health and social work activities,64,-
+NUTS III,Região de Coimbra,2014,Human health and social work activities,64,28630.9
 Município,Arganil,2014,Human health and social work activities,1,-
 Município,Cantanhede,2014,Human health and social work activities,8,18575.5
 Município,Coimbra,2014,Human health and social work activities,5,20744.4
@@ -8430,7 +8430,7 @@ Município,Penela,2014,Human health and social work activities,0,-
 Município,Soure,2014,Human health and social work activities,5,19232.4
 Município,Tábua,2014,Human health and social work activities,2,-
 Município,Vila Nova de Poiares,2014,Human health and social work activities,0,-
-NUTS III,Região de Leiria,2014,Human health and social work activities,150,-
+NUTS III,Região de Leiria,2014,Human health and social work activities,150,28630.9
 Município,Alvaiázere,2014,Human health and social work activities,1,-
 Município,Ansião,2014,Human health and social work activities,6,10630.7
 Município,Batalha,2014,Human health and social work activities,14,27522.8
@@ -8441,7 +8441,7 @@ Município,Marinha Grande,2014,Human health and social work activities,1,-
 Município,Pedrógão Grande,2014,Human health and social work activities,0,-
 Município,Pombal,2014,Human health and social work activities,15,48795.4
 Município,Porto de Mós,2014,Human health and social work activities,98,29974.5
-NUTS III,Viseu Dão Lafões,2014,Human health and social work activities,37,-
+NUTS III,Viseu Dão Lafões,2014,Human health and social work activities,37,28630.9
 Município,Aguiar da Beira,2014,Human health and social work activities,3,-
 Município,Carregal do Sal,2014,Human health and social work activities,1,-
 Município,Castro Daire,2014,Human health and social work activities,9,-
@@ -8456,14 +8456,14 @@ Município,Tondela,2014,Human health and social work activities,4,6859.6
 Município,Vila Nova de Paiva,2014,Human health and social work activities,0,-
 Município,Viseu,2014,Human health and social work activities,5,21874.8
 Município,Vouzela,2014,Human health and social work activities,0,-
-NUTS III,Beira Baixa,2014,Human health and social work activities,4,-
+NUTS III,Beira Baixa,2014,Human health and social work activities,4,28630.9
 Município,Castelo Branco,2014,Human health and social work activities,3,41444.5
 Município,Idanha-a-Nova,2014,Human health and social work activities,1,-
 Município,Oleiros,2014,Human health and social work activities,0,-
 Município,Penamacor,2014,Human health and social work activities,0,-
 Município,Proença-a-Nova,2014,Human health and social work activities,0,-
 Município,Vila Velha de Ródão,2014,Human health and social work activities,0,-
-NUTS III,Médio Tejo,2014,Human health and social work activities,12,-
+NUTS III,Médio Tejo,2014,Human health and social work activities,12,28630.9
 Município,Abrantes,2014,Human health and social work activities,0,-
 Município,Alcanena,2014,Human health and social work activities,0,-
 Município,Constância,2014,Human health and social work activities,2,-
@@ -8477,7 +8477,7 @@ Município,Tomar,2014,Human health and social work activities,3,-
 Município,Torres Novas,2014,Human health and social work activities,0,-
 Município,Vila de Rei,2014,Human health and social work activities,1,-
 Município,Vila Nova da Barquinha,2014,Human health and social work activities,0,-
-NUTS III,Beiras e Serra da Estrela,2014,Human health and social work activities,33,-
+NUTS III,Beiras e Serra da Estrela,2014,Human health and social work activities,33,28630.9
 Município,Almeida,2014,Human health and social work activities,0,-
 Município,Belmonte,2014,Human health and social work activities,0,-
 Município,Celorico da Beira,2014,Human health and social work activities,2,-
@@ -8597,7 +8597,7 @@ Município,Vila do Bispo,2014,Human health and social work activities,0,-
 Município,Vila Real de Santo António,2014,Human health and social work activities,0,-
 NUTS I,Continente,2014,"Agriculture, farming, hunting, forestry and fishing",1065,45715.5
 NUTS II,Norte,2014,"Agriculture, farming, hunting, forestry and fishing",330,16333.2
-NUTS III,Alto Minho,2014,"Agriculture, farming, hunting, forestry and fishing",52,-
+NUTS III,Alto Minho,2014,"Agriculture, farming, hunting, forestry and fishing",52,16333.2
 Município,Arcos de Valdevez,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
 Município,Caminha,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
 Município,Melgaço,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
@@ -8608,14 +8608,14 @@ Município,Ponte de Lima,2014,"Agriculture, farming, hunting, forestry and fishi
 Município,Valença,2014,"Agriculture, farming, hunting, forestry and fishing",11,21123.7
 Município,Viana do Castelo,2014,"Agriculture, farming, hunting, forestry and fishing",7,29399.7
 Município,Vila Nova de Cerveira,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
-NUTS III,Cávado,2014,"Agriculture, farming, hunting, forestry and fishing",34,-
+NUTS III,Cávado,2014,"Agriculture, farming, hunting, forestry and fishing",34,16333.2
 Município,Amares,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
 Município,Barcelos,2014,"Agriculture, farming, hunting, forestry and fishing",5,16700.3
 Município,Braga,2014,"Agriculture, farming, hunting, forestry and fishing",14,-1979.7
 Município,Esposende,2014,"Agriculture, farming, hunting, forestry and fishing",7,26881.7
 Município,Terras de Bouro,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Vila Verde,2014,"Agriculture, farming, hunting, forestry and fishing",6,-
-NUTS III,Ave,2014,"Agriculture, farming, hunting, forestry and fishing",39,-
+NUTS III,Ave,2014,"Agriculture, farming, hunting, forestry and fishing",39,16333.2
 Município,Cabeceiras de Basto,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
 Município,Fafe,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
 Município,Guimarães,2014,"Agriculture, farming, hunting, forestry and fishing",13,14755.9
@@ -8624,7 +8624,7 @@ Município,Póvoa de Lanhoso,2014,"Agriculture, farming, hunting, forestry and f
 Município,Vieira do Minho,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
 Município,Vila Nova de Famalicão,2014,"Agriculture, farming, hunting, forestry and fishing",5,1236.8
 Município,Vizela,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
-NUTS III,Área Metropolitana do Porto,2014,"Agriculture, farming, hunting, forestry and fishing",39,-
+NUTS III,Área Metropolitana do Porto,2014,"Agriculture, farming, hunting, forestry and fishing",39,16333.2
 Município,Arouca,2014,"Agriculture, farming, hunting, forestry and fishing",6,10899.6
 Município,Espinho,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Gondomar,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
@@ -8642,14 +8642,14 @@ Município,Vale de Cambra,2014,"Agriculture, farming, hunting, forestry and fish
 Município,Valongo,2014,"Agriculture, farming, hunting, forestry and fishing",5,23257.6
 Município,Vila do Conde,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
 Município,Vila Nova de Gaia,2014,"Agriculture, farming, hunting, forestry and fishing",4,18722.8
-NUTS III,Alto Tâmega,2014,"Agriculture, farming, hunting, forestry and fishing",45,-
+NUTS III,Alto Tâmega,2014,"Agriculture, farming, hunting, forestry and fishing",45,16333.2
 Município,Boticas,2014,"Agriculture, farming, hunting, forestry and fishing",3,-
 Município,Chaves,2014,"Agriculture, farming, hunting, forestry and fishing",11,19019.3
 Município,Montalegre,2014,"Agriculture, farming, hunting, forestry and fishing",4,5826.8
 Município,Ribeira de Pena,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Valpaços,2014,"Agriculture, farming, hunting, forestry and fishing",5,28091.2
 Município,Vila Pouca de Aguiar,2014,"Agriculture, farming, hunting, forestry and fishing",22,17015.8
-NUTS III,Tâmega e Sousa,2014,"Agriculture, farming, hunting, forestry and fishing",69,-
+NUTS III,Tâmega e Sousa,2014,"Agriculture, farming, hunting, forestry and fishing",69,16333.2
 Município,Amarante,2014,"Agriculture, farming, hunting, forestry and fishing",5,17930.1
 Município,Baião,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Castelo de Paiva,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
@@ -8661,7 +8661,7 @@ Município,Marco de Canaveses,2014,"Agriculture, farming, hunting, forestry and 
 Município,Paços de Ferreira,2014,"Agriculture, farming, hunting, forestry and fishing",8,7883
 Município,Penafiel,2014,"Agriculture, farming, hunting, forestry and fishing",26,10720.6
 Município,Resende,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
-NUTS III,Douro,2014,"Agriculture, farming, hunting, forestry and fishing",37,-
+NUTS III,Douro,2014,"Agriculture, farming, hunting, forestry and fishing",37,16333.2
 Município,Alijó,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Armamar,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
 Município,Carrazeda de Ansiães,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
@@ -8681,7 +8681,7 @@ Município,Tarouca,2014,"Agriculture, farming, hunting, forestry and fishing",1,
 Município,Torre de Moncorvo,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
 Município,Vila Nova de Foz Côa,2014,"Agriculture, farming, hunting, forestry and fishing",6,25735.9
 Município,Vila Real,2014,"Agriculture, farming, hunting, forestry and fishing",10,13030.4
-NUTS III,Terras de Trás-os-Montes,2014,"Agriculture, farming, hunting, forestry and fishing",15,-
+NUTS III,Terras de Trás-os-Montes,2014,"Agriculture, farming, hunting, forestry and fishing",15,16333.2
 Município,Alfândega da Fé,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Bragança,2014,"Agriculture, farming, hunting, forestry and fishing",6,11561.7
 Município,Macedo de Cavaleiros,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
@@ -8692,7 +8692,7 @@ Município,Vila Flor,2014,"Agriculture, farming, hunting, forestry and fishing",
 Município,Vimioso,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Vinhais,2014,"Agriculture, farming, hunting, forestry and fishing",3,-
 NUTS II,Centro,2014,"Agriculture, farming, hunting, forestry and fishing",405,28630.9
-NUTS III,Oeste,2014,"Agriculture, farming, hunting, forestry and fishing",73,-
+NUTS III,Oeste,2014,"Agriculture, farming, hunting, forestry and fishing",73,28630.9
 Município,Alcobaça,2014,"Agriculture, farming, hunting, forestry and fishing",40,28145.7
 Município,Alenquer,2014,"Agriculture, farming, hunting, forestry and fishing",14,8585.4
 Município,Arruda dos Vinhos,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
@@ -8705,7 +8705,7 @@ Município,Óbidos,2014,"Agriculture, farming, hunting, forestry and fishing",1,
 Município,Peniche,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
 Município,Sobral de Monte Agraço,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Torres Vedras,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
-NUTS III,Região de Aveiro,2014,"Agriculture, farming, hunting, forestry and fishing",32,-
+NUTS III,Região de Aveiro,2014,"Agriculture, farming, hunting, forestry and fishing",32,28630.9
 Município,Águeda,2014,"Agriculture, farming, hunting, forestry and fishing",12,26264.1
 Município,Albergaria-a-Velha,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
 Município,Anadia,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
@@ -8717,7 +8717,7 @@ Município,Oliveira do Bairro,2014,"Agriculture, farming, hunting, forestry and 
 Município,Ovar,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
 Município,Sever do Vouga,2014,"Agriculture, farming, hunting, forestry and fishing",6,2097.5
 Município,Vagos,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
-NUTS III,Região de Coimbra,2014,"Agriculture, farming, hunting, forestry and fishing",64,-
+NUTS III,Região de Coimbra,2014,"Agriculture, farming, hunting, forestry and fishing",64,28630.9
 Município,Arganil,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
 Município,Cantanhede,2014,"Agriculture, farming, hunting, forestry and fishing",8,18575.5
 Município,Coimbra,2014,"Agriculture, farming, hunting, forestry and fishing",5,20744.4
@@ -8737,7 +8737,7 @@ Município,Penela,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Soure,2014,"Agriculture, farming, hunting, forestry and fishing",5,19232.4
 Município,Tábua,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
 Município,Vila Nova de Poiares,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
-NUTS III,Região de Leiria,2014,"Agriculture, farming, hunting, forestry and fishing",150,-
+NUTS III,Região de Leiria,2014,"Agriculture, farming, hunting, forestry and fishing",150,28630.9
 Município,Alvaiázere,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
 Município,Ansião,2014,"Agriculture, farming, hunting, forestry and fishing",6,10630.7
 Município,Batalha,2014,"Agriculture, farming, hunting, forestry and fishing",14,27522.8
@@ -8748,7 +8748,7 @@ Município,Marinha Grande,2014,"Agriculture, farming, hunting, forestry and fish
 Município,Pedrógão Grande,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Pombal,2014,"Agriculture, farming, hunting, forestry and fishing",15,48795.4
 Município,Porto de Mós,2014,"Agriculture, farming, hunting, forestry and fishing",98,29974.5
-NUTS III,Viseu Dão Lafões,2014,"Agriculture, farming, hunting, forestry and fishing",37,-
+NUTS III,Viseu Dão Lafões,2014,"Agriculture, farming, hunting, forestry and fishing",37,28630.9
 Município,Aguiar da Beira,2014,"Agriculture, farming, hunting, forestry and fishing",3,-
 Município,Carregal do Sal,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
 Município,Castro Daire,2014,"Agriculture, farming, hunting, forestry and fishing",9,-
@@ -8763,14 +8763,14 @@ Município,Tondela,2014,"Agriculture, farming, hunting, forestry and fishing",4,
 Município,Vila Nova de Paiva,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Viseu,2014,"Agriculture, farming, hunting, forestry and fishing",5,21874.8
 Município,Vouzela,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
-NUTS III,Beira Baixa,2014,"Agriculture, farming, hunting, forestry and fishing",4,-
+NUTS III,Beira Baixa,2014,"Agriculture, farming, hunting, forestry and fishing",4,28630.9
 Município,Castelo Branco,2014,"Agriculture, farming, hunting, forestry and fishing",3,41444.5
 Município,Idanha-a-Nova,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
 Município,Oleiros,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Penamacor,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Proença-a-Nova,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Vila Velha de Ródão,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
-NUTS III,Médio Tejo,2014,"Agriculture, farming, hunting, forestry and fishing",12,-
+NUTS III,Médio Tejo,2014,"Agriculture, farming, hunting, forestry and fishing",12,28630.9
 Município,Abrantes,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Alcanena,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Constância,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
@@ -8784,7 +8784,7 @@ Município,Tomar,2014,"Agriculture, farming, hunting, forestry and fishing",3,-
 Município,Torres Novas,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Vila de Rei,2014,"Agriculture, farming, hunting, forestry and fishing",1,-
 Município,Vila Nova da Barquinha,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
-NUTS III,Beiras e Serra da Estrela,2014,"Agriculture, farming, hunting, forestry and fishing",33,-
+NUTS III,Beiras e Serra da Estrela,2014,"Agriculture, farming, hunting, forestry and fishing",33,28630.9
 Município,Almeida,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Belmonte,2014,"Agriculture, farming, hunting, forestry and fishing",0,-
 Município,Celorico da Beira,2014,"Agriculture, farming, hunting, forestry and fishing",2,-
@@ -9211,7 +9211,7 @@ Município,Vila do Bispo,2014,Manufacturing,42,28183.8
 Município,Vila Real de Santo António,2014,Manufacturing,161,12750.5
 NUTS I,Continente,2015,Mining and quarrying,1027,43188.8
 NUTS II,Norte,2015,Mining and quarrying,318,18719.9
-NUTS III,Alto Minho,2015,Mining and quarrying,47,-
+NUTS III,Alto Minho,2015,Mining and quarrying,47,18719.9
 Município,Arcos de Valdevez,2015,Mining and quarrying,1,-
 Município,Caminha,2015,Mining and quarrying,1,-
 Município,Melgaço,2015,Mining and quarrying,0,-
@@ -9222,14 +9222,14 @@ Município,Ponte de Lima,2015,Mining and quarrying,13,14741.3
 Município,Valença,2015,Mining and quarrying,12,18546.4
 Município,Viana do Castelo,2015,Mining and quarrying,6,41037.5
 Município,Vila Nova de Cerveira,2015,Mining and quarrying,2,-
-NUTS III,Cávado,2015,Mining and quarrying,33,-
+NUTS III,Cávado,2015,Mining and quarrying,33,18719.9
 Município,Amares,2015,Mining and quarrying,1,-
 Município,Barcelos,2015,Mining and quarrying,6,17637.4
 Município,Braga,2015,Mining and quarrying,15,9745.8
 Município,Esposende,2015,Mining and quarrying,6,36790.6
 Município,Terras de Bouro,2015,Mining and quarrying,0,-
 Município,Vila Verde,2015,Mining and quarrying,5,-
-NUTS III,Ave,2015,Mining and quarrying,35,-
+NUTS III,Ave,2015,Mining and quarrying,35,18719.9
 Município,Cabeceiras de Basto,2015,Mining and quarrying,2,-
 Município,Fafe,2015,Mining and quarrying,2,-
 Município,Guimarães,2015,Mining and quarrying,11,18571.9
@@ -9238,7 +9238,7 @@ Município,Póvoa de Lanhoso,2015,Mining and quarrying,4,-
 Município,Vieira do Minho,2015,Mining and quarrying,1,-
 Município,Vila Nova de Famalicão,2015,Mining and quarrying,5,7112.5
 Município,Vizela,2015,Mining and quarrying,0,-
-NUTS III,Área Metropolitana do Porto,2015,Mining and quarrying,38,-
+NUTS III,Área Metropolitana do Porto,2015,Mining and quarrying,38,18719.9
 Município,Arouca,2015,Mining and quarrying,5,9299.6
 Município,Espinho,2015,Mining and quarrying,0,-
 Município,Gondomar,2015,Mining and quarrying,0,-
@@ -9256,14 +9256,14 @@ Município,Vale de Cambra,2015,Mining and quarrying,1,-
 Município,Valongo,2015,Mining and quarrying,5,25890.8
 Município,Vila do Conde,2015,Mining and quarrying,1,-
 Município,Vila Nova de Gaia,2015,Mining and quarrying,4,19745.5
-NUTS III,Alto Tâmega,2015,Mining and quarrying,41,-
+NUTS III,Alto Tâmega,2015,Mining and quarrying,41,18719.9
 Município,Boticas,2015,Mining and quarrying,3,9527.5
 Município,Chaves,2015,Mining and quarrying,8,21881.6
 Município,Montalegre,2015,Mining and quarrying,3,-
 Município,Ribeira de Pena,2015,Mining and quarrying,0,-
 Município,Valpaços,2015,Mining and quarrying,5,27508.2
 Município,Vila Pouca de Aguiar,2015,Mining and quarrying,22,17366.7
-NUTS III,Tâmega e Sousa,2015,Mining and quarrying,71,-
+NUTS III,Tâmega e Sousa,2015,Mining and quarrying,71,18719.9
 Município,Amarante,2015,Mining and quarrying,4,11447
 Município,Baião,2015,Mining and quarrying,0,-
 Município,Castelo de Paiva,2015,Mining and quarrying,1,-
@@ -9275,7 +9275,7 @@ Município,Marco de Canaveses,2015,Mining and quarrying,31,18995.8
 Município,Paços de Ferreira,2015,Mining and quarrying,8,11586.9
 Município,Penafiel,2015,Mining and quarrying,25,13192.3
 Município,Resende,2015,Mining and quarrying,0,-
-NUTS III,Douro,2015,Mining and quarrying,38,-
+NUTS III,Douro,2015,Mining and quarrying,38,18719.9
 Município,Alijó,2015,Mining and quarrying,0,-
 Município,Armamar,2015,Mining and quarrying,2,-
 Município,Carrazeda de Ansiães,2015,Mining and quarrying,0,-
@@ -9295,7 +9295,7 @@ Município,Tarouca,2015,Mining and quarrying,1,-
 Município,Torre de Moncorvo,2015,Mining and quarrying,3,23859.1
 Município,Vila Nova de Foz Côa,2015,Mining and quarrying,5,29498.6
 Município,Vila Real,2015,Mining and quarrying,9,22839.9
-NUTS III,Terras de Trás-os-Montes,2015,Mining and quarrying,15,-
+NUTS III,Terras de Trás-os-Montes,2015,Mining and quarrying,15,18719.9
 Município,Alfândega da Fé,2015,Mining and quarrying,0,-
 Município,Bragança,2015,Mining and quarrying,5,7904.6
 Município,Macedo de Cavaleiros,2015,Mining and quarrying,2,-
@@ -10143,14 +10143,14 @@ Município,Ponte de Lima,2015,"Agriculture, farming, hunting, forestry and fishi
 Município,Valença,2015,"Agriculture, farming, hunting, forestry and fishing",159,5219.2
 Município,Viana do Castelo,2015,"Agriculture, farming, hunting, forestry and fishing",699,7735.7
 Município,Vila Nova de Cerveira,2015,"Agriculture, farming, hunting, forestry and fishing",78,6291.6
-NUTS III,Cávado,2015,"Agriculture, farming, hunting, forestry and fishing",3644,-
+NUTS III,Cávado,2015,"Agriculture, farming, hunting, forestry and fishing",3644,4637
 Município,Amares,2015,"Agriculture, farming, hunting, forestry and fishing",189,10357.9
 Município,Barcelos,2015,"Agriculture, farming, hunting, forestry and fishing",1477,9417.4
 Município,Braga,2015,"Agriculture, farming, hunting, forestry and fishing",583,-
 Município,Esposende,2015,"Agriculture, farming, hunting, forestry and fishing",552,5856.5
 Município,Terras de Bouro,2015,"Agriculture, farming, hunting, forestry and fishing",232,2573.2
 Município,Vila Verde,2015,"Agriculture, farming, hunting, forestry and fishing",611,4897.9
-NUTS III,Ave,2015,"Agriculture, farming, hunting, forestry and fishing",2380,-
+NUTS III,Ave,2015,"Agriculture, farming, hunting, forestry and fishing",2380,4637
 Município,Cabeceiras de Basto,2015,"Agriculture, farming, hunting, forestry and fishing",354,2996.5
 Município,Fafe,2015,"Agriculture, farming, hunting, forestry and fishing",253,1917.9
 Município,Guimarães,2015,"Agriculture, farming, hunting, forestry and fishing",412,8089.8
@@ -10663,13 +10663,13 @@ Município,Setúbal,2015,Manufacturing,369,96350.7
 Município,Sintra,2015,Manufacturing,1806,63826.3
 Município,Vila Franca de Xira,2015,Manufacturing,458,47355.1
 NUTS II,Alentejo,2015,Manufacturing,3931,31206.1
-NUTS III,Alentejo Litoral,2015,Manufacturing,411,-
+NUTS III,Alentejo Litoral,2015,Manufacturing,411,31206.1
 Município,Alcácer do Sal,2015,Manufacturing,69,15481.7
 Município,Grândola,2015,Manufacturing,66,-
 Município,Odemira,2015,Manufacturing,103,11271.9
 Município,Santiago do Cacém,2015,Manufacturing,113,13361.5
 Município,Sines,2015,Manufacturing,60,190383.4
-NUTS III,Baixo Alentejo,2015,Manufacturing,653,-
+NUTS III,Baixo Alentejo,2015,Manufacturing,653,31206.1
 Município,Aljustrel,2015,Manufacturing,59,18206.6
 Município,Almodôvar,2015,Manufacturing,36,14802
 Município,Alvito,2015,Manufacturing,11,10284.5
@@ -10683,7 +10683,7 @@ Município,Moura,2015,Manufacturing,76,15827
 Município,Ourique,2015,Manufacturing,30,15774.1
 Município,Serpa,2015,Manufacturing,79,16621.1
 Município,Vidigueira,2015,Manufacturing,36,19385.7
-NUTS III,Lezíria do Tejo,2015,Manufacturing,1286,-
+NUTS III,Lezíria do Tejo,2015,Manufacturing,1286,31206.1
 Município,Almeirim,2015,Manufacturing,97,17627.5
 Município,Alpiarça,2015,Manufacturing,34,24817.9
 Município,Azambuja,2015,Manufacturing,86,39645.5
@@ -10695,7 +10695,7 @@ Município,Golegã,2015,Manufacturing,24,26263.6
 Município,Rio Maior,2015,Manufacturing,170,32351
 Município,Salvaterra de Magos,2015,Manufacturing,89,18407.8
 Município,Santarém,2015,Manufacturing,361,25145.3
-NUTS III,Alto Alentejo,2015,Manufacturing,569,-
+NUTS III,Alto Alentejo,2015,Manufacturing,569,31206.1
 Município,Alter do Chão,2015,Manufacturing,16,33681.6
 Município,Arronches,2015,Manufacturing,13,16809.2
 Município,Avis,2015,Manufacturing,19,18430.8
@@ -10711,7 +10711,7 @@ Município,Nisa,2015,Manufacturing,57,11708.3
 Município,Ponte de Sor,2015,Manufacturing,78,40170.8
 Município,Portalegre,2015,Manufacturing,104,13759.9
 Município,Sousel,2015,Manufacturing,34,14941
-NUTS III,Alentejo Central,2015,Manufacturing,1012,-
+NUTS III,Alentejo Central,2015,Manufacturing,1012,31206.1
 Município,Alandroal,2015,Manufacturing,38,10083.4
 Município,Arraiolos,2015,Manufacturing,65,18622.4
 Município,Borba,2015,Manufacturing,73,34854.2
@@ -10746,7 +10746,7 @@ Município,Vila do Bispo,2015,Manufacturing,28,12231
 Município,Vila Real de Santo António,2015,Manufacturing,66,15024.5
 NUTS I,Continente,2016,Mining and quarrying,1008,44394
 NUTS II,Norte,2016,Mining and quarrying,313,17981.6
-NUTS III,Alto Minho,2016,Mining and quarrying,45,-
+NUTS III,Alto Minho,2016,Mining and quarrying,45,17981.6
 Município,Arcos de Valdevez,2016,Mining and quarrying,1,-
 Município,Caminha,2016,Mining and quarrying,1,-
 Município,Melgaço,2016,Mining and quarrying,0,-
@@ -10757,14 +10757,14 @@ Município,Ponte de Lima,2016,Mining and quarrying,13,16443.2
 Município,Valença,2016,Mining and quarrying,11,21428.6
 Município,Viana do Castelo,2016,Mining and quarrying,6,50470.4
 Município,Vila Nova de Cerveira,2016,Mining and quarrying,2,-
-NUTS III,Cávado,2016,Mining and quarrying,35,-
+NUTS III,Cávado,2016,Mining and quarrying,35,17981.6
 Município,Amares,2016,Mining and quarrying,1,-
 Município,Barcelos,2016,Mining and quarrying,5,15148.1
 Município,Braga,2016,Mining and quarrying,17,10230.3
 Município,Esposende,2016,Mining and quarrying,6,36284.4
 Município,Terras de Bouro,2016,Mining and quarrying,0,-
 Município,Vila Verde,2016,Mining and quarrying,6,16898.3
-NUTS III,Ave,2016,Mining and quarrying,38,-
+NUTS III,Ave,2016,Mining and quarrying,38,17981.6
 Município,Cabeceiras de Basto,2016,Mining and quarrying,2,-
 Município,Fafe,2016,Mining and quarrying,2,-
 Município,Guimarães,2016,Mining and quarrying,11,19002.1
@@ -10773,7 +10773,7 @@ Município,Póvoa de Lanhoso,2016,Mining and quarrying,5,15654.1
 Município,Vieira do Minho,2016,Mining and quarrying,1,-
 Município,Vila Nova de Famalicão,2016,Mining and quarrying,6,8561.8
 Município,Vizela,2016,Mining and quarrying,0,-
-NUTS III,Área Metropolitana do Porto,2016,Mining and quarrying,39,-
+NUTS III,Área Metropolitana do Porto,2016,Mining and quarrying,39,17981.6
 Município,Arouca,2016,Mining and quarrying,5,-
 Município,Espinho,2016,Mining and quarrying,0,-
 Município,Gondomar,2016,Mining and quarrying,1,-
@@ -10791,14 +10791,14 @@ Município,Vale de Cambra,2016,Mining and quarrying,1,-
 Município,Valongo,2016,Mining and quarrying,5,23978.2
 Município,Vila do Conde,2016,Mining and quarrying,1,-
 Município,Vila Nova de Gaia,2016,Mining and quarrying,4,20572
-NUTS III,Alto Tâmega,2016,Mining and quarrying,41,-
+NUTS III,Alto Tâmega,2016,Mining and quarrying,41,17981.6
 Município,Boticas,2016,Mining and quarrying,2,-
 Município,Chaves,2016,Mining and quarrying,8,20780.5
 Município,Montalegre,2016,Mining and quarrying,3,8956.3
 Município,Ribeira de Pena,2016,Mining and quarrying,0,-
 Município,Valpaços,2016,Mining and quarrying,6,-5256.4
 Município,Vila Pouca de Aguiar,2016,Mining and quarrying,22,13517.3
-NUTS III,Tâmega e Sousa,2016,Mining and quarrying,64,-
+NUTS III,Tâmega e Sousa,2016,Mining and quarrying,64,17981.6
 Município,Amarante,2016,Mining and quarrying,3,12411.9
 Município,Baião,2016,Mining and quarrying,0,-
 Município,Castelo de Paiva,2016,Mining and quarrying,1,-
@@ -10810,7 +10810,7 @@ Município,Marco de Canaveses,2016,Mining and quarrying,29,18452.3
 Município,Paços de Ferreira,2016,Mining and quarrying,9,12818.4
 Município,Penafiel,2016,Mining and quarrying,21,8825.7
 Município,Resende,2016,Mining and quarrying,0,-
-NUTS III,Douro,2016,Mining and quarrying,36,-
+NUTS III,Douro,2016,Mining and quarrying,36,17981.6
 Município,Alijó,2016,Mining and quarrying,0,-
 Município,Armamar,2016,Mining and quarrying,2,-
 Município,Carrazeda de Ansiães,2016,Mining and quarrying,0,-
@@ -10830,7 +10830,7 @@ Município,Tarouca,2016,Mining and quarrying,1,-
 Município,Torre de Moncorvo,2016,Mining and quarrying,2,-
 Município,Vila Nova de Foz Côa,2016,Mining and quarrying,6,40868
 Município,Vila Real,2016,Mining and quarrying,8,16582.8
-NUTS III,Terras de Trás-os-Montes,2016,Mining and quarrying,15,-
+NUTS III,Terras de Trás-os-Montes,2016,Mining and quarrying,15,17981.6
 Município,Alfândega da Fé,2016,Mining and quarrying,0,-
 Município,Bragança,2016,Mining and quarrying,5,-5880.6
 Município,Macedo de Cavaleiros,2016,Mining and quarrying,2,-
@@ -10841,7 +10841,7 @@ Município,Vila Flor,2016,Mining and quarrying,1,-
 Município,Vimioso,2016,Mining and quarrying,0,-
 Município,Vinhais,2016,Mining and quarrying,4,-
 NUTS II,Centro,2016,Mining and quarrying,380,27993.8
-NUTS III,Oeste,2016,Mining and quarrying,68,-
+NUTS III,Oeste,2016,Mining and quarrying,68,27993.8
 Município,Alcobaça,2016,Mining and quarrying,37,32759.5
 Município,Alenquer,2016,Mining and quarrying,12,18584.3
 Município,Arruda dos Vinhos,2016,Mining and quarrying,0,-
@@ -10854,7 +10854,7 @@ Município,Óbidos,2016,Mining and quarrying,0,-
 Município,Peniche,2016,Mining and quarrying,2,-
 Município,Sobral de Monte Agraço,2016,Mining and quarrying,0,-
 Município,Torres Vedras,2016,Mining and quarrying,3,-12019
-NUTS III,Região de Aveiro,2016,Mining and quarrying,35,-
+NUTS III,Região de Aveiro,2016,Mining and quarrying,35,27993.8
 Município,Águeda,2016,Mining and quarrying,10,-
 Município,Albergaria-a-Velha,2016,Mining and quarrying,1,-
 Município,Anadia,2016,Mining and quarrying,2,-
@@ -10866,7 +10866,7 @@ Município,Oliveira do Bairro,2016,Mining and quarrying,3,27380.5
 Município,Ovar,2016,Mining and quarrying,1,-
 Município,Sever do Vouga,2016,Mining and quarrying,6,1079.3
 Município,Vagos,2016,Mining and quarrying,2,-
-NUTS III,Região de Coimbra,2016,Mining and quarrying,56,-
+NUTS III,Região de Coimbra,2016,Mining and quarrying,56,27993.8
 Município,Arganil,2016,Mining and quarrying,1,-
 Município,Cantanhede,2016,Mining and quarrying,8,17954.8
 Município,Coimbra,2016,Mining and quarrying,3,27027.5
@@ -10886,7 +10886,7 @@ Município,Penela,2016,Mining and quarrying,0,-
 Município,Soure,2016,Mining and quarrying,4,8822.8
 Município,Tábua,2016,Mining and quarrying,2,-
 Município,Vila Nova de Poiares,2016,Mining and quarrying,0,-
-NUTS III,Região de Leiria,2016,Mining and quarrying,137,-
+NUTS III,Região de Leiria,2016,Mining and quarrying,137,27993.8
 Município,Alvaiázere,2016,Mining and quarrying,1,-
 Município,Ansião,2016,Mining and quarrying,8,8630.1
 Município,Batalha,2016,Mining and quarrying,13,19210.6
@@ -10897,7 +10897,7 @@ Município,Marinha Grande,2016,Mining and quarrying,1,-
 Município,Pedrógão Grande,2016,Mining and quarrying,0,-
 Município,Pombal,2016,Mining and quarrying,15,50012.2
 Município,Porto de Mós,2016,Mining and quarrying,84,29069.8
-NUTS III,Viseu Dão Lafões,2016,Mining and quarrying,36,-
+NUTS III,Viseu Dão Lafões,2016,Mining and quarrying,36,27993.8
 Município,Aguiar da Beira,2016,Mining and quarrying,4,15063.3
 Município,Carregal do Sal,2016,Mining and quarrying,1,-
 Município,Castro Daire,2016,Mining and quarrying,9,-
@@ -10912,14 +10912,14 @@ Município,Tondela,2016,Mining and quarrying,5,6222.8
 Município,Vila Nova de Paiva,2016,Mining and quarrying,0,-
 Município,Viseu,2016,Mining and quarrying,5,23339
 Município,Vouzela,2016,Mining and quarrying,0,-
-NUTS III,Beira Baixa,2016,Mining and quarrying,4,-
+NUTS III,Beira Baixa,2016,Mining and quarrying,4,27993.8
 Município,Castelo Branco,2016,Mining and quarrying,4,-
 Município,Idanha-a-Nova,2016,Mining and quarrying,0,-
 Município,Oleiros,2016,Mining and quarrying,0,-
 Município,Penamacor,2016,Mining and quarrying,0,-
 Município,Proença-a-Nova,2016,Mining and quarrying,0,-
 Município,Vila Velha de Ródão,2016,Mining and quarrying,0,-
-NUTS III,Médio Tejo,2016,Mining and quarrying,13,-
+NUTS III,Médio Tejo,2016,Mining and quarrying,13,27993.8
 Município,Abrantes,2016,Mining and quarrying,0,-
 Município,Alcanena,2016,Mining and quarrying,0,-
 Município,Constância,2016,Mining and quarrying,2,-
@@ -10933,7 +10933,7 @@ Município,Tomar,2016,Mining and quarrying,3,16562.2
 Município,Torres Novas,2016,Mining and quarrying,0,-
 Município,Vila de Rei,2016,Mining and quarrying,0,-
 Município,Vila Nova da Barquinha,2016,Mining and quarrying,0,-
-NUTS III,Beiras e Serra da Estrela,2016,Mining and quarrying,31,-
+NUTS III,Beiras e Serra da Estrela,2016,Mining and quarrying,31,27993.8
 Município,Almeida,2016,Mining and quarrying,0,-
 Município,Belmonte,2016,Mining and quarrying,0,-
 Município,Celorico da Beira,2016,Mining and quarrying,1,-
@@ -10970,13 +10970,13 @@ Município,Setúbal,2016,Mining and quarrying,2,-
 Município,Sintra,2016,Mining and quarrying,24,18375.2
 Município,Vila Franca de Xira,2016,Mining and quarrying,1,-
 NUTS II,Alentejo,2016,Mining and quarrying,190,94231.4
-NUTS III,Alentejo Litoral,2016,Mining and quarrying,10,-
+NUTS III,Alentejo Litoral,2016,Mining and quarrying,10,94231.4
 Município,Alcácer do Sal,2016,Mining and quarrying,1,-
 Município,Grândola,2016,Mining and quarrying,4,37634.5
 Município,Odemira,2016,Mining and quarrying,0,-
 Município,Santiago do Cacém,2016,Mining and quarrying,4,23447
 Município,Sines,2016,Mining and quarrying,1,-
-NUTS III,Baixo Alentejo,2016,Mining and quarrying,6,-
+NUTS III,Baixo Alentejo,2016,Mining and quarrying,6,94231.4
 Município,Aljustrel,2016,Mining and quarrying,2,-
 Município,Almodôvar,2016,Mining and quarrying,0,-
 Município,Alvito,2016,Mining and quarrying,0,-
@@ -11678,14 +11678,14 @@ Município,Ponte de Lima,2016,"Agriculture, farming, hunting, forestry and fishi
 Município,Valença,2016,"Agriculture, farming, hunting, forestry and fishing",151,4150.2
 Município,Viana do Castelo,2016,"Agriculture, farming, hunting, forestry and fishing",683,9353
 Município,Vila Nova de Cerveira,2016,"Agriculture, farming, hunting, forestry and fishing",81,4466
-NUTS III,Cávado,2016,"Agriculture, farming, hunting, forestry and fishing",3616,-
+NUTS III,Cávado,2016,"Agriculture, farming, hunting, forestry and fishing",3616,5009.4
 Município,Amares,2016,"Agriculture, farming, hunting, forestry and fishing",188,5350.3
 Município,Barcelos,2016,"Agriculture, farming, hunting, forestry and fishing",1454,9642.1
 Município,Braga,2016,"Agriculture, farming, hunting, forestry and fishing",600,3919
 Município,Esposende,2016,"Agriculture, farming, hunting, forestry and fishing",540,5668.1
 Município,Terras de Bouro,2016,"Agriculture, farming, hunting, forestry and fishing",231,-
 Município,Vila Verde,2016,"Agriculture, farming, hunting, forestry and fishing",603,5355.9
-NUTS III,Ave,2016,"Agriculture, farming, hunting, forestry and fishing",2429,-
+NUTS III,Ave,2016,"Agriculture, farming, hunting, forestry and fishing",2429,5009.4
 Município,Cabeceiras de Basto,2016,"Agriculture, farming, hunting, forestry and fishing",382,3556
 Município,Fafe,2016,"Agriculture, farming, hunting, forestry and fishing",247,1900.6
 Município,Guimarães,2016,"Agriculture, farming, hunting, forestry and fishing",420,6908.6
@@ -12069,7 +12069,7 @@ Município,Vila Flor,2016,Manufacturing,50,2241.8
 Município,Vimioso,2016,Manufacturing,39,15179.8
 Município,Vinhais,2016,Manufacturing,43,15125.8
 NUTS II,Centro,2016,Manufacturing,16598,29544.8
-NUTS III,Oeste,2016,Manufacturing,2508,-
+NUTS III,Oeste,2016,Manufacturing,2508,29544.8
 Município,Alcobaça,2016,Manufacturing,649,22500.2
 Município,Alenquer,2016,Manufacturing,276,33138.2
 Município,Arruda dos Vinhos,2016,Manufacturing,105,18173.8
@@ -12082,7 +12082,7 @@ Município,Óbidos,2016,Manufacturing,93,23078.7
 Município,Peniche,2016,Manufacturing,128,22033.7
 Município,Sobral de Monte Agraço,2016,Manufacturing,95,17147.1
 Município,Torres Vedras,2016,Manufacturing,484,24405.6
-NUTS III,Região de Aveiro,2016,Manufacturing,3667,-
+NUTS III,Região de Aveiro,2016,Manufacturing,3667,29544.8
 Município,Águeda,2016,Manufacturing,739,27053.1
 Município,Albergaria-a-Velha,2016,Manufacturing,288,33659.7
 Município,Anadia,2016,Manufacturing,382,27233.5
@@ -12094,7 +12094,7 @@ Município,Oliveira do Bairro,2016,Manufacturing,338,25717.1
 Município,Ovar,2016,Manufacturing,461,28120.3
 Município,Sever do Vouga,2016,Manufacturing,157,26045.1
 Município,Vagos,2016,Manufacturing,176,30453.1
-NUTS III,Região de Coimbra,2016,Manufacturing,2583,-
+NUTS III,Região de Coimbra,2016,Manufacturing,2583,29544.8
 Município,Arganil,2016,Manufacturing,75,18046.6
 Município,Cantanhede,2016,Manufacturing,292,32698.1
 Município,Coimbra,2016,Manufacturing,585,21413.2
@@ -12114,7 +12114,7 @@ Município,Penela,2016,Manufacturing,48,25639.2
 Município,Soure,2016,Manufacturing,103,26267.7
 Município,Tábua,2016,Manufacturing,92,17352.4
 Município,Vila Nova de Poiares,2016,Manufacturing,38,22735.4
-NUTS III,Região de Leiria,2016,Manufacturing,3074,-
+NUTS III,Região de Leiria,2016,Manufacturing,3074,29544.8
 Município,Alvaiázere,2016,Manufacturing,57,13185.7
 Município,Ansião,2016,Manufacturing,94,32329.7
 Município,Batalha,2016,Manufacturing,181,24029.5
@@ -12125,7 +12125,7 @@ Município,Marinha Grande,2016,Manufacturing,565,37310
 Município,Pedrógão Grande,2016,Manufacturing,28,11664.8
 Município,Pombal,2016,Manufacturing,434,29489.1
 Município,Porto de Mós,2016,Manufacturing,316,27076.9
-NUTS III,Viseu Dão Lafões,2016,Manufacturing,1450,-
+NUTS III,Viseu Dão Lafões,2016,Manufacturing,1450,29544.8
 Município,Aguiar da Beira,2016,Manufacturing,41,29133.8
 Município,Carregal do Sal,2016,Manufacturing,83,24868.7
 Município,Castro Daire,2016,Manufacturing,67,16185.2
@@ -12140,14 +12140,14 @@ Município,Tondela,2016,Manufacturing,167,40082.5
 Município,Vila Nova de Paiva,2016,Manufacturing,28,-
 Município,Viseu,2016,Manufacturing,463,21135.8
 Município,Vouzela,2016,Manufacturing,73,20444.7
-NUTS III,Beira Baixa,2016,Manufacturing,521,-
+NUTS III,Beira Baixa,2016,Manufacturing,521,29544.8
 Município,Castelo Branco,2016,Manufacturing,274,21434.2
 Município,Idanha-a-Nova,2016,Manufacturing,49,11722.5
 Município,Oleiros,2016,Manufacturing,42,22953.9
 Município,Penamacor,2016,Manufacturing,37,-
 Município,Proença-a-Nova,2016,Manufacturing,91,13174.5
 Município,Vila Velha de Ródão,2016,Manufacturing,28,114490.2
-NUTS III,Médio Tejo,2016,Manufacturing,1515,-
+NUTS III,Médio Tejo,2016,Manufacturing,1515,29544.8
 Município,Abrantes,2016,Manufacturing,146,35607.1
 Município,Alcanena,2016,Manufacturing,214,25415.6
 Município,Constância,2016,Manufacturing,27,75753.3
@@ -12161,7 +12161,7 @@ Município,Tomar,2016,Manufacturing,182,16408.9
 Município,Torres Novas,2016,Manufacturing,149,34475
 Município,Vila de Rei,2016,Manufacturing,35,16255.7
 Município,Vila Nova da Barquinha,2016,Manufacturing,17,15448.5
-NUTS III,Beiras e Serra da Estrela,2016,Manufacturing,1280,-
+NUTS III,Beiras e Serra da Estrela,2016,Manufacturing,1280,29544.8
 Município,Almeida,2016,Manufacturing,26,9639.4
 Município,Belmonte,2016,Manufacturing,45,11620.9
 Município,Celorico da Beira,2016,Manufacturing,30,14016.2
@@ -12198,13 +12198,13 @@ Município,Setúbal,2016,Manufacturing,371,85001.3
 Município,Sintra,2016,Manufacturing,1802,61475
 Município,Vila Franca de Xira,2016,Manufacturing,462,45227.2
 NUTS II,Alentejo,2016,Manufacturing,3933,31785.7
-NUTS III,Alentejo Litoral,2016,Manufacturing,420,-
+NUTS III,Alentejo Litoral,2016,Manufacturing,420,31785.7
 Município,Alcácer do Sal,2016,Manufacturing,69,17038.4
 Município,Grândola,2016,Manufacturing,64,-
 Município,Odemira,2016,Manufacturing,116,11220.8
 Município,Santiago do Cacém,2016,Manufacturing,109,17495.7
 Município,Sines,2016,Manufacturing,62,191536.6
-NUTS III,Baixo Alentejo,2016,Manufacturing,632,-
+NUTS III,Baixo Alentejo,2016,Manufacturing,632,31785.7
 Município,Aljustrel,2016,Manufacturing,50,18283.1
 Município,Almodôvar,2016,Manufacturing,36,17442.5
 Município,Alvito,2016,Manufacturing,11,10124.2
@@ -12218,7 +12218,7 @@ Município,Moura,2016,Manufacturing,75,18615.5
 Município,Ourique,2016,Manufacturing,30,16713.5
 Município,Serpa,2016,Manufacturing,77,14923.1
 Município,Vidigueira,2016,Manufacturing,36,17477.7
-NUTS III,Lezíria do Tejo,2016,Manufacturing,1290,-
+NUTS III,Lezíria do Tejo,2016,Manufacturing,1290,31785.7
 Município,Almeirim,2016,Manufacturing,96,19079.6
 Município,Alpiarça,2016,Manufacturing,33,32995.2
 Município,Azambuja,2016,Manufacturing,81,47585.2
@@ -12230,7 +12230,7 @@ Município,Golegã,2016,Manufacturing,23,24224.3
 Município,Rio Maior,2016,Manufacturing,177,31813.2
 Município,Salvaterra de Magos,2016,Manufacturing,93,-
 Município,Santarém,2016,Manufacturing,362,23515.2
-NUTS III,Alto Alentejo,2016,Manufacturing,591,-
+NUTS III,Alto Alentejo,2016,Manufacturing,591,31785.7
 Município,Alter do Chão,2016,Manufacturing,15,53940.9
 Município,Arronches,2016,Manufacturing,14,16122.9
 Município,Avis,2016,Manufacturing,19,18820.7
@@ -12246,7 +12246,7 @@ Município,Nisa,2016,Manufacturing,57,13922.6
 Município,Ponte de Sor,2016,Manufacturing,81,42155
 Município,Portalegre,2016,Manufacturing,107,16405.5
 Município,Sousel,2016,Manufacturing,34,20420.7
-NUTS III,Alentejo Central,2016,Manufacturing,1000,-
+NUTS III,Alentejo Central,2016,Manufacturing,1000,31785.7
 Município,Alandroal,2016,Manufacturing,38,12220
 Município,Arraiolos,2016,Manufacturing,64,19493.7
 Município,Borba,2016,Manufacturing,68,28782.1
@@ -12281,7 +12281,7 @@ Município,Vila do Bispo,2016,Manufacturing,25,15616.8
 Município,Vila Real de Santo António,2016,Manufacturing,65,19782.3
 NUTS I,Continente,2017,Mining and quarrying,1028,49232.8
 NUTS II,Norte,2017,Mining and quarrying,324,18313.2
-NUTS III,Alto Minho,2017,Mining and quarrying,49,-
+NUTS III,Alto Minho,2017,Mining and quarrying,49,18313.2
 Município,Arcos de Valdevez,2017,Mining and quarrying,1,-
 Município,Caminha,2017,Mining and quarrying,1,-
 Município,Melgaço,2017,Mining and quarrying,0,-
@@ -12292,14 +12292,14 @@ Município,Ponte de Lima,2017,Mining and quarrying,13,17749.5
 Município,Valença,2017,Mining and quarrying,14,19720.9
 Município,Viana do Castelo,2017,Mining and quarrying,6,25648.2
 Município,Vila Nova de Cerveira,2017,Mining and quarrying,2,-
-NUTS III,Cávado,2017,Mining and quarrying,37,-
+NUTS III,Cávado,2017,Mining and quarrying,37,18313.2
 Município,Amares,2017,Mining and quarrying,1,-
 Município,Barcelos,2017,Mining and quarrying,6,20664.7
 Município,Braga,2017,Mining and quarrying,18,5105.2
 Município,Esposende,2017,Mining and quarrying,6,29883.4
 Município,Terras de Bouro,2017,Mining and quarrying,0,-
 Município,Vila Verde,2017,Mining and quarrying,6,22518.1
-NUTS III,Ave,2017,Mining and quarrying,38,-
+NUTS III,Ave,2017,Mining and quarrying,38,18313.2
 Município,Cabeceiras de Basto,2017,Mining and quarrying,2,-
 Município,Fafe,2017,Mining and quarrying,2,-
 Município,Guimarães,2017,Mining and quarrying,12,18844.8
@@ -12308,7 +12308,7 @@ Município,Póvoa de Lanhoso,2017,Mining and quarrying,4,24439.1
 Município,Vieira do Minho,2017,Mining and quarrying,1,-
 Município,Vila Nova de Famalicão,2017,Mining and quarrying,6,11385.1
 Município,Vizela,2017,Mining and quarrying,0,-
-NUTS III,Área Metropolitana do Porto,2017,Mining and quarrying,44,-
+NUTS III,Área Metropolitana do Porto,2017,Mining and quarrying,44,18313.2
 Município,Arouca,2017,Mining and quarrying,8,10083.5
 Município,Espinho,2017,Mining and quarrying,0,-
 Município,Gondomar,2017,Mining and quarrying,1,-
@@ -12326,14 +12326,14 @@ Município,Vale de Cambra,2017,Mining and quarrying,1,-
 Município,Valongo,2017,Mining and quarrying,5,27489
 Município,Vila do Conde,2017,Mining and quarrying,1,-
 Município,Vila Nova de Gaia,2017,Mining and quarrying,4,24057.7
-NUTS III,Alto Tâmega,2017,Mining and quarrying,41,-
+NUTS III,Alto Tâmega,2017,Mining and quarrying,41,18313.2
 Município,Boticas,2017,Mining and quarrying,2,-
 Município,Chaves,2017,Mining and quarrying,8,23072.2
 Município,Montalegre,2017,Mining and quarrying,3,-2765.2
 Município,Ribeira de Pena,2017,Mining and quarrying,0,-
 Município,Valpaços,2017,Mining and quarrying,4,3666
 Município,Vila Pouca de Aguiar,2017,Mining and quarrying,24,16203
-NUTS III,Tâmega e Sousa,2017,Mining and quarrying,63,-
+NUTS III,Tâmega e Sousa,2017,Mining and quarrying,63,18313.2
 Município,Amarante,2017,Mining and quarrying,3,11311
 Município,Baião,2017,Mining and quarrying,0,-
 Município,Castelo de Paiva,2017,Mining and quarrying,1,-
@@ -12345,7 +12345,7 @@ Município,Marco de Canaveses,2017,Mining and quarrying,30,19618.2
 Município,Paços de Ferreira,2017,Mining and quarrying,8,13381.2
 Município,Penafiel,2017,Mining and quarrying,20,-
 Município,Resende,2017,Mining and quarrying,0,-
-NUTS III,Douro,2017,Mining and quarrying,36,-
+NUTS III,Douro,2017,Mining and quarrying,36,18313.2
 Município,Alijó,2017,Mining and quarrying,0,-
 Município,Armamar,2017,Mining and quarrying,2,-
 Município,Carrazeda de Ansiães,2017,Mining and quarrying,0,-
@@ -12365,7 +12365,7 @@ Município,Tarouca,2017,Mining and quarrying,1,-
 Município,Torre de Moncorvo,2017,Mining and quarrying,2,-
 Município,Vila Nova de Foz Côa,2017,Mining and quarrying,7,42667.1
 Município,Vila Real,2017,Mining and quarrying,8,21385.4
-NUTS III,Terras de Trás-os-Montes,2017,Mining and quarrying,16,-
+NUTS III,Terras de Trás-os-Montes,2017,Mining and quarrying,16,18313.2
 Município,Alfândega da Fé,2017,Mining and quarrying,0,-
 Município,Bragança,2017,Mining and quarrying,4,-
 Município,Macedo de Cavaleiros,2017,Mining and quarrying,2,-
@@ -12376,7 +12376,7 @@ Município,Vila Flor,2017,Mining and quarrying,1,-
 Município,Vimioso,2017,Mining and quarrying,0,-
 Município,Vinhais,2017,Mining and quarrying,4,-
 NUTS II,Centro,2017,Mining and quarrying,392,31149.8
-NUTS III,Oeste,2017,Mining and quarrying,69,-
+NUTS III,Oeste,2017,Mining and quarrying,69,31149.8
 Município,Alcobaça,2017,Mining and quarrying,36,34745.5
 Município,Alenquer,2017,Mining and quarrying,12,16983.7
 Município,Arruda dos Vinhos,2017,Mining and quarrying,0,-
@@ -12389,7 +12389,7 @@ Município,Óbidos,2017,Mining and quarrying,0,-
 Município,Peniche,2017,Mining and quarrying,2,-
 Município,Sobral de Monte Agraço,2017,Mining and quarrying,0,-
 Município,Torres Vedras,2017,Mining and quarrying,3,-7037.3
-NUTS III,Região de Aveiro,2017,Mining and quarrying,39,-
+NUTS III,Região de Aveiro,2017,Mining and quarrying,39,31149.8
 Município,Águeda,2017,Mining and quarrying,10,27082.1
 Município,Albergaria-a-Velha,2017,Mining and quarrying,1,-
 Município,Anadia,2017,Mining and quarrying,2,-
@@ -12401,7 +12401,7 @@ Município,Oliveira do Bairro,2017,Mining and quarrying,2,-
 Município,Ovar,2017,Mining and quarrying,2,-
 Município,Sever do Vouga,2017,Mining and quarrying,5,1362
 Município,Vagos,2017,Mining and quarrying,5,21582.8
-NUTS III,Região de Coimbra,2017,Mining and quarrying,57,-
+NUTS III,Região de Coimbra,2017,Mining and quarrying,57,31149.8
 Município,Arganil,2017,Mining and quarrying,1,-
 Município,Cantanhede,2017,Mining and quarrying,8,25781.9
 Município,Coimbra,2017,Mining and quarrying,4,28526.2
@@ -12421,7 +12421,7 @@ Município,Penela,2017,Mining and quarrying,0,-
 Município,Soure,2017,Mining and quarrying,4,15915.8
 Município,Tábua,2017,Mining and quarrying,2,-
 Município,Vila Nova de Poiares,2017,Mining and quarrying,0,-
-NUTS III,Região de Leiria,2017,Mining and quarrying,142,-
+NUTS III,Região de Leiria,2017,Mining and quarrying,142,31149.8
 Município,Alvaiázere,2017,Mining and quarrying,1,-
 Município,Ansião,2017,Mining and quarrying,9,11152.1
 Município,Batalha,2017,Mining and quarrying,15,18537.3
@@ -12432,7 +12432,7 @@ Município,Marinha Grande,2017,Mining and quarrying,1,-
 Município,Pedrógão Grande,2017,Mining and quarrying,0,-
 Município,Pombal,2017,Mining and quarrying,15,50276.3
 Município,Porto de Mós,2017,Mining and quarrying,84,30552.7
-NUTS III,Viseu Dão Lafões,2017,Mining and quarrying,35,-
+NUTS III,Viseu Dão Lafões,2017,Mining and quarrying,35,31149.8
 Município,Aguiar da Beira,2017,Mining and quarrying,4,12819.1
 Município,Carregal do Sal,2017,Mining and quarrying,1,-
 Município,Castro Daire,2017,Mining and quarrying,8,9851.5
@@ -12447,14 +12447,14 @@ Município,Tondela,2017,Mining and quarrying,5,10260.8
 Município,Vila Nova de Paiva,2017,Mining and quarrying,0,-
 Município,Viseu,2017,Mining and quarrying,5,26625.9
 Município,Vouzela,2017,Mining and quarrying,0,-
-NUTS III,Beira Baixa,2017,Mining and quarrying,3,-
+NUTS III,Beira Baixa,2017,Mining and quarrying,3,31149.8
 Município,Castelo Branco,2017,Mining and quarrying,3,-
 Município,Idanha-a-Nova,2017,Mining and quarrying,0,-
 Município,Oleiros,2017,Mining and quarrying,0,-
 Município,Penamacor,2017,Mining and quarrying,0,-
 Município,Proença-a-Nova,2017,Mining and quarrying,0,-
 Município,Vila Velha de Ródão,2017,Mining and quarrying,0,-
-NUTS III,Médio Tejo,2017,Mining and quarrying,12,-
+NUTS III,Médio Tejo,2017,Mining and quarrying,12,31149.8
 Município,Abrantes,2017,Mining and quarrying,0,-
 Município,Alcanena,2017,Mining and quarrying,0,-
 Município,Constância,2017,Mining and quarrying,2,-
@@ -12468,7 +12468,7 @@ Município,Tomar,2017,Mining and quarrying,3,11300.8
 Município,Torres Novas,2017,Mining and quarrying,0,-
 Município,Vila de Rei,2017,Mining and quarrying,0,-
 Município,Vila Nova da Barquinha,2017,Mining and quarrying,0,-
-NUTS III,Beiras e Serra da Estrela,2017,Mining and quarrying,35,-
+NUTS III,Beiras e Serra da Estrela,2017,Mining and quarrying,35,31149.8
 Município,Almeida,2017,Mining and quarrying,2,-
 Município,Belmonte,2017,Mining and quarrying,0,-
 Município,Celorico da Beira,2017,Mining and quarrying,1,-
@@ -12505,13 +12505,13 @@ Município,Setúbal,2017,Mining and quarrying,2,-
 Município,Sintra,2017,Mining and quarrying,26,18457.4
 Município,Vila Franca de Xira,2017,Mining and quarrying,0,-
 NUTS II,Alentejo,2017,Mining and quarrying,187,107705.5
-NUTS III,Alentejo Litoral,2017,Mining and quarrying,10,-
+NUTS III,Alentejo Litoral,2017,Mining and quarrying,10,107705.5
 Município,Alcácer do Sal,2017,Mining and quarrying,1,-
 Município,Grândola,2017,Mining and quarrying,4,19685.2
 Município,Odemira,2017,Mining and quarrying,0,-
 Município,Santiago do Cacém,2017,Mining and quarrying,4,-
 Município,Sines,2017,Mining and quarrying,1,-
-NUTS III,Baixo Alentejo,2017,Mining and quarrying,6,-
+NUTS III,Baixo Alentejo,2017,Mining and quarrying,6,107705.5
 Município,Aljustrel,2017,Mining and quarrying,2,-
 Município,Almodôvar,2017,Mining and quarrying,0,-
 Município,Alvito,2017,Mining and quarrying,0,-
@@ -12537,7 +12537,7 @@ Município,Golegã,2017,Mining and quarrying,0,-
 Município,Rio Maior,2017,Mining and quarrying,51,49226.4
 Município,Salvaterra de Magos,2017,Mining and quarrying,1,-
 Município,Santarém,2017,Mining and quarrying,48,53224.7
-NUTS III,Alto Alentejo,2017,Mining and quarrying,10,-
+NUTS III,Alto Alentejo,2017,Mining and quarrying,10,107705.5
 Município,Alter do Chão,2017,Mining and quarrying,0,-
 Município,Arronches,2017,Mining and quarrying,0,-
 Município,Avis,2017,Mining and quarrying,0,-
@@ -13604,7 +13604,7 @@ Município,Vila Flor,2017,Manufacturing,39,19859.8
 Município,Vimioso,2017,Manufacturing,42,15177.5
 Município,Vinhais,2017,Manufacturing,44,12437.2
 NUTS II,Centro,2017,Manufacturing,16668,30988.8
-NUTS III,Oeste,2017,Manufacturing,2556,-
+NUTS III,Oeste,2017,Manufacturing,2556,30988.8
 Município,Alcobaça,2017,Manufacturing,663,22492.1
 Município,Alenquer,2017,Manufacturing,275,35304.2
 Município,Arruda dos Vinhos,2017,Manufacturing,106,20548.2
@@ -13617,7 +13617,7 @@ Município,Óbidos,2017,Manufacturing,96,25830.3
 Município,Peniche,2017,Manufacturing,138,22224.4
 Município,Sobral de Monte Agraço,2017,Manufacturing,91,18287
 Município,Torres Vedras,2017,Manufacturing,514,26352.8
-NUTS III,Região de Aveiro,2017,Manufacturing,3660,-
+NUTS III,Região de Aveiro,2017,Manufacturing,3660,30988.8
 Município,Águeda,2017,Manufacturing,747,27297.7
 Município,Albergaria-a-Velha,2017,Manufacturing,277,35237.2
 Município,Anadia,2017,Manufacturing,384,27937.5
@@ -13629,7 +13629,7 @@ Município,Oliveira do Bairro,2017,Manufacturing,332,28221.5
 Município,Ovar,2017,Manufacturing,459,31710.6
 Município,Sever do Vouga,2017,Manufacturing,155,24533
 Município,Vagos,2017,Manufacturing,181,30941.3
-NUTS III,Região de Coimbra,2017,Manufacturing,2566,-
+NUTS III,Região de Coimbra,2017,Manufacturing,2566,30988.8
 Município,Arganil,2017,Manufacturing,79,18463.1
 Município,Cantanhede,2017,Manufacturing,305,34590.8
 Município,Coimbra,2017,Manufacturing,584,21963.1
@@ -13649,7 +13649,7 @@ Município,Penela,2017,Manufacturing,40,29993.7
 Município,Soure,2017,Manufacturing,101,27972.4
 Município,Tábua,2017,Manufacturing,92,17958.2
 Município,Vila Nova de Poiares,2017,Manufacturing,37,22827.3
-NUTS III,Região de Leiria,2017,Manufacturing,3106,-
+NUTS III,Região de Leiria,2017,Manufacturing,3106,30988.8
 Município,Alvaiázere,2017,Manufacturing,59,12402.1
 Município,Ansião,2017,Manufacturing,91,35430.5
 Município,Batalha,2017,Manufacturing,195,24581.7
@@ -13660,7 +13660,7 @@ Município,Marinha Grande,2017,Manufacturing,581,37261.5
 Município,Pedrógão Grande,2017,Manufacturing,30,12695.7
 Município,Pombal,2017,Manufacturing,438,29111.2
 Município,Porto de Mós,2017,Manufacturing,304,26846.4
-NUTS III,Viseu Dão Lafões,2017,Manufacturing,1450,-
+NUTS III,Viseu Dão Lafões,2017,Manufacturing,1450,30988.8
 Município,Aguiar da Beira,2017,Manufacturing,41,26585.1
 Município,Carregal do Sal,2017,Manufacturing,81,23046
 Município,Castro Daire,2017,Manufacturing,66,15792.2
@@ -13675,14 +13675,14 @@ Município,Tondela,2017,Manufacturing,166,42122.4
 Município,Vila Nova de Paiva,2017,Manufacturing,31,-
 Município,Viseu,2017,Manufacturing,470,21549
 Município,Vouzela,2017,Manufacturing,70,22655.6
-NUTS III,Beira Baixa,2017,Manufacturing,529,-
+NUTS III,Beira Baixa,2017,Manufacturing,529,30988.8
 Município,Castelo Branco,2017,Manufacturing,273,23989.6
 Município,Idanha-a-Nova,2017,Manufacturing,44,12705.1
 Município,Oleiros,2017,Manufacturing,46,21879.3
 Município,Penamacor,2017,Manufacturing,37,-
 Município,Proença-a-Nova,2017,Manufacturing,99,14004.3
 Município,Vila Velha de Ródão,2017,Manufacturing,30,112759.4
-NUTS III,Médio Tejo,2017,Manufacturing,1521,-
+NUTS III,Médio Tejo,2017,Manufacturing,1521,30988.8
 Município,Abrantes,2017,Manufacturing,158,36760.2
 Município,Alcanena,2017,Manufacturing,215,25035.5
 Município,Constância,2017,Manufacturing,26,67863.6
@@ -13696,7 +13696,7 @@ Município,Tomar,2017,Manufacturing,190,18082.4
 Município,Torres Novas,2017,Manufacturing,146,32674.7
 Município,Vila de Rei,2017,Manufacturing,32,-
 Município,Vila Nova da Barquinha,2017,Manufacturing,15,14849.8
-NUTS III,Beiras e Serra da Estrela,2017,Manufacturing,1280,-
+NUTS III,Beiras e Serra da Estrela,2017,Manufacturing,1280,30988.8
 Município,Almeida,2017,Manufacturing,24,9997.5
 Município,Belmonte,2017,Manufacturing,43,12244
 Município,Celorico da Beira,2017,Manufacturing,26,13701
@@ -13733,13 +13733,13 @@ Município,Setúbal,2017,Manufacturing,389,70646.6
 Município,Sintra,2017,Manufacturing,1819,56740
 Município,Vila Franca de Xira,2017,Manufacturing,468,46715.8
 NUTS II,Alentejo,2017,Manufacturing,4008,35334.7
-NUTS III,Alentejo Litoral,2017,Manufacturing,432,-
+NUTS III,Alentejo Litoral,2017,Manufacturing,432,35334.7
 Município,Alcácer do Sal,2017,Manufacturing,68,18874.3
 Município,Grândola,2017,Manufacturing,69,-
 Município,Odemira,2017,Manufacturing,118,13636.5
 Município,Santiago do Cacém,2017,Manufacturing,117,21750.8
 Município,Sines,2017,Manufacturing,60,181509.3
-NUTS III,Baixo Alentejo,2017,Manufacturing,654,-
+NUTS III,Baixo Alentejo,2017,Manufacturing,654,35334.7
 Município,Aljustrel,2017,Manufacturing,51,12088.7
 Município,Almodôvar,2017,Manufacturing,36,15028.6
 Município,Alvito,2017,Manufacturing,10,12941.2
@@ -13753,7 +13753,7 @@ Município,Moura,2017,Manufacturing,74,18580.2
 Município,Ourique,2017,Manufacturing,33,18692.1
 Município,Serpa,2017,Manufacturing,81,15225.3
 Município,Vidigueira,2017,Manufacturing,33,16965.7
-NUTS III,Lezíria do Tejo,2017,Manufacturing,1312,-
+NUTS III,Lezíria do Tejo,2017,Manufacturing,1312,35334.7
 Município,Almeirim,2017,Manufacturing,92,20937.1
 Município,Alpiarça,2017,Manufacturing,36,40633.3
 Município,Azambuja,2017,Manufacturing,82,45478.3
@@ -13765,7 +13765,7 @@ Município,Golegã,2017,Manufacturing,23,26934.9
 Município,Rio Maior,2017,Manufacturing,190,33429.1
 Município,Salvaterra de Magos,2017,Manufacturing,101,-
 Município,Santarém,2017,Manufacturing,368,39192.4
-NUTS III,Alto Alentejo,2017,Manufacturing,600,-
+NUTS III,Alto Alentejo,2017,Manufacturing,600,35334.7
 Município,Alter do Chão,2017,Manufacturing,14,47414
 Município,Arronches,2017,Manufacturing,11,17836.6
 Município,Avis,2017,Manufacturing,19,20483.9
@@ -13781,7 +13781,7 @@ Município,Nisa,2017,Manufacturing,62,13470.3
 Município,Ponte de Sor,2017,Manufacturing,77,44729.3
 Município,Portalegre,2017,Manufacturing,109,17723.6
 Município,Sousel,2017,Manufacturing,39,18758.7
-NUTS III,Alentejo Central,2017,Manufacturing,1010,-
+NUTS III,Alentejo Central,2017,Manufacturing,1010,35334.7
 Município,Alandroal,2017,Manufacturing,39,12717.8
 Município,Arraiolos,2017,Manufacturing,60,20091.5
 Município,Borba,2017,Manufacturing,68,21534.4
